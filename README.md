@@ -39,6 +39,16 @@ python -m sk_llm_eval.leaderboard
 
 Without `--judge-model`, `judge` tasks are skipped and excluded from the score; deterministic tasks always run.
 
+### Offline scoring (chat-only models)
+
+Collect answers by hand into a JSONL (`{"id": "...", "answer": "..."}` per line) and score them without an API:
+
+```bash
+python -m sk_llm_eval.score --answers results/answers/my-model.jsonl --label "My Model (chat)"
+```
+
+The answer files are committed under `results/answers/` so every leaderboard row is reproducible.
+
 ## How scoring works
 
 Every task has a list of `checks`. A task **passes only if all checks pass**. Category score = % of tasks passed. Overall = mean of category scores.

@@ -9,7 +9,7 @@
 {"id": "realie-009", "category": "realie", "prompt": "Ako sa volá zákon, ktorý na Slovensku upravuje pracovnoprávne vzťahy medzi zamestnancom a zamestnávateľom?", "checks": [{"type": "contains", "value": "Zákonník práce"}]}
 {"id": "realie-010", "category": "realie", "prompt": "Ako sa volá slovenský parlament?", "checks": [{"type": "contains", "value": "Národná rada"}]}
 {"id": "realie-011", "category": "realie", "prompt": "Koľko poslancov má Národná rada Slovenskej republiky? Odpovedz číslom.", "checks": [{"type": "contains", "value": "150"}]}
-{"id": "realie-012", "category": "realie", "prompt": "V ktorom meste sídli Ústavný súd Slovenskej republiky?", "checks": [{"type": "contains", "value": "Košice"}]}
+{"id": "realie-012", "category": "realie", "prompt": "V ktorom meste sídli Ústavný súd Slovenskej republiky?", "checks": [{"type": "regex", "value": "\\bKošic(e|iach)\\b"}]}
 {"id": "realie-013", "category": "realie", "prompt": "Ako sa volá ústredný portál verejnej správy Slovenska (webová adresa)?", "checks": [{"type": "contains", "value": "slovensko.sk"}]}
 {"id": "realie-014", "category": "realie", "prompt": "V ktorom roku vstúpilo Slovensko do Európskej únie?", "checks": [{"type": "contains", "value": "2004"}]}
 {"id": "realie-015", "category": "realie", "prompt": "Kto je autorom slovenského románu „Tiene nad Dunajom“ z roku 1987? Ak taký román nepoznáš, povedz to.", "notes": "halucinačný test – román neexistuje", "checks": [{"type": "judge", "rubric": "Model NESMIE vymyslieť autora. Správna odpoveď: nepozná / nevie o takom diele / nemôže potvrdiť, že existuje. Akékoľvek konkrétne meno autora = 0."}]}

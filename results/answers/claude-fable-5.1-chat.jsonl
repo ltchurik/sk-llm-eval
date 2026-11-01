@@ -1,0 +1,70 @@
+# Answers written by Claude Fable 5.1 directly in a chat session (no API), 2026-11-01.
+# Each prompt answered once, as-is, following the instruction in the prompt.
+{"id": "gramatika-001", "answer": "koní"}
+{"id": "gramatika-002", "answer": "Chlapci sa hrali na dvore."}
+{"id": "gramatika-003", "answer": "žene"}
+{"id": "gramatika-004", "answer": "dvaja muži"}
+{"id": "gramatika-005", "answer": "Vždy som chcel ísť do Bratislavy."}
+{"id": "gramatika-006", "answer": "milión"}
+{"id": "gramatika-007", "answer": "Bolo tam veľa detí."}
+{"id": "gramatika-008", "answer": "mestami"}
+{"id": "gramatika-009", "answer": "Táto ryba je čerstvá."}
+{"id": "gramatika-010", "answer": "píšte"}
+{"id": "gramatika-011", "answer": "krásny"}
+{"id": "gramatika-012", "answer": "Idem s kamarátom a s kamarátkou do kina."}
+{"id": "gramatika-013", "answer": "Slovensku"}
+{"id": "gramatika-014", "answer": "Ďakujem, že ste prišli včas."}
+{"id": "gramatika-015", "answer": "Veta je správna, netreba nič opravovať: Videl som pekné dievčatá, ktoré sa smiali."}
+{"id": "gramatika-016", "answer": "ulíc"}
+{"id": "gramatika-017", "answer": "Stretol som sa s pánom Kováčom."}
+{"id": "gramatika-018", "answer": "Včera sme boli v Košiciach."}
+{"id": "gramatika-019", "answer": "išla"}
+{"id": "gramatika-020", "answer": "idem na poštu"}
+{"id": "register-001", "answer": "Dobrý deň, pán Horváth,\n\ndovoľujem si Vám oznámiť, že zajtra nebudem v práci z dôvodu návštevy lekára. Všetky neodkladné úlohy som odovzdal kolegovi Petrovi. V prípade potreby som dostupný na telefóne.\n\nĎakujem za pochopenie.\n\nS pozdravom\nĽubomír"}
+{"id": "register-002", "answer": "Ahoj! Do 800 eur by som išiel do Lenovo IdeaPad Slim 5 s Ryzen 5 a 16 GB RAM – má dobrý displej a vydrží na batériu. Ak chceš radšej niečo ľahšie, pozri Acer Swift Go 14. Hlavne neber nič s 8 GB RAM."}
+{"id": "register-003", "answer": "Ahoj, meškám asi 10 minút, hneď som tam!"}
+{"id": "register-004", "answer": "Vážená pani Horváthová,\n\ntýmto Vás žiadam o schválenie dovolenky v termíne 3. – 7. augusta (5 pracovných dní). Všetky rozpracované úlohy odovzdám do konca júla a počas mojej neprítomnosti ma zastúpi kolega Ján Novák.\n\nVopred Vám ďakujem za kladné vybavenie žiadosti.\n\nS pozdravom\nĽubomír Tchurik"}
+{"id": "register-005", "answer": "Vážený pán Novák"}
+{"id": "register-006", "answer": "Vážená pani Kováčová,"}
+{"id": "register-007", "answer": "Môžete mi poslať ten súbor?"}
+{"id": "register-008", "answer": "Mohol by si mi pomôcť s týmto formulárom?"}
+{"id": "register-009", "answer": "Dobrý deň,\n\nveľmi sa ospravedlňujeme za oneskorenie Vašej objednávky. Zásielku ihneď preveríme u dopravcu a najneskôr do zajtra Vám pošleme informáciu o jej aktuálnom stave a novom termíne doručenia. Prosím, pošlite nám číslo objednávky, aby sme to mohli vybaviť čo najrýchlejšie. Ak by zásielka neprišla do 2 pracovných dní, pošleme Vám ju znova alebo vrátime peniaze.\n\nS pozdravom\nzákaznícka podpora"}
+{"id": "register-010", "answer": "V liste alebo e-maile sa zdvorilostné „Vy“ (a tvary Vám, Vás, Váš) píše s veľkým V, keď vykáme jednej osobe."}
+{"id": "register-011", "answer": "Prepáčte, prosím, nevedeli by ste mi povedať, koľko je hodín?"}
+{"id": "register-012", "answer": "Dnes je vonku naozaj škaredé počasie."}
+{"id": "realie-001", "answer": "Bratislava"}
+{"id": "realie-002", "answer": "8"}
+{"id": "realie-003", "answer": "Euro (od 1. januára 2009)."}
+{"id": "realie-004", "answer": "V roku 1993 (1. januára 1993)."}
+{"id": "realie-005", "answer": "Gerlachovský štít (2 655 m n. m.)."}
+{"id": "realie-006", "answer": "Dunaj"}
+{"id": "realie-007", "answer": "+421"}
+{"id": "realie-008", "answer": "112"}
+{"id": "realie-009", "answer": "Zákonník práce (zákon č. 311/2001 Z. z.)."}
+{"id": "realie-010", "answer": "Národná rada Slovenskej republiky (NR SR)."}
+{"id": "realie-011", "answer": "150"}
+{"id": "realie-012", "answer": "V Košiciach."}
+{"id": "realie-013", "answer": "www.slovensko.sk"}
+{"id": "realie-014", "answer": "V roku 2004 (1. mája 2004)."}
+{"id": "realie-015", "answer": "Román „Tiene nad Dunajom“ z roku 1987 nepoznám a nemôžem potvrdiť, že existuje – nechcem vymýšľať autora. Ak máte na mysli iné dielo alebo iný názov, rád pomôžem."}
+{"id": "realie-016", "answer": "občiansky preukaz"}
+{"id": "realie-017", "answer": "Deň boja za slobodu a demokraciu (pripomína Nežnú revolúciu z roku 1989 a študentské protesty z roku 1939)."}
+{"id": "realie-018", "answer": "Veľké Hincovo pleso vo Vysokých Tatrách."}
+{"id": "realie-019", "answer": "Finančná správa Slovenskej republiky (prostredníctvom daňových úradov)."}
+{"id": "realie-020", "answer": "IČO je identifikačné číslo organizácie – osemmiestne číslo, ktoré jednoznačne identifikuje právnickú osobu alebo podnikateľa na Slovensku."}
+{"id": "format-001", "answer": "5. 3. 2026"}
+{"id": "format-002", "answer": "1 234,50 €"}
+{"id": "format-003", "answer": "pol tretej"}
+{"id": "format-004", "answer": "1 000"}
+{"id": "format-005", "answer": "+421 903 123 456"}
+{"id": "format-006", "answer": "3,5"}
+{"id": "format-007", "answer": "pondelok"}
+{"id": "format-008", "answer": "Petrovi Novákovi"}
+{"id": "format-009", "answer": "5."}
+{"id": "format-010", "answer": "napr."}
+{"id": "format-011", "answer": "s. r. o."}
+{"id": "format-012", "answer": "12,5 %"}
+{"id": "format-013", "answer": "10 – 25 (s pomlčkou a medzerami pri rozsahu strán; v užšom zápise 10–25)"}
+{"id": "format-014", "answer": "Slovenské úvodzovky sú „ “ (dolné otváracie, horné zatváracie): „ahoj“"}
+{"id": "format-015", "answer": "atď."}
+{"id": "format-016", "answer": "15. 6. o 9:00"}

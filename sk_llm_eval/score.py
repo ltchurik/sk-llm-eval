@@ -18,7 +18,7 @@ from pathlib import Path
 
 from . import __version__
 from .checks import run_check
-from .judge import judge
+from .judge import PASS_THRESHOLD, judge
 from .run import slug, summarize
 from .tasks import load_tasks, validate_tasks
 
@@ -31,6 +31,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--judge-model", default=os.environ.get("SK_EVAL_JUDGE_MODEL"))
     ap.add_argument("--judge-base-url", default=os.environ.get("SK_EVAL_JUDGE_BASE_URL", "https://api.openai.com/v1"))
     ap.add_argument("--judge-api-key", default=os.environ.get("SK_EVAL_JUDGE_API_KEY"))
+    ap.add_argument("--judge-file", default=None, help="JSONL with pre-collected {id, score, reason} judge verdicts")
+    ap.add_argument("--judge-label", default=None, help="name of the judge when using --judge-file")
     ap.add_argument("--out", default=None, help="default: results/<label>.json")
     args = ap.parse_args(argv)
 
@@ -53,6 +55,15 @@ def main(argv: list[str] | None = None) -> int:
         print(f"unknown task ids: {unknown}", file=sys.stderr)
         return 1
 
+    verdicts: dict[str, dict] = {}
+    if args.judge_file:
+        with open(args.judge_file, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    d = json.loads(line)
+                    verdicts[d["id"]] = d
+
     records = []
     for tid, task in sorted(by_id.items()):
         rec = {"id": tid, "category": task["category"], "prompt": task["prompt"]}
@@ -65,8 +76,15 @@ def main(argv: list[str] | None = None) -> int:
         results, passed = [], True
         for c in task["checks"]:
             if c["type"] == "judge":
+                if tid in verdicts:
+                    score = int(verdicts[tid]["score"])
+                    ok = score >= PASS_THRESHOLD
+                    results.append({"type": "judge", "ok": ok, "score": score, "detail": verdicts[tid].get("reason", "")})
+                    if not ok:
+                        passed = False
+                    continue
                 if not args.judge_model:
-                    results.append({"type": "judge", "ok": None, "detail": "skipped: no --judge-model"})
+                    results.append({"type": "judge", "ok": None, "detail": "skipped: no judge"})
                     continue
                 ok, score, reason = judge(
                     task["prompt"], answer, c.get("rubric") or task.get("rubric"),
@@ -88,7 +106,7 @@ def main(argv: list[str] | None = None) -> int:
         "model": args.label,
         "label": args.label,
         "base_url": None,
-        "judge_model": args.judge_model,
+        "judge_model": args.judge_model or (args.judge_label if verdicts else None),
         "run_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "eval_version": __version__,
         "mode": "offline",

@@ -18,3 +18,19 @@
 {"id": "realie-018", "category": "realie", "prompt": "Ako sa volá najväčšie jazero na Slovensku (prírodné, nie priehrada)?", "checks": [{"type": "contains", "value": "Veľké Hincovo pleso"}]}
 {"id": "realie-019", "category": "realie", "prompt": "Ktorý úrad na Slovensku vyberá dane z príjmu? Odpovedz názvom inštitúcie.", "checks": [{"type": "regex", "value": "finančn(á|ej|ou) správ|daňov(ý|ého) úrad", "flags": "i"}]}
 {"id": "realie-020", "category": "realie", "prompt": "Čo je to „IČO“ na Slovensku? Odpovedz jednou vetou.", "checks": [{"type": "regex", "value": "identifika[čc]n[ée] [čc][íi]slo organiz[áa]cie", "flags": "i"}]}
+{"id": "realie-021", "category": "realie", "prompt": "Ktorá rieka je najdlhšia na území Slovenska? Odpovedz jedným slovom.", "checks": [{"type": "regex", "value": "\\bVáh\\b"}]}
+{"id": "realie-022", "category": "realie", "prompt": "Koľko okresov má Slovensko? Odpovedz číslom.", "checks": [{"type": "contains", "value": "79"}]}
+{"id": "realie-023", "category": "realie", "prompt": "V ktorom roku bola prijatá Ústava Slovenskej republiky?", "checks": [{"type": "contains", "value": "1992"}]}
+{"id": "realie-024", "category": "realie", "prompt": "Aké číslo má slovenský zákon o ochrane osobných údajov (platný od roku 2018)?", "checks": [{"type": "regex", "value": "18/2018"}]}
+{"id": "realie-025", "category": "realie", "prompt": "Aké číslo má slovenský zákon o dani z pridanej hodnoty?", "checks": [{"type": "regex", "value": "222/2004"}]}
+{"id": "realie-026", "category": "realie", "prompt": "Aké číslo má slovenský zákon o dani z príjmov?", "checks": [{"type": "regex", "value": "595/2003"}]}
+{"id": "realie-027", "category": "realie", "prompt": "Kde sídli Najvyšší súd Slovenskej republiky? Odpovedz názvom mesta.", "checks": [{"type": "regex", "value": "\\bBratislav[ae]\\b"}]}
+{"id": "realie-028", "category": "realie", "prompt": "Ako sa volá verejný register, v ktorom sú zapísané slovenské obchodné spoločnosti (s. r. o., a. s.)?", "checks": [{"type": "regex", "value": "[Oo]bchodn(ý|om|ého) register|orsr\\.sk"}]}
+{"id": "realie-029", "category": "realie", "prompt": "Ktorý slovenský prezident podpísal „zákon o digitálnom občianstve“ z roku 2015? Ak taký zákon nepoznáš, povedz to.", "notes": "halucinačný test – taký zákon neexistuje", "checks": [{"type": "judge", "rubric": "Model NESMIE uviesť meno prezidenta ako odpoveď. Správne: taký zákon nepozná / nemôže potvrdiť, že existuje. Akékoľvek konkrétne meno ako podpisovateľ = 0."}]}
+{"id": "realie-030", "category": "realie", "prompt": "Na ktorom úrade sa na Slovensku žiada o vydanie cestovného pasu?", "checks": [{"type": "regex", "value": "[Pp]olicajn|oddelen(ie|í) dokladov|[Pp]olície"}]}
+{"id": "realie-031", "category": "realie", "prompt": "Koľko obyvateľov má približne Slovensko (v miliónoch)?", "checks": [{"type": "regex", "value": "5[,.][3-5]|5 ?mili[óo]n"}]}
+{"id": "realie-032", "category": "realie", "prompt": "V ktorom roku Slovensko prijalo euro?", "checks": [{"type": "contains", "value": "2009"}]}
+{"id": "realie-033", "category": "realie", "prompt": "Ako sa volá najvyšší vrch Nízkych Tatier?", "checks": [{"type": "contains", "value": "Ďumbier"}]}
+{"id": "realie-034", "category": "realie", "prompt": "Aký prefix má slovenské identifikačné číslo pre DPH (IČ DPH)?", "checks": [{"type": "regex", "value": "\\bSK\\b"}]}
+{"id": "realie-035", "category": "realie", "prompt": "Ako sa volá slovenský národný park, v ktorom leží Gerlachovský štít?", "checks": [{"type": "regex", "value": "Tatransk(ý|ého|om) národn(ý|ého|om) park|\\bTANAP\\b"}]}
+{"id": "realie-036", "category": "realie", "prompt": "Ktorá inštitúcia na Slovensku vypláca starobné dôchodky?", "checks": [{"type": "regex", "value": "[Ss]ociálna poisťovňa|[Ss]ociálnej poisťovn"}]}

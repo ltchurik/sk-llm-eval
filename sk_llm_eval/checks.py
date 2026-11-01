@@ -8,6 +8,11 @@ Types:
   exact         – normalized answer == value
   regex         – re.search(pattern, answer)   (case-sensitive; flag "i" = ignorecase)
   not_regex     – re.search finds no match
+  min_words     – answer has at least N words
+  max_words     – answer has at most N words
+  diacritics_ratio – share of words containing a Slovak diacritic letter >= value
+                     (real Slovak prose sits around 0.35–0.55; text with stripped
+                     diacritics scores ~0)
   judge         – LLM-as-judge against a rubric (handled by judge.py)
 """
 
@@ -16,8 +21,22 @@ from __future__ import annotations
 import re
 import unicodedata
 
-DETERMINISTIC = {"contains", "not_contains", "exact", "regex", "not_regex"}
+DETERMINISTIC = {"contains", "not_contains", "exact", "regex", "not_regex", "min_words", "max_words", "diacritics_ratio"}
 ALL_TYPES = DETERMINISTIC | {"judge"}
+
+SK_DIACRITICS = "áäčďéíĺľňóôŕšťúýžÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽ"
+_WORD_RE = re.compile(r"[^\W\d_]+", re.UNICODE)
+
+
+def words(text: str) -> list[str]:
+    return _WORD_RE.findall(text)
+
+
+def diacritics_ratio(text: str) -> float:
+    ws = words(text)
+    if not ws:
+        return 0.0
+    return sum(any(ch in SK_DIACRITICS for ch in w) for w in ws) / len(ws)
 
 
 def normalize(text: str) -> str:
@@ -52,6 +71,15 @@ def run_check(check: dict, answer: str) -> tuple[bool, str]:
     if t == "not_regex":
         ok = re.search(val, ans, _flags(check)) is None
         return ok, f"not_regex /{val}/"
+    if t == "min_words":
+        n = len(words(ans))
+        return n >= int(val), f"min_words {val} (got {n})"
+    if t == "max_words":
+        n = len(words(ans))
+        return n <= int(val), f"max_words {val} (got {n})"
+    if t == "diacritics_ratio":
+        r = diacritics_ratio(ans)
+        return r >= float(val), f"diacritics_ratio >= {val} (got {r:.2f})"
     if t == "judge":
         raise ValueError("judge check must be handled by judge.py")
     raise ValueError(f"unknown check type: {t}")

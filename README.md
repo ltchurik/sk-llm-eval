@@ -10,6 +10,7 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure NLU and problem solving. Th
 | `register` | formal *vykanie* vs. informal *tykanie*, salutations, standard vs. colloquial style |
 | `realie` | Slovak facts without hallucination (institutions, law, geography) |
 | `format` | dates, numbers, currency, phone numbers, quotation marks, abbreviations per Slovak orthography |
+| `long_text` | 100–300-word outputs: consistent diacritics, no anglicisms, correct register held over a whole text, restoring stripped diacritics |
 
 Zero dependencies (Python 3.10+ standard library only). Works with any OpenAI-compatible API: OpenAI, Anthropic (via proxy), Google, Mistral, OpenRouter, Ollama, vLLM, LM Studio…
 
@@ -70,6 +71,8 @@ Every task has a list of `checks`. A task **passes only if all checks pass**. Ca
 | `contains` / `not_contains` | case-insensitive substring |
 | `exact` | normalized answer equals value |
 | `regex` / `not_regex` | `re.search`; `"flags": "i"` = ignorecase |
+| `min_words` / `max_words` | word-count bounds |
+| `diacritics_ratio` | share of words containing a Slovak diacritic ≥ value (catches stripped diacritics in long text) |
 | `judge` | LLM-as-judge against a `rubric`, score 0–10, pass at ≥ 7 |
 
 Answers are normalized (NFC, nbsp → space, collapsed whitespace) before checking.
@@ -90,7 +93,7 @@ New tasks are the most valuable contribution. Rules:
 4. For facts, add `"source"` (URL). For things that change (rates, office holders), add `"volatile": true`.
 5. Run `python -m sk_llm_eval.validate` — CI enforces it on every PR.
 
-Ideas for new categories: `preklad` (EN→SK without anglicisms), `agent` (tool calling in Slovak), `dlhy_text` (diacritics consistency over 500+ words).
+Ideas for new categories: `preklad` (EN→SK without anglicisms), `agent` (tool calling in Slovak), `long_text` (diacritics consistency over 500+ words).
 
 ## License
 

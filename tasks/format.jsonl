@@ -14,3 +14,17 @@
 {"id": "format-014", "category": "format", "prompt": "Aké sú správne slovenské úvodzovky? Napíš slovo ahoj v slovenských úvodzovkách.", "checks": [{"type": "contains", "value": "„ahoj“"}]}
 {"id": "format-015", "category": "format", "prompt": "Napíš skratku pre „a tak ďalej“.", "checks": [{"type": "regex", "value": "\\batď\\.", "flags": "i"}]}
 {"id": "format-016", "category": "format", "prompt": "Napíš dátum a čas „pätnásteho júna o deviatej ráno“ číslicami v slovenskom formáte (bez roku).", "checks": [{"type": "regex", "value": "15\\. ?6\\.? .*9[:.]00|15\\. ?júna .*9[:.]00"}]}
+{"id": "format-017", "category": "format", "prompt": "Zapíš číslo 1234567,89 v slovenskom formáte s oddeľovačmi tisícov.", "checks": [{"type": "regex", "value": "1[  ]234[  ]567,89"}]}
+{"id": "format-018", "category": "format", "prompt": "Napíš dátum 31.12.2026 so správnymi medzerami podľa slovenského pravopisu.", "checks": [{"type": "regex", "value": "\\b31\\. 12\\. 2026\\b"}]}
+{"id": "format-019", "category": "format", "prompt": "Zapíš bratislavské pevné číslo 02/5555 1234 v medzinárodnom formáte.", "checks": [{"type": "regex", "value": "\\+421 ?2 ?5555 ?1234\\b"}]}
+{"id": "format-020", "category": "format", "prompt": "Napíš prídavné meno „päťročný“ s číslicou.", "checks": [{"type": "regex", "value": "\\b5-ročn"}, {"type": "not_regex", "value": "5 ročn|5ročn"}]}
+{"id": "format-021", "category": "format", "prompt": "Napíš „dvadsaťpäťpercentný“ s číslicou.", "checks": [{"type": "regex", "value": "\\b25-percentn"}]}
+{"id": "format-022", "category": "format", "prompt": "Ako sa skracuje „to jest“ (to znamená)?", "checks": [{"type": "regex", "value": "\\bt\\. ?j\\."}]}
+{"id": "format-023", "category": "format", "prompt": "Napíš rozsah rokov 2010 až 2015 so správnou pomlčkou (bez medzier).", "checks": [{"type": "regex", "value": "2010–2015"}]}
+{"id": "format-024", "category": "format", "prompt": "Ako sa skracuje „pred naším letopočtom“?", "checks": [{"type": "regex", "value": "pred n\\. ?l\\."}]}
+{"id": "format-025", "category": "format", "prompt": "Ako sa po slovensky správne píše elektronická pošta: „email“, „e-mail“ alebo „mail“? Odpovedz len správnym tvarom.", "checks": [{"type": "regex", "value": "\\be-mail\\b", "flags": "i"}, {"type": "not_regex", "value": "\\bemail\\b", "flags": "i"}]}
+{"id": "format-026", "category": "format", "prompt": "Zapíš teplotu „mínus päť stupňov Celzia“ číslicami a značkou.", "checks": [{"type": "regex", "value": "[-−–]5 ?°C"}]}
+{"id": "format-027", "category": "format", "prompt": "Napíš „desiatich ľudí“ s číslicou.", "checks": [{"type": "contains", "value": "10 ľudí"}]}
+{"id": "format-028", "category": "format", "prompt": "Ako sa skracuje odkaz na stranu 5 v citácii (strana → skratka)?", "checks": [{"type": "regex", "value": "\\bs\\."}, {"type": "not_regex", "value": "\\bstr\\."}]}
+{"id": "format-029", "category": "format", "prompt": "Napíš čas 9:05 slovami tak, ako sa bežne hovorí.", "checks": [{"type": "regex", "value": "päť (minút )?po deviatej|deväť (hodín )?(a )?päť", "flags": "i"}]}
+{"id": "format-030", "category": "format", "prompt": "Napíš sumu 999 eur bez desatinných miest so symbolom meny tak, ako sa píše na Slovensku.", "checks": [{"type": "regex", "value": "\\b999 €"}, {"type": "not_regex", "value": "€ ?999|999€"}]}

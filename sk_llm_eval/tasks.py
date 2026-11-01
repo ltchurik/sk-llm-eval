@@ -10,7 +10,7 @@ from .checks import ALL_TYPES, DETERMINISTIC
 
 REQUIRED = {"id", "category", "prompt", "checks"}
 OPTIONAL = {"system", "notes", "source", "rubric", "volatile"}
-ID_RE = re.compile(r"^[a-z]+-\d{3,}$")
+ID_RE = re.compile(r"^[a-z_]+-\d{3,}$")
 
 
 class TaskError(ValueError):
@@ -66,8 +66,11 @@ def validate_tasks(tasks: list[dict]) -> list[str]:
             if ct not in ALL_TYPES:
                 errors.append(f"{where}: unknown check type {ct!r}")
                 continue
-            if ct in DETERMINISTIC and not c.get("value"):
+            if ct in DETERMINISTIC and c.get("value") in (None, ""):
                 errors.append(f"{where}: check {ct} needs 'value'")
+            if ct in ("min_words", "max_words", "diacritics_ratio"):
+                if not isinstance(c.get("value"), (int, float)) or isinstance(c.get("value"), bool):
+                    errors.append(f"{where}: check {ct} needs a numeric 'value'")
             if ct in ("regex", "not_regex"):
                 try:
                     re.compile(c.get("value", ""))

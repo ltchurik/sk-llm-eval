@@ -1,0 +1,138 @@
+{"id": "format-001", "answer": "5. 3. 2026"}
+{"id": "format-002", "answer": "1 234,50 €"}
+{"id": "format-003", "answer": "pol tretej popoludní"}
+{"id": "format-004", "answer": "1 000"}
+{"id": "format-005", "answer": "+421 903 123 456"}
+{"id": "format-006", "answer": "3,5"}
+{"id": "format-007", "answer": "pondelok"}
+{"id": "format-008", "answer": "Petrovi Novákovi"}
+{"id": "format-009", "answer": "5."}
+{"id": "format-010", "answer": "napr."}
+{"id": "format-011", "answer": "s. r. o."}
+{"id": "format-012", "answer": "12,5 %"}
+{"id": "format-013", "answer": "10 – 25"}
+{"id": "format-014", "answer": "Správne slovenské úvodzovky sú dolné a horné: „ahoj“"}
+{"id": "format-015", "answer": "atď."}
+{"id": "format-016", "answer": "15. 6. o 9.00 h"}
+{"id": "format-017", "answer": "1 234 567,89"}
+{"id": "format-018", "answer": "31. 12. 2026"}
+{"id": "format-019", "answer": "+421 2 5555 1234"}
+{"id": "format-020", "answer": "5-ročný"}
+{"id": "format-021", "answer": "25-percentný"}
+{"id": "format-022", "answer": "t. j."}
+{"id": "format-023", "answer": "2010–2015"}
+{"id": "format-024", "answer": "pred n. l."}
+{"id": "format-025", "answer": "e-mail"}
+{"id": "format-026", "answer": "−5 °C"}
+{"id": "format-027", "answer": "10 ľudí"}
+{"id": "format-028", "answer": "s."}
+{"id": "format-029", "answer": "päť minút po deviatej"}
+{"id": "format-030", "answer": "999 €"}
+{"id": "gramatika-001", "answer": "koní"}
+{"id": "gramatika-002", "answer": "Chlapci sa hrali na dvore."}
+{"id": "gramatika-003", "answer": "žene"}
+{"id": "gramatika-004", "answer": "dvaja muži"}
+{"id": "gramatika-005", "answer": "Vždy som chcel ísť do Bratislavy."}
+{"id": "gramatika-006", "answer": "jeden milión"}
+{"id": "gramatika-007", "answer": "Bolo tam veľa detí."}
+{"id": "gramatika-008", "answer": "mestami"}
+{"id": "gramatika-009", "answer": "Táto ryba je čerstvá."}
+{"id": "gramatika-010", "answer": "píšte"}
+{"id": "gramatika-011", "answer": "krásny"}
+{"id": "gramatika-012", "answer": "Idem s kamarátom a s kamarátkou do kina."}
+{"id": "gramatika-013", "answer": "Slovensku"}
+{"id": "gramatika-014", "answer": "Ďakujem, že ste prišli včas."}
+{"id": "gramatika-015", "answer": "Videl som pekné dievčatá, ktoré sa smiali."}
+{"id": "gramatika-016", "answer": "ulíc"}
+{"id": "gramatika-017", "answer": "Stretol som sa s pánom Kováčom."}
+{"id": "gramatika-018", "answer": "Včera sme boli v Košiciach."}
+{"id": "gramatika-019", "answer": "išla"}
+{"id": "gramatika-020", "answer": "idem na poštu"}
+{"id": "gramatika-021", "answer": "Bývam v Bratislave."}
+{"id": "gramatika-022", "answer": "sŕdc"}
+{"id": "gramatika-023", "answer": "sestier"}
+{"id": "gramatika-024", "answer": "jabĺk"}
+{"id": "gramatika-025", "answer": "vojen"}
+{"id": "gramatika-026", "answer": "ľuďom"}
+{"id": "gramatika-027", "answer": "kone"}
+{"id": "gramatika-028", "answer": "mliečny"}
+{"id": "gramatika-029", "answer": "Dvaja psi sa hrali na dvore."}
+{"id": "gramatika-030", "answer": "Včera som videl troch pekných mužov."}
+{"id": "gramatika-031", "answer": "Kúpil som si dve kilá jabĺk."}
+{"id": "gramatika-032", "answer": "vajec"}
+{"id": "gramatika-033", "answer": "Tí ľudia boli veľmi milí."}
+{"id": "gramatika-034", "answer": "od 5 rokov"}
+{"id": "gramatika-035", "answer": "Peter a ja sme išli do kina."}
+{"id": "gramatika-036", "answer": "Nový rok"}
+{"id": "gramatika-037", "answer": "slovenčina"}
+{"id": "gramatika-038", "answer": "psovi"}
+{"id": "gramatika-039", "answer": "očiach"}
+{"id": "gramatika-040", "answer": "Psy celú noc brechali."}
+{"id": "gramatika-041", "answer": "krásnych"}
+{"id": "gramatika-042", "answer": "paňou"}
+{"id": "long_text-001", "answer": "Kontajnerizácia sa pôvodne spájala s veľkými technologickými spoločnosťami, no dnes prináša výrazné výhody aj malým firmám. Kontajner zabalí aplikáciu spolu so všetkými závislosťami do jedného celku, ktorý sa správa rovnako na notebooku vývojára, na testovacom serveri aj v produkcii. Vďaka tomu zmizne známy problém, keď niečo na jednom počítači funguje a na inom nie. Malý tím tak ušetrí množstvo času, ktorý by inak strávil hľadaním rozdielov medzi prostrediami.\n\nĎalšou výhodou je efektívne využitie hardvéru. Na jednom serveri môže bežať viac izolovaných služieb, takže firma nemusí platiť za množstvo samostatných strojov. To znižuje náklady na prevádzku aj spotrebu energie. Nasadzovanie nových verzií sa výrazne zjednoduší: stačí stiahnuť nový obraz a spustiť ho, a ak sa objaví chyba, možno sa v priebehu sekúnd vrátiť k predchádzajúcej verzii.\n\nKontajnery tiež uľahčujú škálovanie. Keď návštevnosť rastie, firma jednoducho spustí ďalšie inštancie služby. Noví členovia tímu sa zaúčajú rýchlejšie, pretože celé vývojové prostredie sa spustí jediným príkazom. Napokon, väčšina nástrojov je open source, takže ich zavedenie nevyžaduje drahé licencie. Pri rozumnom postupe preto kontajnerizácia znamená menej výpadkov, nižšie náklady a viac času na rozvoj samotného podnikania."}
+{"id": "long_text-002", "answer": "Včera sme išli do mesta kúpiť darčeky pre deti. Obchody boli plné ľudí a bolo ťažké nájsť parkovanie. Nakoniec sme zaparkovali ďaleko od centra a šli sme pešo. V kníhkupectve sme kúpili knižku o zvieratách a v hračkárstve stavebnicu. Domov sme sa vrátili až o ôsmej večer, unavení, ale spokojní."}
+{"id": "long_text-003", "answer": "Práca na diaľku sa stala bežnou pre mnohé vývojárske tímy. Firmy uvádzajú, že zamestnanci sú produktívnejší, keď si môžu sami upraviť pracovné prostredie, no manažéri len ťažko udržiavajú tím zosúladený. Najčastejšími problémami sú nejasné priority, priveľa porád a pomalá spätná väzba. Úspešné tímy zvyčajne všetko zapisujú: rozhodnutia, plány aj správy o stave práce sú uložené v zdieľaných dokumentoch, nie v hlavách ľudí. Chránia si aj čas na sústredenú prácu tým, že porady obmedzujú na dva dni v týždni. Napokon investujú do zaškoľovania nováčikov, pretože nový zamestnanec, ktorý sa nemôže opýtať cez stôl, potrebuje jasnú písomnú príručku k zdrojovému kódu a zvyklostiam tímu."}
+{"id": "long_text-004", "answer": "Mestský úrad\nOdbor výstavby a životného prostredia\nHlavné námestie 1\n\nVo Vašom meste dňa 1. 11. 2026\n\nVec: Žiadosť o povolenie na umiestnenie reklamnej tabule\n\nVážená pani, vážený pane,\n\nobraciam sa na Vás so žiadosťou o vydanie povolenia na umiestnenie reklamnej tabule pred prevádzkou kaviarne na Hlavnej ulici 12.\n\nTabuľa s rozmermi 100 × 60 cm by bola umiestnená bezprostredne pred vchodom do prevádzky a nebránila by pohybu chodcov ani zásobovaniu. Jej účelom je informovať okoloidúcich o otváracích hodinách a ponuke kaviarne. Zároveň by prispela k lepšej orientácii zákazníkov, ktorí našu prevádzku často hľadajú, pretože sa nachádza vo vnútrobloku. Tabuľa bude vyrobená z kvalitných materiálov a jej vzhľad sa prispôsobí charakteru ulice.\n\nV prípade potreby som pripravený(á) doložiť ďalšie podklady, ako je vizualizácia alebo situačný plán. Za vybavenie žiadosti Vám vopred ďakujem.\n\nS pozdravom\n\nMeno a priezvisko\nkaviareň, Hlavná ulica 12"}
+{"id": "long_text-005", "answer": "Na okraji veľkého lesa býval malý ježko Ježo. Cez deň sa nebál ničoho, ale len čo zapadlo slnko a les sa zahalil do tmy, schoval sa pod lístie a triasol sa strachom.\n\n„Mama, v tme sú strašidlá,“ šepkal každý večer.\n\n„Nie sú, Ježko,“ usmiala sa mama. „Tma je len tma.“\n\nJedného večera však Ježo zistil, že sa jeho kamarát zajac Zajko nevrátil domov. Ježo sa zhlboka nadýchol a vyšiel von. Bolo ticho a tma, len kdesi zahúkala sova.\n\n„Kto je tam?“ zvolal Ježo trasľavým hláskom.\n\n„Ja som, sova Hú,“ ozval sa hlas z konára. „Čo robíš v noci vonku?“\n\n„Hľadám Zajka,“ povedal Ježo. „Bojím sa, ale musím ho nájsť.“\n\n„Si veľmi statočný,“ odvetila sova. „Poď za mnou, ukážem ti cestu.“\n\nSova letela nízko a Ježo kráčal za ňou. Čoskoro začul tiché popiskovanie. Pod kríkom sedel Zajko a nevedel trafiť domov.\n\n„Ježo, ďakujem ti!“ zvolal Zajko a objal ho.\n\nOd tej noci sa Ježo tmy bál čoraz menej. Zistil totiž, že v tme žijú aj kamaráti, ktorí sa na človeka usmievajú."}
+{"id": "long_text-006", "answer": "1. Router zapojte do elektrickej siete a počkajte, kým sa rozsvietia kontrolky. Trvá to zvyčajne jednu až dve minúty.\n2. Pomocou sieťového kábla prepojte port WAN na routeri s modemom alebo zásuvkou od poskytovateľa internetu.\n3. Pripojte sa k predvolenej sieti Wi-Fi, ktorej názov a heslo nájdete na štítku na spodnej strane zariadenia. Prípadne použite sieťový kábel a pripojte počítač priamo k routeru.\n4. Otvorte internetový prehliadač a do adresného riadka zadajte adresu administrácie, napríklad 192.168.0.1 alebo 192.168.1.1. Adresu nájdete na štítku routera.\n5. Prihláste sa predvoleným menom a heslom a hneď si zmeňte administrátorské heslo na silné a jedinečné.\n6. V nastaveniach bezdrôtovej siete zmeňte názov siete (SSID) na vlastný, ľahko rozpoznateľný názov.\n7. Nastavte zabezpečenie WPA2 alebo WPA3 a vytvorte nové silné heslo k sieti Wi-Fi.\n8. Skontrolujte dostupnosť novej verzie firmvéru, nainštalujte ju a router potom reštartujte. Po reštarte sa znova pripojte k svojej sieti s novým názvom a heslom."}
+{"id": "long_text-007", "answer": "Keď primárny server zlyhá, záťažový balancér (load balancer) mu do desiatich sekúnd prestane posielať prevádzku. Požiadavky sa presmerujú na zostávajúce dva servery, na ktorých beží rovnaká verzia aplikácie. Keď sa zlyhaný server opraví, operátor ho do poolu manuálne pridá späť. Odporúčame tento postup každý mesiac otestovať na testovacích (staging) serveroch, pretože rozdiely v konfigurácii medzi servermi (configuration drift) sú najčastejšou príčinou neúspešných prepnutí pri výpadku (failover)."}
+{"id": "long_text-008", "answer": "Vysoké Tatry sú najvyšším pohorím Slovenska a zároveň jednou z najobľúbenejších turistických destinácií v strednej Európe. Na pomerne malom území ponúkajú dramatické štíty, desiatky plies, hlboké doliny a čistý horský vzduch. Návštevníci sa do Vysokých Tatier vracajú v lete aj v zime, pretože každé ročné obdobie prináša iný zážitok.\n\nLetná turistika sa sústreďuje okolo Štrbského Plesa, Popradského plesa a Tatranskej Lomnice. Obľúbené sú ľahšie trasy k Skalnatému plesu aj náročnejšie výstupy na Rysy či Slavkovský štít. Treba však pamätať, že v horách sa počasie rýchlo mení, a preto je nevyhnutná poriadna obuv a vhodné oblečenie. Od novembra do polovice júna sú navyše zatvorené chodníky nad hranicou lesa.\n\nZimné mesiace patria lyžiarom a milovníkom snehu. Stredisko Jasná v neďalekých Nízkych Tatrách je populárne, no samotné stredisko Starý Smokovec či Štrbské Pleso lákajú rodiny aj skúsených lyžiarov. Po náročnom dni si možno oddýchnuť v útulných chatách alebo termálnych kúpeľoch. Návšteva Vysokých Tatier je zážitok, na ktorý sa nezabúda, a mnohí turisti tvrdia, že dych im vyrazili práve výhľady z tatranských štítov."}
+{"id": "realie-001", "answer": "Bratislava"}
+{"id": "realie-002", "answer": "8"}
+{"id": "realie-003", "answer": "Na Slovensku sa používa euro (€)."}
+{"id": "realie-004", "answer": "Samostatná Slovenská republika vznikla 1. januára 1993."}
+{"id": "realie-005", "answer": "Gerlachovský štít (2 655 m n. m.)."}
+{"id": "realie-006", "answer": "Dunaj"}
+{"id": "realie-007", "answer": "+421"}
+{"id": "realie-008", "answer": "112"}
+{"id": "realie-009", "answer": "Zákonník práce (zákon č. 311/2001 Z. z.)."}
+{"id": "realie-010", "answer": "Národná rada Slovenskej republiky."}
+{"id": "realie-011", "answer": "150"}
+{"id": "realie-012", "answer": "V Košiciach."}
+{"id": "realie-013", "answer": "www.slovensko.sk"}
+{"id": "realie-014", "answer": "V roku 2004 (1. mája 2004)."}
+{"id": "realie-015", "answer": "Taký román nepoznám, preto nemôžem určiť jeho autora."}
+{"id": "realie-016", "answer": "Občiansky preukaz"}
+{"id": "realie-017", "answer": "Deň boja za slobodu a demokraciu."}
+{"id": "realie-018", "answer": "Veľké Hincovo pleso vo Vysokých Tatrách."}
+{"id": "realie-019", "answer": "Finančná správa Slovenskej republiky (daňové úrady a Finančné riaditeľstvo SR)."}
+{"id": "realie-020", "answer": "IČO je identifikačné číslo organizácie, jedinečný osemmiestny kód, ktorým sa na Slovensku označujú podnikatelia a právnické osoby."}
+{"id": "realie-021", "answer": "Váh"}
+{"id": "realie-022", "answer": "79"}
+{"id": "realie-023", "answer": "V roku 1992 (prijatá 1. septembra 1992)."}
+{"id": "realie-024", "answer": "Zákon č. 18/2018 Z. z. o ochrane osobných údajov."}
+{"id": "realie-025", "answer": "Zákon č. 222/2004 Z. z. o dani z pridanej hodnoty."}
+{"id": "realie-026", "answer": "Zákon č. 595/2003 Z. z. o dani z príjmov."}
+{"id": "realie-027", "answer": "Bratislava"}
+{"id": "realie-028", "answer": "Obchodný register Slovenskej republiky."}
+{"id": "realie-029", "answer": "Taký zákon nepoznám, preto neviem určiť, ktorý prezident ho podpísal."}
+{"id": "realie-030", "answer": "Na okresnom riaditeľstve Policajného zboru (oddelenie dokladov) podľa miesta trvalého pobytu."}
+{"id": "realie-031", "answer": "Približne 5,4 milióna obyvateľov."}
+{"id": "realie-032", "answer": "V roku 2009 (1. januára 2009)."}
+{"id": "realie-033", "answer": "Ďumbier (2 046 m n. m.)."}
+{"id": "realie-034", "answer": "SK"}
+{"id": "realie-035", "answer": "Tatranský národný park (TANAP)."}
+{"id": "realie-036", "answer": "Sociálna poisťovňa."}
+{"id": "register-001", "answer": "Dobrý deň, pán riaditeľ,\n\ndovoľte mi informovať Vás, že zajtra nebudem v práci z dôvodu návštevy lekára. Všetky naliehavé úlohy vybavím ešte dnes, prípadne som Vám v prípade potreby k dispozícii telefonicky. Ďakujem za pochopenie.\n\nS pozdravom\nMeno Priezvisko"}
+{"id": "register-002", "answer": "Ahoj! Za 800 eur by som sa pozrel na Lenovo ThinkPad alebo ASUS Zenbook, majú dobrú výdrž batérie aj kvalitné spracovanie. Povedz mi, na čo ho budeš používať, a poradím ti presnejšie."}
+{"id": "register-003", "answer": "Ahoj, budem mať asi 10 minút meškanie, prepáč! Už som na ceste. :)"}
+{"id": "register-004", "answer": "Vážená pani Horváthová,\n\nžiadam Vás o udelenie dovolenky na zotavenie v termíne od 3. do 7. augusta 2026. Počas mojej neprítomnosti zabezpečím odovzdanie všetkých rozpracovaných úloh kolegom.\n\nĎakujem Vám za vybavenie žiadosti.\n\nS pozdravom\nMeno Priezvisko"}
+{"id": "register-005", "answer": "Vážený pán Novák"}
+{"id": "register-006", "answer": "Vážená pani Kováčová,"}
+{"id": "register-007", "answer": "Môžete mi poslať ten súbor?"}
+{"id": "register-008", "answer": "Mohol by si mi pomôcť s týmto formulárom?"}
+{"id": "register-009", "answer": "Dobrý deň, ospravedlňujeme sa za meškanie Vašej objednávky a chápeme Vaše sklamanie. Hneď sme si overili stav zásielky a kontaktujeme dopravcu, aby ju doručil čo najskôr. Dnes Vám ešte pošleme e-mail s presným termínom doručenia. Ako ospravedlnenie Vám poskytneme zľavu na ďalší nákup. Ďakujeme za trpezlivosť."}
+{"id": "register-010", "answer": "Áno, v liste sa pri vykaní jednej osobe zámeno „Vy“ píše s veľkým V."}
+{"id": "register-011", "answer": "Prepáčte, pani, nevedeli by ste mi povedať, koľko je hodín?"}
+{"id": "register-012", "answer": "Áno, dnes je naozaj škaredé počasie."}
+{"id": "register-013", "answer": "Ďakujem Vám za Vašu pomoc."}
+{"id": "register-014", "answer": "Prosím, pošlite mi to do zajtra."}
+{"id": "register-015", "answer": "Vážený pán riaditeľ,"}
+{"id": "register-016", "answer": "Dobrý deň,\n\nĎakujem Vám za ponuku pozície a čas, ktorý ste venovali pohovoru. Po dôkladnom zvážení som sa však rozhodol prijať inú ponuku, preto Vašu ponuku musím odmietnuť. Vážim si Váš záujem a želám Vám veľa úspechov pri hľadaní vhodného kandidáta.\n\nS pozdravom\nMeno Priezvisko"}
+{"id": "register-017", "answer": "Ďakujem ti, že si prišiel."}
+{"id": "register-018", "answer": "Deploy na produkciu je hotový a všetko beží ako má."}
+{"id": "register-019", "answer": "Prosím, sadnite si."}
+{"id": "register-020", "answer": "Nie, za záverečným pozdravom „S pozdravom“ sa čiarka nepíše."}
+{"id": "register-021", "answer": "Vážený pán Novák, vážená pani Horváthová,"}
+{"id": "register-022", "answer": "Dobrý deň, Váš balík sa nám bohužiaľ stratil. Ospravedlňujeme sa za vzniknutú nepríjemnosť a v najbližších dňoch Vám pošleme náhradnú zásielku."}

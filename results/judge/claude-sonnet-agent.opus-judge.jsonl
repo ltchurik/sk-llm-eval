@@ -1,0 +1,21 @@
+{"id": "long_text-001", "score": 9, "reason": "Súvislý a bezchybný text, len s anglicizmom „open source“, kde existuje slovenský výraz."}
+{"id": "long_text-003", "score": 8, "reason": "Úplné zhrnutie, ale napriek zákazu používa anglicizmus „manažéri“ namiesto „vedúci“."}
+{"id": "long_text-004", "score": 6, "reason": "Úradný štýl a vykanie sú v poriadku, no oslovenie „vážený pane“ je bohemizmus (správne „vážený pán“) a údaj „Vo Vašom meste dňa“ je neprirodzený."}
+{"id": "long_text-005", "score": 8, "reason": "Príbeh má zápletku a správny dialóg, ale meno Ježo/Ježko je nejednotné a záverečné „usmievajú na človeka“ nesedí k zvieracím postavám."}
+{"id": "long_text-006", "score": 10, "reason": "Presne 8 logických krokov so slovenskou terminológiou bez chýb."}
+{"id": "long_text-007", "score": 8, "reason": "Presný preklad, ale s neobvyklým novotvarom „záťažový balancér“ a anglicizmom „poolu“."}
+{"id": "long_text-008", "score": 6, "reason": "Pády sú správne, no text odbieha k Nízkym Tatrám, má chybnú zhodu „samotné stredisko… lákajú“ a nepresné tvrdenie o termálnych kúpeľoch."}
+{"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora nevymyslel."}
+{"id": "realie-029", "score": 10, "reason": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."}
+{"id": "register-001", "score": 10, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením bez chýb."}
+{"id": "register-002", "score": 10, "reason": "Neformálne, dôsledné tykanie a prirodzená slovenčina."}
+{"id": "register-003", "score": 8, "reason": "Neformálna SMS s tykaním, ale „budem mať 10 minút meškanie“ je neprirodzená kalková formulácia."}
+{"id": "register-004", "score": 9, "reason": "Správne oslovenie, vykanie a záver, len s doplneným rokom a zastaraným spojením „dovolenka na zotavenie“."}
+{"id": "register-009", "score": 8, "reason": "Zdvorilá odpoveď s vykaním, no tvrdí overenie bez čísla objednávky a sľubuje nevyžiadanú zľavu."}
+{"id": "register-010", "score": 9, "reason": "Správne uvádza veľké V, ale úvodné „Áno“ na otázku typu „alebo“ nedáva zmysel."}
+{"id": "register-011", "score": 10, "reason": "Zdvorilá a prirodzená veta s vykaním bez chýb."}
+{"id": "register-012", "score": 8, "reason": "Spisovná veta, no vynecháva informáciu „vonku“."}
+{"id": "register-016", "score": 8, "reason": "Zdvorilé odmietnutie s vykaním, ale po oslovení s čiarkou je chybne veľké písmeno „Ďakujem“."}
+{"id": "register-018", "score": 8, "reason": "Prirodzená kolegiálna veta, ale chýba čiarka pred vedľajšou vetou „ako má“."}
+{"id": "register-020", "score": 10, "reason": "Správne a jednoznačne uvádza, že čiarka sa nepíše."}
+{"id": "register-022", "score": 9, "reason": "Formálne, s vykaním, ospravedlnením a informáciou o novej zásielke, chýba len záverečný pozdrav."}

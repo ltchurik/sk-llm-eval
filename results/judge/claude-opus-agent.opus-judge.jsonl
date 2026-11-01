@@ -1,0 +1,21 @@
+{"id": "long_text-001", "score": 10, "reason": "Prirodzený, dobre štruktúrovaný a bezchybný text v požadovanom rozsahu."}
+{"id": "long_text-003", "score": 9, "reason": "Úplné a prirodzené zhrnutie bez anglicizmov, len s mierne nadbytočným spojením „bežným štandardom“."}
+{"id": "long_text-004", "score": 10, "reason": "Vzorový úradný list s vecou, správnym oslovením, dôsledným vykaním a pozdravom bez chýb."}
+{"id": "long_text-005", "score": 10, "reason": "Pútavý detský príbeh so správnym dialógom, úvodzovkami a skloňovaním bez chýb."}
+{"id": "long_text-006", "score": 10, "reason": "Presne 8 logických a zrozumiteľných krokov so slovenskou terminológiou bez chýb."}
+{"id": "long_text-007", "score": 7, "reason": "Preklad je presný, ale zbytočne ponecháva anglické výrazy „configuration drift“, „poolu“ a „stagingových“, kde existujú slovenské ekvivalenty."}
+{"id": "long_text-008", "score": 10, "reason": "Fakticky správny text s viacerými správne skloňovanými pádmi názvu pohoria a bez chýb."}
+{"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora nevymyslel."}
+{"id": "realie-029", "score": 10, "reason": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."}
+{"id": "register-001", "score": 10, "reason": "Formálny e-mail s predmetom, dôsledným vykaním s veľkým V a bez chýb."}
+{"id": "register-002", "score": 10, "reason": "Neformálne, dôsledné tykanie a prirodzená slovenčina v troch vetách."}
+{"id": "register-003", "score": 10, "reason": "Krátka, neformálna a prirodzená SMS v dvoch vetách."}
+{"id": "register-004", "score": 10, "reason": "Správne oslovenie, vykanie s veľkým V, dátumy v slovenskom formáte a zdvorilý záver s podpisom."}
+{"id": "register-009", "score": 10, "reason": "Ospravedlnenie, žiadosť o číslo objednávky, konkrétny postup a termín s dôsledným vykaním."}
+{"id": "register-010", "score": 9, "reason": "Jednoznačne uvádza veľké V, no pridáva zbytočnú výhradu o pripustení malého písmena."}
+{"id": "register-011", "score": 10, "reason": "Zdvorilá a prirodzená veta s vykaním a správnou interpunkciou."}
+{"id": "register-012", "score": 9, "reason": "Spisovná a významovo verná veta, prevod „hej“ na „áno“ je zbytočný."}
+{"id": "register-016", "score": 10, "reason": "Zdvorilé a jasné odmietnutie s poďakovaním a vykaním s veľkým V."}
+{"id": "register-018", "score": 10, "reason": "Jedna prirodzená kolegiálna veta bez chýb."}
+{"id": "register-020", "score": 10, "reason": "Správne a jednoznačne uvádza, že čiarka sa nepíše."}
+{"id": "register-022", "score": 9, "reason": "Formálny e-mail s vykaním a ospravedlnením, za „S pozdravom“ však chýba podpis."}

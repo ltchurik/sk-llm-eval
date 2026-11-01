@@ -83,6 +83,15 @@ Prompts and rubrics are in Slovak on purpose: the benchmark tests how a model be
 
 See [`results/LEADERBOARD.md`](results/LEADERBOARD.md). Each run writes `results/<model>.json` with full answers, so you can see *why* a model failed.
 
+How the current rows were produced (read before drawing conclusions):
+
+- **`(agent)` rows** — the model ran as a Claude Code subagent that read the prompts file and wrote answers; it was told not to read the task checks. Not a clean API run (the agent harness adds its own system prompt), but it is the real model.
+- **`(chat)` row** — answers typed by the model inside a chat session; same caveat.
+- **Judge** — `judge` tasks were graded by Claude Opus as a blind subagent: it saw four anonymous answer sets without model names. It is still a Claude model grading Claude models, so expect some family bias. Verdicts are in `results/judge/`.
+- The author of the tasks also wrote the Fable answers. Treat that row as a task sanity check, not a measurement.
+
+Independent API runs of other model families are the most useful thing to contribute right now.
+
 ## Contributing
 
 New tasks are the most valuable contribution. Rules:

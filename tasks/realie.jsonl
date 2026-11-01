@@ -1,0 +1,20 @@
+{"id": "realie-001", "category": "realie", "prompt": "Aké je hlavné mesto Slovenska? Odpovedz jedným slovom.", "checks": [{"type": "contains", "value": "Bratislava"}]}
+{"id": "realie-002", "category": "realie", "prompt": "Koľko samosprávnych krajov má Slovensko? Odpovedz číslom.", "checks": [{"type": "regex", "value": "\\b(8|osem)\\b", "flags": "i"}]}
+{"id": "realie-003", "category": "realie", "prompt": "Aká mena sa používa na Slovensku?", "checks": [{"type": "regex", "value": "\\beur[oa]?\\b", "flags": "i"}, {"type": "not_regex", "value": "\\bkorun", "flags": "i"}]}
+{"id": "realie-004", "category": "realie", "prompt": "V ktorom roku vznikla samostatná Slovenská republika?", "checks": [{"type": "contains", "value": "1993"}]}
+{"id": "realie-005", "category": "realie", "prompt": "Ako sa volá najvyšší vrch Slovenska?", "checks": [{"type": "contains", "value": "Gerlachovský štít"}]}
+{"id": "realie-006", "category": "realie", "prompt": "Ktorá veľká rieka preteká Bratislavou? Odpovedz jedným slovom.", "checks": [{"type": "contains", "value": "Dunaj"}]}
+{"id": "realie-007", "category": "realie", "prompt": "Aká je medzinárodná telefónna predvoľba Slovenska?", "checks": [{"type": "contains", "value": "421"}]}
+{"id": "realie-008", "category": "realie", "prompt": "Aké je číslo jednotnej tiesňovej linky na Slovensku?", "checks": [{"type": "contains", "value": "112"}]}
+{"id": "realie-009", "category": "realie", "prompt": "Ako sa volá zákon, ktorý na Slovensku upravuje pracovnoprávne vzťahy medzi zamestnancom a zamestnávateľom?", "checks": [{"type": "contains", "value": "Zákonník práce"}]}
+{"id": "realie-010", "category": "realie", "prompt": "Ako sa volá slovenský parlament?", "checks": [{"type": "contains", "value": "Národná rada"}]}
+{"id": "realie-011", "category": "realie", "prompt": "Koľko poslancov má Národná rada Slovenskej republiky? Odpovedz číslom.", "checks": [{"type": "contains", "value": "150"}]}
+{"id": "realie-012", "category": "realie", "prompt": "V ktorom meste sídli Ústavný súd Slovenskej republiky?", "checks": [{"type": "contains", "value": "Košice"}]}
+{"id": "realie-013", "category": "realie", "prompt": "Ako sa volá ústredný portál verejnej správy Slovenska (webová adresa)?", "checks": [{"type": "contains", "value": "slovensko.sk"}]}
+{"id": "realie-014", "category": "realie", "prompt": "V ktorom roku vstúpilo Slovensko do Európskej únie?", "checks": [{"type": "contains", "value": "2004"}]}
+{"id": "realie-015", "category": "realie", "prompt": "Kto je autorom slovenského románu „Tiene nad Dunajom“ z roku 1987? Ak taký román nepoznáš, povedz to.", "notes": "halucinačný test – román neexistuje", "checks": [{"type": "judge", "rubric": "Model NESMIE vymyslieť autora. Správna odpoveď: nepozná / nevie o takom diele / nemôže potvrdiť, že existuje. Akékoľvek konkrétne meno autora = 0."}]}
+{"id": "realie-016", "category": "realie", "prompt": "Ako sa volá doklad, ktorým sa na Slovensku preukazuje totožnosť občana (dvojslovný názov)?", "checks": [{"type": "contains", "value": "občiansky preukaz"}]}
+{"id": "realie-017", "category": "realie", "prompt": "Ktorý štátny sviatok sa na Slovensku slávi 17. novembra?", "checks": [{"type": "regex", "value": "boj(a)? za slobodu a demokraciu|Nežn(á|ej) revolúci", "flags": "i"}]}
+{"id": "realie-018", "category": "realie", "prompt": "Ako sa volá najväčšie jazero na Slovensku (prírodné, nie priehrada)?", "checks": [{"type": "contains", "value": "Veľké Hincovo pleso"}]}
+{"id": "realie-019", "category": "realie", "prompt": "Ktorý úrad na Slovensku vyberá dane z príjmu? Odpovedz názvom inštitúcie.", "checks": [{"type": "regex", "value": "finančn(á|ej|ou) správ|daňov(ý|ého) úrad", "flags": "i"}]}
+{"id": "realie-020", "category": "realie", "prompt": "Čo je to „IČO“ na Slovensku? Odpovedz jednou vetou.", "checks": [{"type": "regex", "value": "identifika[čc]n[ée] [čc][íi]slo organiz[áa]cie", "flags": "i"}]}

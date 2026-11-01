@@ -1,0 +1,16 @@
+{"id": "format-001", "category": "format", "prompt": "Napíš dátum 5. marca 2026 číslicami v slovenskom formáte.", "checks": [{"type": "regex", "value": "\\b5\\. ?3\\. ?2026\\b"}, {"type": "not_regex", "value": "2026-03-05|03/05/2026|3/5/2026"}]}
+{"id": "format-002", "category": "format", "prompt": "Napíš sumu 1234,5 eura tak, ako sa správne zapisuje na Slovensku (číslicami so symbolom alebo skratkou meny).", "checks": [{"type": "regex", "value": "1[  ]?234,50? ?(€|eur|EUR)"}, {"type": "not_regex", "value": "1,234\\.5|1234\\.5"}]}
+{"id": "format-003", "category": "format", "prompt": "Ako sa po slovensky povie čas 14:30 slovami? Odpovedz jedným spojením.", "checks": [{"type": "regex", "value": "pol tretej|štrnásť tridsať|dve tridsať", "flags": "i"}]}
+{"id": "format-004", "category": "format", "prompt": "Napíš číslo tisíc číslicami so správnym slovenským oddeľovačom tisícov.", "checks": [{"type": "regex", "value": "\\b1[  ]000\\b"}, {"type": "not_regex", "value": "1,000|1\\.000"}]}
+{"id": "format-005", "category": "format", "prompt": "Zapíš slovenské mobilné číslo 0903123456 v medzinárodnom formáte.", "checks": [{"type": "regex", "value": "\\+421 ?903 ?123 ?456\\b"}]}
+{"id": "format-006", "category": "format", "prompt": "Napíš desatinné číslo „tri a pol“ číslicami tak, ako sa píše na Slovensku.", "checks": [{"type": "regex", "value": "\\b3,5\\b"}, {"type": "not_regex", "value": "\\b3\\.5\\b"}]}
+{"id": "format-007", "category": "format", "prompt": "Prelož do slovenčiny: Monday. Odpovedz jedným slovom.", "checks": [{"type": "regex", "value": "\\bpondelok\\b", "flags": "i"}]}
+{"id": "format-008", "category": "format", "prompt": "Napíš meno „Peter Novák“ v datíve (komu?).", "checks": [{"type": "contains", "value": "Petrovi Novákovi"}]}
+{"id": "format-009", "category": "format", "prompt": "Napíš radovú číslovku „piaty“ číslicou.", "checks": [{"type": "regex", "value": "\\b5\\."}, {"type": "not_regex", "value": "5th|5-ty"}]}
+{"id": "format-010", "category": "format", "prompt": "Aká je správna skratka slova „napríklad“?", "checks": [{"type": "contains", "value": "napr."}]}
+{"id": "format-011", "category": "format", "prompt": "Ako sa skracuje „spoločnosť s ručením obmedzeným“?", "checks": [{"type": "regex", "value": "s\\. ?r\\. ?o\\."}]}
+{"id": "format-012", "category": "format", "prompt": "Napíš percento 12,5 % so správnou medzerou podľa slovenského pravopisu.", "checks": [{"type": "regex", "value": "12,5[  ]%"}, {"type": "not_regex", "value": "12\\.5|12,5%"}]}
+{"id": "format-013", "category": "format", "prompt": "Napíš rozsah strán od 10 po 25 so správnou pomlčkou podľa slovenského pravopisu.", "checks": [{"type": "regex", "value": "10[  ]?[–—][  ]?25"}]}
+{"id": "format-014", "category": "format", "prompt": "Aké sú správne slovenské úvodzovky? Napíš slovo ahoj v slovenských úvodzovkách.", "checks": [{"type": "contains", "value": "„ahoj“"}]}
+{"id": "format-015", "category": "format", "prompt": "Napíš skratku pre „a tak ďalej“.", "checks": [{"type": "regex", "value": "\\batď\\.", "flags": "i"}]}
+{"id": "format-016", "category": "format", "prompt": "Napíš dátum a čas „pätnásteho júna o deviatej ráno“ číslicami v slovenskom formáte (bez roku).", "checks": [{"type": "regex", "value": "15\\. ?6\\.? .*9[:.]00|15\\. ?júna .*9[:.]00"}]}

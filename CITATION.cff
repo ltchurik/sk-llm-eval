@@ -12,7 +12,7 @@ identifiers:
     value: "10.5281/zenodo.24091954"
     description: "Concept DOI, resolves to the latest version"
 repository-code: "https://github.com/ltchurik/sk-llm-eval"
-url: "https://github.com/ltchurik/sk-llm-eval"
+url: "https://lubomirtchurik.sk"
 license: MIT
 version: 0.1.0
 date-released: 2026-11-09

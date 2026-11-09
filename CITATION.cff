@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use sk-llm-eval in your work, please cite it using the metadata below."
+type: software
+title: "sk-llm-eval"
+abstract: "A practical benchmark for Slovak language quality in LLM responses: grammar, register, Slovak facts, formatting per Slovak orthography and long-text consistency, with a blind judge and a leaderboard. Python standard library only, works with any OpenAI-compatible API."
+authors:
+  - family-names: Tchurik
+    given-names: Ľubomír
+    orcid: "https://orcid.org/0009-0005-8053-9405"
+repository-code: "https://github.com/ltchurik/sk-llm-eval"
+url: "https://github.com/ltchurik/sk-llm-eval"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-09
+keywords:
+  - slovak
+  - llm
+  - benchmark
+  - evaluation
+  - nlp

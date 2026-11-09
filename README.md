@@ -2,6 +2,9 @@
 
 **A practical benchmark for Slovak language quality in LLM responses.**
 
+[![validate](https://github.com/ltchurik/sk-llm-eval/actions/workflows/validate.yml/badge.svg)](https://github.com/ltchurik/sk-llm-eval/actions/workflows/validate.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24091954.svg)](https://doi.org/10.5281/zenodo.24091954)
+
 Academic Slovak benchmarks (skLEP, Trojsten) measure NLU and problem solving. This one measures what users and companies actually care about when picking a model: **does it write correct Slovak?**
 
 | Category | What it measures |
@@ -103,6 +106,10 @@ New tasks are the most valuable contribution. Rules:
 5. Run `python -m sk_llm_eval.validate` — CI enforces it on every PR.
 
 Ideas for new categories: `preklad` (EN→SK without anglicisms), `agent` (tool calling in Slovak), `long_text` (diacritics consistency over 500+ words).
+
+## Citing
+
+See [CITATION.cff](CITATION.cff) (GitHub's "Cite this repository" button renders it). The DOI [10.5281/zenodo.24091954](https://doi.org/10.5281/zenodo.24091954) covers all versions.
 
 ## License
 

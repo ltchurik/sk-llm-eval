@@ -5,6 +5,8 @@
 {"id": "long_text-006", "score": 6, "reason": "Osem logických krokov, no v poslednom kroku model prechádza z vykania na tykanie („over pripojenie“)."}
 {"id": "long_text-007", "score": 7, "reason": "Preklad je úplný, ale obsahuje bohemizmus „akonáhle“, krkolomný slovosled a zbytočné anglicizmy „poolu“ a „staging serveroch“."}
 {"id": "long_text-008", "score": 7, "reason": "Pády sú správne, no text má nelogickú a krkolomnú vetu o „vláčiku Tatranskej električky“, ktorým sa dá dostať „z Vysokých Tatier“."}
+{"id": "long_text-011", "score": 9, "reason": "Zdvorilý, zrozumiteľný návod s dôsledným vykaním a bez chýb."}
+{"id": "long_text-013", "score": 9, "reason": "Formálna a vecná sťažnosť bez chýb s dôsledným vykaním a správnym záverom."}
 {"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora nevymyslel."}
 {"id": "realie-029", "score": 10, "reason": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."}
 {"id": "register-001", "score": 10, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V bez chýb."}

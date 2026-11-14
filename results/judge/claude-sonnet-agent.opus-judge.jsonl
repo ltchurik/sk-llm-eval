@@ -5,6 +5,8 @@
 {"id": "long_text-006", "score": 10, "reason": "Presne 8 logických krokov so slovenskou terminológiou bez chýb."}
 {"id": "long_text-007", "score": 8, "reason": "Presný preklad, ale s neobvyklým novotvarom „záťažový balancér“ a anglicizmom „poolu“."}
 {"id": "long_text-008", "score": 6, "reason": "Pády sú správne, no text odbieha k Nízkym Tatrám, má chybnú zhodu „samotné stredisko… lákajú“ a nepresné tvrdenie o termálnych kúpeľoch."}
+{"id": "long_text-011", "score": 9, "reason": "Plynulý a zrozumiteľný postup s dôsledným vykaním s veľkým V a bez chýb."}
+{"id": "long_text-013", "score": 9, "reason": "Vecná a zdvorilá sťažnosť s jasnou požiadavkou, vykaním s veľkým V a správnym záverom."}
 {"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora nevymyslel."}
 {"id": "realie-029", "score": 10, "reason": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."}
 {"id": "register-001", "score": 10, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením bez chýb."}

@@ -1,5 +1,6 @@
 # Answers written by Claude Fable 5.1 directly in a chat session (no API), 2026-11-01.
 # Each prompt answered once, as-is, following the instruction in the prompt.
+# v0.2.0 (2026-11-14): gramatika-029 and the 69 new tasks were answered by Claude Fable 5.1 running as a subagent (prompts only, no checks).
 {"id": "gramatika-001", "answer": "koní"}
 {"id": "gramatika-002", "answer": "Chlapci sa hrali na dvore."}
 {"id": "gramatika-003", "answer": "žene"}
@@ -138,3 +139,72 @@
 {"id": "long_text-006", "answer": "1. Pripojte router k elektrine a sieťovým káblom k modemu alebo prípojke od poskytovateľa internetu. Počkajte, kým sa rozsvietia kontrolky napájania a pripojenia.\n2. Pripojte počítač alebo telefón k routeru – káblom alebo cez predvolenú Wi-Fi sieť, ktorej názov a heslo sú na nálepke na spodnej strane zariadenia.\n3. Otvorte prehliadač a zadajte adresu administrácie (zvyčajne 192.168.0.1 alebo 192.168.1.1, prípadne adresa uvedená na nálepke).\n4. Prihláste sa predvoleným menom a heslom z nálepky alebo z návodu. Pri prvom spustení vás často privíta sprievodca nastavením.\n5. Ihneď zmeňte heslo do administrácie na vlastné, dlhé a jedinečné. Predvolené heslo pozná každý, kto má rovnaký model.\n6. Nastavte názov Wi-Fi siete (SSID) a silné heslo k nej, aspoň 12 znakov. Ako zabezpečenie zvoľte WPA3, alebo WPA2 ak staršie zariadenia WPA3 nepodporujú.\n7. V sekcii Systém alebo Správa skontrolujte, či je k dispozícii aktualizácia firmvéru, a nainštalujte ju. Odstraňuje bezpečnostné chyby a často zlepšuje stabilitu.\n8. Vypnite funkcie, ktoré nepotrebujete (napr. WPS a vzdialenú správu z internetu), uložte nastavenia a reštartujte router. Potom pripojte svoje zariadenia k novej sieti."}
 {"id": "long_text-007", "answer": "Keď zlyhá primárny server, load balancer naň do desiatich sekúnd prestane posielať prevádzku. Požiadavky sa presmerujú na dva zostávajúce servery, na ktorých beží rovnaká verzia aplikácie. Po oprave zlyhaného servera ho správca manuálne pridá späť do skupiny serverov. Odporúčame tento postup každý mesiac otestovať na testovacích serveroch, pretože rozdiely v konfigurácii medzi servermi (konfiguračný drift) sú najčastejšou príčinou neúspešných failoverov."}
 {"id": "long_text-008", "answer": "Vysoké Tatry sú najmenšie veľhory na svete a zároveň najnavštevovanejšia turistická oblasť Slovenska. Na ploche sotva 340 km² ponúkajú všetko, čo turista od hôr čaká: ostré štíty, plesá, vodopády a hustú sieť značených chodníkov. Najvyšším vrcholom je Gerlachovský štít (2 655 m), na ktorý sa však smie len s horským vodcom.\n\nVýchodiskami do Vysokých Tatier sú najmä Štrbské Pleso, Starý Smokovec a Tatranská Lomnica, spojené Tatranskou elektrickou železnicou. Zo Štrbského Plesa vedú obľúbené trasy k Popradskému plesu a na Rysy, z Lomnice vyvezie lanovka návštevníkov až na Lomnický štít s nádherným výhľadom. Menej náročné sú prechádzky k Studenovodským vodopádom alebo na Hrebienok.\n\nVo Vysokých Tatrách platia prísne pravidlá: väčšina vysokohorských chodníkov je od novembra do polovice júna uzavretá, chodí sa len po značených trasách a počasie sa môže zmeniť v priebehu hodiny. Kto sa Vysokým Tatrám prispôsobí – vyrazí skoro ráno, má pevnú obuv a teplú vrstvu v batohu – odnesie si zážitok, aký inde na Slovensku nenájde."}
+{"id": "format-031", "answer": "811 01 Bratislava"}
+{"id": "format-032", "answer": "Ing. Ján Novák, PhD."}
+{"id": "format-033", "answer": "a pod."}
+{"id": "format-034", "answer": "a. s."}
+{"id": "format-035", "answer": "Narodil sa 21. 9. 1990."}
+{"id": "format-036", "answer": "50 EUR"}
+{"id": "format-037", "answer": "č."}
+{"id": "format-038", "answer": "2 × 3 m"}
+{"id": "gramatika-043", "answer": "piesní"}
+{"id": "gramatika-044", "answer": "kuchýň"}
+{"id": "gramatika-045", "answer": "jedál"}
+{"id": "gramatika-046", "answer": "mydiel"}
+{"id": "gramatika-047", "answer": "hier"}
+{"id": "gramatika-048", "answer": "rozprávok"}
+{"id": "gramatika-049", "answer": "nôh"}
+{"id": "gramatika-050", "answer": "ľuďmi"}
+{"id": "gramatika-051", "answer": "deťmi"}
+{"id": "gramatika-052", "answer": "peňazí"}
+{"id": "gramatika-053", "answer": "koňmi"}
+{"id": "gramatika-054", "answer": "dievčat"}
+{"id": "gramatika-055", "answer": "čítajú"}
+{"id": "gramatika-056", "answer": "zamkol"}
+{"id": "gramatika-057", "answer": "piekol"}
+{"id": "gramatika-058", "answer": "jedz"}
+{"id": "gramatika-059", "answer": "dvetisícdvadsaťštyri"}
+{"id": "gramatika-060", "answer": "tisícdeväťstodeväťdesiatdeväť"}
+{"id": "gramatika-061", "answer": "Tie hladné psy celú noc štekali."}
+{"id": "gramatika-062", "answer": "Tí rýchli bežci vyhrali preteky."}
+{"id": "gramatika-063", "answer": "Dievčatá včera spievali v zbore a ženy tancovali."}
+{"id": "gramatika-064", "answer": "Je to presne to, čo potrebujem."}
+{"id": "gramatika-065", "answer": "Mohli by sme ísť zajtra do kina."}
+{"id": "gramatika-066", "answer": "Vrátil sa zo školy neskoro."}
+{"id": "gramatika-067", "answer": "Hlavná ulica 5, Prešov"}
+{"id": "gramatika-068", "answer": "Námestie slobody"}
+{"id": "gramatika-069", "answer": "vtáčí spev"}
+{"id": "long_text-009", "answer": "Minulý týždeň sme s deťmi navštívili Liptovský Mikuláš. Ubytovali sme sa v malom penzióne neďaleko námestia. Ráno sme sa vybrali do Demänovskej doliny, kde sme si pozreli Demänovskú jaskyňu slobody. Deti boli nadšené z kvapľov a podzemného jazierka. Popoludní začalo pršať, tak sme sa schovali v kaviarni a dali si horúcu čokoládu. Večer sme sa prechádzali po meste a kúpili sme si suveníry. Domov sme sa vracali unavení, ale šťastní."}
+{"id": "long_text-010", "answer": "Malá účtovnícka firma z Trnavy s desiatimi zamestnancami sa počas pandémie rozhodla zaviesť prácu z domu. Majiteľka najprv zistila, čo zamestnanci potrebujú: prenosné počítače, bezpečné pripojenie do firemnej siete a prístup k účtovnému programu. Firma nakúpila techniku a nastavila vzdialený prístup, aby sa dalo pracovať odkiaľkoľvek.\n\nVedúca tímu pripravila jednoduché pravidlá. Každý pondelok ráno sa koná krátka spoločná porada cez videohovor, na ktorej si kolegovia rozdelia úlohy a dohodnú termíny odovzdania. Počas dňa si píšu správy vo firemnej aplikácii, a ak treba niečo vyriešiť rýchlo, zavolajú si. Pracovný čas je pružný, ale medzi deviatou a trinástou hodinou musí byť každý dostupný.\n\nZamestnanci si prácu z domu rýchlo obľúbili. Ušetrili čas, ktorý predtým strávili cestovaním, a lepšie zladili prácu s rodinou. Vedenie si zasa všimlo, že výkonnosť neklesla, naopak, niektoré úlohy sa dokončili skôr. Raz za mesiac sa všetci stretnú osobne v kancelárii, aby si vymenili skúsenosti a udržali dobré vzťahy. Majiteľka pravidelne zbiera spätnú väzbu a pravidlá podľa nej upravuje. Dnes firma ponúka prácu z domu ako bežnú súčasť pracovnej zmluvy."}
+{"id": "long_text-011", "answer": "Videohovor s vnúčatami si na mobile nastavíte v niekoľkých krokoch.\n\n1. Uistite sa, že je Váš mobil pripojený na internet (cez wifi alebo mobilné dáta).\n2. Otvorte obchod s aplikáciami (Google Play alebo App Store) a vyhľadajte aplikáciu WhatsApp. Stlačte Inštalovať a počkajte, kým sa stiahne.\n3. Otvorte aplikáciu a zadajte svoje telefónne číslo. Príde Vám SMS s kódom, ktorý opíšete do aplikácie.\n4. Povoľte aplikácii prístup ku kontaktom, kamere a mikrofónu – bez toho videohovor nebude fungovať.\n5. V zozname kontaktov nájdite meno vnúčaťa a ťuknite naň.\n6. V hornej časti obrazovky uvidíte ikonu kamery. Ťuknite na ňu a hovor sa začne.\n7. Držte mobil pred tvárou vo vzdialenosti asi 40 cm, aby Vás bolo dobre vidieť. Hovor ukončíte červeným tlačidlom.\n\nAk máte pochybnosti, požiadajte vnúčatá, aby Vám prvý hovor zavolali ony – stačí ťuknúť na zelené tlačidlo a hovor prijať. Nebojte sa skúšať, nič nepokazíte."}
+{"id": "long_text-012", "answer": "Vážené kolegyne, vážení kolegovia,\n\nsrdečne Vás pozývame na firemný vianočný večierok, ktorý sa uskutoční v piatok 12. decembra 2025 o 18.00 h v hoteli Devín v Bratislave.\n\nČaká Vás slávnostná večera, hudba, tanec a tombola. Spoločne si pripomenieme úspechy uplynulého roka a v príjemnej atmosfére privítame blížiace sa sviatky.\n\nVstupné je 25 € na osobu. Svoju účasť, prosím, potvrďte do 5. decembra 2025 na personálnom oddelení alebo e-mailom.\n\nTešíme sa na spoločný večer!\n\nVedenie spoločnosti"}
+{"id": "long_text-013", "answer": "Vec: Sťažnosť na poškodený tovar a nereagovanie na e-maily\n\nVážený zákaznícky servis,\n\ndňa 3. novembra 2025 som si vo Vašom internetovom obchode objednal práčku (číslo objednávky 2025-4871). Zásielka mi bola doručená 7. novembra 2025, no po rozbalení som zistil, že práčka má prasknuté predné dvierka a poškodený ovládací panel. Poškodenie som ihneď zdokumentoval fotografiami a v ten istý deň som Vám ich poslal e-mailom spolu so žiadosťou o riešenie.\n\nOdvtedy som Vám napísal ešte tri e-maily, na žiadny z nich som však nedostal odpoveď. Takýto prístup považujem za neprijateľný, keďže som za tovar zaplatil plnú sumu 489 €.\n\nŽiadam Vás, aby ste mi do siedmich dní poslali vyjadrenie a navrhli riešenie: výmenu práčky za nepoškodenú alebo vrátenie peňazí. V opačnom prípade sa obrátim na Slovenskú obchodnú inšpekciu.\n\nVerím, že vec vyriešite čo najskôr.\n\nS pozdravom\nPeter Horváth"}
+{"id": "preklad-001", "answer": "Stretnutie bolo odložené na budúci utorok."}
+{"id": "preklad-002", "answer": "V prílohe Vám posielam faktúru za marec."}
+{"id": "preklad-003", "answer": "Leje ako z krhly."}
+{"id": "preklad-004", "answer": "Zlom väz!"}
+{"id": "preklad-005", "answer": "Je to veľmi súcitný človek."}
+{"id": "preklad-006", "answer": "Nakoniec sme problém našli."}
+{"id": "preklad-007", "answer": "Skutočné náklady boli vyššie, než sa očakávalo."}
+{"id": "preklad-008", "answer": "Firma prijala nového manažéra."}
+{"id": "preklad-009", "answer": "Náš tím dodá projekt načas."}
+{"id": "preklad-010", "answer": "Na konferencii sa zúčastnilo dvestopäťdesiat ľudí."}
+{"id": "preklad-011", "answer": "Lekárka povedala, že mi zajtra zavolá."}
+{"id": "preklad-012", "answer": "V Bratislave bývam už päť rokov."}
+{"id": "preklad-013", "answer": "Ak máte akékoľvek otázky, neváhajte nás kontaktovať."}
+{"id": "preklad-014", "answer": "Dve ženy sedeli na lavičke a rozprávali sa."}
+{"id": "realie-037", "answer": "Veľký Kriváň (1 709 m n. m.)."}
+{"id": "realie-038", "answer": "1944"}
+{"id": "realie-039", "answer": "Ľudovít Štúr."}
+{"id": "realie-040", "answer": "Anton Bernolák."}
+{"id": "realie-041", "answer": "Nad Tatrou sa blýska."}
+{"id": "realie-042", "answer": "Demänovský jaskynný systém (v Demänovskej doline v Nízkych Tatrách)."}
+{"id": "realie-043", "answer": "Spišský hrad."}
+{"id": "realie-044", "answer": "Banskobystrický kraj."}
+{"id": "realie-045", "answer": "23 %"}
+{"id": "realie-046", "answer": "Taký človek neexistuje – žiadny Slovák na Mesiaci nepristál. Jediným Slovákom vo vesmíre bol Ivan Bella, ktorý v roku 1999 letel na stanicu Mir."}
+{"id": "realie-047", "answer": "Košice"}
+{"id": "register-023", "answer": "Ak chcete, môžete prísť aj so svojou manželkou."}
+{"id": "register-024", "answer": "Boli ste včera na porade?"}
+{"id": "register-025", "answer": "Už ste sa najedli?"}
+{"id": "register-026", "answer": "Vážená pani inžinierka Kováčová,"}

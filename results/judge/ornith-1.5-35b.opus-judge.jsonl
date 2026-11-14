@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 6, "reason": "Text je plynulý, ale obsahuje chyby ako „frustujúcej“ a nesprávny tvar „Kontajneri“."}
+{"id": "long_text-003", "score": 7, "reason": "Vecné a úplné zhrnutie v prirodzenej slovenčine s chýbajúcou diakritikou v slove „začlenovania“."}
+{"id": "long_text-004", "score": 2, "reason": "Žiadosť obsahuje české slová („Věc“, „Jméno“) a viaceré chyby („spríjniť“, „tabula“)."}
+{"id": "long_text-005", "score": 2, "reason": "Príbeh obsahuje veľa chýb („starý sova“, „Bám sa“, „tieňe“, „skrýajú“) a nekonzistentné úvodzovky."}
+{"id": "long_text-006", "score": 6, "reason": "Dobrý návod, ale obsahuje preklep „kábloom“ a nesprávnu konštrukciu „aby mal nikto iný prístup“."}
+{"id": "long_text-007", "score": 3, "reason": "Preklad obsahuje chyby v skloňovaní („serveru“, „medzi servery“), tvar „prestaje“ a nepreložené „configuration drift“."}
+{"id": "long_text-008", "score": 3, "reason": "Názov pohoria je len v nominatíve, text obsahuje chyby („neopísateľným krásami“, „sviš ťavčí“, „výhody“ namiesto výhľady)."}
+{"id": "long_text-011", "score": 4, "reason": "Návod obsahuje chyby („svoj telefónne číslo“, „Nájdenie vnúča otvorte“, „Vášho vnúča“)."}
+{"id": "long_text-013", "score": 3, "reason": "Sťažnosť obsahuje veľa chýb („zákaznícký“, „doružená“, „Toto prístup“, „vybudenie“, „prístroza“)."}
+{"id": "realie-015", "score": 3, "reason": "Autora neuvádza, ale obsahuje preklep „nepoznáms“ a vymyslený román „Slováci nad Dunajom“."}
+{"id": "realie-029", "score": 7, "reason": "Správne priznáva, že zákon nepozná, no obsahuje chybu „žiadný“."}
+{"id": "register-001", "score": 2, "reason": "Nevhodné oslovenie nadriadeného „pán doktor“ a chyby („pondelie“, „ste mi dostupný“)."}
+{"id": "register-002", "score": 5, "reason": "Tykanie je správne, ale vyskytuje sa preklep „právu“ a chýba sloveso v „Ak ti dôležitá“."}
+{"id": "register-003", "score": 9, "reason": "Krátka, neformálna a prirodzená SMS bez chýb."}
+{"id": "register-004", "score": 3, "reason": "Obsahuje české „Věc“ a chyby („Nehnuteľnosti“, „budem riadne odovzdať“, „Váš pracovný postavenie“)."}
+{"id": "register-009", "score": 6, "reason": "Profesionálna odpoveď s vykaním s veľkým V, ale s preklepom „nepršla“."}
+{"id": "register-010", "score": 10, "reason": "Jednoznačne a správne uvádza veľké V."}
+{"id": "register-011", "score": 8, "reason": "Zdvorilá otázka s vykaním, chýbajú čiarky okolo „prosím“."}
+{"id": "register-012", "score": 3, "reason": "Obsahuje preklep „nepríjne“ a neprirodzenú konštrukciu."}
+{"id": "register-016", "score": 4, "reason": "Chyby „rozhodol“ bez „sa“, „hadaní“, „Váš men“."}
+{"id": "register-018", "score": 10, "reason": "Prirodzená kolegiálna veta bez chýb."}
+{"id": "register-020", "score": 10, "reason": "Správne a jednoznačne uvádza, že čiarka sa nepíše."}
+{"id": "register-022", "score": 2, "reason": "Chýba ospravedlnenie, „sľubujeme Vám“ dáva nezmysel a „o Vaše trpezlivosť“ je chybné."}

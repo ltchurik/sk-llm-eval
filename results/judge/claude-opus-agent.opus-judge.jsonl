@@ -5,6 +5,8 @@
 {"id": "long_text-006", "score": 10, "reason": "Presne 8 logických a zrozumiteľných krokov so slovenskou terminológiou bez chýb."}
 {"id": "long_text-007", "score": 7, "reason": "Preklad je presný, ale zbytočne ponecháva anglické výrazy „configuration drift“, „poolu“ a „stagingových“, kde existujú slovenské ekvivalenty."}
 {"id": "long_text-008", "score": 10, "reason": "Fakticky správny text s viacerými správne skloňovanými pádmi názvu pohoria a bez chýb."}
+{"id": "long_text-011", "score": 9, "reason": "Jasný a zrozumiteľný postup s dôsledným vykaním a bez chýb."}
+{"id": "long_text-013", "score": 9, "reason": "Výborne štruktúrovaná sťažnosť s konkrétnou požiadavkou a bezchybnou slovenčinou."}
 {"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora nevymyslel."}
 {"id": "realie-029", "score": 10, "reason": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."}
 {"id": "register-001", "score": 10, "reason": "Formálny e-mail s predmetom, dôsledným vykaním s veľkým V a bez chýb."}

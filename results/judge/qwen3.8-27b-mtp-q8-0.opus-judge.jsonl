@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 7, "reason": "Prirodzený a súvislý text s drobnou chybou v zhode („aktuálnej dopytu“)."}
+{"id": "long_text-003", "score": 6, "reason": "Zhrnutie pokrýva všetky body, ale obsahuje chybu „jasný písomný sprievodca“ v akuzatíve a väzbu „závislosť na pamäti“."}
+{"id": "long_text-004", "score": 4, "reason": "Úradný štýl je zachovaný, ale vyskytujú sa chyby („oslovit’“, „Závazne“, „prispelieme“) a nevhodné oslovenie zastupiteľstva."}
+{"id": "long_text-005", "score": 8, "reason": "Pekný a súvislý detský príbeh so správnymi úvodzovkami a len drobnými lexikálnymi nedostatkami („bleskotiek“)."}
+{"id": "long_text-006", "score": 7, "reason": "Zrozumiteľný návod v 8 krokoch s drobnou chybou v diakritike („diody“)."}
+{"id": "long_text-007", "score": 3, "reason": "Preklad ponecháva zbytočné anglicizmy („traffic“, „staging“, „konfigurácia drift“) a chýba v ňom zámeno „ho“."}
+{"id": "long_text-008", "score": 4, "reason": "Faktická chyba (Jasná nie je vo Vysokých Tatrách) a gramatické chyby („horolezce“, „Krášna“)."}
+{"id": "long_text-011", "score": 5, "reason": "Vykanie je dôsledné, ale vyskytujú sa chyby („z zoznamu“, „k kamere“) a neprirodzené oslovenie „Vážený senior“."}
+{"id": "long_text-013", "score": 4, "reason": "Sťažnosť obsahuje chyby („obrátam“, „nespokojivú“, „deklarovými“) a čiarku za „S pozdravom“."}
+{"id": "realie-015", "score": 5, "reason": "Autora nevymýšľa, ale chybne píše „nepoznáš“ a používa nevhodné slovo „zámienku“."}
+{"id": "realie-029", "score": 7, "reason": "Správne uvádza, že taký zákon neexistuje, a Kisku nespomína ako podpisovateľa, no pridáva neisté podrobnosti."}
+{"id": "register-001", "score": 8, "reason": "Formálny e-mail s vykaním s veľkým V, len s čiarkou za „S pozdravom“."}
+{"id": "register-002", "score": 9, "reason": "Prirodzená odpoveď s dôsledným tykaním a bez chýb."}
+{"id": "register-003", "score": 9, "reason": "Krátka, prirodzená neformálna SMS bez chýb."}
+{"id": "register-004", "score": 5, "reason": "Správne oslovenie a vykanie, ale chyby („bude za mňa zastupovať“, „O prosím“) a čiarka za „S pozdravom“."}
+{"id": "register-009", "score": 5, "reason": "Zdvorilá odpoveď s ďalším krokom, ale vykanie je s malým v napriek požiadavke."}
+{"id": "register-010", "score": 7, "reason": "Uvádza veľké písmeno, ale úvodné „Áno“ je nelogické a tvar „vykávanie“ je nespisovný."}
+{"id": "register-011", "score": 2, "reason": "Nezmyselné oslovenie „Oslobodná“ robí vetu neprirodzenou."}
+{"id": "register-012", "score": 9, "reason": "Správny spisovný prepis so zachovaným významom."}
+{"id": "register-016", "score": 7, "reason": "Zdvorilé a bezchybné odmietnutie, hoci zámená s veľkým V sa v ňom takmer nevyskytujú."}
+{"id": "register-018", "score": 10, "reason": "Prirodzená kolegiálna veta bez chýb."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
+{"id": "register-022", "score": 9, "reason": "Formálny e-mail s ospravedlnením, informáciou o novej zásielke a vykaním s veľkým V."}

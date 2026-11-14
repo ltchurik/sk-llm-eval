@@ -56,7 +56,7 @@
 {"id": "gramatika-026", "answer": "ľuďom"}
 {"id": "gramatika-027", "answer": "kone"}
 {"id": "gramatika-028", "answer": "mliečny"}
-{"id": "gramatika-029", "answer": "Dva psy sa hrali na dvore."}
+{"id": "gramatika-029", "answer": "Dvaja psi sa hrali na dvore."}
 {"id": "gramatika-030", "answer": "Včera som videl troch pekných mužov."}
 {"id": "gramatika-031", "answer": "Kúpil som si dve kilá jabĺk."}
 {"id": "gramatika-032", "answer": "vajec"}
@@ -136,3 +136,72 @@
 {"id": "register-020", "answer": "Nie, za záverečným pozdravom „S pozdravom“ sa v slovenskom liste čiarka nepíše."}
 {"id": "register-021", "answer": "Vážená pani Horváthová, vážený pán Novák,"}
 {"id": "register-022", "answer": "Vážený zákazník,\n\nveľmi nás mrzí, že sa Vaša zásielka počas prepravy stratila. Bezodkladne Vám zašleme nový balík a o jeho odoslaní Vás budeme informovať. Za vzniknuté nepríjemnosti sa Vám úprimne ospravedlňujeme.\n\nS pozdravom"}
+{"id": "format-031", "answer": "811 01 Bratislava"}
+{"id": "format-032", "answer": "Ing. Ján Novák, PhD."}
+{"id": "format-033", "answer": "a pod."}
+{"id": "format-034", "answer": "a. s."}
+{"id": "format-035", "answer": "Narodil sa 21. 9. 1990."}
+{"id": "format-036", "answer": "50 EUR"}
+{"id": "format-037", "answer": "č."}
+{"id": "format-038", "answer": "2 × 3 m"}
+{"id": "gramatika-043", "answer": "piesní"}
+{"id": "gramatika-044", "answer": "kuchýň"}
+{"id": "gramatika-045", "answer": "jedál"}
+{"id": "gramatika-046", "answer": "mydiel"}
+{"id": "gramatika-047", "answer": "hier"}
+{"id": "gramatika-048", "answer": "rozprávok"}
+{"id": "gramatika-049", "answer": "nôh"}
+{"id": "gramatika-050", "answer": "ľuďmi"}
+{"id": "gramatika-051", "answer": "deťmi"}
+{"id": "gramatika-052", "answer": "peňazí"}
+{"id": "gramatika-053", "answer": "koňmi"}
+{"id": "gramatika-054", "answer": "dievčat"}
+{"id": "gramatika-055", "answer": "čítajú"}
+{"id": "gramatika-056", "answer": "zamkol"}
+{"id": "gramatika-057", "answer": "piekol"}
+{"id": "gramatika-058", "answer": "jedz"}
+{"id": "gramatika-059", "answer": "dvetisícdvadsaťštyri"}
+{"id": "gramatika-060", "answer": "tisícdeväťstodeväťdesiatdeväť"}
+{"id": "gramatika-061", "answer": "Tie hladné psy celú noc štekali."}
+{"id": "gramatika-062", "answer": "Tí rýchli bežci vyhrali preteky."}
+{"id": "gramatika-063", "answer": "Dievčatá včera spievali v zbore a ženy tancovali."}
+{"id": "gramatika-064", "answer": "Je to práve to, čo potrebujem."}
+{"id": "gramatika-065", "answer": "Mohli by sme ísť zajtra do kina."}
+{"id": "gramatika-066", "answer": "Vrátil sa zo školy neskoro."}
+{"id": "gramatika-067", "answer": "Hlavná ulica 5, Prešov"}
+{"id": "gramatika-068", "answer": "Námestie slobody"}
+{"id": "gramatika-069", "answer": "vtáčí spev"}
+{"id": "long_text-009", "answer": "Minulý týždeň sme s deťmi navštívili Liptovský Mikuláš. Ubytovali sme sa v malom penzióne neďaleko námestia. Ráno sme sa vybrali do Demänovskej doliny, kde sme si pozreli Demänovskú jaskyňu slobody. Deti boli nadšené z kvapľov a podzemného jazierka. Popoludní začalo pršať, tak sme sa schovali v kaviarni a dali si horúcu čokoládu. Večer sme sa prechádzali po meste a kúpili sme si suveníry. Domov sme sa vracali unavení, ale šťastní."}
+{"id": "long_text-010", "answer": "Malá košická firma, ktorá sa venuje účtovníctvu, sa minulý rok rozhodla zaviesť prácu z domu. Dvanásť zamestnancov dostalo možnosť pracovať dva dni v týždni zo svojej domácnosti. Vedúca tímu najprv zistila, čo ľudia potrebujú: niektorým chýbal kvalitný počítač, iným pokojné miesto na prácu. Firma preto nakúpila prenosné počítače a slúchadlá a zabezpečila bezpečné pripojenie k firemnej sieti.\n\nNajväčšou výzvou bola komunikácia. Kolegovia sa už nemohli len tak zastaviť pri stole a niečo prebrať. Zaviedli preto krátku pondelkovú poradu cez videohovor, na ktorej každý povie, na čom pracuje a aké má termíny. Dôležité úlohy si zapisujú do spoločného zoznamu, takže každý vie, kto čo robí a dokedy to musí odovzdať.\n\nRiaditeľ firmy spočiatku pochyboval, či budú ľudia doma rovnako výkonní. Po pol roku však zistil, že práca je hotová načas a zamestnanci sú spokojnejší, pretože ušetria čas na cestovanie. Pravidelne sa ich pýta na názor a postupne upravuje pravidlá.\n\nSkúsenosť ukázala, že práca z domu funguje, ak sú jasné pravidlá, dobrá technika a vzájomná dôvera."}
+{"id": "long_text-011", "answer": "Takto si na mobile nastavíte videohovor s vnúčatami:\n\n1. Skontrolujte, či máte zapnutý internet (Wi-Fi alebo mobilné dáta).\n2. Otvorte aplikáciu WhatsApp. Ak ju v telefóne nemáte, požiadajte niekoho z rodiny, aby vám ju nainštaloval.\n3. Ťuknite na kartu Chaty a nájdite meno vnúčaťa alebo jeho rodiča.\n4. Ťuknite na meno, otvorí sa rozhovor.\n5. Vpravo hore uvidíte ikonu malej kamery. Ťuknite na ňu a hovor sa začne.\n6. Ak sa telefón opýta na prístup ku kamere a mikrofónu, ťuknite na Povoliť.\n7. Držte telefón pred tvárou tak, aby vás bolo vidieť. Ak vás nepočuť, skontrolujte, či nie je ikona mikrofónu prečiarknutá.\n8. Hovor ukončíte ťuknutím na červené tlačidlo so slúchadlom.\n\nAk si nebudete vedieť rady, pokojne zavolajte svojim deťom, radi vám pomôžu. Prvý raz si to môžete vyskúšať spolu s nimi. Prajeme vám veľa radosti pri rozhovoroch s vnúčatami!"}
+{"id": "long_text-012", "answer": "Pozvánka na vianočný večierok\n\nMilé kolegyne, milí kolegovia,\n\nsrdečne vás pozývame na firemný vianočný večierok, ktorý sa uskutoční v piatok 12. decembra 2025 o 18.00 h v hoteli Devín v Bratislave. Čaká nás slávnostná večera, živá hudba, tombola s peknými cenami a príjemná predvianočná atmosféra.\n\nVstupné je 25 eur a zahŕňa večeru aj nápoje. Svoju účasť, prosím, potvrďte do 5. decembra 2025 na personálnom oddelení.\n\nTešíme sa na stretnutie s vami a na spoločné privítanie sviatkov.\n\nVedenie spoločnosti"}
+{"id": "long_text-013", "answer": "Vec: Sťažnosť – poškodená práčka, objednávka č. 2025-04817\n\nVážená zákaznícka podpora,\n\ndňa 3. novembra 2025 som si vo Vašom internetovom obchode objednal práčku (objednávka č. 2025-04817), ktorú mi kuriér doručil 7. novembra 2025. Po rozbalení som zistil, že práčka je poškodená: predné dvierka sú prasknuté a na bočnej stene je hlboká preliačina. Poškodenie som zdokumentoval na fotografiách.\n\nEšte v deň doručenia som Vás o tom informoval e-mailom a následne som Vám napísal ešte dvakrát, naposledy 12. novembra 2025. Doteraz som však nedostal žiadnu odpoveď, čo považujem za neprofesionálne.\n\nŽiadam Vás preto, aby ste mi do 7 dní od doručenia tejto sťažnosti oznámili, ako vec vyriešite. Požadujem výmenu práčky za nový, nepoškodený kus vrátane bezplatného dovozu a odvozu poškodeného spotrebiča. Ak výmena nie je možná, žiadam o odstúpenie od zmluvy a vrátenie celej kúpnej ceny.\n\nAk na moju sťažnosť nebudete reagovať, obrátim sa na Slovenskú obchodnú inšpekciu.\n\nS pozdravom\nPeter Horváth\ntel.: 0905 123 456"}
+{"id": "preklad-001", "answer": "Porada bola presunutá na budúci utorok."}
+{"id": "preklad-002", "answer": "V prílohe Vám posielame faktúru za marec."}
+{"id": "preklad-003", "answer": "Leje ako z krhly."}
+{"id": "preklad-004", "answer": "Zlom väz!"}
+{"id": "preklad-005", "answer": "Je to veľmi chápavý a súcitný človek."}
+{"id": "preklad-006", "answer": "Nakoniec sme problém našli."}
+{"id": "preklad-007", "answer": "Skutočné náklady boli vyššie, ako sa očakávalo."}
+{"id": "preklad-008", "answer": "Spoločnosť prijala nového manažéra."}
+{"id": "preklad-009", "answer": "Náš tím odovzdá projekt načas."}
+{"id": "preklad-010", "answer": "Konferencie sa zúčastnilo dvestopäťdesiat ľudí."}
+{"id": "preklad-011", "answer": "Lekárka povedala, že mi zajtra zavolá."}
+{"id": "preklad-012", "answer": "V Bratislave bývam už päť rokov."}
+{"id": "preklad-013", "answer": "Ak máte akékoľvek otázky, neváhajte nás kontaktovať."}
+{"id": "preklad-014", "answer": "Dve ženy sedeli na lavičke a rozprávali sa."}
+{"id": "realie-037", "answer": "Veľký Kriváň (1 709 m n. m.)."}
+{"id": "realie-038", "answer": "1944"}
+{"id": "realie-039", "answer": "Ľudovít Štúr (spolu s Jozefom Miloslavom Hurbanom a Michalom Miloslavom Hodžom)."}
+{"id": "realie-040", "answer": "Anton Bernolák."}
+{"id": "realie-041", "answer": "Nad Tatrou sa blýska."}
+{"id": "realie-042", "answer": "Demänovský jaskynný systém."}
+{"id": "realie-043", "answer": "Spišský hrad."}
+{"id": "realie-044", "answer": "Banskobystrický samosprávny kraj."}
+{"id": "realie-045", "answer": "23 %"}
+{"id": "realie-046", "answer": "Taký človek neexistuje – na Mesiaci zatiaľ nepristál žiadny Slovák."}
+{"id": "realie-047", "answer": "Košice"}
+{"id": "register-023", "answer": "Ak chcete, môžete prísť aj so svojou manželkou."}
+{"id": "register-024", "answer": "Boli ste včera na porade?"}
+{"id": "register-025", "answer": "Už ste sa najedli?"}
+{"id": "register-026", "answer": "Vážená pani inžinierka,"}

@@ -5,6 +5,8 @@
 {"id": "long_text-006", "score": 9, "reason": "Presne 8 logických krokov so slovenskou terminológiou, len chýba čiarka pred vedľajšou vetou „ak staršie zariadenia…“."}
 {"id": "long_text-007", "score": 10, "reason": "Presný a plynulý preklad so správne skloňovanými termínmi a slovenskými výrazmi pre bežné slová."}
 {"id": "long_text-008", "score": 10, "reason": "Názov pohoria použitý vo viacerých správne skloňovaných pádoch, fakty sedia a text je bez chýb."}
+{"id": "long_text-011", "score": 9, "reason": "Prehľadný postup s dôsledným vykaním a správnou slovenčinou."}
+{"id": "long_text-013", "score": 9, "reason": "Vecná sťažnosť s jasnou požiadavkou, vykaním s veľkým V a bez chýb."}
 {"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora si nevymyslel."}
 {"id": "realie-029", "score": 10, "reason": "Model nepotvrdil existenciu zákona a neuviedol žiadne meno prezidenta."}
 {"id": "register-001", "score": 10, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením bez chýb."}

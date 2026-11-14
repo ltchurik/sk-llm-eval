@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 3, "reason": "Text obsahuje veľa bohemizmov a gramatických chýb („zrychluje“, „usnadňuje“, „Navíc“, „pri zmenu záväzkov“)."}
+{"id": "long_text-003", "score": 1, "reason": "Text je plný nezmyselných slov a gramatických chýb („keľko“, „potierajú“, „Úspechúsle“, „novi“)."}
+{"id": "long_text-004", "score": 1, "reason": "Text je plný bohemizmov a nezmyslov („tabule“, „výjimečná“, „kavárna“, „povolenieplatníkov“)."}
+{"id": "long_text-005", "score": 1, "reason": "Príbeh je nesúvislý a plný nezmyselných slov a chýb („Ježek“, „svetr“, „bliekli“, „časťka“)."}
+{"id": "long_text-006", "score": 5, "reason": "Kroky sú logické, ale obsahujú gramatické chyby („LAN káble“, „k novému Wi-Fi sieti“, „nastaveníach“)."}
+{"id": "long_text-007", "score": 1, "reason": "Preklad obsahuje bohemizmy a hrubé chyby („sa zlyhá“, „provoz“, „běží“, „kažný“, „zlyhalý“)."}
+{"id": "long_text-008", "score": 1, "reason": "Text je plný chýb a nezmyslov a obsahuje faktické omyly (Chopok, severozápadná časť)."}
+{"id": "long_text-011", "score": 3, "reason": "Návod obsahuje viacero gramatických chýb („Ak ich nie sú“, „pošli“, „kýv“, „potvrdzujte“)."}
+{"id": "long_text-013", "score": 1, "reason": "Text je plný nezmyslov a chýb („písom“, „jeďra“, „reštartáciu“, „pečných“, „očakujem“)."}
+{"id": "realie-015", "score": 7, "reason": "Správne priznáva, že román nepozná, hoci formulácia „v svojich dátach“ je neobratná."}
+{"id": "realie-029", "score": 0, "reason": "Vymýšľa zákon a uvádza Andreja Kisku ako podpisovateľa."}
+{"id": "register-001", "score": 2, "reason": "Nesprávne oslovenie „Vážený pánovi“ a chyby („som Vám informoval“, „dosúvať“)."}
+{"id": "register-002", "score": 3, "reason": "Obsahuje bohemizmus „doporučujem“ a nezmyselné spojenie „bázu a miestne úlohy“."}
+{"id": "register-003", "score": 0, "reason": "Správa má opačný význam a obsahuje nezmysly („snať dorazniť“)."}
+{"id": "register-004", "score": 1, "reason": "Chýba správne oslovenie, text obsahuje nezmysly („Väzbe“, „cakávať“)."}
+{"id": "register-009", "score": 1, "reason": "Nevhodné „Ahoj“, české slová („odeslání“) a nezmyselné formulácie."}
+{"id": "register-010", "score": 8, "reason": "Správna odpoveď, ale s chybou „v formálnom“ namiesto „vo formálnom“."}
+{"id": "register-011", "score": 0, "reason": "Nejde o priamu otázku, ale o chybný opis situácie."}
+{"id": "register-012", "score": 0, "reason": "Ponecháva hovorové výrazy („Hej“, „hnusné“) a pridáva bohemizmus „venku“."}
+{"id": "register-016", "score": 3, "reason": "Chybné oslovenie a veľké písmeno po čiarke, nesprávne slová („časované“, „oferu“) a malé „vašu“."}
+{"id": "register-018", "score": 10, "reason": "Prirodzená kolegiálna veta bez chýb."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše, a obsahuje preklep „lete“."}
+{"id": "register-022", "score": 2, "reason": "Vykanie je s malým v, chýba ospravedlnenie a formulácia „súčasne s právo apelovať“ je nezmyselná."}

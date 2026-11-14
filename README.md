@@ -1,5 +1,7 @@
 # sk-llm-eval
 
+![sk-llm-eval: Does your LLM write correct Slovak?](assets/social-preview.png)
+
 **Does the model write correct Slovak?** A practical benchmark for Slovak language quality in LLM answers.
 
 [![validate](https://github.com/ltchurik/sk-llm-eval/actions/workflows/validate.yml/badge.svg)](https://github.com/ltchurik/sk-llm-eval/actions/workflows/validate.yml)

@@ -21,26 +21,26 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 
 18 models: 4 Claude models and 14 open-weight models run locally.
 
-| # | Model | Overall | format | gramatika | long_text | preklad | realie | register |
+| # | Model | Overall | Grammar | Register | Facts | Formatting | Translation | Long text |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Claude Fable 5.1 (chat) | **100.0** | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | 2 | Claude Opus (agent) | **100.0** | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
-| 3 | Claude Sonnet (agent) | **94.4** | 100.0 | 98.6 | 76.9 | 92.9 | 97.9 | 100.0 |
-| 4 | Claude Haiku (agent) | **93.1** | 97.4 | 94.2 | 84.6 | 92.9 | 93.6 | 96.2 |
-| 5 | Gemma 4 26B-A4B (Ollama) | **75.9** | 86.8 | 75.4 | 30.8 | 92.9 | 85.1 | 84.6 |
-| 6 | Qwen 3.8 27B Q8 (Ollama, no thinking) | **70.4** | 84.2 | 69.6 | 38.5 | 92.9 | 63.8 | 73.1 |
-| 7 | Gemma 4 12B (Ollama) | **60.1** | 73.7 | 62.3 | 7.7 | 85.7 | 61.7 | 69.2 |
-| 8 | Gemma 3 12B (Ollama) | **58.9** | 63.2 | 63.8 | 30.8 | 78.6 | 59.6 | 57.7 |
-| 9 | Ornith 1.5 35B (Ollama) | **58.5** | 73.7 | 56.5 | 23.1 | 71.4 | 72.3 | 53.8 |
-| 10 | Qwen 3.5 9B (Ollama, no thinking) | **52.9** | 63.2 | 55.1 | 15.4 | 85.7 | 59.6 | 38.5 |
-| 11 | Gemma 4 E4B (Ollama) | **47.3** | 52.6 | 47.8 | 15.4 | 78.6 | 51.1 | 38.5 |
-| 12 | Laguna XS 2.1 Q8 (Ollama) | **41.5** | 63.2 | 34.8 | 7.7 | 64.3 | 59.6 | 19.2 |
-| 13 | Qwen 3.5 4B (Ollama, no thinking) | **39.9** | 63.2 | 49.3 | 7.7 | 57.1 | 42.6 | 19.2 |
-| 14 | Gemma 3 4B (Ollama) | **36.6** | 34.2 | 37.7 | 7.7 | 71.4 | 34.0 | 34.6 |
-| 15 | Granite 4.1 8B (Ollama) | **34.8** | 52.6 | 43.5 | 7.7 | 42.9 | 42.6 | 19.2 |
-| 16 | Mistral Nemo 12B (Ollama) | **21.3** | 39.5 | 31.9 | 0.0 | 0.0 | 44.7 | 11.5 |
-| 17 | Llama 3.2 3B (Ollama) | **14.5** | 18.4 | 24.6 | 7.7 | 7.1 | 21.3 | 7.7 |
-| 18 | Phi-4 mini 3.8B (Ollama) | **13.0** | 18.4 | 15.9 | 0.0 | 14.3 | 25.5 | 3.8 |
+| 3 | Claude Sonnet (agent) | **94.4** | 98.6 | 100.0 | 97.9 | 100.0 | 92.9 | 76.9 |
+| 4 | Claude Haiku (agent) | **93.1** | 94.2 | 96.2 | 93.6 | 97.4 | 92.9 | 84.6 |
+| 5 | Gemma 4 26B-A4B (Ollama) | **75.9** | 75.4 | 84.6 | 85.1 | 86.8 | 92.9 | 30.8 |
+| 6 | Qwen 3.8 27B Q8 (Ollama, no thinking) | **70.4** | 69.6 | 73.1 | 63.8 | 84.2 | 92.9 | 38.5 |
+| 7 | Gemma 4 12B (Ollama) | **60.1** | 62.3 | 69.2 | 61.7 | 73.7 | 85.7 | 7.7 |
+| 8 | Gemma 3 12B (Ollama) | **58.9** | 63.8 | 57.7 | 59.6 | 63.2 | 78.6 | 30.8 |
+| 9 | Ornith 1.5 35B (Ollama) | **58.5** | 56.5 | 53.8 | 72.3 | 73.7 | 71.4 | 23.1 |
+| 10 | Qwen 3.5 9B (Ollama, no thinking) | **52.9** | 55.1 | 38.5 | 59.6 | 63.2 | 85.7 | 15.4 |
+| 11 | Gemma 4 E4B (Ollama) | **47.3** | 47.8 | 38.5 | 51.1 | 52.6 | 78.6 | 15.4 |
+| 12 | Laguna XS 2.1 Q8 (Ollama) | **41.5** | 34.8 | 19.2 | 59.6 | 63.2 | 64.3 | 7.7 |
+| 13 | Qwen 3.5 4B (Ollama, no thinking) | **39.9** | 49.3 | 19.2 | 42.6 | 63.2 | 57.1 | 7.7 |
+| 14 | Gemma 3 4B (Ollama) | **36.6** | 37.7 | 34.6 | 34.0 | 34.2 | 71.4 | 7.7 |
+| 15 | Granite 4.1 8B (Ollama) | **34.8** | 43.5 | 19.2 | 42.6 | 52.6 | 42.9 | 7.7 |
+| 16 | Mistral Nemo 12B (Ollama) | **21.3** | 31.9 | 11.5 | 44.7 | 39.5 | 0.0 | 0.0 |
+| 17 | Llama 3.2 3B (Ollama) | **14.5** | 24.6 | 7.7 | 21.3 | 18.4 | 7.1 | 7.7 |
+| 18 | Phi-4 mini 3.8B (Ollama) | **13.0** | 15.9 | 3.8 | 25.5 | 18.4 | 14.3 | 0.0 |
 
 Score = % of tasks that passed all their checks; Overall = mean of the category scores. The full table with judge and dates is in [`results/LEADERBOARD.md`](results/LEADERBOARD.md). Read [how the rows were produced](#how-the-rows-were-produced) before you compare them.
 
@@ -65,12 +65,14 @@ Some small models drift into a neighbouring language: Mistral Nemo translated *E
 
 | Category | Tasks | What it measures |
 |---|---|---|
-| `gramatika` | 69 | declension, i/y, rhythmic law and its exceptions, verb forms, numbers in words, bohemisms, capitalisation |
-| `realie` | 47 | Slovak institutions, law, geography and history; hallucination traps |
-| `format` | 38 | dates, numbers, currency, phone numbers, postal codes, titles, abbreviations, quotation marks |
-| `register` | 26 | *vykanie* vs. *tykanie*, salutations, formal letters, standard vs. colloquial style |
-| `preklad` | 14 | EN→SK: idioms, false friends (*actual*, *eventually*, *sympathetic*), gender and case agreement |
-| `long_text` | 13 | 100–300-word texts: consistent diacritics and register, no anglicisms, restoring stripped diacritics |
+| Grammar (`gramatika`) | 69 | declension, i/y, rhythmic law and its exceptions, verb forms, numbers in words, bohemisms, capitalisation |
+| Register (`register`) | 26 | *vykanie* vs. *tykanie*, salutations, formal letters, standard vs. colloquial style |
+| Facts (`realie`) | 47 | Slovak institutions, law, geography and history; hallucination traps |
+| Formatting (`format`) | 38 | dates, numbers, currency, phone numbers, postal codes, titles, abbreviations, quotation marks |
+| Translation (`preklad`) | 14 | EN→SK: idioms, false friends (*actual*, *eventually*, *sympathetic*), gender and case agreement |
+| Long text (`long_text`) | 13 | 100–300-word texts: consistent diacritics and register, no anglicisms, restoring stripped diacritics |
+
+The ids in brackets are the category names used in `tasks/<id>.jsonl` and in the results files.
 
 Prompts and rubrics are in Slovak on purpose: the benchmark tests how a model behaves for a Slovak user.
 

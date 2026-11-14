@@ -7,6 +7,16 @@ import json
 import sys
 from pathlib import Path
 
+# display names for the category ids used in tasks/*.jsonl, in table order
+CATEGORY_NAMES = {
+    "gramatika": "Grammar",
+    "register": "Register",
+    "realie": "Facts",
+    "format": "Formatting",
+    "preklad": "Translation",
+    "long_text": "Long text",
+}
+
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
@@ -24,12 +34,13 @@ def main(argv: list[str] | None = None) -> int:
         print("no results", file=sys.stderr)
         return 1
 
-    cats = sorted({c for r in runs for c in r["summary"]["categories"]})
+    found = {c for r in runs for c in r["summary"]["categories"]}
+    cats = [c for c in CATEGORY_NAMES if c in found] + sorted(found - set(CATEGORY_NAMES))
     runs.sort(key=lambda r: -r["summary"]["overall"])
 
     lines = ["# Leaderboard", "", "Score = % of tasks that passed all checks; Overall = mean of category scores. "
              "Tasks = number of scored tasks (judge tasks count only when a judge ran). Generated automatically.", ""]
-    lines.append("| # | Model | Overall | " + " | ".join(cats) + " | Tasks | Judge | Version | Date |")
+    lines.append("| # | Model | Overall | " + " | ".join(CATEGORY_NAMES.get(c, c) for c in cats) + " | Tasks | Judge | Version | Date |")
     lines.append("|---|---|---|" + "---|" * len(cats) + "---|---|---|---|")
     for i, r in enumerate(runs, 1):
         s = r["summary"]

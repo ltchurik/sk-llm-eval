@@ -27,9 +27,10 @@ def main(argv: list[str] | None = None) -> int:
     cats = sorted({c for r in runs for c in r["summary"]["categories"]})
     runs.sort(key=lambda r: -r["summary"]["overall"])
 
-    lines = ["# Leaderboard", "", "Score = % of tasks that passed all checks. Generated automatically.", ""]
-    lines.append("| # | Model | Overall | " + " | ".join(cats) + " | Judge | Date |")
-    lines.append("|---|---|---|" + "---|" * len(cats) + "---|---|")
+    lines = ["# Leaderboard", "", "Score = % of tasks that passed all checks; Overall = mean of category scores. "
+             "Tasks = number of scored tasks (judge tasks count only when a judge ran). Generated automatically.", ""]
+    lines.append("| # | Model | Overall | " + " | ".join(cats) + " | Tasks | Judge | Version | Date |")
+    lines.append("|---|---|---|" + "---|" * len(cats) + "---|---|---|---|")
     for i, r in enumerate(runs, 1):
         s = r["summary"]
         cells = []
@@ -39,7 +40,8 @@ def main(argv: list[str] | None = None) -> int:
         lines.append(
             f"| {i} | {r['label']} | **{s['overall']:.1f}** | "
             + " | ".join(cells)
-            + f" | {r.get('judge_model') or '–'} | {r['run_at'][:10]} |"
+            + f" | {sum(c['total'] for c in s['categories'].values())}"
+            + f" | {r.get('judge_model') or '–'} | {r.get('eval_version', '–')} | {r['run_at'][:10]} |"
         )
     Path(args.out).write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))

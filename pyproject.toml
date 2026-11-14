@@ -1,6 +1,6 @@
 [project]
 name = "sk-llm-eval"
-version = "0.1.0"
+version = "0.2.0"
 description = "A practical benchmark for Slovak language quality in LLM responses"
 readme = "README.md"
 license = "MIT"

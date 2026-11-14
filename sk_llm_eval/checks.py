@@ -41,6 +41,8 @@ def diacritics_ratio(text: str) -> float:
 
 def normalize(text: str) -> str:
     text = unicodedata.normalize("NFC", text)
+    text = text.replace("**", "").replace("__", "").replace("`", "")
+    text = re.sub(r"(?<!\w)\*(?!\s)([^*\n]+?)(?<!\s)\*(?!\w)", r"\1", text)  # *italic*
     text = text.replace(" ", " ")
     text = re.sub(r"\s+", " ", text).strip()
     return text

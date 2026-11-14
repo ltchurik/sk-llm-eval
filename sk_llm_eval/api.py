@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
@@ -11,6 +12,14 @@ import urllib.request
 
 class ApiError(RuntimeError):
     pass
+
+
+_THINK_RE = re.compile(r"<think>.*?(</think>|$)", re.DOTALL | re.IGNORECASE)
+
+
+def strip_reasoning(text: str) -> str:
+    """Drop <think>…</think> blocks that some reasoning models put into the answer."""
+    return _THINK_RE.sub("", text).strip()
 
 
 def chat(
@@ -22,8 +31,9 @@ def chat(
     system: str | None = None,
     temperature: float = 0.0,
     max_tokens: int = 512,
-    timeout: int = 120,
+    timeout: int = 300,
     retries: int = 3,
+    extra_body: dict | None = None,
 ) -> str:
     """Send one prompt, return the answer text. Retries with exponential backoff."""
     url = base_url.rstrip("/") + "/chat/completions"
@@ -34,14 +44,14 @@ def chat(
         messages.append({"role": "system", "content": system})
     messages.append({"role": "user", "content": prompt})
 
-    body = json.dumps(
-        {
-            "model": model,
-            "messages": messages,
-            "temperature": temperature,
-            "max_tokens": max_tokens,
-        }
-    ).encode("utf-8")
+    payload = {
+        "model": model,
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+    }
+    payload.update(extra_body or {})
+    body = json.dumps(payload).encode("utf-8")
 
     headers = {"Content-Type": "application/json"}
     if key:
@@ -53,7 +63,7 @@ def chat(
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
-            return data["choices"][0]["message"]["content"] or ""
+            return strip_reasoning(data["choices"][0]["message"]["content"] or "")
         except urllib.error.HTTPError as e:
             msg = e.read().decode("utf-8", "replace")[:500]
             last_err = ApiError(f"HTTP {e.code}: {msg}")

@@ -30,23 +30,29 @@ def slug(s: str) -> str:
     return re.sub(r"[^a-z0-9.-]+", "-", s.lower()).strip("-")
 
 
-def eval_task(task: dict, args: argparse.Namespace) -> dict:
+def eval_task(task: dict, args: argparse.Namespace, cached: str | None = None) -> dict:
     rec = {"id": task["id"], "category": task["category"], "prompt": task["prompt"]}
-    t0 = time.time()
-    try:
-        answer = chat(
-            task["prompt"],
-            model=args.model,
-            base_url=args.base_url,
-            api_key=args.api_key,
-            system=task.get("system", DEFAULT_SYSTEM),
-            temperature=args.temperature,
-            max_tokens=args.max_tokens,
-        )
-    except ApiError as e:
-        rec.update(answer=None, passed=False, error=str(e), checks=[], latency=time.time() - t0)
-        return rec
-    rec["latency"] = round(time.time() - t0, 2)
+    if cached is not None:
+        answer = cached
+        rec["cached"] = True
+    else:
+        t0 = time.time()
+        try:
+            answer = chat(
+                task["prompt"],
+                model=args.model,
+                base_url=args.base_url,
+                api_key=args.api_key,
+                system=task.get("system", DEFAULT_SYSTEM),
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+                timeout=args.timeout,
+                extra_body=args.extra_body,
+            )
+        except ApiError as e:
+            rec.update(answer=None, passed=False, error=str(e), checks=[], latency=round(time.time() - t0, 2))
+            return rec
+        rec["latency"] = round(time.time() - t0, 2)
     rec["answer"] = answer
 
     results = []
@@ -106,7 +112,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--temperature", type=float, default=0.0)
-    ap.add_argument("--max-tokens", type=int, default=512)
+    ap.add_argument("--max-tokens", type=int, default=512, help="raise to 4096+ for reasoning models")
+    ap.add_argument("--timeout", type=int, default=300, help="seconds per request")
+    ap.add_argument("--extra-body", type=json.loads, default=None,
+                    help='JSON merged into the request body, e.g. \'{"reasoning_effort": "low"}\'')
+    ap.add_argument("--answers-out", default=None,
+                    help="JSONL where answers are appended as they arrive (default: results/answers/<model>.jsonl)")
+    ap.add_argument("--resume", action="store_true",
+                    help="reuse answers already in --answers-out; only missing tasks hit the API")
     ap.add_argument("--out", default=None, help="default: results/<model>.json")
     ap.add_argument("--label", default=None, help="display name in leaderboard (default: model)")
     args = ap.parse_args(argv)
@@ -122,13 +135,27 @@ def main(argv: list[str] | None = None) -> int:
         print("no tasks", file=sys.stderr)
         return 1
 
-    print(f"model={args.model} tasks={len(tasks)} judge={args.judge_model or '-'}")
+    answers_path = Path(args.answers_out or f"results/answers/{slug(args.model)}.jsonl")
+    cache: dict[str, str] = {}
+    if args.resume and answers_path.exists():
+        for line in answers_path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                d = json.loads(line)
+                cache[d["id"]] = d["answer"]
+    elif answers_path.exists():
+        answers_path.unlink()
+    answers_path.parent.mkdir(parents=True, exist_ok=True)
+
+    print(f"model={args.model} tasks={len(tasks)} cached={len(cache)} judge={args.judge_model or '-'}")
     records: list[dict] = []
-    with ThreadPoolExecutor(max_workers=args.workers) as ex:
-        futs = {ex.submit(eval_task, t, args): t for t in tasks}
+    with ThreadPoolExecutor(max_workers=args.workers) as ex, answers_path.open("a", encoding="utf-8") as af:
+        futs = {ex.submit(eval_task, t, args, cache.get(t["id"])): t for t in tasks}
         for i, fut in enumerate(as_completed(futs), 1):
             r = fut.result()
             records.append(r)
+            if r.get("answer") is not None and not r.get("cached"):
+                af.write(json.dumps({"id": r["id"], "answer": r["answer"]}, ensure_ascii=False) + "\n")
+                af.flush()
             mark = "·" if r.get("skipped") else ("✔" if r["passed"] else "✘")
             print(f"[{i:>3}/{len(tasks)}] {mark} {r['id']}" + (f"  ({r['error'][:60]})" if r.get("error") else ""))
 

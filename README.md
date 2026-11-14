@@ -14,6 +14,9 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure NLU and problem solving. Th
 | `realie` | Slovak facts without hallucination (institutions, law, geography) |
 | `format` | dates, numbers, currency, phone numbers, quotation marks, abbreviations per Slovak orthography |
 | `long_text` | 100–300-word outputs: consistent diacritics, no anglicisms, correct register held over a whole text, restoring stripped diacritics |
+| `preklad` | EN→SK translation: idioms, false friends (*actual*, *eventually*, *sympathetic*), gender and case agreement, no calques |
+
+207 tasks in total. Most checks are deterministic (regex, word counts, diacritics ratio); an LLM judge is used only where a regex cannot verify the answer.
 
 Zero dependencies (Python 3.10+ standard library only). Works with any OpenAI-compatible API: OpenAI, Anthropic (via proxy), Google, Mistral, OpenRouter, Ollama, vLLM, LM Studio…
 
@@ -37,11 +40,19 @@ python -m sk_llm_eval.run --base-url https://openrouter.ai/api/v1 \
 # local model via Ollama
 python -m sk_llm_eval.run --base-url http://localhost:11434/v1 --model qwen2.5:7b
 
+# reasoning models: give them room to think, or switch thinking off
+python -m sk_llm_eval.run --base-url http://localhost:11434/v1 --model my-reasoning-model \
+  --max-tokens 8192 --timeout 900
+python -m sk_llm_eval.run --base-url http://localhost:11434/v1 --model my-reasoning-model \
+  --max-tokens 1500 --extra-body '{"reasoning_effort": "none"}'
+
 # build the leaderboard from results/*.json
 python -m sk_llm_eval.leaderboard
 ```
 
 Without `--judge-model`, `judge` tasks are skipped and excluded from the score; deterministic tasks always run.
+
+Answers are appended to `results/answers/<model>.jsonl` as they arrive. A long run that dies can be continued with `--resume`: only tasks without an answer hit the API. `<think>…</think>` blocks are stripped from answers before checking.
 
 ### Offline scoring (chat-only models)
 
@@ -78,7 +89,7 @@ Every task has a list of `checks`. A task **passes only if all checks pass**. Ca
 | `diacritics_ratio` | share of words containing a Slovak diacritic ≥ value (catches stripped diacritics in long text) |
 | `judge` | LLM-as-judge against a `rubric`, score 0–10, pass at ≥ 7 |
 
-Answers are normalized (NFC, nbsp → space, collapsed whitespace) before checking.
+Answers are normalized (NFC, nbsp → space, collapsed whitespace, Markdown emphasis like `**…**` removed) before checking. A `not_regex` check fails even when the wrong form appears only in an explanation: when a task asks for one word or the corrected sentence, the answer should be just that.
 
 Prompts and rubrics are in Slovak on purpose: the benchmark tests how a model behaves for a Slovak user.
 
@@ -88,12 +99,15 @@ See [`results/LEADERBOARD.md`](results/LEADERBOARD.md). Each run writes `results
 
 How the current rows were produced (read before drawing conclusions):
 
+- **`(Ollama)` rows** — clean API runs of open-weight models on a local machine (NVIDIA DGX Spark) through Ollama's OpenAI-compatible endpoint, temperature 0, default system prompt. The run settings (thinking on/off, token cap) are in the label and in `results/<model>.json`.
 - **`(agent)` rows** — the model ran as a Claude Code subagent that read the prompts file and wrote answers; it was told not to read the task checks. Not a clean API run (the agent harness adds its own system prompt), but it is the real model.
-- **`(chat)` row** — answers typed by the model inside a chat session; same caveat.
+- **`(chat)` row** — the v0.1.0 tasks were answered by the model inside a chat session; tasks added in v0.2.0 were answered by the same model as a subagent. Same caveat.
 - **Judge** — `judge` tasks were graded by Claude Opus as a blind subagent: it saw four anonymous answer sets without model names. It is still a Claude model grading Claude models, so expect some family bias. Verdicts are in `results/judge/`.
+- **Reasoning models** — an empty answer counts as a failure. Laguna returned nothing on 5 tasks because its thinking used up the whole 8192-token budget. Qwen ran with thinking switched off because the dense 27B model generates ~5 tokens/s on this machine; with thinking on it would likely score higher.
+- **Top of the table** — Opus and Fable still pass all 207 tasks. v0.2.0 separates mid-size and open-weight models well, but the hardest tasks so far do not separate the strongest models. Tasks that trip up frontier models are the most wanted contribution.
 - The author of the tasks also wrote the Fable answers. Treat that row as a task sanity check, not a measurement.
 
-Independent API runs of other model families are the most useful thing to contribute right now.
+Independent API runs of other model families (GPT, Gemini, Mistral, Llama…) are the most useful thing to contribute right now. See [CHANGELOG.md](CHANGELOG.md) for what changed between task versions; scores are only comparable within one version.
 
 ## Contributing
 
@@ -105,7 +119,9 @@ New tasks are the most valuable contribution. Rules:
 4. For facts, add `"source"` (URL). For things that change (rates, office holders), add `"volatile": true`.
 5. Run `python -m sk_llm_eval.validate` — CI enforces it on every PR.
 
-Ideas for new categories: `preklad` (EN→SK without anglicisms), `agent` (tool calling in Slovak), `long_text` (diacritics consistency over 500+ words).
+Ideas for new categories: `agent` (tool calling in Slovak), `long_text` (diacritics consistency over 500+ words), `sumar` (summaries of Slovak source texts without hallucination).
+
+Every new deterministic task should be checked against a correct answer and a typical wrong one before it lands; a check that fails a correct answer is worse than no check.
 
 ## Citing
 

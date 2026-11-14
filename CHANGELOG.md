@@ -2,6 +2,19 @@
 
 Scores are comparable only within one task version. Every leaderboard row records the `eval_version` it was scored with.
 
+## 0.2.1 — 2026-11-14
+
+### Results
+
+- 11 more open-weight models run locally through Ollama: Gemma 3 (4B, 12B), Gemma 4 (E4B, 12B, 26B-A4B), Qwen 3.5 (4B, 9B), Llama 3.2 3B, Phi-4 mini, Granite 4.1 8B and Mistral Nemo 12B. The leaderboard now has 18 rows.
+- Judge tasks for the new rows were graded blind by Claude Opus, with answers shuffled and anonymised per task.
+- Each Ollama row records its quantisation and thinking settings in `run_settings`.
+
+### Fixes
+
+- Checks loosened where a correct answer failed: `register-011` (any polite question with *vykanie*, not only one starting with *Prepáčte*), `preklad-004` (*Držím palce!*), `realie-046` (*žiaden*).
+- All rows re-scored with these checks. No v0.2.0 score changed.
+
 ## 0.2.0 — 2026-11-14
 
 ### Tasks (138 → 207)

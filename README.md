@@ -17,7 +17,9 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 - **Zero dependencies.** Python 3.10+ standard library, any OpenAI-compatible API: OpenAI, OpenRouter, Ollama, vLLM, LM Studio…
 - **Reproducible.** Every answer and every judge verdict behind the leaderboard is committed.
 
-## Leaderboard (v0.2.0)
+## Leaderboard (v0.2.1)
+
+18 models: 4 Claude models and 14 open-weight models run locally.
 
 | # | Model | Overall | format | gramatika | long_text | preklad | realie | register |
 |---|---|---|---|---|---|---|---|---|
@@ -25,25 +27,39 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 | 2 | Claude Opus (agent) | **100.0** | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | 3 | Claude Sonnet (agent) | **94.4** | 100.0 | 98.6 | 76.9 | 92.9 | 97.9 | 100.0 |
 | 4 | Claude Haiku (agent) | **93.1** | 97.4 | 94.2 | 84.6 | 92.9 | 93.6 | 96.2 |
-| 5 | Qwen 3.8 27B Q8 (Ollama, no thinking) | **70.4** | 84.2 | 69.6 | 38.5 | 92.9 | 63.8 | 73.1 |
-| 6 | Ornith 1.5 35B (Ollama) | **58.5** | 73.7 | 56.5 | 23.1 | 71.4 | 72.3 | 53.8 |
-| 7 | Laguna XS 2.1 Q8 (Ollama) | **41.5** | 63.2 | 34.8 | 7.7 | 64.3 | 59.6 | 19.2 |
+| 5 | Gemma 4 26B-A4B (Ollama) | **75.9** | 86.8 | 75.4 | 30.8 | 92.9 | 85.1 | 84.6 |
+| 6 | Qwen 3.8 27B Q8 (Ollama, no thinking) | **70.4** | 84.2 | 69.6 | 38.5 | 92.9 | 63.8 | 73.1 |
+| 7 | Gemma 4 12B (Ollama) | **60.1** | 73.7 | 62.3 | 7.7 | 85.7 | 61.7 | 69.2 |
+| 8 | Gemma 3 12B (Ollama) | **58.9** | 63.2 | 63.8 | 30.8 | 78.6 | 59.6 | 57.7 |
+| 9 | Ornith 1.5 35B (Ollama) | **58.5** | 73.7 | 56.5 | 23.1 | 71.4 | 72.3 | 53.8 |
+| 10 | Qwen 3.5 9B (Ollama, no thinking) | **52.9** | 63.2 | 55.1 | 15.4 | 85.7 | 59.6 | 38.5 |
+| 11 | Gemma 4 E4B (Ollama) | **47.3** | 52.6 | 47.8 | 15.4 | 78.6 | 51.1 | 38.5 |
+| 12 | Laguna XS 2.1 Q8 (Ollama) | **41.5** | 63.2 | 34.8 | 7.7 | 64.3 | 59.6 | 19.2 |
+| 13 | Qwen 3.5 4B (Ollama, no thinking) | **39.9** | 63.2 | 49.3 | 7.7 | 57.1 | 42.6 | 19.2 |
+| 14 | Gemma 3 4B (Ollama) | **36.6** | 34.2 | 37.7 | 7.7 | 71.4 | 34.0 | 34.6 |
+| 15 | Granite 4.1 8B (Ollama) | **34.8** | 52.6 | 43.5 | 7.7 | 42.9 | 42.6 | 19.2 |
+| 16 | Mistral Nemo 12B (Ollama) | **21.3** | 39.5 | 31.9 | 0.0 | 0.0 | 44.7 | 11.5 |
+| 17 | Llama 3.2 3B (Ollama) | **14.5** | 18.4 | 24.6 | 7.7 | 7.1 | 21.3 | 7.7 |
+| 18 | Phi-4 mini 3.8B (Ollama) | **13.0** | 18.4 | 15.9 | 0.0 | 14.3 | 25.5 | 3.8 |
 
 Score = % of tasks that passed all their checks; Overall = mean of the category scores. The full table with judge and dates is in [`results/LEADERBOARD.md`](results/LEADERBOARD.md). Read [how the rows were produced](#how-the-rows-were-produced) before you compare them.
 
 ## What models get wrong
 
-Real answers from the runs above:
+Real answers from the 18 runs above:
 
 | Task | Expected | Wrong answers seen |
 |---|---|---|
-| *He is a very sympathetic person.* | *súcitný, empatický* | *sympatický* (5 of 7 models) |
-| *Bola si včera na porade?* → *vykanie* | *Boli ste…* | *Bola ste…* (a Czech pattern) |
-| *vtáči* or *vtáčí spev*? | *vtáčí* (exception to the rhythmic law) | *vtáči* |
-| *sestra*, genitive plural | *sestier* | *sester*, *sestr* |
-| Seat of the Constitutional Court | Košice | Bratislava |
-| Largest self-governing region | Banskobystrický | Košický, Prešovský |
-| Date 21 Sep 1990 in numbers | *21. 9. 1990* | *21.9.1990* |
+| Seat of the Constitutional Court | Košice | Bratislava (13 of 18 models) |
+| Largest self-governing region | Banskobystrický | Košický, Prešovský (13 of 18) |
+| *He is a very sympathetic person.* | *súcitný, empatický* | *sympatický* (11 of 18) |
+| VAT rate since 1 January 2025 | 23 % | 20 % (11 of 18) |
+| *sestra*, genitive plural | *sestier* | *sester*, *sestr* (10 of 18) |
+| Date 21 Sep 1990 in numbers | *21. 9. 1990* | *21.9.1990*, *21. septembra 1990* (8 of 18) |
+| *vtáči* or *vtáčí spev*? | *vtáčí* (exception to the rhythmic law) | *vtáči* (5 of 18) |
+| *Bola si včera na porade?* → *vykanie* | *Boli ste…* | *Bola ste…*, a Czech pattern (4 of 18) |
+
+Some small models drift into a neighbouring language: Mistral Nemo translated *Eventually, we found the problem* as *Končno smo našli problem*, which is Slovenian.
 
 ## Categories
 
@@ -136,11 +152,13 @@ Before checking, answers are normalised: NFC, non-breaking spaces become spaces,
 
 ## How the rows were produced
 
-- **`(Ollama)` rows** are clean API runs of open-weight models on an NVIDIA DGX Spark, at temperature 0 with the default system prompt. Run settings are in the label and in `results/<model>.json`. Qwen ran with thinking switched off, because the dense 27B model generates about 5 tokens/s on this machine. Laguna returned an empty answer on 5 tasks after its thinking used the whole 8192-token budget, and an empty answer counts as a failure.
+- **`(Ollama)` rows** are clean API runs of open-weight models on an NVIDIA DGX Spark through Ollama's OpenAI-compatible endpoint, at temperature 0 with the default system prompt. Models use Ollama's default quantisation (Q4_K_M; Mistral Nemo Q4_0) unless the label says Q8. Exact settings are in `run_settings` in `results/<model>.json`.
+- **Thinking.** Models that think by default kept it on, with an 8192-token budget. The Qwen models ran with thinking switched off (`reasoning_effort: none`), because with it on, Qwen 3.5 4B managed 7 tasks in 30 minutes and the dense Qwen 3.8 27B generates about 5 tokens/s on this machine. With thinking they would likely score higher.
+- **Empty answers count as failures.** Gemma 4 12B (11 tasks), Gemma 4 26B-A4B (9), Laguna (5) and Ornith (3) returned an empty answer on some tasks, most likely because their thinking used up the token budget.
 - **`(agent)` rows**: the Claude model ran as a Claude Code subagent that saw only the prompts, not the checks. This is not a clean API run, because the harness adds its own system prompt.
 - **`(chat)` row**: the author of the tasks answered the v0.1.0 tasks with this model in a chat session, and the same model answered the v0.2.0 tasks as a subagent. Treat it as a sanity check of the tasks.
 - **Judge**: Claude Opus graded the judge tasks blind. For each task, the answers were shuffled and labelled only A, B, C… It is still a Claude model grading Claude models, so expect some family bias. All verdicts are in `results/judge/`.
-- **Top of the table**: Opus and Fable pass all 207 tasks. v0.2.0 separates mid-size and open-weight models well, but it does not yet separate the strongest models.
+- **Top of the table**: Opus and Fable pass all 207 tasks. The benchmark separates mid-size and open-weight models well, from 13 % to 76 %, but it does not yet separate the strongest models.
 
 Scores are comparable only within one task version. See [CHANGELOG.md](CHANGELOG.md).
 

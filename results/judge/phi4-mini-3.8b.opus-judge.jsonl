@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 1, "reason": "Text je napísaný po česky."}
+{"id": "long_text-003", "score": 1, "reason": "Odpoveď je v češtine, nie v slovenčine."}
+{"id": "long_text-004", "score": 1, "reason": "Text je prevažne po česky."}
+{"id": "long_text-005", "score": 1, "reason": "Text je v češtine a obsahovo nezmyselný."}
+{"id": "long_text-006", "score": 1, "reason": "Text je prevažne česky s tykaním a chybami."}
+{"id": "long_text-007", "score": 1, "reason": "Nezmyselný text v češtine."}
+{"id": "long_text-008", "score": 1, "reason": "Text je prevažne česky s vymyslenými údajmi."}
+{"id": "long_text-011", "score": 0, "reason": "Zacyklený nezmyselný text s tykaním a češtinou."}
+{"id": "long_text-013", "score": 1, "reason": "Text je po česky a obsahovo zmätený."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno prezidenta."}
+{"id": "register-001", "score": 1, "reason": "Text je prevažne v češtine a obsahuje nezmysly."}
+{"id": "register-002", "score": 1, "reason": "Zmes češtiny a chybných tvarov („okrmy“, „mohlaš“)."}
+{"id": "register-003", "score": 0, "reason": "Nezmyselný text s češtinou."}
+{"id": "register-004", "score": 1, "reason": "Text je po česky."}
+{"id": "register-009", "score": 1, "reason": "Odpoveď je v češtine."}
+{"id": "register-010", "score": 2, "reason": "Česky („Velký“) a bez celej vety."}
+{"id": "register-011", "score": 0, "reason": "Nezmyselná veta, ktorá nie je otázkou na čas."}
+{"id": "register-012", "score": 0, "reason": "Nezmyselné a nespisovné („Dneska“, „hnědé“)."}
+{"id": "register-016", "score": 1, "reason": "Odpoveď je v češtine."}
+{"id": "register-018", "score": 0, "reason": "Česky a nezmyselný opakujúci sa text."}
+{"id": "register-020", "score": 0, "reason": "Na otázku neodpovedá."}
+{"id": "register-022", "score": 1, "reason": "Text je po česky."}

@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 4, "reason": "Viacero gramatických chýb: „malé firmy nemusí“, „dojde“, „vývojárom počítači“, „funkci“."}
+{"id": "long_text-003", "score": 0, "reason": "Prázdna odpoveď."}
+{"id": "long_text-004", "score": 5, "reason": "Štruktúra v poriadku, no bohemizmy „architekturou“, „ohrožovať“."}
+{"id": "long_text-005", "score": 2, "reason": "Veľa neexistujúcich slov a chýb („tremcovať“, „cienie“, „svoj zrkadlo“, „prekvapen“, „konecnosti“)."}
+{"id": "long_text-006", "score": 4, "reason": "Nezmyselné slovo „nezactívnšia“, chyba „prehližadník“ a úvodná veta navyše."}
+{"id": "long_text-007", "score": 4, "reason": "Chybné „prevoz“ a neexistujúce „zlyhuleho“, inak zachovaný obsah."}
+{"id": "long_text-008", "score": 0, "reason": "Prázdna odpoveď."}
+{"id": "long_text-011", "score": 3, "reason": "Vykanie zachované, ale množstvo chýb („kontákti“, „Vaši vnúčatá“, „vnúčatníka“, „v ruky“, „nepočúvajú“)."}
+{"id": "long_text-013", "score": 0, "reason": "Prázdna odpoveď."}
+{"id": "realie-015", "score": 10, "reason": "Správne a stručne priznáva, že román nepozná."}
+{"id": "realie-029", "score": 9, "reason": "Správne a jasne uvádza, že taký zákon nepozná."}
+{"id": "register-001", "score": 7, "reason": "Formálny a správny e-mail, no vykanie s malým v a neprirodzené „úlohy si vyrovnám“."}
+{"id": "register-002", "score": 6, "reason": "Prirodzený tón, ale chybný slovosled „dá sa kúpiť“ na začiatku vety."}
+{"id": "register-003", "score": 9, "reason": "Správna a prirodzená neformálna SMS."}
+{"id": "register-004", "score": 4, "reason": "Chýba sloveso („týmto žiadosť o dovolenku“), veta je negramatická."}
+{"id": "register-009", "score": 3, "reason": "Nezmyselné „ľutujeme za onespodok“ a vykanie s malým v."}
+{"id": "register-010", "score": 7, "reason": "Správna odpoveď, ale neobratný začiatok „V úctave“."}
+{"id": "register-011", "score": 10, "reason": "Prirodzená, zdvorilá a bezchybná otázka s vykaním."}
+{"id": "register-012", "score": 2, "reason": "Pridáva „Ahoj“ a chyba „vonka“."}
+{"id": "register-016", "score": 3, "reason": "Namiesto jedného e-mailu ponúka tri varianty, vykanie s malým v a chyby („Prajúc vám úspech“, „ste ma zaujalosť“)."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
+{"id": "register-020", "score": 10, "reason": "Správne a jednoznačne uvádza, že sa čiarka nepíše."}
+{"id": "register-022", "score": 2, "reason": "Nezmyselné slová „bochodila“ a „oprávdame“."}

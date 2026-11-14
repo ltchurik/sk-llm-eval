@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 5, "reason": "Téma zvládnutá, ale chyby ako „prenosilosť“, „náhla zvýšenú prevádzku“ a „kontajnerov môže obmedziť“."}
+{"id": "long_text-003", "score": 0, "reason": "Prázdna odpoveď."}
+{"id": "long_text-004", "score": 8, "reason": "Úradný štýl, správne vykanie a štruktúra, len drobné štylistické nedostatky."}
+{"id": "long_text-005", "score": 6, "reason": "Pekný príbeh so správnymi úvodzovkami, no s chybami („z pod listov“, „tŕňavým nosíkom v očiach“, „zasnil o“ bez „sa“)."}
+{"id": "long_text-006", "score": 9, "reason": "Presne 8 logických krokov v správnej a zrozumiteľnej slovenčine."}
+{"id": "long_text-007", "score": 5, "reason": "Ponecháva anglické slová ako „traffic“, „requests“ a „configuration drift“ nepreložené, inak správny preklad."}
+{"id": "long_text-008", "score": 8, "reason": "Prirodzený, fakticky správny text s názvom v troch pádoch, len drobná nezhoda „sú hlavnou atrakciou rozvinutá sieť“."}
+{"id": "long_text-011", "score": 6, "reason": "Zrozumiteľný postup s dôsledným vykaním, no s chybami („Nežiadajte ho pri uchu“, „vnúčatka alebo vnúčatká“)."}
+{"id": "long_text-013", "score": 5, "reason": "Vecný tón a vykanie, ale chyby „Žiadavam“, „úplný vrátenie“, „zaplacenej“ a čiarka za pozdravom."}
+{"id": "realie-015", "score": 10, "reason": "Správne a stručne priznáva, že román nepozná."}
+{"id": "realie-029", "score": 8, "reason": "Správne odmieta existenciu zákona v bezchybnej slovenčine."}
+{"id": "register-001", "score": 9, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V a takmer bez chýb."}
+{"id": "register-002", "score": 9, "reason": "Prirodzená, neformálna a správna odpoveď s tykaním."}
+{"id": "register-003", "score": 8, "reason": "Správna neformálna SMS, mierne formálne „ospravedlňujem sa“."}
+{"id": "register-004", "score": 9, "reason": "Správne oslovenie, vykanie s veľkým V, dátumy a záver."}
+{"id": "register-009", "score": 6, "reason": "Zdvorilé ospravedlnenie s konkrétnym krokom, ale vykanie s malým v."}
+{"id": "register-010", "score": 9, "reason": "Jednoznačne uvádza veľké písmeno."}
+{"id": "register-011", "score": 10, "reason": "Prirodzená, zdvorilá a bezchybná otázka s vykaním."}
+{"id": "register-012", "score": 9, "reason": "Spisovná a správna formulácia."}
+{"id": "register-016", "score": 8, "reason": "Zdvorilé a jasné odmietnutie s vykaním s veľkým V, iba drobná chyba „mojím“."}
+{"id": "register-018", "score": 5, "reason": "Ponúka dve možnosti namiesto jednej vety a chýba diakritika v „Standardná“."}
+{"id": "register-020", "score": 9, "reason": "Správna odpoveď, že sa čiarka nepoužíva."}
+{"id": "register-022", "score": 9, "reason": "Formálne, s vykaním veľkým V, ospravedlnením a informáciou o novej zásielke."}

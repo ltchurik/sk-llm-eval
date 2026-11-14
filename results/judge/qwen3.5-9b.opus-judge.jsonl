@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 6, "reason": "Prirodzený text, no chyba „kontajneri zdieľajú“, anglicizmus „benefitom“ a nejednotné úvodzovky."}
+{"id": "long_text-003", "score": 5, "reason": "Obsahovo úplné, no s gramatickými chybami („predstavujú … pomalú spätnú väzbu“, „k kódu“) a neprirodzeným „pracovanie z diaľky“."}
+{"id": "long_text-004", "score": 4, "reason": "Chýba riadne oslovenie a sú tam chyby „vizuálneho identitu“, „tabula“, „okamžitý demontáž“."}
+{"id": "long_text-005", "score": 3, "reason": "Zmiešané úvodzovky a viaceré chyby („Pipove nohy sa mu“, „vyhol z úkrytu“, „nasledujúce večer“, „červenú blesku“)."}
+{"id": "long_text-006", "score": 6, "reason": "Zrozumiteľné kroky, ale chyba „prihlasovacích poľ“ a chýba zmena hesla administrácie."}
+{"id": "long_text-007", "score": 5, "reason": "Úplný preklad, ale gramatické chyby („bežia rovnakú verziu“, „po opravu“, „zlyhávajúceho“)."}
+{"id": "long_text-008", "score": 3, "reason": "Faktické chyby (Chopok, lyžovanie v lete) a gramatické chyby („jedno z regiónov“, „Vysoké Tatranské národný park“)."}
+{"id": "long_text-011", "score": 4, "reason": "Vykanie zachované, ale je tu viacero chýb a nezmyslov („Ak vám to nespustí“, „zvukovú kartu (slúchadlá)“, „my sme tu, aby vám pomohli“)."}
+{"id": "long_text-013", "score": 2, "reason": "Nesprávne oslovenie „Vážení zákazníci“, malé „vás“, chyby a chýba záver s pozdravom."}
+{"id": "realie-015", "score": 8, "reason": "Autora nevymýšľa, hoci kategoricky tvrdí, že dielo neexistuje, namiesto toho, aby priznal neznalosť."}
+{"id": "realie-029", "score": 0, "reason": "Napriek úvodu uvádza ako podpisovateľku Zuzanu Čaputovú."}
+{"id": "register-001", "score": 4, "reason": "Bohemizmus „omluvujem“ a chyby („na voľnom dňu“, „odozvať“)."}
+{"id": "register-002", "score": 6, "reason": "Bohemizmus „Doporučím“ namiesto „Odporúčam“."}
+{"id": "register-003", "score": 2, "reason": "Príliš formálny tón a gramatická chyba „Čakaj mi“."}
+{"id": "register-004", "score": 3, "reason": "Nesprávne oslovenie „Pán/paní“ a nezmyselné „Súhlasím s tým“."}
+{"id": "register-009", "score": 4, "reason": "Vykanie s malým v, chýbajúca diakritika („termine“) a nesprávny čas „momentálne skontrolujeme“."}
+{"id": "register-010", "score": 0, "reason": "Nesprávne uvádza malé písmeno."}
+{"id": "register-011", "score": 4, "reason": "Oslovenie „panička“ je nevhodné a formulácia neprirodzená."}
+{"id": "register-012", "score": 6, "reason": "Spisovné, ale ponecháva hovorové „Hej“."}
+{"id": "register-016", "score": 3, "reason": "Vykanie s veľkým V, ale gramatické chyby („iné pracovné ponuku“, „sa nám podaríme“, „želim“)."}
+{"id": "register-018", "score": 8, "reason": "Správna veta, oslovenie „Kolega“ trochu strohé."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše, a uvádza vymyslené zdôvodnenie."}
+{"id": "register-022", "score": 3, "reason": "Bohemizmy „zásilky“ a „Omlouváme“."}

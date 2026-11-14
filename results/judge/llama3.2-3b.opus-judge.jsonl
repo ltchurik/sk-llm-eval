@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 0, "reason": "Nezmyselný, repetitívny text bez obsahu."}
+{"id": "long_text-003", "score": 0, "reason": "Nezmyselný text so zacyklením a miešaním jazykov."}
+{"id": "long_text-004", "score": 1, "reason": "Text je plný gramatických chýb a nezmyslov („Prezývame“, „Zaprasovám Vás k kontaktu“)."}
+{"id": "long_text-005", "score": 0, "reason": "Zacyklený nezmyselný text bez dialógu a so zlou slovenčinou."}
+{"id": "long_text-006", "score": 1, "reason": "Zmes češtiny a slovenčiny s množstvom chýb a nezmyselnými krokmi."}
+{"id": "long_text-007", "score": 1, "reason": "Nezmyselný preklad s miešaním jazykov a nesprávnym významom."}
+{"id": "long_text-008", "score": 1, "reason": "Nezmyselný, opakujúci sa text s chybami a anglicizmami („High Tatras“, „surroundingskej“)."}
+{"id": "long_text-011", "score": 2, "reason": "Mechanický a nepoužiteľný postup s gramatickými chybami („vašho“, „Nastavte kamera“, „mikrofon“)."}
+{"id": "long_text-013", "score": 0, "reason": "Nezmyselný, nekonečne sa opakujúci text."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno prezidenta."}
+{"id": "register-001", "score": 1, "reason": "Nezmyselný obsah, oslovenie „Prezidentu“ a bohemizmy."}
+{"id": "register-002", "score": 1, "reason": "Chyby „Prečítaj sa“, „najpopulárnych“, „optionál“."}
+{"id": "register-003", "score": 1, "reason": "Nezrozumiteľný text plný chýb."}
+{"id": "register-004", "score": 0, "reason": "Nezmyselný text plný chýb."}
+{"id": "register-009", "score": 1, "reason": "Chýbajúca diakritika, české tvary a nezmyselný obsah bez ospravedlnenia."}
+{"id": "register-010", "score": 1, "reason": "Nesprávna a jazykovo pomiešaná odpoveď."}
+{"id": "register-011", "score": 0, "reason": "Nezmyselné odmietnutie s chybami namiesto požadovanej vety."}
+{"id": "register-012", "score": 1, "reason": "Ponecháva hovorové „Hej“ a „hnusný“, gramaticky chybné."}
+{"id": "register-016", "score": 0, "reason": "Zacyklený nezmyselný text s češtinou a azbukou."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
+{"id": "register-020", "score": 2, "reason": "Iba české „Ne“ bez slovenskej vety."}
+{"id": "register-022", "score": 0, "reason": "Nezmyselný text."}

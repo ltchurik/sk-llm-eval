@@ -4,7 +4,7 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T14:54:12+00:00",
-  "eval_version": "0.2.0",
+  "eval_version": "0.2.1",
   "mode": "api+offline-judge",
   "summary": {
     "overall": 70.4,
@@ -2695,7 +2695,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /zlom(te)? väz|veľa šťastia|držím (ti|Vám|vám) palce/"
+          "detail": "regex /zlom(te)? väz|veľa šťastia|držím( ti| vám)? palce/"
         },
         {
           "type": "not_regex",
@@ -3688,7 +3688,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /\\b(nikto|neexist|žiadn|nebol|nepristál|nikdy)/"
+          "detail": "regex /\\b(nikto|neexist|žiadn|žiaden|nebol|nepristál|nikdy)/"
         }
       ],
       "latency": 9.69
@@ -3935,13 +3935,13 @@
       "checks": [
         {
           "type": "regex",
-          "ok": false,
-          "detail": "regex /\\b(Prepáčte|Dovoľte|Nehnevajte sa)\\b/"
+          "ok": true,
+          "detail": "regex /\\b(ste|Vás|vás|Vám|vám|Prepáčte|Dovoľte|Nehnevajte)\\b/"
         },
         {
           "type": "not_regex",
           "ok": true,
-          "detail": "not_regex /\\b(vieš|máš|nevieš)\\b/"
+          "detail": "not_regex /\\b(vieš|máš|nevieš|môžeš|povedz)\\b/"
         },
         {
           "type": "judge",
@@ -4269,6 +4269,7 @@
     "extra_body": {
       "reasoning_effort": "none"
     },
-    "hardware": "NVIDIA DGX Spark (GB10, 128 GB)"
+    "hardware": "NVIDIA DGX Spark (GB10, 128 GB)",
+    "quantization": "Q8_0"
   }
 }

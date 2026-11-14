@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 4, "reason": "Zbytočné anglicizmy (SMBs, core businessu) a gramatické chyby („aktuálnej dopytu“, rozbitá veta)."}
+{"id": "long_text-003", "score": 2, "reason": "Obsahuje kórejské slovo a hrubé chyby („priorítu“, „stretnaní“, „manažeri sa bojuje“)."}
+{"id": "long_text-004", "score": 3, "reason": "Veľa chýb („reklámna“, „v zóny“, „v verejnom“, „narúšovať“, „Prosím o úvaha“)."}
+{"id": "long_text-005", "score": 3, "reason": "Bohemizmy („ježek“, „jmenoval“) a viaceré gramatické chyby („strašné hmyz“, „na čiernom oblohe“, „najtmavej“)."}
+{"id": "long_text-006", "score": 5, "reason": "Chýbajúca diakritika („bezpečnost“, „Potvrdte“) a chyba „k novej siete“."}
+{"id": "long_text-007", "score": 3, "reason": "Rušivé zátvorky a tučné písmo, poľské „przestane“, chybné „do desať sekúnd“ a vymyslený „balíktor“."}
+{"id": "long_text-008", "score": 2, "reason": "Veľa nezmyselných slov („plášťov“, „tatrske plasy“, „gólske“) a názov pohoria iba v dvoch pádoch."}
+{"id": "long_text-011", "score": 3, "reason": "Vykanie nie je dôsledné („skús tepuť“, „skús zmeniť“) a sú tu ďalšie chyby („zrnity“, „by sa teraz pokúsiť“)."}
+{"id": "long_text-013", "score": 3, "reason": "Veľa chýb („najhlavšiu“, „v výrazne“, „voprívore“, „Žiadám“, „konstruktívnu“)."}
+{"id": "realie-015", "score": 6, "reason": "Autora si nevymýšľa, ale obsahuje gramatickú chybu „Nie môžem“."}
+{"id": "realie-029", "score": 6, "reason": "Správne neuvádza meno, ale tvar „Nepoznávam“ je neštandardný."}
+{"id": "register-001", "score": 6, "reason": "Vykanie s veľkým V, ale neprirodzené formulácie („urgentný zámer“, „Absencie zajtra“) a čiarka za „S pozdravom“."}
+{"id": "register-002", "score": 6, "reason": "Neformálny tón, no chyba „Predtým, čo“ namiesto „Skôr než“."}
+{"id": "register-003", "score": 2, "reason": "Nezrozumiteľná a nesprávna formulácia „už chýbam“, nevyjadruje meškanie."}
+{"id": "register-004", "score": 7, "reason": "Správne oslovenie a obsah, no veľké „Týmto“ po čiarke a neobratné „predčasne zabezpečím“."}
+{"id": "register-009", "score": 6, "reason": "Ospravedlnenie a konkrétny krok (číslo objednávky), ale vykanie s malým v a chýba pozdrav."}
+{"id": "register-010", "score": 0, "reason": "Nesprávne uvádza malé V."}
+{"id": "register-011", "score": 4, "reason": "Chybná konštrukcia „môžem vás požiadať, koľko je hodín“."}
+{"id": "register-012", "score": 9, "reason": "Spisovná a správna formulácia so zachovaným významom."}
+{"id": "register-016", "score": 3, "reason": "Dva varianty, vykanie s malým v a nezmyselný kalk („urobiť čas, aby som sa uverejnil“)."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
+{"id": "register-022", "score": 5, "reason": "Vykanie a štruktúra v poriadku, ale bohemizmus „ztratil“."}

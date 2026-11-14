@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 8, "reason": "Správna, prirodzená slovenčina bez chýb, hoci text je skôr kratší."}
+{"id": "long_text-003", "score": 5, "reason": "Pokrýva hlavné body, ale obsahuje chyby („z diaľky“, „pomalé spätne väzby“, „na ústne komunikáciu“)."}
+{"id": "long_text-004", "score": 6, "reason": "Celkovo úradný a správny text, no chyba „Veca“ namiesto „Vec“ a oslovenie úradu je neobratné."}
+{"id": "long_text-005", "score": 5, "reason": "Zrozumiteľný príbeh, ale rovné úvodzovky, chyby („vyzeril“, „nová dobrodružstvo“) a pravdepodobne pod 150 slov."}
+{"id": "long_text-006", "score": 8, "reason": "Logický a zrozumiteľný návod v správnej slovenčine, len drobný anglicizmus „providera“."}
+{"id": "long_text-007", "score": 5, "reason": "Úplný preklad, ale s chybami („sprevádzkujú“, „konfigurácia drift“) a horším slovosledom."}
+{"id": "long_text-008", "score": 4, "reason": "Vymyslený štít „Števio“, chyba „úžžiny“ a názov pohoria len v dvoch pádoch."}
+{"id": "long_text-011", "score": 1, "reason": "Celý text tyká napriek požiadavke na vykanie."}
+{"id": "long_text-013", "score": 5, "reason": "Obsah v poriadku, ale veľké písmeno po oslovení, chyba „zaoberáte a navrhnite“ a čiarka za „S pozdravom“."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno prezidentky."}
+{"id": "register-001", "score": 6, "reason": "Vykanie s veľkým V, ale čiarka za „S pozdravom“, zástupný text „[Tvoje meno]“ a nelogická veta o návrate."}
+{"id": "register-002", "score": 7, "reason": "Prirodzený tón, chýba čiarka v „aj aby“."}
+{"id": "register-003", "score": 10, "reason": "Prirodzená, neformálna a bezchybná SMS s tykaním."}
+{"id": "register-004", "score": 8, "reason": "Správne oslovenie a forma, hoci veľmi stručné."}
+{"id": "register-009", "score": 6, "reason": "Správna a zdvorilá odpoveď s ospravedlnením, ale vykanie s malým v a menej konkrétny ďalší krok."}
+{"id": "register-010", "score": 6, "reason": "Správna odpoveď, no bohemizmus „vykání“ a nekonzistentný príklad „vy“."}
+{"id": "register-011", "score": 10, "reason": "Prirodzená, zdvorilá a bezchybná otázka s vykaním."}
+{"id": "register-012", "score": 9, "reason": "Spisovná a správna formulácia."}
+{"id": "register-016", "score": 6, "reason": "Správne a zdvorilé odmietnutie, ale vykanie s malým v."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
+{"id": "register-022", "score": 3, "reason": "Malé „váš/vám“ a rozbitá veta „dovoľujeme si sa poďakovať“."}

@@ -1,5 +1,7 @@
 # sk-llm-eval
 
+**English** · [Slovensky](README.sk.md)
+
 ![sk-llm-eval: Does your LLM write correct Slovak?](assets/social-preview.png)
 
 **Does the model write correct Slovak?** A practical benchmark for Slovak language quality in LLM answers.
@@ -180,10 +182,6 @@ Rules for tasks:
 - Run `python -m sk_llm_eval.validate` and `python -m unittest discover -s tests`. CI runs both on every PR.
 
 Ideas for new categories: `agent` (tool calling in Slovak), `sumar` (summaries of Slovak texts without hallucination), and long texts of 500+ words.
-
-## Po slovensky
-
-sk-llm-eval je benchmark, ktorý meria, či jazykový model píše správnou slovenčinou: skloňovanie, vykanie, diakritiku, zápis dátumov a súm, slovenské reálie bez halucinácií a preklady bez anglicizmov a bohemizmov. Má 207 vlastných úloh, väčšinou s deterministickými kontrolami, a funguje s ľubovoľným OpenAI-kompatibilným API vrátane lokálnej Ollamy. Nové úlohy a behy ďalších modelov sú vítané.
 
 ## Citing
 

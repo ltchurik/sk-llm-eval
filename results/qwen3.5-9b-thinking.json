@@ -4,21 +4,8 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-15T08:30:12+00:00",
-  "eval_version": "0.2.1",
+  "eval_version": "0.2.2",
   "mode": "api+offline-judge",
-  "run_settings": {
-    "temperature": 0.6,
-    "top_p": 0.95,
-    "top_k": 20,
-    "presence_penalty": 1.5,
-    "max_tokens": 16384,
-    "num_ctx": 32768,
-    "thinking": true,
-    "base_model": "qwen3.5:9b",
-    "hardware": "NVIDIA DGX Spark (GB10, 128 GB)",
-    "quantization": "Q4_K_M",
-    "note": "Qwen-recommended thinking sampling; greedy decoding loops in thinking mode. Empty answers = thinking hit max_tokens."
-  },
   "summary": {
     "overall": 63.0,
     "categories": {
@@ -4275,5 +4262,18 @@
       ],
       "latency": 335.1
     }
-  ]
+  ],
+  "run_settings": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "presence_penalty": 1.5,
+    "max_tokens": 16384,
+    "num_ctx": 32768,
+    "thinking": true,
+    "base_model": "qwen3.5:9b",
+    "hardware": "NVIDIA DGX Spark (GB10, 128 GB)",
+    "quantization": "Q4_K_M",
+    "note": "Qwen-recommended thinking sampling; greedy decoding loops in thinking mode. Empty answers = thinking hit max_tokens."
+  }
 }

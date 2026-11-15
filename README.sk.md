@@ -19,7 +19,7 @@ Akademické slovenské benchmarky (skLEP, Trojsten) merajú porozumenie textu a 
 - **Žiadne závislosti.** Štandardná knižnica Pythonu 3.10+ a ľubovoľné OpenAI-kompatibilné API: OpenAI, OpenRouter, Ollama, vLLM, LM Studio…
 - **Reprodukovateľné.** Všetky odpovede a všetky verdikty hodnotiteľa, z ktorých rebríček vychádza, sú v repozitári.
 
-## Rebríček (v0.2.1)
+## Rebríček (v0.2.2)
 
 20 riadkov: 4 modely Claude a 14 modelov s otvorenými váhami spustených lokálne; Qwen 3.5 4B a 9B sú v tabuľke dvakrát, s vypnutým aj zapnutým premýšľaním.
 

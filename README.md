@@ -19,7 +19,7 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 - **Zero dependencies.** Python 3.10+ standard library, any OpenAI-compatible API: OpenAI, OpenRouter, Ollama, vLLM, LM Studio…
 - **Reproducible.** Every answer and every judge verdict behind the leaderboard is committed.
 
-## Leaderboard (v0.2.1)
+## Leaderboard (v0.2.2)
 
 20 rows: 4 Claude models and 14 open-weight models run locally; Qwen 3.5 4B and 9B appear twice, with thinking off and on.
 

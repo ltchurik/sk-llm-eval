@@ -2,6 +2,15 @@
 
 Scores are comparable only within one task version. Every leaderboard row records the `eval_version` it was scored with.
 
+## 0.2.4 — 2026-11-15
+
+### Judge cross-check
+
+- All 598 judge answers were graded again by GPT-6.1 Sol and Gemini 4 Argon through OpenRouter, as a check on Claude Opus as the judge. The order hardly changes (no row moves more than 3 places, only among neighbours with similar scores), pass/fail agreement between any two judges is 93–94 %, Opus is the strictest judge, and there is no sign that it favours the Claude rows. The leaderboard still uses Opus. Details and the per-judge table are in docs/METHODOLOGY.md. The verdicts are in `results/judge/<model>.{gpt-6.1-sol,gemini-4-argon}-judge.jsonl`.
+- `python -m sk_llm_eval.blind_judge api` grades a prepared batch with any model behind an OpenAI-compatible API, one answer per request, resumable.
+
+Tasks, checks and leaderboard scores are unchanged from 0.2.3, so 0.2.3 and 0.2.4 scores are directly comparable. All rows were re-scored with 0.2.4; no score changed.
+
 ## 0.2.3 — 2026-11-15
 
 ### Results

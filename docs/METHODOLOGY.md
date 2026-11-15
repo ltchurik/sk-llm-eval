@@ -9,7 +9,8 @@ This document records how every leaderboard row of v0.2.1 was produced, so that 
 | `tasks/*.jsonl` | the 207 tasks with their checks (v0.2.1) |
 | `results/<model>.json` | per-task results: answer, every check and its outcome, latency, and `run_settings` (sampling, token budget, quantisation, hardware) |
 | `results/answers/<model>.jsonl` | raw answers, one `{id, answer}` per line, exactly as the model returned them (reasoning blocks stripped) |
-| `results/judge/<model>.opus-judge.jsonl` | the judge's verdict on each judge task: `{id, score, reason}` |
+| `results/judge/<model>.opus-judge.jsonl` | the judge's verdict on each judge task: `{id, score, reason}` (used by the leaderboard) |
+| `results/judge/<model>.{gpt-6.1-sol,gemini-4-argon}-judge.jsonl` | verdicts of the two cross-check judges |
 | `docs/modelfiles/` | Ollama Modelfiles for the thinking Qwen rows |
 | `sk_llm_eval/blind_judge.py` | the anonymise → judge → de-anonymise procedure used for all verdicts |
 
@@ -144,9 +145,64 @@ python -m sk_llm_eval.blind_judge prepare results/answers/*.jsonl --out-dir judg
 
 **Known limits of the judge**
 
-- A Claude model grades Claude models, so expect some family bias in the Claude rows. Claude Opus is both a graded row and the judge.
+- A Claude model grades Claude models, and Claude Opus is both a graded row and the judge. The [cross-check](#judge-cross-check) with GPT-6.1 Sol and Gemini 4 Argon as judges found no sign that this favours the Claude rows.
 - The judge is an agent session, not a fixed API call at temperature 0. Repeating it will not give identical scores. Agreement between two rounds was 94 % on pass/fail.
 - Give each judge its own output path and keep helper scripts out of shared folders: in the v0.2.3 round, two parallel judge sessions shared a helper script, and one batch's verdicts were written to the wrong file. It was caught because the keys of each output must match its own input (`merge` checks this), and the batch was written again.
+
+## Judge cross-check
+
+To test whether the leaderboard depends on Claude Opus as the judge, all 598 judge answers were graded again by two judges from other families, **GPT-6.1 Sol** and **Gemini 4 Argon**, through OpenRouter. Both are also graded rows. The answers were the same shuffled, anonymised set (`blind_judge prepare … --seed 201`), but each answer was graded alone in a fresh API request, so these judges never saw other answers to the same task:
+
+```bash
+python -m sk_llm_eval.blind_judge prepare results/answers/*.jsonl --out-dir judging/ind-gpt --seed 201
+python -m sk_llm_eval.blind_judge api judging/ind-gpt --model openai/gpt-6.1-sol \
+  --base-url https://openrouter.ai/api/v1 --workers 3
+python -m sk_llm_eval.blind_judge merge judging/ind-gpt --suffix gpt-6.1-sol-judge
+```
+
+The API judge prompt is in `blind_judge.py` (`API_JUDGE_SYSTEM`). It has the same rules as the Opus prompt, at temperature 0 and with a 4096-token budget. The verdicts are in `results/judge/<model>.gpt-6.1-sol-judge.jsonl` and `….gemini-4-argon-judge.jsonl`. The two runs cost about $2.80 together.
+
+**Findings**
+
+- **The order hardly depends on the judge.** No row moves more than 3 places, and rows swap places only with neighbours within about two points of them (ranks 1–3, 4–6, 10–11 and 14–16). No overall score moves more than 3.8 points.
+- **Pass/fail agreement between any two judges is 93–94 %** (Opus–GPT 554/598, Opus–Gemini 562/598, GPT–Gemini 558/598). That is about the same as between two Opus rounds (94 %), so the choice of judge matters about as much as re-running the same judge.
+- **Opus is the strictest judge**: it passes 272 of 598 answers, against 292 for GPT and 298 for Gemini.
+- **No sign that Opus favours Claude.** On the judge tasks of the four Claude rows, Opus passes 95 %, GPT 96 % and Gemini 98 %. Opus ranks itself first only because the top three rows are within one task of each other. Both other judges give Opus 99.4.
+- **Self-preference is small and within noise.** Gemini passes all 23 of its own judge answers, while Opus passes 22 and GPT 21. GPT passes all of its own, and so does Gemini, so that is not self-preference.
+- **The top three (Opus, Fable, GPT-6.1 Sol) cannot be separated**, whichever judge is used.
+
+Overall score per row with each judge (the leaderboard uses Opus):
+
+| Model | Opus | GPT-6.1 Sol | Gemini 4 Argon |
+|---|---|---|---|
+| Claude Opus (agent) | 100.0 | 99.4 | 99.4 |
+| Claude Fable 5.1 (chat) | 99.4 | 100.0 | 100.0 |
+| GPT-6.1 Sol (OpenRouter) | 98.7 | 100.0 | 100.0 |
+| Gemini 4 Argon (OpenRouter) | 97.0 | 96.6 | 97.0 |
+| DeepSeek V4 Pro (OpenRouter) | 96.9 | 96.9 | 96.9 |
+| Claude Sonnet (agent) | 95.7 | 95.7 | 97.0 |
+| Grok 4.7 (OpenRouter) | 94.5 | 95.2 | 95.2 |
+| Claude Haiku (agent) | 93.1 | 93.8 | 94.4 |
+| Mistral Large 4 (OpenRouter) | 88.5 | 88.5 | 89.8 |
+| Gemma 4 26B-A4B (Ollama) | 76.6 | 75.3 | 78.5 |
+| Llama 4 Maverick (OpenRouter) | 76.0 | 76.6 | 77.3 |
+| Qwen 3.8 27B Q8 (Ollama, no thinking) | 69.4 | 70.0 | 69.7 |
+| Qwen 3.5 9B (Ollama, thinking) | 63.6 | 64.6 | 64.9 |
+| Gemma 4 12B (Ollama) | 58.8 | 60.7 | 59.4 |
+| Gemma 3 12B (Ollama) | 58.3 | 58.9 | 62.1 |
+| Ornith 1.5 35B (Ollama) | 57.8 | 59.1 | 60.4 |
+| Qwen 3.5 9B (Ollama, no thinking) | 52.9 | 53.8 | 54.2 |
+| Gemma 4 E4B (Ollama) | 47.3 | 48.7 | 47.7 |
+| Qwen 3.5 4B (Ollama, thinking) | 44.2 | 45.5 | 44.2 |
+| Laguna XS 2.1 Q8 (Ollama) | 41.1 | 41.1 | 40.5 |
+| Qwen 3.5 4B (Ollama, no thinking) | 39.9 | 40.5 | 39.9 |
+| Gemma 3 4B (Ollama) | 36.0 | 36.6 | 36.0 |
+| Granite 4.1 8B (Ollama) | 34.1 | 35.4 | 34.8 |
+| Mistral Nemo 12B (Ollama) | 21.6 | 22.3 | 21.6 |
+| Llama 3.2 3B (Ollama) | 14.5 | 14.5 | 14.5 |
+| Phi-4 mini 3.8B (Ollama) | 13.0 | 13.0 | 13.0 |
+
+To recompute one cell, re-score with that judge's file: `python -m sk_llm_eval.score --answers results/answers/<model>.jsonl --label "<label>" --judge-file results/judge/<model>.gpt-6.1-sol-judge.jsonl --out /tmp/<model>.json`.
 
 ## Checking the deterministic checks
 

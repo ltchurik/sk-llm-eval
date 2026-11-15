@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 10, "reason": "Text spĺňa požadovaný rozsah aj formu bez nadpisov, je súvislý, prirodzený, gramaticky správny a má dôslednú diakritiku aj primeranú odbornú terminológiu."}
+{"id": "long_text-003", "score": 10, "reason": "Zhrnutie spĺňa rozsah 80–150 slov, presne zachytáva všetky hlavné body a používa prirodzenú, gramaticky správnu slovenčinu bez zbytočných anglicizmov."}
+{"id": "long_text-004", "score": 10, "reason": "Žiadosť spĺňa rozsah 120–200 slov, má formálny štýl, správne oslovenie, jasný predmet, odôvodnenie, pozdrav aj podpis a dôsledne používa tvary „Vás“ a „Vám“ bez gramatických či pravopisných chýb."}
+{"id": "long_text-005", "score": 10, "reason": "Príbeh spĺňa rozsah 150–250 slov, má jasný začiatok, zápletku aj koniec, prirodzený detský jazyk, správne úvodzovky, skloňovanie aj diakritiku a neobsahuje bohemizmy."}
+{"id": "long_text-006", "score": 10, "reason": "Odpoveď obsahuje presne osem logicky usporiadaných krokov s jednou až dvoma vetami, používa správnu slovenskú terminológiu aj diakritiku a zrozumiteľne pokrýva všetky požadované úkony."}
+{"id": "long_text-007", "score": 8, "reason": "Preklad je významovo úplný a technické termíny skloňuje správne, no namiesto požadovaného „testovacích serveroch“ používa „stagingových serveroch“ a spojenie „mu posielať prevádzku“ je menej prirodzené než „naň smerovať prevádzku“."}
+{"id": "long_text-008", "score": 7, "reason": "Text spĺňa rozsah aj požiadavku na správne skloňovanie názvu pohoria, ale uvádza neaktuálny koniec sezónnej uzávery chodníkov (15. júna namiesto 31. mája) a neprirodzené spojenie „Za Vysokými Tatrami sa oplatí vracať“ namiesto „Do Vysokých Tatier sa oplatí vracať“."}
+{"id": "long_text-011", "score": 10, "reason": "Návod má požadovaný rozsah, logický a zrozumiteľný postup, dôsledne vyká a neobsahuje gramatické chyby, nedostatky v diakritike ani zbytočné anglicizmy."}
+{"id": "long_text-013", "score": 10, "reason": "Sťažnosť spĺňa rozsah 120–180 slov, má formálny a zdvorilý tón, jasne opisuje oba problémy, obsahuje konkrétne požiadavky a dôsledné vykanie s veľkým V aj správny záver bez čiarky."}
+{"id": "realie-015", "score": 10, "reason": "Odpoveď je gramaticky správna, prirodzená a v súlade so zadaním priznáva neznalosť románu bez vymýšľania autora."}
+{"id": "realie-029", "score": 10, "reason": "Odpoveď je prirodzená a gramaticky správna, jasne uvádza, že taký zákon nepozná, a neuvádza meno prezidenta."}
+{"id": "register-001", "score": 10, "reason": "E-mail má požadované tri vety, zdvorilé oslovenie, dôsledné vykanie s veľkým V a je bez gramatických či diakritických chýb."}
+{"id": "register-002", "score": 10, "reason": "Odpoveď má požadované tri vety, dôsledne tyká, zachováva neformálny tón a je napísaná prirodzenou slovenčinou bez chýb."}
+{"id": "register-003", "score": 10, "reason": "Odpoveď má dve krátke vety, prirodzený neformálny tón a bez jazykových chýb oznamuje kamarátke desaťminútové meškanie."}
+{"id": "register-004", "score": 9, "reason": "Žiadosť je formálna, jazykovo správna a spĺňa požadované náležitosti, no údaj „5 pracovných dní“ nemožno bez uvedenia roka overiť, pretože časť termínu môže pripadnúť na víkend."}
+{"id": "register-009", "score": 10, "reason": "Odpoveď má štyri vety, správne vyká, obsahuje ospravedlnenie, žiadosť o číslo objednávky aj konkrétnu lehotu na informovanie a je zdvorilá, profesionálna a jazykovo bezchybná."}
+{"id": "register-010", "score": 6, "reason": "Odpoveď je gramaticky správna, jednovetová a uvádza veľké V, ale dodatok „hoci pravidlá pripúšťajú aj malé písmeno“ je v danom kontexte vecne nesprávny a zavádzajúci."}
+{"id": "register-011", "score": 10, "reason": "Veta je prirodzená, gramaticky správna a používa zdvorilé vykanie aj vhodné oslovenie neznámej ženy."}
+{"id": "register-012", "score": 10, "reason": "Veta je v spisovnej slovenčine, zachováva pôvodný význam a neobsahuje hovorové výrazy."}
+{"id": "register-016", "score": 10, "reason": "Odpoveď má tri vety, obsahuje poďakovanie, jasné a zdvorilé odmietnutie prijatím inej ponuky a správne vykanie s veľkým V, pričom je gramaticky aj pravopisne bezchybná."}
+{"id": "register-018", "score": 10, "reason": "Odpoveď je jedna prirodzená slovenská veta s diakritikou, neutrálnym kolegiálnym tónom a všetkými požadovanými informáciami."}
+{"id": "register-020", "score": 10, "reason": "Odpoveď je spisovná, tvorí ju jedna veta a jednoznačne správne uvádza, že za pozdravom „S pozdravom“ sa čiarka nepíše."}
+{"id": "register-022", "score": 10, "reason": "Odpoveď obsahuje formálne oslovenie, tri prirodzené a gramaticky správne vety, vykanie s veľkým V, ospravedlnenie aj informáciu o novej zásielke a neobsahuje hovorové výrazy ani anglicizmy."}

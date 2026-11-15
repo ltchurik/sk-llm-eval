@@ -4,7 +4,7 @@
   "base_url": null,
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T18:19:09+00:00",
-  "eval_version": "0.2.3",
+  "eval_version": "0.2.4",
   "mode": "offline",
   "summary": {
     "overall": 93.1,

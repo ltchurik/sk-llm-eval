@@ -33,11 +33,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import string
 import sys
 from pathlib import Path
 
+from .api import ApiError, chat
 from .judge import PASS_THRESHOLD
 from .tasks import load_tasks
 
@@ -66,6 +68,31 @@ it a unique name and do not reuse an existing one. Write the results to {output}
 errors, quoting them where useful>"}}. All {n} keys must be present. Write valid UTF-8 JSON \
 (ensure_ascii off). Reply only with "done N" where N is the number of lines written.
 """
+
+
+API_JUDGE_SYSTEM = """\
+You are a strict evaluator of Slovak language quality. You get a task that was given to an \
+anonymous language model, a rubric in Slovak saying what the answer must satisfy, and the \
+model's answer. Score the answer 0–10 ({threshold} = pass threshold: acceptable, natural \
+Slovak meeting the rubric with at most minor slips). Be strict about grammar errors, missing \
+diacritics, bohemisms, unnecessary anglicisms, wrong formal/informal address \
+(vykanie/tykanie), factual errors, made-up facts, and ignoring instructions (length, form, \
+language). An empty answer scores 0. An answer not in Slovak (e.g. Czech or Slovenian) \
+scores at most 2. An answer that contains visible reasoning/thinking text or \
+meta-commentary instead of just the requested output should be penalised accordingly.
+
+Reply with exactly two lines:
+SCORE: <integer 0-10>
+REASON: <one sentence in Slovak naming the concrete errors, quoting them where useful>"""
+
+API_JUDGE_TEMPLATE = """TASK GIVEN TO THE MODEL:
+{prompt}
+
+RUBRIC:
+{rubric}
+
+MODEL ANSWER:
+{answer}"""
 
 
 def _read_jsonl(path: Path) -> list[dict]:
@@ -120,6 +147,62 @@ def prepare(args: argparse.Namespace) -> int:
     return 0
 
 
+def api_judge(args: argparse.Namespace) -> int:
+    """Grade every line of judge_in.jsonl with a model behind an OpenAI-compatible API.
+
+    Each answer is graded on its own, in a fresh request, so the judge never sees other
+    answers or model names. Already graded keys are skipped, so an interrupted run resumes.
+    """
+    import re
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    d = Path(args.dir)
+    lines = _read_jsonl(d / "judge_in.jsonl")
+    out_path = d / args.output
+    done = {v["key"] for v in _read_jsonl(out_path)} if out_path.exists() else set()
+    todo = [x for x in lines if x["key"] not in done]
+    (d / (out_path.stem + ".meta.json")).write_text(json.dumps({
+        "judge_model": args.model, "base_url": args.base_url, "temperature": args.temperature,
+        "max_tokens": args.max_tokens, "extra_body": args.extra_body,
+        "system": API_JUDGE_SYSTEM.format(threshold=PASS_THRESHOLD), "template": API_JUDGE_TEMPLATE,
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"{len(lines)} answers, {len(done)} already graded, {len(todo)} to go → {out_path}")
+
+    def grade(x: dict) -> dict:
+        text = chat(
+            API_JUDGE_TEMPLATE.format(prompt=x["prompt"], rubric=x["rubric"], answer=x["answer"] or "(empty)"),
+            model=args.model, base_url=args.base_url, api_key=args.api_key,
+            system=API_JUDGE_SYSTEM.format(threshold=PASS_THRESHOLD),
+            temperature=args.temperature, max_tokens=args.max_tokens, timeout=args.timeout,
+            extra_body=args.extra_body,
+        )
+        m = re.search(r"SCORE:\s*(\d+)", text, re.IGNORECASE)
+        if not m:
+            raise ApiError(f"no SCORE in reply: {text[:200]!r}")
+        r = re.search(r"REASON:\s*(.+)", text, re.IGNORECASE | re.DOTALL)
+        reason = r.group(1).strip().split("\n")[0] if r else ""
+        return {"key": x["key"], "score": max(0, min(10, int(m.group(1)))), "reason": reason}
+
+    failed = 0
+    with ThreadPoolExecutor(max_workers=args.workers) as ex, out_path.open("a", encoding="utf-8") as f:
+        futs = {ex.submit(grade, x): x for x in todo}
+        for i, fut in enumerate(as_completed(futs), 1):
+            try:
+                v = fut.result()
+            except ApiError as e:
+                failed += 1
+                print(f"[{i}/{len(todo)}] ✘ {futs[fut]['key']}: {str(e)[:120]}")
+                continue
+            f.write(json.dumps(v, ensure_ascii=False) + "\n")
+            f.flush()
+            if i % 25 == 0 or i == len(todo):
+                print(f"[{i}/{len(todo)}]")
+    if failed:
+        print(f"{failed} answers not graded; run the same command again to retry them", file=sys.stderr)
+        return 1
+    return 0
+
+
 def merge(args: argparse.Namespace) -> int:
     d = Path(args.dir)
     key = json.loads((d / "key.json").read_text(encoding="utf-8"))
@@ -171,6 +254,19 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--seed", type=int, default=None, help="shuffle seed (record it for reproducibility)")
     p.add_argument("--only", nargs="*", help="judge only these task ids")
     p.set_defaults(func=prepare)
+
+    a = sub.add_parser("api", help="grade judge_in.jsonl with a model behind an OpenAI-compatible API")
+    a.add_argument("dir", help="the --out-dir of prepare")
+    a.add_argument("--model", required=True)
+    a.add_argument("--base-url", default=os.environ.get("SK_EVAL_BASE_URL", "https://api.openai.com/v1"))
+    a.add_argument("--api-key", default=None, help="default: $SK_EVAL_API_KEY or $OPENAI_API_KEY")
+    a.add_argument("--output", default="judge_out.jsonl", help="verdicts file inside dir")
+    a.add_argument("--temperature", type=float, default=0.0)
+    a.add_argument("--max-tokens", type=int, default=4096, help="leave room for reasoning models")
+    a.add_argument("--timeout", type=int, default=300)
+    a.add_argument("--workers", type=int, default=3)
+    a.add_argument("--extra-body", type=json.loads, default=None)
+    a.set_defaults(func=api_judge)
 
     m = sub.add_parser("merge", help="map the judge's verdicts back to models")
     m.add_argument("dir", help="the --out-dir of prepare")

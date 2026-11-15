@@ -51,3 +51,36 @@ class TestBlindJudge(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestApiJudge(unittest.TestCase):
+    def test_api_grades_each_line_and_resumes(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            run = Path(tmp)
+            lines = [{"key": f"long_text-001#{c}", "task": "long_text-001", "prompt": "p", "rubric": "r",
+                      "answer": a} for c, a in (("A", "dobrá"), ("B", ""), ("C", "zlá"))]
+            (run / "judge_in.jsonl").write_text("".join(json.dumps(x) + "\n" for x in lines), encoding="utf-8")
+            replies = {"dobrá": "SCORE: 8\nREASON: Bez chýb.", "(empty)": "SCORE: 0\nREASON: Prázdna odpoveď.",
+                       "zlá": "Hmm.\nSCORE: 12\nREASON:"}
+            seen = []
+
+            def fake_chat(prompt, **kw):
+                seen.append(prompt)
+                for k, v in replies.items():
+                    if prompt.endswith(k):
+                        return v
+                raise AssertionError(prompt)
+
+            with mock.patch("sk_llm_eval.blind_judge.chat", side_effect=fake_chat):
+                self.assertEqual(blind_judge.main(["api", str(run), "--model", "m", "--base-url", "http://x"]), 0)
+                out = {json.loads(x)["key"]: json.loads(x) for x in open(run / "judge_out.jsonl", encoding="utf-8")}
+                self.assertEqual({k: v["score"] for k, v in out.items()},
+                                 {"long_text-001#A": 8, "long_text-001#B": 0, "long_text-001#C": 10})
+                self.assertEqual(out["long_text-001#C"]["reason"], "")
+                self.assertTrue(all("model" not in p.lower() or "MODEL ANSWER" in p for p in seen))
+                # a second run grades nothing
+                n = len(seen)
+                blind_judge.main(["api", str(run), "--model", "m", "--base-url", "http://x"])
+                self.assertEqual(len(seen), n)
+            self.assertTrue((run / "judge_out.meta.json").exists())

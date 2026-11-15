@@ -19,7 +19,7 @@ Akademické slovenské benchmarky (skLEP, Trojsten) merajú porozumenie textu a 
 - **Žiadne závislosti.** Štandardná knižnica Pythonu 3.10+ a ľubovoľné OpenAI-kompatibilné API: OpenAI, OpenRouter, Ollama, vLLM, LM Studio…
 - **Reprodukovateľné.** Všetky odpovede a všetky verdikty hodnotiteľa, z ktorých rebríček vychádza, sú v repozitári.
 
-## Rebríček (v0.2.3)
+## Rebríček (v0.2.4)
 
 26 riadkov: 4 modely Claude, 6 modelov cez API OpenRouter (GPT, Gemini, Grok, DeepSeek, Mistral, Llama) a 14 modelov s otvorenými váhami spustených lokálne; Qwen 3.5 4B a 9B sú v tabuľke dvakrát, s vypnutým aj zapnutým premýšľaním.
 
@@ -173,7 +173,7 @@ Všetky podrobnosti (presné príkazy, digesty modelov, Modelfiles, prompt a dá
 - **Riadky `(OpenRouter)`** sú čisté behy cez API OpenRouter s teplotou 0, limitom 8192 tokenov a predvoleným systémovým promptom. Premýšľanie ostalo na predvolenom nastavení každého poskytovateľa. Mistral Large 4 vrátil pri 3 úlohách prázdnu odpoveď. Všetkých šesť behov stálo spolu asi 1,70 $.
 - **Riadky `(agent)`**: model Claude bežal ako subagent v Claude Code a videl len zadania, nie kontroly. Nejde o čistý beh cez API, pretože prostredie pridáva vlastný systémový prompt.
 - **Riadok `(chat)`**: autor úloh nechal tento model odpovedať na úlohy z v0.1.0 v chate a na úlohy z v0.2.0 odpovedal ten istý model ako subagent. Berte ho ako kontrolu správnosti úloh.
-- **Hodnotiteľ**: úlohy pre hodnotiteľa naslepo ohodnotil Claude Opus. Odpovede všetkých 26 riadkov na tú istú úlohu sa hodnotili spolu v jednom kole, zamiešané a označené len písmenami A, B, C… Stále však ide o model Claude, ktorý hodnotí modely Claude, preto treba počítať s istým zvýhodnením vlastnej rodiny modelov. Všetky verdikty sú v priečinku `results/judge/`.
+- **Hodnotiteľ**: úlohy pre hodnotiteľa naslepo ohodnotil Claude Opus. Odpovede všetkých 26 riadkov na tú istú úlohu sa hodnotili spolu v jednom kole, zamiešané a označené len písmenami A, B, C… Stále však ide o model Claude, ktorý hodnotí modely Claude. Pre kontrolu ohodnotili tie isté odpovede aj GPT-6.1 Sol a Gemini 4 Argon. Poradie sa takmer nemení (žiadny riadok sa neposunie o viac ako 3 miesta a len medzi susedmi s podobným skóre), dvaja hodnotitelia sa v pass/fail zhodujú na 93–94 %, Opus je z troch najprísnejší a nič nenasvedčuje tomu, že by zvýhodňoval modely Claude. Pozrite [kontrolu hodnotiteľa](docs/METHODOLOGY.md#judge-cross-check) (po anglicky). Všetky verdikty sú v priečinku `results/judge/`.
 - **Vrchol rebríčka**: Opus prešiel všetkými 207 úlohami, Fable a GPT-6.1 Sol neprešli každý jednou úlohou pre hodnotiteľa a ďalších päť modelov má medzi 93 a 97. Opus je zároveň hodnotiteľ, preto jeho 100 nepreceňujte. Benchmark dobre rozlišuje stredné modely a modely s otvorenými váhami (od 13 % do 89 %), no najsilnejšie modely zatiaľ od seba neodlíši.
 
 Skóre sú porovnateľné len v rámci jednej verzie úloh. Pozrite [CHANGELOG.md](CHANGELOG.md).

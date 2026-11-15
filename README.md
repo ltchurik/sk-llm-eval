@@ -19,7 +19,7 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 - **Zero dependencies.** Python 3.10+ standard library, any OpenAI-compatible API: OpenAI, OpenRouter, Ollama, vLLM, LM Studio…
 - **Reproducible.** Every answer and every judge verdict behind the leaderboard is committed.
 
-## Leaderboard (v0.2.3)
+## Leaderboard (v0.2.4)
 
 26 rows: 4 Claude models, 6 API models through OpenRouter (GPT, Gemini, Grok, DeepSeek, Mistral, Llama) and 14 open-weight models run locally; Qwen 3.5 4B and 9B appear twice, with thinking off and on.
 
@@ -173,7 +173,7 @@ Full details (exact commands, model digests, Modelfiles, the judge prompt and ba
 - **`(OpenRouter)` rows** are clean API runs through OpenRouter at temperature 0 with an 8192-token budget and the default system prompt. Reasoning was left at each provider's default. Mistral Large 4 returned an empty answer on 3 tasks. The six runs cost about $1.70 in total.
 - **`(agent)` rows**: the Claude model ran as a Claude Code subagent that saw only the prompts, not the checks. This is not a clean API run, because the harness adds its own system prompt.
 - **`(chat)` row**: the author of the tasks answered the v0.1.0 tasks with this model in a chat session, and the same model answered the v0.2.0 tasks as a subagent. Treat it as a sanity check of the tasks.
-- **Judge**: Claude Opus graded the judge tasks blind. For each task, the answers of all 26 rows were judged together in one round, shuffled and labelled only A, B, C… It is still a Claude model grading Claude models, so expect some family bias. All verdicts are in `results/judge/`.
+- **Judge**: Claude Opus graded the judge tasks blind. For each task, the answers of all 26 rows were judged together in one round, shuffled and labelled only A, B, C… It is still a Claude model grading Claude models. As a cross-check, GPT-6.1 Sol and Gemini 4 Argon graded the same answers. The order hardly changes (no row moves more than 3 places among near-ties), pass/fail agreement between any two judges is 93–94 %, Opus is the strictest of the three, and there is no sign that it favours Claude rows. See the [judge cross-check](docs/METHODOLOGY.md#judge-cross-check). All verdicts are in `results/judge/`.
 - **Top of the table**: Opus passes all 207 tasks, Fable and GPT-6.1 Sol each fail one judge task, and the next five models are between 93 and 97. Opus also is the judge, so do not read much into its 100. The benchmark separates mid-size and open-weight models well, from 13 % to 89 %, but it does not yet separate the strongest models.
 
 Scores are comparable only within one task version. See [CHANGELOG.md](CHANGELOG.md).

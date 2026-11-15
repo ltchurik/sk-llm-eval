@@ -4,7 +4,7 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T15:22:16+00:00",
-  "eval_version": "0.2.3",
+  "eval_version": "0.2.4",
   "mode": "api+offline-judge",
   "summary": {
     "overall": 36.0,

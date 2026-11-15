@@ -1,0 +1,10 @@
+# Used for the "Qwen 3.5 4B (Ollama, thinking)" row.
+# ollama create qwen3.5:4b-32k -f docs/modelfiles/qwen3.5-4b-32k.Modelfile
+# Ollama's default context (8192) cuts the thinking short, which gives empty answers.
+# Sampling follows Qwen's recommendation for thinking mode; at temperature 0 the thinking loops.
+FROM qwen3.5:4b
+PARAMETER num_ctx 32768
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 20
+PARAMETER presence_penalty 1.5

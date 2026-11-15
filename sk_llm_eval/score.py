@@ -34,6 +34,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--judge-file", default=None, help="JSONL with pre-collected {id, score, reason} judge verdicts")
     ap.add_argument("--judge-label", default=None, help="name of the judge when using --judge-file")
     ap.add_argument("--out", default=None, help="default: results/<label>.json")
+    ap.add_argument("--meta-from", default=None,
+                    help="earlier run.py result whose model, base_url, run_at, run_settings and latencies to keep")
     args = ap.parse_args(argv)
 
     tasks = load_tasks(Path(args.tasks))
@@ -113,6 +115,19 @@ def main(argv: list[str] | None = None) -> int:
         "summary": summary,
         "records": records,
     }
+    if args.meta_from:
+        meta = json.loads(Path(args.meta_from).read_text(encoding="utf-8"))
+        for k in ("model", "base_url", "run_at", "run_settings"):
+            if meta.get(k) is not None:
+                out[k] = meta[k]
+        if meta.get("base_url"):
+            out["mode"] = "api+offline-judge"
+        latency = {r["id"]: r["latency"] for r in meta.get("records", []) if "latency" in r}
+        for r in records:
+            if r["id"] in latency:
+                r["latency"] = latency[r["id"]]
+        out = {k: out[k] for k in ("model", "label", "base_url", "judge_model", "run_at", "eval_version",
+                                   "mode", "summary", "records", "run_settings") if k in out}
     out_path = Path(args.out or f"results/{slug(args.label)}.json")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")

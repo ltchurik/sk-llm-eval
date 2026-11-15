@@ -4,6 +4,12 @@ Scores are comparable only within one task version. Every leaderboard row record
 
 ## Unreleased
 
+### Documentation and tooling
+
+- `docs/METHODOLOGY.md`: how every row was produced, with exact run commands, Ollama version, model digests, the Modelfiles of the thinking Qwen rows (`docs/modelfiles/`), how the Claude rows were collected, and the judge prompt, batches and calibration.
+- `python -m sk_llm_eval.blind_judge prepare|merge`: the blind judging procedure (shuffle and anonymise answers per task, map verdicts back, compare anchors with `--anchors`) as a script instead of ad-hoc steps.
+- `score --meta-from results/<model>.json` keeps the model, endpoint, run time, `run_settings` and latencies of an earlier API run when re-scoring with judge verdicts.
+
 ### Results
 
 - Qwen 3.5 4B and 9B rerun with thinking on (32k context, 16384-token budget, Qwen's recommended thinking sampling: temperature 0.6, top_p 0.95, top_k 20, presence_penalty 1.5). Thinking lifts 9B from 52.9 to 63.0 and 4B from 39.9 to 44.8. The leaderboard now has 20 rows; tasks and checks are unchanged (still 0.2.1).

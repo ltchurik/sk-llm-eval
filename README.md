@@ -158,6 +158,8 @@ Before checking, answers are normalised: NFC, non-breaking spaces become spaces,
 
 ## How the rows were produced
 
+Full details (exact commands, model digests, Modelfiles, the judge prompt and batches) are in [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+
 - **`(Ollama)` rows** are clean API runs of open-weight models on an NVIDIA DGX Spark through Ollama's OpenAI-compatible endpoint, at temperature 0 with the default system prompt. Models use Ollama's default quantisation (Q4_K_M; Mistral Nemo Q4_0) unless the label says Q8. Exact settings are in `run_settings` in `results/<model>.json`.
 - **Thinking.** Models that think by default kept it on, with an 8192-token budget. The `no thinking` Qwen rows ran with thinking switched off (`reasoning_effort: none`); the dense Qwen 3.8 27B generates about 5 tokens/s on this machine, too slow for a thinking run.
 - **`thinking` Qwen rows** ran with thinking on, a 32k context and a 16384-token budget, using Qwen's recommended sampling for thinking mode (temperature 0.6, top_p 0.95, top_k 20, presence_penalty 1.5). At temperature 0 the models got stuck in endless thinking loops. Thinking lifts Qwen 3.5 9B from 52.9 to 63.0 and 4B from 39.9 to 44.8, at about 5 minutes per task. It helps on grammar, facts and register, but not on long texts.

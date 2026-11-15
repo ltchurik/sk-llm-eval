@@ -158,6 +158,8 @@ Pred kontrolou sa odpovede normalizujú: NFC, nezlomiteľné medzery sa nahradia
 
 ## Ako vznikli výsledky
 
+Všetky podrobnosti (presné príkazy, digesty modelov, Modelfiles, prompt a dávky hodnotenia) sú v [docs/METHODOLOGY.md](docs/METHODOLOGY.md) (po anglicky).
+
 - **Riadky `(Ollama)`** sú čisté behy cez API modelov s otvorenými váhami na NVIDIA DGX Spark cez OpenAI-kompatibilné rozhranie Ollamy, s teplotou 0 a predvoleným systémovým promptom. Modely používajú predvolenú kvantizáciu Ollamy (Q4_K_M; Mistral Nemo Q4_0), ak názov neuvádza Q8. Presné nastavenia sú v poli `run_settings` v súbore `results/<model>.json`.
 - **Premýšľanie.** Modely, ktoré predvolene premýšľajú, ho mali zapnuté s limitom 8192 tokenov. Riadky Qwen `bez premýšľania` bežali s vypnutým premýšľaním (`reasoning_effort: none`); hustý Qwen 3.8 27B generuje na tomto stroji asi 5 tokenov za sekundu, čo je na beh s premýšľaním príliš pomaly.
 - **Riadky Qwen `s premýšľaním`** bežali so zapnutým premýšľaním, kontextom 32k a limitom 16 384 tokenov, s nastavením vzorkovania, ktoré Qwen odporúča pre premýšľanie (teplota 0,6, top_p 0,95, top_k 20, presence_penalty 1,5). Pri teplote 0 sa modely v premýšľaní zacyklili. Premýšľanie zdvihne Qwen 3.5 9B z 52,9 na 63,0 a 4B z 39,9 na 44,8, za cenu asi 5 minút na úlohu. Pomáha pri gramatike, reáliách a registri, no nie pri dlhých textoch.

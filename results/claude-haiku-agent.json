@@ -4,7 +4,7 @@
   "base_url": null,
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T18:19:09+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "offline",
   "summary": {
     "overall": 93.1,
@@ -20,9 +20,9 @@
         "score": 94.2
       },
       "long_text": {
-        "passed": 11,
+        "passed": 12,
         "total": 13,
-        "score": 84.6
+        "score": 92.3
       },
       "preklad": {
         "passed": 13,
@@ -35,9 +35,9 @@
         "score": 93.6
       },
       "register": {
-        "passed": 25,
+        "passed": 23,
         "total": 26,
-        "score": 96.2
+        "score": 88.5
       }
     }
   },
@@ -1974,7 +1974,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Súvislý a gramaticky správny text, miestami mierne ťažkopádne formulácie („problémy… sa výrazne zmenšujú“) a anglicizmus „škálovať“."
+          "detail": "Prirodzený, vecný text, minimálne nedostatky."
         }
       ]
     },
@@ -2069,8 +2069,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Úplné zhrnutie všetkých bodov v prirodzenej slovenčine bez anglicizmov."
+          "score": 9,
+          "detail": "Úplné a prirodzené zhrnutie so slovenskými výrazmi; len kalk „stav práce žijú v dokumentoch“."
         }
       ]
     },
@@ -2098,9 +2098,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2110,8 +2110,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Úradný štýl a vykanie s veľkým V sú v poriadku, podpis je len zástupný a rozmer zapísaný s „x“ namiesto „×“."
+          "score": 8,
+          "detail": "Správna a vecná žiadosť s vykaním, len nekonzistentné časy („Tabuľa má rozmer“, „informuje“)."
         }
       ]
     },
@@ -2151,8 +2151,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Správny detský príbeh s dialógom a úvodzovkami bez chýb, zápletka je však dosť slabá."
+          "score": 8,
+          "detail": "Prirodzený a správny príbeh so správnymi úvodzovkami a dialógom; drobnosťou je väzba „zapadlo za lesom“ (lepšie „za les“) a slabšia zápletka."
         }
       ]
     },
@@ -2162,7 +2162,7 @@
       "prompt": "Napíš číslovaný návod v 8 krokoch, ako nastaviť nový domáci Wi-Fi router (pripojenie, prihlásenie do administrácie, zmena hesla, názov siete, aktualizácia firmvéru…). Každý krok 1–2 vety, po slovensky.",
       "answer": "1. Pripojte router k napájaniu a k internetu. Kábel od poskytovateľa zapojte do portu označeného ako WAN alebo Internet.\n2. Pripojte počítač alebo mobil k routeru. Použite kábel LAN alebo sa pripojte k sieti Wi-Fi, ktorú router vysiela po zapnutí.\n3. Otvorte webový prehliadač a zadajte adresu administrácie, zvyčajne 192.168.1.1 alebo 192.168.0.1. Adresu nájdete na nálepke na spodku routera.\n4. Prihláste sa do administrácie pomocou prihlasovacieho mena a hesla z nálepky. Pri prvom prihlásení toto heslo okamžite zmeňte.\n5. Zmeňte heslo administrátora na silné a jedinečné heslo, ktoré si uložte do správcu hesiel.\n6. Nastavte názov siete (SSID) a heslo Wi-Fi. Zvoľte zabezpečenie WPA2 alebo WPA3 a nepoužívajte predvolené údaje.\n7. Skontrolujte aktualizácie firmvéru a nainštalujte najnovšiu verziu. Ak router podporuje automatické aktualizácie, zapnite ich.\n8. Uložte nastavenia, reštartujte router a over pripojenie na internet z jedného zo zariadení.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "min_words",
@@ -2186,9 +2186,9 @@
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Osem logických krokov, no v poslednom kroku model prechádza z vykania na tykanie („over pripojenie“)."
+          "ok": true,
+          "score": 7,
+          "detail": "Kvalitný návod, no v kroku 8 nekonzistentné tykanie „over pripojenie“ medzi vykaním."
         }
       ]
     },
@@ -2223,8 +2223,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 7,
-          "detail": "Preklad je úplný, ale obsahuje bohemizmus „akonáhle“, krkolomný slovosled a zbytočné anglicizmy „poolu“ a „staging serveroch“."
+          "score": 8,
+          "detail": "Presný a prirodzený preklad, drobná výhrada k bohemizmu „Akonáhle“."
         }
       ]
     },
@@ -2264,8 +2264,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 7,
-          "detail": "Pády sú správne, no text má nelogickú a krkolomnú vetu o „vláčiku Tatranskej električky“, ktorým sa dá dostať „z Vysokých Tatier“."
+          "score": 8,
+          "detail": "Správne pády a fakty, len neobratné „Z Vysokých Tatier sa dá dostať vláčikom Tatranskej električky“."
         }
       ]
     },
@@ -2395,8 +2395,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Zdvorilý, zrozumiteľný návod s dôsledným vykaním a bez chýb."
+          "score": 7,
+          "detail": "Správny postup a vykanie, ale 118 slov tesne pod limitom a oslovenie len „Vážený pán“."
         }
       ]
     },
@@ -2476,13 +2476,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Formálna a vecná sťažnosť bez chýb s dôsledným vykaním a správnym záverom."
+          "score": 8,
+          "detail": "Gramaticky správna, vecná sťažnosť s vykaním, no mierne pod dolnou hranicou (okolo 116 slov) a požiadavka je len nepriama."
         }
       ]
     },
@@ -3032,8 +3032,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Model priznal, že román nepozná, a autora nevymyslel."
+          "score": 9,
+          "detail": "Správne priznáva neznalosť a ponúka pomoc; odpoveď je bez chýb."
         }
       ]
     },
@@ -3093,7 +3093,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ]
     },
@@ -3243,8 +3243,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."
+          "score": 9,
+          "detail": "Správne a jazykovo bezchybné."
         }
       ]
     },
@@ -3549,8 +3549,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Formálny e-mail s dôsledným vykaním s veľkým V bez chýb."
+          "score": 9,
+          "detail": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením, bez chýb."
         }
       ]
     },
@@ -3575,8 +3575,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Neformálne, dôsledné tykanie a prirodzená slovenčina."
+          "score": 9,
+          "detail": "Prirodzený neformálny tón, tykanie, bez chýb."
         }
       ]
     },
@@ -3596,8 +3596,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Krátka, neformálna a prirodzená SMS v dvoch vetách."
+          "score": 9,
+          "detail": "Prirodzená neformálna SMS v dvoch vetách, bez chýb."
         }
       ]
     },
@@ -3622,8 +3622,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Oslovenie a vykanie sú správne, ale formulácia „moja práca bude zastúpená kolegom“ je neprirodzená."
+          "score": 7,
+          "detail": "Zdvorilá žiadosť s vykaním, ale neobratný trpný rod „bude moja práca zastúpená kolegom“."
         }
       ]
     },
@@ -3703,7 +3703,7 @@
       "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
       "answer": "Dobrý deň,\n\nďakujeme za Vašu správu a ospravedlňujeme sa za oneskorenie objednávky. Preverili sme stav zásielky a momentálne ju kuriér doručuje. Predpokladaný termín doručenia je zajtra do 18.00 hod., o čom Vás budeme informovať e-mailom.\n\nAk by sa doručenie neuskutočnilo, neváhajte nás kontaktovať, rádi to s Vami vyriešime.\n\nS pozdravom\nZákaznícka podpora",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "regex",
@@ -3712,9 +3712,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 8,
-          "detail": "Zdvorilá odpoveď s vykaním, no bez čísla objednávky si vymýšľa konkrétny stav zásielky a termín doručenia."
+          "ok": false,
+          "score": 6,
+          "detail": "Jazykovo správne, ale vymýšľa si fakty o stave zásielky („momentálne ju kuriér doručuje“, „zajtra do 18.00 hod.“) bez čísla objednávky."
         }
       ]
     },
@@ -3724,13 +3724,13 @@
       "prompt": "Píše sa v slovenskom liste zámeno „Vy“ s veľkým alebo malým V, keď vykám jednej osobe? Odpovedz jednou vetou.",
       "answer": "Zdvorilostné zámeno „Vy“ sa v slovenskom liste píše s veľkým V, aj keď sa vykáme jednej osobe.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Uvádza veľké V správne, ale obsahuje gramatickú chybu „aj keď sa vykáme“."
+          "ok": false,
+          "score": 6,
+          "detail": "Správna odpoveď, ale chyba „sa vykáme“ a nelogické „aj keď“."
         }
       ]
     },
@@ -3756,7 +3756,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Zdvorilá veta s vykaním, len chýbajú čiarky okolo „prosím“."
+          "detail": "Správna zdvorilá otázka, len chýbajú čiarky okolo „prosím“."
         }
       ]
     },
@@ -3777,7 +3777,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Spisovná a významovo správna veta, ale s neprirodzeným slovosledom („počasie vonku“ na konci)."
+          "detail": "Spisovné, ale slovosled „počasie vonku“ na konci je menej prirodzený."
         }
       ]
     },
@@ -3848,7 +3848,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Zdvorilé odmietnutie s vykaním a poďakovaním, štylisticky rušivé trojité opakovanie slova „ponuka“."
+          "detail": "Správne a zdvorilé s veľkým V; drobná neobratnosť „Vám musím ponuku odmietnuť“."
         }
       ]
     },
@@ -3883,8 +3883,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Jedna prirodzená kolegiálna veta bez chýb."
+          "score": 9,
+          "detail": "Prirodzená jedna veta bez chýb."
         }
       ]
     },
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nesprávne tvrdí, že sa za pozdravom píše čiarka."
+          "detail": "Nesprávne tvrdí, že sa čiarka píše."
         }
       ]
     },
@@ -3961,7 +3961,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Formálny a s vykaním, ale po oslovení s čiarkou nasleduje chybne veľké písmeno „Ďakujeme“ a pridaná je zbytočná veta."
+          "detail": "Vymyslený kontext „Ďakujeme za Vašu správu“ a veľké písmeno po oslovení s čiarkou."
         }
       ]
     },

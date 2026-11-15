@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 2, "reason": "Množstvo bohemizmov a chýb (softwarovom, poptávky, rychlé, mnohem, infrastrukture) a tučné nadpisy."}
-{"id": "long_text-003", "score": 2, "reason": "Množstvo chýb a nezmyselných tvarov („zamäťi“, „prioritá“, „zpätné vedenie“) a vymyslená zmienka o pandémii."}
-{"id": "long_text-004", "score": 1, "reason": "Chybné oslovenie „Vážne pán miestny“, bohemizmy a nezmysly („Vážnime sa“)."}
-{"id": "long_text-005", "score": 1, "reason": "Takmer nezrozumiteľný text plný neexistujúcich slov a chýb („bol veľmi báť tmu“, „uklamali“)."}
-{"id": "long_text-006", "score": 2, "reason": "Bohemizmy a chyby („počkejte“, „otevrením“, „zmenite“, „firmwéru“) a miešanie tykania s vykaním."}
-{"id": "long_text-007", "score": 2, "reason": "Bohemizmy („zátěže“, „směrovane“), chyby („dve zvyšné servery“) a skreslený význam („menej často“)."}
-{"id": "long_text-008", "score": 1, "reason": "Množstvo chýb, bohemizmov a vymyslených údajov („lyžiny“, „Rainer“)."}
-{"id": "long_text-011", "score": 1, "reason": "Prevažne tykanie zmiešané s vykaním a množstvo gramatických chýb."}
-{"id": "long_text-013", "score": 2, "reason": "Chybné oslovenie „vážna žena“, bohemizmy („odkazuji“, „nejdeššom“) a chýba pozdrav."}
-{"id": "realie-015", "score": 4, "reason": "Autora si nevymýšľa, ale obsahuje bohemizmy a chyby („Možná jde“, „povedám“, „Autorom… nie je známy“)."}
-{"id": "realie-029", "score": 5, "reason": "Správne neuvádza meno, no obsahuje chyby („nepodpíšalo“, „Možná“, „prostredí“)."}
-{"id": "register-001", "score": 1, "reason": "Množstvo hrubých chýb, bohemizmov a nezmyslov („omlouvam“, „musieť absencia“, „nepriechod“)."}
-{"id": "register-002", "score": 3, "reason": "Rozbitá veta „Riešiť by som tiež“ a formálny záver „S úctou“."}
-{"id": "register-003", "score": 8, "reason": "Krátka, neformálna a správna SMS, meškanie je vyjadrené nepriamo."}
-{"id": "register-004", "score": 2, "reason": "Chybné oslovenie a viaceré chyby („Váš pozitívny odpoveď“, „vyhovorenie“)."}
-{"id": "register-009", "score": 2, "reason": "Mnoho chýb a nezmyslov („Ovďačujeme“, „Vás ukladáme“, podpis „Zákazník“) a príliš dlhé."}
-{"id": "register-010", "score": 9, "reason": "Správne a jednoznačne uvádza veľké V."}
-{"id": "register-011", "score": 3, "reason": "Bohemizmus „mohla byste“."}
-{"id": "register-012", "score": 8, "reason": "Spisovné, len menej prirodzený slovosled."}
-{"id": "register-016", "score": 1, "reason": "Nezmyselné slová („dĺžky“, „bohužialstvo“) a české tvary."}
-{"id": "register-018", "score": 3, "reason": "Metakomentár s chybami („Kolégovi“, „vete“)."}
-{"id": "register-020", "score": 4, "reason": "Vecne správne, ale používa české slovo „čárka“."}
-{"id": "register-022", "score": 2, "reason": "Zmes češtiny a chýb („Omlouvame“, „poštom“, „Vaše spokojnosť“)."}
+{"id": "long_text-001", "score": 2, "reason": "Nad 250 slov, tučné písmo a množstvo čechizmov/chýb: „poptávky“, „rychlé“, „mnohem“, „infrastrukture“, „je tieto výhody“, „znížiť“."}
+{"id": "long_text-003", "score": 2, "reason": "Vymyslená pandémia, chyby „dálku“, „zamäťi“, „prioritá“, „schôdza“, „zpätné vedenie“, „jasný písaný príručku“."}
+{"id": "long_text-004", "score": 1, "reason": "Nezrozumiteľné „Vážne pán miestny“, „Vážnime sa“, české „přitáhnúť“, „piet“, malé „vás“ a meta-poznámka „Počet slov: 152“."}
+{"id": "long_text-005", "score": 1, "reason": "Nezmyselný a negramatický text („jednýročník ježatko“, „bol veľmi báť tmu“, „uklamali“, „usmál“, „S mnou“, „priateľník“)."}
+{"id": "long_text-006", "score": 2, "reason": "Množstvo chýb a čechizmov: „káble“, „počkejte“, „otevrením“, „zmenite“, „vypniť“, „firmwéru“, „routeru“, tykanie „nájdeš“, nezmyselná „anonymizácia IP adresy“."}
+{"id": "long_text-007", "score": 1, "reason": "Veľmi chybný text s čechizmami („zátěže“, „směrovane“), tvarmi „do desať“, „dve zvyšné servery“, „zlyhalejho“ a vecne nesprávnym „menej často“ namiesto každý mesiac."}
+{"id": "long_text-008", "score": 1, "reason": "Zmes češtiny („pohořie“, „láká“, „výběh“) a angličtiny („Tatra National Parku“), vymyslené strediská „Rainer“, „Žiar“."}
+{"id": "long_text-011", "score": 1, "reason": "Tyká namiesto vykania („postupuj“), kolíše medzi tykaním a vykaním, množstvo chýb („Otvori“, „prijú“), nad limit slov."}
+{"id": "long_text-013", "score": 2, "reason": "Chybné oslovenie „vážna žena“, české tvary „odkazuji“, „nejdeššom“, „mi znepokojuje“, oslovenie zopakované namiesto záveru."}
+{"id": "realie-015", "score": 3, "reason": "Nevymyslel autora, ale obsahuje chyby („Autorom … nie je známy“), češtinu („Možná jde“), neexistujúci tvar „povedám“ a mechanicky opakuje zadanie."}
+{"id": "realie-029", "score": 5, "reason": "Obsahovo správne, ale chyby „nepodpíšalo“, čechizmy „Možná“, „prostredí“."}
+{"id": "register-001", "score": 2, "reason": "Viacero hrubých chýb a čechizmov („Omlouvam“, „ktorý budem musieť absencia“, „nepriechod“) a nelogický obsah (dovolenka, „dnešnom dni“)."}
+{"id": "register-002", "score": 3, "reason": "Nezmyselná veta „Riešiť by som tiež zabezpečenie“ a formálny záver „S úctou, [Tvoje meno]“ nesedí k tónu."}
+{"id": "register-003", "score": 6, "reason": "Gramaticky správne, ale chýba ospravedlnenie a „počkaj 10 minút“ nevyjadruje jasne meškanie."}
+{"id": "register-004", "score": 2, "reason": "Chybné oslovenie „Vážená pani vedúcej oddelenia pani Horváthovej“, nezmysly „nepreniknuteľnú pozornosť“, „vyhovorenie“, „Budem radosťou prijať“, „Váš pozitívny odpoveď“."}
+{"id": "register-009", "score": 1, "reason": "Množstvo chýb a nezmyslov („inštruktovali“, „do Vášho poštu“, „Ovďačujeme“, „Vás ukladáme“, „nejpresnejšom“), „ste správne zadal“, podpis „Zákazník“ a prekročená dĺžka."}
+{"id": "register-010", "score": 9, "reason": "Správne a jazykovo bezchybné."}
+{"id": "register-011", "score": 3, "reason": "Čechizmus „mohla byste“ namiesto „mohli by ste“."}
+{"id": "register-012", "score": 8, "reason": "Spisovné, ale slovosled „nepríjemne vonku“ je menej prirodzený."}
+{"id": "register-016", "score": 2, "reason": "Čechizmy „Jméno“, nezmyselné „dĺžky“, „bohužialstvo“, „tuto“; chýba poďakovanie na začiatku."}
+{"id": "register-018", "score": 3, "reason": "Obsahuje meta-komentár a chyby („Kolégovi“, „nasledujúcu vete“ namiesto „vetu“), samotná veta je v úvodzovkách."}
+{"id": "register-020", "score": 5, "reason": "Obsahovo správna odpoveď, ale používa český tvar „čárka“ namiesto „čiarka“."}
+{"id": "register-022", "score": 2, "reason": "Plno čechizmov a chýb: „Omluva“, „Omlouvame“, „tuto“, „Bohužial“, „náš balík“, „poštom“, „Vaše spokojnosť“, „najvyššia prioritou“, nesúvisiaca veta o ponuke."}

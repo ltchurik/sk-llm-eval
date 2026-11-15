@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 9, "reason": "Súvislý a gramaticky správny text, miestami mierne ťažkopádne formulácie („problémy… sa výrazne zmenšujú“) a anglicizmus „škálovať“."}
-{"id": "long_text-003", "score": 10, "reason": "Úplné zhrnutie všetkých bodov v prirodzenej slovenčine bez anglicizmov."}
-{"id": "long_text-004", "score": 9, "reason": "Úradný štýl a vykanie s veľkým V sú v poriadku, podpis je len zástupný a rozmer zapísaný s „x“ namiesto „×“."}
-{"id": "long_text-005", "score": 9, "reason": "Správny detský príbeh s dialógom a úvodzovkami bez chýb, zápletka je však dosť slabá."}
-{"id": "long_text-006", "score": 6, "reason": "Osem logických krokov, no v poslednom kroku model prechádza z vykania na tykanie („over pripojenie“)."}
-{"id": "long_text-007", "score": 7, "reason": "Preklad je úplný, ale obsahuje bohemizmus „akonáhle“, krkolomný slovosled a zbytočné anglicizmy „poolu“ a „staging serveroch“."}
-{"id": "long_text-008", "score": 7, "reason": "Pády sú správne, no text má nelogickú a krkolomnú vetu o „vláčiku Tatranskej električky“, ktorým sa dá dostať „z Vysokých Tatier“."}
-{"id": "long_text-011", "score": 9, "reason": "Zdvorilý, zrozumiteľný návod s dôsledným vykaním a bez chýb."}
-{"id": "long_text-013", "score": 9, "reason": "Formálna a vecná sťažnosť bez chýb s dôsledným vykaním a správnym záverom."}
-{"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora nevymyslel."}
-{"id": "realie-029", "score": 10, "reason": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."}
-{"id": "register-001", "score": 10, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V bez chýb."}
-{"id": "register-002", "score": 10, "reason": "Neformálne, dôsledné tykanie a prirodzená slovenčina."}
-{"id": "register-003", "score": 10, "reason": "Krátka, neformálna a prirodzená SMS v dvoch vetách."}
-{"id": "register-004", "score": 8, "reason": "Oslovenie a vykanie sú správne, ale formulácia „moja práca bude zastúpená kolegom“ je neprirodzená."}
-{"id": "register-009", "score": 8, "reason": "Zdvorilá odpoveď s vykaním, no bez čísla objednávky si vymýšľa konkrétny stav zásielky a termín doručenia."}
-{"id": "register-010", "score": 7, "reason": "Uvádza veľké V správne, ale obsahuje gramatickú chybu „aj keď sa vykáme“."}
-{"id": "register-011", "score": 9, "reason": "Zdvorilá veta s vykaním, len chýbajú čiarky okolo „prosím“."}
-{"id": "register-012", "score": 8, "reason": "Spisovná a významovo správna veta, ale s neprirodzeným slovosledom („počasie vonku“ na konci)."}
-{"id": "register-016", "score": 9, "reason": "Zdvorilé odmietnutie s vykaním a poďakovaním, štylisticky rušivé trojité opakovanie slova „ponuka“."}
-{"id": "register-018", "score": 10, "reason": "Jedna prirodzená kolegiálna veta bez chýb."}
-{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa za pozdravom píše čiarka."}
-{"id": "register-022", "score": 7, "reason": "Formálny a s vykaním, ale po oslovení s čiarkou nasleduje chybne veľké písmeno „Ďakujeme“ a pridaná je zbytočná veta."}
+{"id": "long_text-001", "score": 9, "reason": "Prirodzený, vecný text, minimálne nedostatky."}
+{"id": "long_text-003", "score": 9, "reason": "Úplné a prirodzené zhrnutie so slovenskými výrazmi; len kalk „stav práce žijú v dokumentoch“."}
+{"id": "long_text-004", "score": 8, "reason": "Správna a vecná žiadosť s vykaním, len nekonzistentné časy („Tabuľa má rozmer“, „informuje“)."}
+{"id": "long_text-005", "score": 8, "reason": "Prirodzený a správny príbeh so správnymi úvodzovkami a dialógom; drobnosťou je väzba „zapadlo za lesom“ (lepšie „za les“) a slabšia zápletka."}
+{"id": "long_text-006", "score": 7, "reason": "Kvalitný návod, no v kroku 8 nekonzistentné tykanie „over pripojenie“ medzi vykaním."}
+{"id": "long_text-007", "score": 8, "reason": "Presný a prirodzený preklad, drobná výhrada k bohemizmu „Akonáhle“."}
+{"id": "long_text-008", "score": 8, "reason": "Správne pády a fakty, len neobratné „Z Vysokých Tatier sa dá dostať vláčikom Tatranskej električky“."}
+{"id": "long_text-011", "score": 7, "reason": "Správny postup a vykanie, ale 118 slov tesne pod limitom a oslovenie len „Vážený pán“."}
+{"id": "long_text-013", "score": 8, "reason": "Gramaticky správna, vecná sťažnosť s vykaním, no mierne pod dolnou hranicou (okolo 116 slov) a požiadavka je len nepriama."}
+{"id": "realie-015", "score": 9, "reason": "Správne priznáva neznalosť a ponúka pomoc; odpoveď je bez chýb."}
+{"id": "realie-029", "score": 9, "reason": "Správne a jazykovo bezchybné."}
+{"id": "register-001", "score": 9, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením, bez chýb."}
+{"id": "register-002", "score": 9, "reason": "Prirodzený neformálny tón, tykanie, bez chýb."}
+{"id": "register-003", "score": 9, "reason": "Prirodzená neformálna SMS v dvoch vetách, bez chýb."}
+{"id": "register-004", "score": 7, "reason": "Zdvorilá žiadosť s vykaním, ale neobratný trpný rod „bude moja práca zastúpená kolegom“."}
+{"id": "register-009", "score": 6, "reason": "Jazykovo správne, ale vymýšľa si fakty o stave zásielky („momentálne ju kuriér doručuje“, „zajtra do 18.00 hod.“) bez čísla objednávky."}
+{"id": "register-010", "score": 6, "reason": "Správna odpoveď, ale chyba „sa vykáme“ a nelogické „aj keď“."}
+{"id": "register-011", "score": 9, "reason": "Správna zdvorilá otázka, len chýbajú čiarky okolo „prosím“."}
+{"id": "register-012", "score": 8, "reason": "Spisovné, ale slovosled „počasie vonku“ na konci je menej prirodzený."}
+{"id": "register-016", "score": 9, "reason": "Správne a zdvorilé s veľkým V; drobná neobratnosť „Vám musím ponuku odmietnuť“."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená jedna veta bez chýb."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
+{"id": "register-022", "score": 7, "reason": "Vymyslený kontext „Ďakujeme za Vašu správu“ a veľké písmeno po oslovení s čiarkou."}

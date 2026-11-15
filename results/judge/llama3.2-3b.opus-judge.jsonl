@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 0, "reason": "Nezmyselný, repetitívny text bez obsahu."}
-{"id": "long_text-003", "score": 0, "reason": "Nezmyselný text so zacyklením a miešaním jazykov."}
-{"id": "long_text-004", "score": 1, "reason": "Text je plný gramatických chýb a nezmyslov („Prezývame“, „Zaprasovám Vás k kontaktu“)."}
-{"id": "long_text-005", "score": 0, "reason": "Zacyklený nezmyselný text bez dialógu a so zlou slovenčinou."}
-{"id": "long_text-006", "score": 1, "reason": "Zmes češtiny a slovenčiny s množstvom chýb a nezmyselnými krokmi."}
-{"id": "long_text-007", "score": 1, "reason": "Nezmyselný preklad s miešaním jazykov a nesprávnym významom."}
-{"id": "long_text-008", "score": 1, "reason": "Nezmyselný, opakujúci sa text s chybami a anglicizmami („High Tatras“, „surroundingskej“)."}
-{"id": "long_text-011", "score": 2, "reason": "Mechanický a nepoužiteľný postup s gramatickými chybami („vašho“, „Nastavte kamera“, „mikrofon“)."}
-{"id": "long_text-013", "score": 0, "reason": "Nezmyselný, nekonečne sa opakujúci text."}
-{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
-{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno prezidenta."}
-{"id": "register-001", "score": 1, "reason": "Nezmyselný obsah, oslovenie „Prezidentu“ a bohemizmy."}
-{"id": "register-002", "score": 1, "reason": "Chyby „Prečítaj sa“, „najpopulárnych“, „optionál“."}
-{"id": "register-003", "score": 1, "reason": "Nezrozumiteľný text plný chýb."}
-{"id": "register-004", "score": 0, "reason": "Nezmyselný text plný chýb."}
-{"id": "register-009", "score": 1, "reason": "Chýbajúca diakritika, české tvary a nezmyselný obsah bez ospravedlnenia."}
-{"id": "register-010", "score": 1, "reason": "Nesprávna a jazykovo pomiešaná odpoveď."}
-{"id": "register-011", "score": 0, "reason": "Nezmyselné odmietnutie s chybami namiesto požadovanej vety."}
-{"id": "register-012", "score": 1, "reason": "Ponecháva hovorové „Hej“ a „hnusný“, gramaticky chybné."}
-{"id": "register-016", "score": 0, "reason": "Zacyklený nezmyselný text s češtinou a azbukou."}
-{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
-{"id": "register-020", "score": 2, "reason": "Iba české „Ne“ bez slovenskej vety."}
-{"id": "register-022", "score": 0, "reason": "Nezmyselný text."}
+{"id": "long_text-001", "score": 0, "reason": "Iba 33 slov nezmyselného textu („zamestnanosť zamestnavateľných zamestnaných“)."}
+{"id": "long_text-003", "score": 0, "reason": "Nezmyselný text s nekonečným opakovaním „súčasnú“, anglické „surroundings“, ďaleko nad limitom."}
+{"id": "long_text-004", "score": 1, "reason": "Takmer nezrozumiteľný text („Prezývame [vaša meno]“, „Zaprasovám Vás k kontaktu“, „vyhlásit“), chýbajú diakritika a správne oslovenie."}
+{"id": "long_text-005", "score": 1, "reason": "Nezmyselný text, ktorý sa donekonečna opakuje („Ežak bol si uvedomal, že tma nie je zlyhala“, „prázdna space“), nemá dialóg ani dej a výrazne prekračuje rozsah."}
+{"id": "long_text-006", "score": 1, "reason": "Zmes češtiny a slovenčiny („Zkontrolujte“, „Otevřete“, „zadejte“, „najnovější“, „Uložení“) a nezmyselný obsah („Zmena portálneho adresy“)."}
+{"id": "long_text-007", "score": 1, "reason": "Nezrozumiteľný text plný chýb a cudzích slov („within“, „zraniteľný“, „Povinnosti“, „primárным“, „drifť“), význam originálu sa stratil."}
+{"id": "long_text-008", "score": 1, "reason": "Nezmyselný text s chybami a angličtinou („High Tatras“, „surroundingskej scéně“, „popularnou turistickej“)."}
+{"id": "long_text-011", "score": 2, "reason": "Chyby „mobilnom telefónu“, „vašho“, „Nastavte kamera“, tykanie „pripravi sa“ a nezmyselné kroky."}
+{"id": "long_text-013", "score": 0, "reason": "Nezrozumiteľný, nekonečne opakovaný text („Súhlasím, že práčka bola poštedlá poškodená“), ďaleko nad limitom."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel autora („Dušan Kovačić“) a použil bohemizmus „napsal“."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza vymyslené meno podpisovateľa „Michal Kováč“ a číslo zákona, navyše chyba „podpísal Zákonom“."}
+{"id": "register-001", "score": 1, "reason": "Nezmyselný text („Prezidentu [nadriadeného]“, „vyšetření“), bez vykania a s obsahom odporujúcim zadaniu (bude v práci do poludnia)."}
+{"id": "register-002", "score": 1, "reason": "Chyby „Prečítaj sa“, „najpopulárnych“, „specifikáciách“, „porovnaj ich cena“, „najvhodnú optionál“."}
+{"id": "register-003", "score": 1, "reason": "Nezrozumiteľný text s chybami („sem si nevezal“, „prijedej“), nesprávny význam."}
+{"id": "register-004", "score": 1, "reason": "Nezrozumiteľná zmes češtiny a skomolenín („žiadoji“, „periodo“, „Dôkynka“), chýba oslovenie aj správny záver."}
+{"id": "register-009", "score": 1, "reason": "Chýbajúca diakritika a čechizmy („Dakujeme“, „se“, „nas“, „pondeliku“), obsahovo nezmyselné a bez ospravedlnenia."}
+{"id": "register-010", "score": 0, "reason": "Zmes slovinčiny a slovenčiny („se v listu“, „uporábja“) a vecne nesprávne."}
+{"id": "register-011", "score": 1, "reason": "Namiesto otázky nezmyselné odmietnutie s chybami („napisať“, „záujanlivých“, „úkolu“)."}
+{"id": "register-012", "score": 1, "reason": "Pridaný prefix „Prepisanie:“, ponechané „Hej“ a „hnusný“, neexistujúce „dneský deň“."}
+{"id": "register-016", "score": 0, "reason": "Nezmyselný, donekonečna opakovaný text s čechizmami a azbukou („размере“)."}
+{"id": "register-018", "score": 8, "reason": "Správna veta, ale zbytočne v úvodzovkách."}
+{"id": "register-020", "score": 2, "reason": "Odpovedá len českým „Ne.“ a nie celou slovenskou vetou."}
+{"id": "register-022", "score": 1, "reason": "Nezrozumiteľný text („Ktorý balík ste prišiel, bol si mu neúspešný“) s metakomentárom, bez ospravedlnenia."}

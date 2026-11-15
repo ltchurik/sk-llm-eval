@@ -16,7 +16,7 @@
 {"id": "realie-016", "category": "realie", "prompt": "Ako sa volá doklad, ktorým sa na Slovensku preukazuje totožnosť občana (dvojslovný názov)?", "checks": [{"type": "contains", "value": "občiansky preukaz"}]}
 {"id": "realie-017", "category": "realie", "prompt": "Ktorý štátny sviatok sa na Slovensku slávi 17. novembra?", "checks": [{"type": "regex", "value": "boj(a)? za slobodu a demokraciu|Nežn(á|ej) revolúci", "flags": "i"}]}
 {"id": "realie-018", "category": "realie", "prompt": "Ako sa volá najväčšie jazero na Slovensku (prírodné, nie priehrada)?", "checks": [{"type": "contains", "value": "Veľké Hincovo pleso"}]}
-{"id": "realie-019", "category": "realie", "prompt": "Ktorý úrad na Slovensku vyberá dane z príjmu? Odpovedz názvom inštitúcie.", "checks": [{"type": "regex", "value": "finančn(á|ej|ou) správ|daňov(ý|ého) úrad", "flags": "i"}]}
+{"id": "realie-019", "category": "realie", "prompt": "Ktorý úrad na Slovensku vyberá dane z príjmu? Odpovedz názvom inštitúcie.", "checks": [{"type": "regex", "value": "finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv", "flags": "i"}]}
 {"id": "realie-020", "category": "realie", "prompt": "Čo je to „IČO“ na Slovensku? Odpovedz jednou vetou.", "checks": [{"type": "regex", "value": "identifika[čc]n[ée] [čc][íi]slo organiz[áa]cie", "flags": "i"}]}
 {"id": "realie-021", "category": "realie", "prompt": "Ktorá rieka je najdlhšia na území Slovenska? Odpovedz jedným slovom.", "checks": [{"type": "regex", "value": "\\bVáh\\b"}]}
 {"id": "realie-022", "category": "realie", "prompt": "Koľko okresov má Slovensko? Odpovedz číslom.", "checks": [{"type": "contains", "value": "79"}]}

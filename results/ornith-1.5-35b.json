@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T14:19:11+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 58.5,
+    "overall": 57.8,
     "categories": {
       "format": {
         "passed": 28,
@@ -35,9 +35,9 @@
         "score": 72.3
       },
       "register": {
-        "passed": 14,
+        "passed": 13,
         "total": 26,
-        "score": 53.8
+        "score": 50.0
       }
     }
   },
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Text je plynulý, ale obsahuje chyby ako „frustujúcej“ a nesprávny tvar „Kontajneri“."
+          "score": 5,
+          "detail": "Chyby „Kontajneri“, „kontajnere“, preklep „frustujúcej“, nesúrodé úvodzovky."
         }
       ],
       "latency": 21.46
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Vecné a úplné zhrnutie v prirodzenej slovenčine s chýbajúcou diakritikou v slove „začlenovania“."
+          "detail": "Úplné, ale chýbajúci mäkčeň v „začlenovania“ a nepresné „bežnou súčasťou mnohých tímov“."
         }
       ],
       "latency": 36.81
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
-          "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Žiadosť obsahuje české slová („Věc“, „Jméno“) a viaceré chyby („spríjniť“, „tabula“)."
+          "detail": "Bohemizmy „Věc“, „Jméno“, chyby „tabula“, „priamo vchode“, „spríjniť“, „obrátim sa“, „Ikonom kaviarne“."
         }
       ],
       "latency": 13.11
@@ -2263,7 +2263,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Príbeh obsahuje veľa chýb („starý sova“, „Bám sa“, „tieňe“, „skrýajú“) a nekonzistentné úvodzovky."
+          "detail": "Veľa chýb: „starý sova Menom“, „trpčíš“, „Bám sa temna“, „tieňe“, „skrýajú“, „z pod“, anglicizmus „Wow“, nezmyselné „nemaloval“ a zmiešané úvodzovky („…” a “)."
         }
       ],
       "latency": 13.92
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Dobrý návod, ale obsahuje preklep „kábloom“ a nesprávnu konštrukciu „aby mal nikto iný prístup“."
+          "detail": "Preklep „kábloom“ a gramatická chyba „aby mal nikto iný prístup“ (správne „aby nikto iný nemal“), inak dobrý návod."
         }
       ],
       "latency": 15.42
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Preklad obsahuje chyby v skloňovaní („serveru“, „medzi servery“), tvar „prestaje“ a nepreložené „configuration drift“."
+          "score": 4,
+          "detail": "Chybný tvar „prestaje“, bohemizmy „serveru“ a „medzi servery“, nevhodné „premávku“ a „najčastejšia príčina“."
         }
       ],
       "latency": 23.62
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Názov pohoria je len v nominatíve, text obsahuje chyby („neopísateľným krásami“, „sviš ťavčí“, „výhody“ namiesto výhľady)."
+          "detail": "Názov len v nominatíve, chyby „neopísateľným krásami“, „panoramatické výhody“, vymyslený „sviš ťavčí“, „Štrbské jazero“."
         }
       ],
       "latency": 23.57
@@ -2512,8 +2512,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Návod obsahuje chyby („svoj telefónne číslo“, „Nájdenie vnúča otvorte“, „Vášho vnúča“)."
+          "score": 5,
+          "detail": "Chyby „svoj telefónne číslo“, „Vášho vnúča“, nezmyselné „Nájdenie vnúča otvorte“."
         }
       ],
       "latency": 15.97
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Sťažnosť obsahuje veľa chýb („zákaznícký“, „doružená“, „Toto prístup“, „vybudenie“, „prístroza“)."
+          "detail": "Chyby „zákaznícký“, „doružená“, „Toto prístup“, „vybudenie reklamácie“, „prístroza“, „podľa Vášho požadovania“, zlé časy."
         }
       ],
       "latency": 16.36
@@ -3180,8 +3180,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Autora neuvádza, ale obsahuje preklep „nepoznáms“ a vymyslený román „Slováci nad Dunajom“."
+          "score": 2,
+          "detail": "Hoci priznáva neznalosť, obsahuje preklep „nepoznáms“ a vymýšľa iné dielo s autorom („„Slováci nad Dunajom\" od Jozefa Cíger-Hronského (1938)“)."
         }
       ],
       "latency": 5.95
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 6.27
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Správne priznáva, že zákon nepozná, no obsahuje chybu „žiadný“."
+          "detail": "Správne, ale pravopisná chyba „žiadný“."
         }
       ],
       "latency": 8.2
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Nevhodné oslovenie nadriadeného „pán doktor“ a chyby („pondelie“, „ste mi dostupný“)."
+          "score": 4,
+          "detail": "Nevhodné oslovenie „pán doktor“, chyba „v pondelie“ a obrátený význam „ste mi dostupný“ namiesto „som Vám k dispozícii“."
         }
       ],
       "latency": 3.09
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Tykanie je správne, ale vyskytuje sa preklep „právu“ a chýba sloveso v „Ak ti dôležitá“."
+          "detail": "Preklep „bežnú právu“, chýbajúce sloveso v „Ak ti dôležitá výdrž“."
         }
       ],
       "latency": 4.9
@@ -3779,8 +3779,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Krátka, neformálna a prirodzená SMS bez chýb."
+          "score": 7,
+          "detail": "Zrozumiteľné, chýba čiarka v „hneď, ako prídem“, skratka „cca“ v poriadku."
         }
       ],
       "latency": 4.07
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Obsahuje české „Věc“ a chyby („Nehnuteľnosti“, „budem riadne odovzdať“, „Váš pracovný postavenie“)."
+          "detail": "Český „Věc“, nezmysel „Nehnuteľnosti súvisiace s mojou prácou“, chybné „budem riadne odovzdať“, „Váš pracovný postavenie“, hovorové „vďaka“."
         }
       ],
       "latency": 5.54
@@ -3902,8 +3902,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Profesionálna odpoveď s vykaním s veľkým V, ale s preklepom „nepršla“."
+          "score": 5,
+          "detail": "Preklep „nepršla“, neobratné „budeme Vás prosiť“, inak vykanie, ospravedlnenie a konkrétny krok."
         }
       ],
       "latency": 6.78
@@ -3919,8 +3919,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Jednoznačne a správne uvádza veľké V."
+          "score": 7,
+          "detail": "Správne veľké V, ale „Váš“ nesprávne označuje za prídavné meno."
         }
       ],
       "latency": 7.82
@@ -3931,7 +3931,7 @@
       "prompt": "Napíš jednu vetu, ktorou sa starší muž zdvorilo opýta neznámej ženy na ulici, koľko je hodín.",
       "answer": "Prepáčte, nemôžete mi prosím povedať, koľko je hodín?",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "regex",
@@ -3945,9 +3945,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 8,
-          "detail": "Zdvorilá otázka s vykaním, chýbajú čiarky okolo „prosím“."
+          "ok": false,
+          "score": 6,
+          "detail": "„Nemôžete mi prosím povedať“ znie menej zdvorilo a chýbajú čiarky okolo „prosím“."
         }
       ],
       "latency": 4.99
@@ -3968,8 +3968,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Obsahuje preklep „nepríjne“ a neprirodzenú konštrukciu."
+          "score": 4,
+          "detail": "Preklep/neexistujúce slovo „nepríjne“ a neprirodzený slovosled."
         }
       ],
       "latency": 5.93
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Chyby „rozhodol“ bez „sa“, „hadaní“, „Váš men“."
+          "detail": "Chýbajúce „sa“ v „nakoniec som rozhodol“, preklep „hadaní“, „[Váš men]“."
         }
       ],
       "latency": 4.72
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Prirodzená kolegiálna veta bez chýb."
+          "score": 9,
+          "detail": "Prirodzená veta s emoji, vhodná na Slack, bez chýb."
         }
       ],
       "latency": 4.44
@@ -4119,8 +4119,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Správne a jednoznačne uvádza, že čiarka sa nepíše."
+          "score": 9,
+          "detail": "Správna a jednoznačná odpoveď; úvodzovky sú nejednotné („…\")."
         }
       ],
       "latency": 8.99
@@ -4163,7 +4163,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Chýba ospravedlnenie, „sľubujeme Vám“ dáva nezmysel a „o Vaše trpezlivosť“ je chybné."
+          "detail": "Nezmyselné „sľubujeme Vám, že Váš balík sa … stratil“, chyba „Vaše trpezlivosť“ a chýba ospravedlnenie."
         }
       ],
       "latency": 5.4

@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T17:36:43+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 58.9,
+    "overall": 58.3,
     "categories": {
       "format": {
         "passed": 24,
@@ -20,9 +20,9 @@
         "score": 63.8
       },
       "long_text": {
-        "passed": 4,
+        "passed": 3,
         "total": 13,
-        "score": 30.8
+        "score": 23.1
       },
       "preklad": {
         "passed": 11,
@@ -35,9 +35,9 @@
         "score": 59.6
       },
       "register": {
-        "passed": 15,
+        "passed": 16,
         "total": 26,
-        "score": 57.7
+        "score": 61.5
       }
     }
   },
@@ -2055,7 +2055,7 @@
       "prompt": "Napíš článok (150–250 slov) o výhodách kontajnerizácie pre malé firmy. Po slovensky, s diakritikou, bez nadpisov.",
       "answer": "Kontajnerizácia, technológia známa najmä z DevOps prostredia, prináša aj malým firmám množstvo výhod. Ide o balenie aplikácií a všetkých ich závislostí do samostatných, prenosných jednotiek – kontajnerov.\n\nJednou z hlavných výhod je zjednodušenie nasadzovania. Aplikácie sa dajú nasadzovať na rôzne platformy (napr. cloud, server, notebook) bez obáv z nekompatibility. To šetrí čas a znižuje riziko chýb.\n\nKontajnerizácia zvyšuje efektivitu využitia zdrojov. Viaceré aplikácie môžu bežať na jednom serveri, čo znižuje náklady na infraštruktúru. \n\nZlepšuje sa aj škálovateľnosť. Pri zvýšenej záťaži je možné rýchlo a jednoducho vytvoriť ďalšie kontajnery a aplikáciu rozšíriť.\n\nNavyše, kontajnery zabezpečujú konzistentné prostredie pre vývoj, testovanie a produkciu, čím sa minimalizujú problémy s prechodom medzi jednotlivými fázami.\n\nPre malé firmy, ktoré často pracujú s obmedzeným rozpočtom a zdrojmi, predstavuje kontajnerizácia efektívny spôsob, ako zlepšiť agilitu, znížiť náklady a zamerať sa na podnikanie.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "min_words",
@@ -2079,9 +2079,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 8,
-          "detail": "Správna, prirodzená slovenčina bez chýb, hoci text je skôr kratší."
+          "ok": false,
+          "score": 6,
+          "detail": "Jazykovo správne, ale iba 135 slov – pod požadovaným rozsahom."
         }
       ],
       "latency": 14.71
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Pokrýva hlavné body, ale obsahuje chyby („z diaľky“, „pomalé spätne väzby“, „na ústne komunikáciu“)."
+          "detail": "Chyby „pomalé spätne väzby“, „ústne komunikáciu“, chýba dôvod (nemožnosť opýtať sa cez stôl)."
         }
       ],
       "latency": 9.92
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2220,8 +2220,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Celkovo úradný a správny text, no chyba „Veca“ namiesto „Vec“ a oslovenie úradu je neobratné."
+          "score": 5,
+          "detail": "Chyba „Veca“, oslovenie „Vážený Mestský úrad“, len okolo 114 slov a čiarka za „S pozdravom,“; inak správna slovenčina."
         }
       ],
       "latency": 12.52
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Zrozumiteľný príbeh, ale rovné úvodzovky, chyby („vyzeril“, „nová dobrodružstvo“) a pravdepodobne pod 150 slov."
+          "score": 3,
+          "detail": "Rozsah 124 slov je pod požadovaným minimom, používa anglické úvodzovky \"…\" a obsahuje chyby („Mama ježko“, „vyzeril“, „nová dobrodružstvo“)."
         }
       ],
       "latency": 12.95
@@ -2299,8 +2299,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Logický a zrozumiteľný návod v správnej slovenčine, len drobný anglicizmus „providera“."
+          "score": 7,
+          "detail": "Zrozumiteľné kroky, ale anglicizmus „providera“ a nadpis kroku 3 „Prihláste sa“ nezodpovedá obsahu."
         }
       ],
       "latency": 18.91
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Úplný preklad, ale s chybami („sprevádzkujú“, „konfigurácia drift“) a horším slovosledom."
+          "score": 4,
+          "detail": "Neprirodzené „návštevnosť“, chybné „sprevádzkujú“, nesprávny slovosled „operátor ho“ a chybné spojenie „konfigurácia drift“."
         }
       ],
       "latency": 5.91
@@ -2378,8 +2378,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Vymyslený štít „Števio“, chyba „úžžiny“ a názov pohoria len v dvoch pádoch."
+          "score": 3,
+          "detail": "Iba 136 slov, chyba „V Vysokých Tatrách“, „úžžiny“, vymyslený štít „Števio“ a vodné športy na plesách."
         }
       ],
       "latency": 16.01
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Celý text tyká napriek požiadavke na vykanie."
+          "detail": "Celý text tyká („Pomôžem ti“), čím priamo porušuje zadanie; chyba „Nájdni“."
         }
       ],
       "latency": 15.42
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Obsah v poriadku, ale veľké písmeno po oslovení, chyba „zaoberáte a navrhnite“ a čiarka za „S pozdravom“."
+          "detail": "Veľké „Píšem“ po oslovení, chybný tvar „navrhnite“ (namiesto „navrhnete“), „neobdržal“, len okolo 112 slov a čiarka za „S pozdravom,“."
         }
       ],
       "latency": 19.23
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslel konkrétne meno autora."
+          "detail": "Vymyslel autora („Igor Králik“)."
         }
       ],
       "latency": 2.31
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 0.86
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Uvádza konkrétne meno prezidentky."
+          "detail": "Uvádza Zuzanu Čaputovú ako podpisovateľku a vymýšľa fakty."
         }
       ],
       "latency": 3.97
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Vykanie s veľkým V, ale čiarka za „S pozdravom“, zástupný text „[Tvoje meno]“ a nelogická veta o návrate."
+          "score": 5,
+          "detail": "Veľké „Chcel/a“ po čiarke, chýba čiarka v oslovení, šablóna „[Tvoje meno]“ s tykaním a neprirodzené „zistiť, kedy sa môžem vrátiť“."
         }
       ],
       "latency": 6.75
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Prirodzený tón, chýba čiarka v „aj aby“."
+          "detail": "Tykanie v poriadku, chýba čiarka v „Dôležité je aj aby“, „pozri sa po modeloch“ je mierne neobratné."
         }
       ],
       "latency": 4.97
@@ -3779,8 +3779,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Prirodzená, neformálna a bezchybná SMS s tykaním."
+          "score": 9,
+          "detail": "Krátke, neformálne a správne."
         }
       ],
       "latency": 1.41
@@ -3806,8 +3806,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Správne oslovenie a forma, hoci veľmi stručné."
+          "score": 7,
+          "detail": "Stručná, správna žiadosť so správnym oslovením, ale vymyslený rok „2024“ a čiarka za „S pozdravom,“; zámeno Vy chýba."
         }
       ],
       "latency": 3.67
@@ -3892,18 +3892,18 @@
       "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
       "answer": "Dobrý deň, ďakujeme za správu. Ospravedlňujeme sa za oneskorenie. Skontrolujeme stav vašej objednávky a čo najskôr vás budeme informovať o jej aktuálnom stave a predpokladanom termíne doručenia. Prosíme o trpezlivosť a dovoľte nám vyriešiť situáciu.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "regex",
-          "ok": false,
+          "ok": true,
           "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Správna a zdvorilá odpoveď s ospravedlnením, ale vykanie s malým v a menej konkrétny ďalší krok."
+          "ok": true,
+          "score": 8,
+          "detail": "Správna slovenčina s vykaním a ospravedlnením, ďalší krok je však vágny a fráza „dovoľte nám vyriešiť situáciu“ znie neprirodzene."
         }
       ],
       "latency": 5.54
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Správna odpoveď, no bohemizmus „vykání“ a nekonzistentný príklad „vy“."
+          "detail": "Správne veľké V, ale čechizmus „vykání“ a väzba „jednej osoby“."
         }
       ],
       "latency": 1.42
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Prirodzená, zdvorilá a bezchybná otázka s vykaním."
+          "detail": "Prirodzená zdvorilá otázka s vykaním a správnou interpunkciou."
         }
       ],
       "latency": 1.45
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Spisovná a správna formulácia."
+          "detail": "Spisovné a prirodzené, význam zachovaný."
         }
       ],
       "latency": 1.22
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Správne a zdvorilé odmietnutie, ale vykanie s malým v."
+          "detail": "Obsahovo v poriadku, ale vykanie malým písmenom („vašu ponuku“, „vám“), chýba podpis."
         }
       ],
       "latency": 6.36
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prirodzená, správna jedna veta."
+          "detail": "Prirodzená jedna veta s pozdravom „Ahoj“, kolegiálny tón, bez chýb."
         }
       ],
       "latency": 1.8
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Malé „váš/vám“ a rozbitá veta „dovoľujeme si sa poďakovať“."
+          "score": 4,
+          "detail": "Malé „váš/vám“, veľké písmeno po čiarke a chybné „dovoľujeme si sa … poďakovať“."
         }
       ],
       "latency": 4.21

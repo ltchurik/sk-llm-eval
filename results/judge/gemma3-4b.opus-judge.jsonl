@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 6, "reason": "Logistický výklad témy, prijateľný jazyk, ale chyba „v vlastných skladoch“ a „rýchle prepravy tovaru“."}
-{"id": "long_text-003", "score": 3, "reason": "Viaceré neexistujúce slová a chyby („schoviek“, „schúvky“, „zažívania“, „tímy, ktoré sa daria“)."}
-{"id": "long_text-004", "score": 4, "reason": "Nezmyselný úvod „sú s tým, že“ a chyba „návrh rozmery“."}
-{"id": "long_text-005", "score": 3, "reason": "Neštandardné tvary a chyby („ježok“, „vlasek“, „prizeral sa“, „strachopýtlivý“) a nedokončený koniec."}
-{"id": "long_text-006", "score": 4, "reason": "Vecné chyby (USB kábel do WAN portu) a jazykové chyby („nezapáky“, „prehľadávač“)."}
-{"id": "long_text-007", "score": 2, "reason": "Mnoho nezmyslov a chýb („zátkové riadenie“, „odesielanie dopravy“, „prida jeho späť do pulzu“)."}
-{"id": "long_text-008", "score": 4, "reason": "Vymyslená „Tatranská Polňa“ a chyby v zhode („ponúka Vysoké Tatry“, „lednícke“)."}
-{"id": "long_text-011", "score": 4, "reason": "Dôsledné vykanie, ale chýba mäkčeň („Potvrdte“), je tu bohemizmus „obvykle“ a chybná zhoda („má vaše vnúčatá… pripojený“)."}
-{"id": "long_text-013", "score": 2, "reason": "Nezmyselné formulácie („Súhlasím s tým“, „Hlasným sklamaním“, „nepodvoláte“) a malé „váš“."}
-{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
-{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno a vymyslené číslo zákona."}
-{"id": "register-001", "score": 2, "reason": "Neexistujúce slová a chyby („Nevednosť“, „rádil by som Vám“, „neprekára“)."}
-{"id": "register-002", "score": 8, "reason": "Správna slovenčina a tykanie, obsahovo trochu slabšie odporúčanie."}
-{"id": "register-003", "score": 3, "reason": "Chýbajúca diakritika („Čakam“) a nelogický obsah („nech sa už pripravíš“, „čakám ťa“)."}
-{"id": "register-004", "score": 8, "reason": "Správne oslovenie a formálny záver, hoci veľmi stručné."}
-{"id": "register-009", "score": 3, "reason": "Vymyslené informácie, chyba „očakávame ju doručiť“ a vykanie s malým v."}
-{"id": "register-010", "score": 9, "reason": "Správne uvádza veľké Vy."}
-{"id": "register-011", "score": 2, "reason": "Nesprávny význam a ženský rod hovoriaceho namiesto staršieho muža."}
-{"id": "register-012", "score": 3, "reason": "Ponecháva hovorové „Dneska“."}
-{"id": "register-016", "score": 4, "reason": "Chyby („po starostom zvážení“, „Vám želám Vám“) a zástupný text „[Tvoje meno]“."}
-{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
-{"id": "register-020", "score": 8, "reason": "Správna odpoveď, hoci s menej prirodzeným slovosledom."}
-{"id": "register-022", "score": 2, "reason": "Dve možnosti, chyby a anglicizmus („súcemu“, „inconveniencie“, „prehlásime“)."}
+{"id": "long_text-001", "score": 4, "reason": "Téma chápaná ako skladovanie tovaru, nie softvérové kontajnery, a chyba „v vlastných“."}
+{"id": "long_text-003", "score": 3, "reason": "Nezmyselné „schoviek“, „schúvky“, „zažívania“, chybné „Tímy, ktoré sa daria“, „nemôže jednoducho spýtať“."}
+{"id": "long_text-004", "score": 3, "reason": "Nezmyselný začiatok „sú s tým, že ... smerujem na Vás“, chyba „návrh rozmery“, oslovenie „Vážení páni“ a čiarka za „S pozdravom,“."}
+{"id": "long_text-005", "score": 2, "reason": "Chyby „Ježok“, nezmysly („chlpatý ježok“, „chlpatý chvost“, „vlasek“, „prizeral sa“, „strachopýtlivý“), rozsah pod 150 slov a chýba záver."}
+{"id": "long_text-006", "score": 3, "reason": "Neexistujúce slovo „nezapáky“, vecne chybné pripojenie počítača „USB kábla“ do „WAN portu“, bohemizmus „obvykle“ a zbytočný úvodný komentár."}
+{"id": "long_text-007", "score": 2, "reason": "Nezmyselné výrazy „zátkové riadenie“, „odesielanie dopravy“, „prida jeho späť do pulzu“, „premostení“; chýba aj load balancer."}
+{"id": "long_text-008", "score": 4, "reason": "Chyby „lednícke jazerá“, „Tatranská Polňa“, „ponúka Vysoké Tatry“, „chat“."}
+{"id": "long_text-011", "score": 4, "reason": "Nelogický prvý krok „Späť“, chýbajúci mäkčeň „Potvrdte“, nezhoda „má vaše vnúčatá“, pod rozsahom pre laika nejasné."}
+{"id": "long_text-013", "score": 2, "reason": "Chýba oslovenie, chyby „Vaša Telefónna Číslo“, „Hlasným sklamaním“, „Môje“, „nepodvoláte“, malé „váš/vás“ napriek zadaniu."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel autora („Jozef Kopányi“)."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza Andreja Kisku ako podpisovateľa a vymýšľa číslo zákona."}
+{"id": "register-001", "score": 2, "reason": "Chyby „Nevednosť“, „rádil by som Vám“, „neprekára“; text je nezrozumiteľný."}
+{"id": "register-002", "score": 6, "reason": "Jazykovo v poriadku, ale rada (Celeron za 800 €) je vecne nevhodná."}
+{"id": "register-003", "score": 3, "reason": "Chybné „meškám o 10 minút“, nezmyselné „nech sa už pripravíš“, chýbajúca dĺžka v „Čakam“."}
+{"id": "register-004", "score": 7, "reason": "Stručná, správna žiadosť so správnym oslovením, ale vymyslený rok, čiarka za „S pozdravom,“ a bez zámena Vy."}
+{"id": "register-009", "score": 3, "reason": "Chybná konštrukcia „očakávame ju doručiť do piatku“, bagatelizujúce „prípadné zdržanie“, vymyslený stav zásielky a nezmyselné „aby sme sa zlepšili“."}
+{"id": "register-010", "score": 7, "reason": "Správne, ale neprirodzené „s formálnou rečou“ a nepresné „vždy“."}
+{"id": "register-011", "score": 2, "reason": "Nelogická veta z pohľadu ženy („mohla by som sa opýtať“) a „neviem, koľko je hodín“ nespĺňa zadanie."}
+{"id": "register-012", "score": 4, "reason": "Ponechané hovorové „Dneska“, prepis do spisovnej podoby nie je dokončený."}
+{"id": "register-016", "score": 4, "reason": "Chyby „Po starostom zvážení“, „Vám želám Vám“, zástupný text „[Tvoje meno]“ s tykaním."}
+{"id": "register-018", "score": 8, "reason": "Prirodzená veta, ale chýba čiarka pred vedľajšou vetou „ako má“."}
+{"id": "register-020", "score": 7, "reason": "Obsahovo správna odpoveď s neprirodzeným slovosledom („v slovenskom liste čiarka sa nepíše za…“)."}
+{"id": "register-022", "score": 2, "reason": "Dve varianty namiesto jedného e-mailu, nezmysel „súcemu“, anglicizmus „inconveniencie“, chybné „prehlásime“."}

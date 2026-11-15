@@ -4,10 +4,10 @@
   "base_url": null,
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T18:19:09+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "offline",
   "summary": {
-    "overall": 94.4,
+    "overall": 95.7,
     "categories": {
       "format": {
         "passed": 38,
@@ -20,9 +20,9 @@
         "score": 98.6
       },
       "long_text": {
-        "passed": 10,
+        "passed": 11,
         "total": 13,
-        "score": 76.9
+        "score": 84.6
       },
       "preklad": {
         "passed": 13,
@@ -1973,8 +1973,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Súvislý a bezchybný text, len s anglicizmom „open source“, kde existuje slovenský výraz."
+          "score": 10,
+          "detail": "Prirodzený, súvislý text bez chýb."
         }
       ]
     },
@@ -2069,8 +2069,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Úplné zhrnutie, ale napriek zákazu používa anglicizmus „manažéri“ namiesto „vedúci“."
+          "score": 10,
+          "detail": "Úplné, presné a prirodzené zhrnutie bez anglicizmov a chýb."
         }
       ]
     },
@@ -2098,9 +2098,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2111,7 +2111,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Úradný štýl a vykanie sú v poriadku, no oslovenie „vážený pane“ je bohemizmus (správne „vážený pán“) a údaj „Vo Vašom meste dňa“ je neprirodzený."
+          "detail": "Dobrý text, no oslovenie s českým vokatívom „vážený pane“ a zvláštne „Vo Vašom meste dňa“."
         }
       ]
     },
@@ -2152,7 +2152,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Príbeh má zápletku a správny dialóg, ale meno Ježo/Ježko je nejednotné a záverečné „usmievajú na človeka“ nesedí k zvieracím postavám."
+          "detail": "Dobrý príbeh so správnymi úvodzovkami; meno postavy je nejednotné („Ježo“ a v oslovení „Ježko“) a výraz „nevedel trafiť domov“ je hovorový."
         }
       ]
     },
@@ -2187,8 +2187,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Presne 8 logických krokov so slovenskou terminológiou bez chýb."
+          "score": 9,
+          "detail": "Prirodzená a bezchybná slovenčina, logické poradie krokov."
         }
       ]
     },
@@ -2223,8 +2223,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Presný preklad, ale s neobvyklým novotvarom „záťažový balancér“ a anglicizmom „poolu“."
+          "score": 9,
+          "detail": "Presný, plynulý preklad so slovenskými ekvivalentmi a anglickými termínmi v zátvorkách; jemne rozvláčne, ale bez chýb."
         }
       ]
     },
@@ -2234,7 +2234,7 @@
       "prompt": "Napíš 150–220 slov o Vysokých Tatrách ako turistickej destinácii. Použi názov pohoria aspoň trikrát v rôznych pádoch.",
       "answer": "Vysoké Tatry sú najvyšším pohorím Slovenska a zároveň jednou z najobľúbenejších turistických destinácií v strednej Európe. Na pomerne malom území ponúkajú dramatické štíty, desiatky plies, hlboké doliny a čistý horský vzduch. Návštevníci sa do Vysokých Tatier vracajú v lete aj v zime, pretože každé ročné obdobie prináša iný zážitok.\n\nLetná turistika sa sústreďuje okolo Štrbského Plesa, Popradského plesa a Tatranskej Lomnice. Obľúbené sú ľahšie trasy k Skalnatému plesu aj náročnejšie výstupy na Rysy či Slavkovský štít. Treba však pamätať, že v horách sa počasie rýchlo mení, a preto je nevyhnutná poriadna obuv a vhodné oblečenie. Od novembra do polovice júna sú navyše zatvorené chodníky nad hranicou lesa.\n\nZimné mesiace patria lyžiarom a milovníkom snehu. Stredisko Jasná v neďalekých Nízkych Tatrách je populárne, no samotné stredisko Starý Smokovec či Štrbské Pleso lákajú rodiny aj skúsených lyžiarov. Po náročnom dni si možno oddýchnuť v útulných chatách alebo termálnych kúpeľoch. Návšteva Vysokých Tatier je zážitok, na ktorý sa nezabúda, a mnohí turisti tvrdia, že dych im vyrazili práve výhľady z tatranských štítov.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "min_words",
@@ -2263,9 +2263,9 @@
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Pády sú správne, no text odbieha k Nízkym Tatrám, má chybnú zhodu „samotné stredisko… lákajú“ a nepresné tvrdenie o termálnych kúpeľoch."
+          "ok": true,
+          "score": 8,
+          "detail": "Správne pády a fakty, drobná neobratnosť „samotné stredisko Starý Smokovec či Štrbské Pleso lákajú“, sporné termálne kúpele."
         }
       ]
     },
@@ -2395,8 +2395,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Plynulý a zrozumiteľný postup s dôsledným vykaním s veľkým V a bez chýb."
+          "score": 8,
+          "detail": "Logický postup s veľkým V, správna dĺžka; drobné neobratnosti („Telefón Vám môže ponúknuť povolenie“)."
         }
       ]
     },
@@ -2476,13 +2476,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Vecná a zdvorilá sťažnosť s jasnou požiadavkou, vykaním s veľkým V a správnym záverom."
+          "detail": "Vecná, gramaticky správna sťažnosť s vykaním, jasnou požiadavkou a správnym záverom."
         }
       ]
     },
@@ -3033,7 +3033,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Model priznal, že román nepozná, a autora nevymyslel."
+          "detail": "Správne a bez chýb priznáva, že román nepozná."
         }
       ]
     },
@@ -3093,7 +3093,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ]
     },
@@ -3243,8 +3243,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."
+          "score": 9,
+          "detail": "Správne a jazykovo bezchybné."
         }
       ]
     },
@@ -3549,8 +3549,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením bez chýb."
+          "score": 9,
+          "detail": "Zdvorilý formálny e-mail s dôsledným vykaním s veľkým V, bez chýb."
         }
       ]
     },
@@ -3575,8 +3575,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Neformálne, dôsledné tykanie a prirodzená slovenčina."
+          "score": 9,
+          "detail": "Prirodzené, tykanie, bez chýb."
         }
       ]
     },
@@ -3597,7 +3597,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Neformálna SMS s tykaním, ale „budem mať 10 minút meškanie“ je neprirodzená kalková formulácia."
+          "detail": "Správne a neformálne, ale „budem mať asi 10 minút meškanie“ znie strojene."
         }
       ]
     },
@@ -3623,7 +3623,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Správne oslovenie, vykanie a záver, len s doplneným rokom a zastaraným spojením „dovolenka na zotavenie“."
+          "detail": "Správna formálna žiadosť s vykaním „Vás“, oslovením a záverom, bez chýb."
         }
       ]
     },
@@ -3714,7 +3714,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Zdvorilá odpoveď s vykaním, no tvrdí overenie bez čísla objednávky a sľubuje nevyžiadanú zľavu."
+          "detail": "Správna odpoveď s vykaním a konkrétnym krokom, len „Ako ospravedlnenie Vám poskytneme zľavu“ znie trochu neobratne."
         }
       ]
     },
@@ -3729,8 +3729,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Správne uvádza veľké V, ale úvodné „Áno“ na otázku typu „alebo“ nedáva zmysel."
+          "score": 8,
+          "detail": "Správne, ale úvodné „Áno“ nesedí na otázku typu „alebo“."
         }
       ]
     },
@@ -3756,7 +3756,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Zdvorilá a prirodzená veta s vykaním bez chýb."
+          "detail": "Prirodzená zdvorilá otázka s oslovením „pani“ a vykaním, bez chýb."
         }
       ]
     },
@@ -3777,7 +3777,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Spisovná veta, no vynecháva informáciu „vonku“."
+          "detail": "Spisovné a správne, len vypustilo „vonku“."
         }
       ]
     },
@@ -3847,8 +3847,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Zdvorilé odmietnutie s vykaním, ale po oslovení s čiarkou je chybne veľké písmeno „Ďakujem“."
+          "score": 9,
+          "detail": "Správne a zdvorilé s veľkým V; len veľké „Ďakujem“ po čiarke v oslovení."
         }
       ]
     },
@@ -3884,7 +3884,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Prirodzená kolegiálna veta, ale chýba čiarka pred vedľajšou vetou „ako má“."
+          "detail": "Prirodzená veta, chýba čiarka pred „ako má“."
         }
       ]
     },
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Správne a jednoznačne uvádza, že čiarka sa nepíše."
+          "detail": "Správna a jednoznačná odpoveď bez chýb."
         }
       ]
     },
@@ -3961,7 +3961,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Formálne, s vykaním, ospravedlnením a informáciou o novej zásielke, chýba len záverečný pozdrav."
+          "detail": "Formálne, prirodzené, s veľkým V a ospravedlnením."
         }
       ]
     },

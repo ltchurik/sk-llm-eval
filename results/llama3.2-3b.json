@@ -4,7 +4,7 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T15:32:37+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
     "overall": 14.5,
@@ -2081,7 +2081,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nezmyselný, repetitívny text bez obsahu."
+          "detail": "Iba 33 slov nezmyselného textu („zamestnanosť zamestnavateľných zamestnaných“)."
         }
       ],
       "latency": 1.88
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nezmyselný text so zacyklením a miešaním jazykov."
+          "detail": "Nezmyselný text s nekonečným opakovaním „súčasnú“, anglické „surroundings“, ďaleko nad limitom."
         }
       ],
       "latency": 150.09
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
-          "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "type": "regex",
+          "ok": false,
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je plný gramatických chýb a nezmyslov („Prezývame“, „Zaprasovám Vás k kontaktu“)."
+          "detail": "Takmer nezrozumiteľný text („Prezývame [vaša meno]“, „Zaprasovám Vás k kontaktu“, „vyhlásit“), chýbajú diakritika a správne oslovenie."
         }
       ],
       "latency": 4.78
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Zacyklený nezmyselný text bez dialógu a so zlou slovenčinou."
+          "score": 1,
+          "detail": "Nezmyselný text, ktorý sa donekonečna opakuje („Ežak bol si uvedomal, že tma nie je zlyhala“, „prázdna space“), nemá dialóg ani dej a výrazne prekračuje rozsah."
         }
       ],
       "latency": 151.25
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Zmes češtiny a slovenčiny s množstvom chýb a nezmyselnými krokmi."
+          "detail": "Zmes češtiny a slovenčiny („Zkontrolujte“, „Otevřete“, „zadejte“, „najnovější“, „Uložení“) a nezmyselný obsah („Zmena portálneho adresy“)."
         }
       ],
       "latency": 7.74
@@ -2337,7 +2337,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nezmyselný preklad s miešaním jazykov a nesprávnym významom."
+          "detail": "Nezrozumiteľný text plný chýb a cudzích slov („within“, „zraniteľný“, „Povinnosti“, „primárным“, „drifť“), význam originálu sa stratil."
         }
       ],
       "latency": 2.14
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nezmyselný, opakujúci sa text s chybami a anglicizmami („High Tatras“, „surroundingskej“)."
+          "detail": "Nezmyselný text s chybami a angličtinou („High Tatras“, „surroundingskej scéně“, „popularnou turistickej“)."
         }
       ],
       "latency": 5.72
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Mechanický a nepoužiteľný postup s gramatickými chybami („vašho“, „Nastavte kamera“, „mikrofon“)."
+          "detail": "Chyby „mobilnom telefónu“, „vašho“, „Nastavte kamera“, tykanie „pripravi sa“ a nezmyselné kroky."
         }
       ],
       "latency": 4.93
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nezmyselný, nekonečne sa opakujúci text."
+          "detail": "Nezrozumiteľný, nekonečne opakovaný text („Súhlasím, že práčka bola poštedlá poškodená“), ďaleko nad limitom."
         }
       ],
       "latency": 156.23
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslel konkrétne meno autora."
+          "detail": "Vymyslel autora („Dušan Kovačić“) a použil bohemizmus „napsal“."
         }
       ],
       "latency": 0.52
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 0.28
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Uvádza konkrétne meno prezidenta."
+          "detail": "Uvádza vymyslené meno podpisovateľa „Michal Kováč“ a číslo zákona, navyše chyba „podpísal Zákonom“."
         }
       ],
       "latency": 0.81
@@ -3731,7 +3731,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nezmyselný obsah, oslovenie „Prezidentu“ a bohemizmy."
+          "detail": "Nezmyselný text („Prezidentu [nadriadeného]“, „vyšetření“), bez vykania a s obsahom odporujúcim zadaniu (bude v práci do poludnia)."
         }
       ],
       "latency": 1.45
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Chyby „Prečítaj sa“, „najpopulárnych“, „optionál“."
+          "detail": "Chyby „Prečítaj sa“, „najpopulárnych“, „specifikáciách“, „porovnaj ich cena“, „najvhodnú optionál“."
         }
       ],
       "latency": 1.38
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nezrozumiteľný text plný chýb."
+          "detail": "Nezrozumiteľný text s chybami („sem si nevezal“, „prijedej“), nesprávny význam."
         }
       ],
       "latency": 0.95
@@ -3806,8 +3806,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nezmyselný text plný chýb."
+          "score": 1,
+          "detail": "Nezrozumiteľná zmes češtiny a skomolenín („žiadoji“, „periodo“, „Dôkynka“), chýba oslovenie aj správny záver."
         }
       ],
       "latency": 3.14
@@ -3903,7 +3903,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Chýbajúca diakritika, české tvary a nezmyselný obsah bez ospravedlnenia."
+          "detail": "Chýbajúca diakritika a čechizmy („Dakujeme“, „se“, „nas“, „pondeliku“), obsahovo nezmyselné a bez ospravedlnenia."
         }
       ],
       "latency": 2.32
@@ -3919,8 +3919,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Nesprávna a jazykovo pomiešaná odpoveď."
+          "score": 0,
+          "detail": "Zmes slovinčiny a slovenčiny („se v listu“, „uporábja“) a vecne nesprávne."
         }
       ],
       "latency": 0.73
@@ -3946,8 +3946,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nezmyselné odmietnutie s chybami namiesto požadovanej vety."
+          "score": 1,
+          "detail": "Namiesto otázky nezmyselné odmietnutie s chybami („napisať“, „záujanlivých“, „úkolu“)."
         }
       ],
       "latency": 0.93
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Ponecháva hovorové „Hej“ a „hnusný“, gramaticky chybné."
+          "detail": "Pridaný prefix „Prepisanie:“, ponechané „Hej“ a „hnusný“, neexistujúce „dneský deň“."
         }
       ],
       "latency": 0.45
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Zacyklený nezmyselný text s češtinou a azbukou."
+          "detail": "Nezmyselný, donekonečna opakovaný text s čechizmami a azbukou („размере“)."
         }
       ],
       "latency": 149.85
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Prirodzená, správna jedna veta."
+          "score": 8,
+          "detail": "Správna veta, ale zbytočne v úvodzovkách."
         }
       ],
       "latency": 0.63
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Iba české „Ne“ bez slovenskej vety."
+          "detail": "Odpovedá len českým „Ne.“ a nie celou slovenskou vetou."
         }
       ],
       "latency": 0.11
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nezmyselný text."
+          "score": 1,
+          "detail": "Nezrozumiteľný text („Ktorý balík ste prišiel, bol si mu neúspešný“) s metakomentárom, bez ospravedlnenia."
         }
       ],
       "latency": 2.26

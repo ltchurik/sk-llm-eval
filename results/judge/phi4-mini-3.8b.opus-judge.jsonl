@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 1, "reason": "Text je napísaný po česky."}
-{"id": "long_text-003", "score": 1, "reason": "Odpoveď je v češtine, nie v slovenčine."}
-{"id": "long_text-004", "score": 1, "reason": "Text je prevažne po česky."}
-{"id": "long_text-005", "score": 1, "reason": "Text je v češtine a obsahovo nezmyselný."}
-{"id": "long_text-006", "score": 1, "reason": "Text je prevažne česky s tykaním a chybami."}
-{"id": "long_text-007", "score": 1, "reason": "Nezmyselný text v češtine."}
-{"id": "long_text-008", "score": 1, "reason": "Text je prevažne česky s vymyslenými údajmi."}
-{"id": "long_text-011", "score": 0, "reason": "Zacyklený nezmyselný text s tykaním a češtinou."}
-{"id": "long_text-013", "score": 1, "reason": "Text je po česky a obsahovo zmätený."}
-{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
-{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno prezidenta."}
-{"id": "register-001", "score": 1, "reason": "Text je prevažne v češtine a obsahuje nezmysly."}
-{"id": "register-002", "score": 1, "reason": "Zmes češtiny a chybných tvarov („okrmy“, „mohlaš“)."}
-{"id": "register-003", "score": 0, "reason": "Nezmyselný text s češtinou."}
-{"id": "register-004", "score": 1, "reason": "Text je po česky."}
-{"id": "register-009", "score": 1, "reason": "Odpoveď je v češtine."}
-{"id": "register-010", "score": 2, "reason": "Česky („Velký“) a bez celej vety."}
-{"id": "register-011", "score": 0, "reason": "Nezmyselná veta, ktorá nie je otázkou na čas."}
-{"id": "register-012", "score": 0, "reason": "Nezmyselné a nespisovné („Dneska“, „hnědé“)."}
-{"id": "register-016", "score": 1, "reason": "Odpoveď je v češtine."}
-{"id": "register-018", "score": 0, "reason": "Česky a nezmyselný opakujúci sa text."}
-{"id": "register-020", "score": 0, "reason": "Na otázku neodpovedá."}
-{"id": "register-022", "score": 1, "reason": "Text je po česky."}
+{"id": "long_text-001", "score": 1, "reason": "Text je takmer celý v češtine („která“, „nabízí“, „snadno“, „Za čtvrté“)."}
+{"id": "long_text-003", "score": 1, "reason": "Text je v češtine („Práce z dálka se stala standardním“), nie po slovensky."}
+{"id": "long_text-004", "score": 1, "reason": "Text je prevažne v češtine („Předmluva“, „Odôvodnění“, „S pozdravem“) a obsahuje meta-poznámku na konci."}
+{"id": "long_text-005", "score": 1, "reason": "Text je v podstate po česky („Název“, „přišel“, „řekl“, „děkuji“), obsahuje francúzske „qui“ a je nezmyselný, nejde v ňom o strach z tmy."}
+{"id": "long_text-006", "score": 1, "reason": "Text je prevažne v češtine s nezmyslami („Vytiňte“, „zásobníku pro výživu pomocí zástěry“), nejde o slovenčinu."}
+{"id": "long_text-007", "score": 1, "reason": "Odpoveď je v češtine („Když“, „posílání provozu“) a obsahuje nezmysly „zbalížeř“, „strmou rukou“, „seléchaní“."}
+{"id": "long_text-008", "score": 1, "reason": "Prevažne česky, opakovaný odsek, vymyslený vrchol „Svĕtokrus“, nezmysel „turistických traktorov“."}
+{"id": "long_text-011", "score": 0, "reason": "Nezmyselný, opakujúci sa text s tykaním a češtinou („Otevře“, „jsi v režimech“)."}
+{"id": "long_text-013", "score": 1, "reason": "Text je v češtine a nezmyselne zamieňa práčku za knihu („výměna poškrábané knihy“)."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel autora („Dušan Čič“) a použil bohemizmus „Autorem“."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza Andreja Kisku ako podpisovateľa, navyše čechizmus „digitálném“."}
+{"id": "register-001", "score": 1, "reason": "Text je v zmesi češtiny a slovenčiny s nezmyslami („Budu se vrátit v rádi slnce“)."}
+{"id": "register-002", "score": 1, "reason": "Množstvo chýb a čechizmov: „práce, hraní“, „okrmy“, „úložiště“, „tvými rozpočtomom“, „ti mohlaš“."}
+{"id": "register-003", "score": 0, "reason": "Nezmyselný text s češtinou („Chyť se hned“), hashtagom a úvodzovkami, nesplňa zadanie."}
+{"id": "register-004", "score": 1, "reason": "Celý text je v češtine („Drahá Paní Horváthové, píšu, abych požádal“, „srpna“), nie po slovensky."}
+{"id": "register-009", "score": 1, "reason": "Odpoveď je v češtine („Omlouváme se“, „Děkujemy“) a obsahovo nezmyselná (presun na pondelok)."}
+{"id": "register-010", "score": 2, "reason": "Nie je to veta a je po česky „Velký V“."}
+{"id": "register-011", "score": 1, "reason": "Nezmyselný text („Vstup na 2 hodiny“, „zdvoril opýta neznámej ženu“), nie je to požadovaná otázka."}
+{"id": "register-012", "score": 0, "reason": "Ponechané „Dneska“, čeština „hnědé“ a úplne zmenený význam."}
+{"id": "register-016", "score": 1, "reason": "Text je v češtine („Děkuji vám za nabídku“), nie po slovensky."}
+{"id": "register-018", "score": 1, "reason": "Text je prevažne v češtine („Zdravím, kolegové! Zavolal jsem“), mnohovetný, s nezmyselnými opakovanými inštrukciami a hashtagmi."}
+{"id": "register-020", "score": 0, "reason": "Na otázku vôbec neodpovedá („S pozdravom.“)."}
+{"id": "register-022", "score": 1, "reason": "Text je prevažne v češtine („Předmět“, „Doufám“, „Děkujeme“)."}

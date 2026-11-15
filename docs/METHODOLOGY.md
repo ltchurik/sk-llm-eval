@@ -95,6 +95,21 @@ This reproduces the committed `results/*.json` exactly (apart from `eval_version
 
 The runs above leave judge tasks unscored (no `--judge-model`). They were then graded as described under [Judge](#judge).
 
+## API models through OpenRouter (`(OpenRouter)` rows)
+
+GPT-6.1 Sol, Gemini 4 Argon, Grok 4.7, DeepSeek V4 Pro, Mistral Large 4 and Llama 4 Maverick were run on 2026-11-15 through [OpenRouter](https://openrouter.ai)'s OpenAI-compatible API, with OpenRouter's default provider routing. The exact model id is in `model` of each result file.
+
+```bash
+export SK_EVAL_API_KEY=...   # OpenRouter key
+python -m sk_llm_eval.run --base-url https://openrouter.ai/api/v1 --model openai/gpt-6.1-sol \
+  --label "GPT-6.1 Sol (OpenRouter)" --max-tokens 8192 --timeout 600 --workers 3 --resume
+```
+
+- Temperature 0 and an 8192-token budget. Reasoning was left at each provider's default (no `reasoning` parameter sent), so models that reason by default did so. Providers that do not accept a temperature ignore it.
+- New OpenRouter accounts are limited to 20 requests per minute per model. The client waits on HTTP 429 (honouring `Retry-After`) and a second `--resume` pass retried anything that still failed. In the end no task had an API error.
+- The full runs of all six models cost about $1.70 in total (plus about $0.20 for a 23-task pilot).
+- Mistral Large 4 returned an empty answer on 3 short grammar tasks (`gramatika-011`, `-015`, `-029`). A later single request for `gramatika-011` returned an answer after about 2,300 reasoning tokens, so the empty answers look transient. They still count as failures, because every row gets one attempt per task.
+
 ## Claude rows
 
 These rows were not produced through an API, and they are not directly comparable with the Ollama rows.
@@ -113,24 +128,25 @@ The online judge in `sk_llm_eval/judge.py` (`--judge-model`) was **not** used fo
 3. **De-anonymise.** `blind_judge merge` maps the verdicts back into `results/judge/<model>.opus-judge.jsonl`.
 4. **Re-score** each row with `score --judge-file … --meta-from …` (see the top of this document).
 
-The verdicts were produced in these batches:
+**Current verdicts (v0.2.3): one round for all rows.** All 598 judge answers (23 tasks × 26 rows) were graded again in one round, so every row is graded on the same scale. The tasks were split into six batches of 3–4 tasks. Each batch held the answers of all 26 rows to its tasks, shuffled per task, so the judge saw every answer to a task side by side. Each batch went to a separate Claude Opus subagent with the prompt that `blind_judge prepare` writes to `PROMPT.md`. Among other things, it tells the judge to grade one task at a time and not to mark an answer down because others to the same task are better, or up because they are worse.
 
-| Batch | Models | Answers |
-|---|---|---|
-| v0.1.0 | Claude rows, the 21 judge tasks of v0.1.0 | graded per model while the tasks were built, not shuffled across models |
-| v0.2.0 #1 | Qwen 3.8 27B, Ornith, Laguna (all 23 tasks) + Claude rows (the 2 new judge tasks) | 77 |
-| v0.2.1 #2 | the 11 other non-thinking Ollama rows (all 23 tasks), split into two judge sessions of 132 and 121 answers | 253 |
-| thinking | Qwen 3.5 4B/9B thinking + Qwen 3.5 4B/9B no-thinking as anchors | 92 |
+```bash
+python -m sk_llm_eval.blind_judge prepare results/answers/*.jsonl --out-dir judging/all-1 --seed 101 \
+  --only long_text-001 long_text-008 register-002 register-012
+# … batches all-2 to all-6 with seeds 102–106, the next tasks in sorted order (every 6th judge task)
+```
 
-The instructions grew a little between batches: batch #2 added the "Czech/Slovenian at most 2" rule, and the thinking batch added explicit rules about anglicisms, made-up facts and visible thinking text. The prompt in `blind_judge.py` is the union of these rules.
+`register-009` was then graded again on its own (seed 107), after its rubric was corrected to accept lowercase *vaša/vám* (see CHANGELOG 0.2.3).
 
-**Calibration.** In the thinking batch, the answers of the already-graded non-thinking Qwen rows were mixed in as anonymous anchors. The judge's pass/fail agreed with the earlier verdicts on 45 of 46 answers. The earlier verdicts were kept (`merge --anchors`).
+**Why the re-grading.** When the six OpenRouter rows were first graded together with two already-graded rows as anchors, pass/fail agreed with the earlier verdicts on only 34 of 46 anchor answers, and every change went from pass to fail. Next to very strong answers, the judge became stricter with mid-level ones. Grading all rows in one round removes that drift between rows. Compared with the earlier verdicts, the single round agrees on pass/fail for 561 of 598 answers (94 %), with changes in both directions (16 fail → pass, 21 pass → fail). For the rows that existed before, overall scores moved by at most 1.3 points, and the order of the leaderboard barely changed.
+
+**Earlier batches (v0.1.0–v0.2.2, now replaced).** Before v0.2.3 the verdicts came from separate batches: the v0.1.0 tasks of the Claude rows were graded per model while the tasks were built; Qwen 3.8 27B, Ornith and Laguna in one batch (77 answers); the other 11 non-thinking Ollama rows in two sessions (253 answers); and the thinking Qwen rows with the non-thinking Qwen rows as anchors (92 answers, pass/fail agreement with the anchors 45 of 46). The instructions grew a little between those batches; the prompt in `blind_judge.py` is the union of their rules.
 
 **Known limits of the judge**
 
-- A Claude model grades Claude models, so expect some family bias in the Claude rows.
-- The judge is an agent session, not a fixed API call at temperature 0. Repeating it will not give identical scores. The 45/46 agreement is an estimate of how stable pass/fail is.
-- The shuffle seeds of the past batches were not recorded. `blind_judge prepare --seed` records them from now on.
+- A Claude model grades Claude models, so expect some family bias in the Claude rows. Claude Opus is both a graded row and the judge.
+- The judge is an agent session, not a fixed API call at temperature 0. Repeating it will not give identical scores. Agreement between two rounds was 94 % on pass/fail.
+- Give each judge its own output path and keep helper scripts out of shared folders: in the v0.2.3 round, two parallel judge sessions shared a helper script, and one batch's verdicts were written to the wrong file. It was caught because the keys of each output must match its own input (`merge` checks this), and the batch was written again.
 
 ## Checking the deterministic checks
 
@@ -146,4 +162,5 @@ After each new row, the failed tasks were read by hand to look for checks that f
    # give judging/new/PROMPT.md to the judge, which writes judging/new/judge_out.jsonl
    python -m sk_llm_eval.blind_judge merge judging/new --anchors qwen3.5-9b gemma3-12b
    ```
-3. Re-score with `score --judge-file … --meta-from …` and rebuild the leaderboard (`python -m sk_llm_eval.leaderboard`).
+3. If pass/fail on the anchors agrees poorly with their earlier verdicts (well below ~90 %), the judge's scale has drifted. Grade all rows again in one round, as in v0.2.3, instead of merging the new verdicts.
+4. Re-score with `score --judge-file … --meta-from …` and rebuild the leaderboard (`python -m sk_llm_eval.leaderboard`).

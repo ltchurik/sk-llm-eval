@@ -46,8 +46,11 @@ You are a strict evaluator of Slovak language quality. Read the file {input} ({n
 JSON each with key, task, prompt, rubric, answer). Each line is one anonymous model answer \
 to a Slovak-language task; the rubric (in Slovak) says what the answer must satisfy. \
 Several answers to the same task are labelled A, B, C…; they come from different, unknown \
-models. Do not try to guess which model wrote which. Judge each on its own merits against \
-the rubric, but keep your scale consistent across answers to the same task.
+models of very different quality. Do not try to guess which model wrote which. If the file \
+is large, work through it one task at a time (read all answers to one task, then grade \
+them), so that your scale stays consistent across answers to the same task. Judge each \
+answer on its own merits against the rubric: an answer must not score lower just because \
+others to the same task are better, nor higher because others are worse.
 
 Score each answer 0–10 ({threshold} = pass threshold: acceptable, natural Slovak meeting \
 the rubric with at most minor slips). Be strict about grammar errors, missing diacritics, \
@@ -57,7 +60,8 @@ scores 0. An answer not in Slovak (e.g. Czech or Slovenian) scores at most 2. An
 that contains visible reasoning/thinking text or meta-commentary instead of just the \
 requested output should be penalised accordingly.
 
-Do not read any other files. Write the results to {output}, one JSON object per line: \
+Do not read any other files (in particular not key.json). If you use a helper script, give \
+it a unique name and do not reuse an existing one. Write the results to {output}, one JSON object per line: \
 {{"key": "<key>", "score": <int>, "reason": "<one sentence in Slovak naming the concrete \
 errors, quoting them where useful>"}}. All {n} keys must be present. Write valid UTF-8 JSON \
 (ensure_ascii off). Reply only with "done N" where N is the number of lines written.

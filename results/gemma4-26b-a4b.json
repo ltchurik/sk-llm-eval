@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T18:16:04+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 75.9,
+    "overall": 76.6,
     "categories": {
       "format": {
         "passed": 33,
@@ -35,9 +35,9 @@
         "score": 85.1
       },
       "register": {
-        "passed": 22,
+        "passed": 23,
         "total": 26,
-        "score": 84.6
+        "score": 88.5
       }
     }
   },
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Téma zvládnutá, ale chyby ako „prenosilosť“, „náhla zvýšenú prevádzku“ a „kontajnerov môže obmedziť“."
+          "score": 4,
+          "detail": "Chyby „prenosilosť“, „náhla zvýšenú prevádzku“, nezmyselná veta „kontajnerov môže jednoducho početne obmedziť“."
         }
       ],
       "latency": 49.36
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2220,8 +2220,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Úradný štýl, správne vykanie a štruktúra, len drobné štylistické nedostatky."
+          "score": 7,
+          "detail": "Celkovo správna žiadosť, no zvláštne oslovenie „vážený úradník“, väzba „rozhodnutia pre umiestnenie“ a čiarka za „S pozdravom,“."
         }
       ],
       "latency": 47.51
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Pekný príbeh so správnymi úvodzovkami, no s chybami („z pod listov“, „tŕňavým nosíkom v očiach“, „zasnil o“ bez „sa“)."
+          "score": 4,
+          "detail": "Chyby „Bojal sa tmy“, „z pod listov“ (správne „spod“), nezmyselné „s tŕňavým nosíkom v očiach“, „Mama ježová“ a „zasnil o“ bez „sa“."
         }
       ],
       "latency": 53.42
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Presne 8 logických krokov v správnej a zrozumiteľnej slovenčine."
+          "detail": "Jazykovo bezchybné a zrozumiteľné kroky so správnou terminológiou."
         }
       ],
       "latency": 40.05
@@ -2337,7 +2337,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Ponecháva anglické slová ako „traffic“, „requests“ a „configuration drift“ nepreložené, inak správny preklad."
+          "detail": "Nepreložené „traffic“ a „Requests“, neprirodzené „zhavarovaného servera“ a „spúšťajú tú istú verziu“."
         }
       ],
       "latency": 45.89
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Prirodzený, fakticky správny text s názvom v troch pádoch, len drobná nezhoda „sú hlavnou atrakciou rozvinutá sieť“."
+          "detail": "Správne pády, zbytočné tučné písmo, zhoda „sú hlavnou atrakciou rozvinutá sieť“."
         }
       ],
       "latency": 86.99
@@ -2512,8 +2512,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Zrozumiteľný postup s dôsledným vykaním, no s chybami („Nežiadajte ho pri uchu“, „vnúčatka alebo vnúčatká“)."
+          "score": 5,
+          "detail": "Chyby „vnúčatka alebo vnúčatká“, nezmyselné „Nežiadajte ho pri uchu“, „Neotočte sa“."
         }
       ],
       "latency": 53.05
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Vecný tón a vykanie, ale chyby „Žiadavam“, „úplný vrátenie“, „zaplacenej“ a čiarka za pozdravom."
+          "score": 3,
+          "detail": "Chyby „Žiadavam“, „úplný vrátenie“, „zaplacenej“, „Slovenského obchodného inšpektorátu“, logický rozpor (kontakt pred doručením), čiarka za „S pozdravom,“."
         }
       ],
       "latency": 45.46
@@ -3180,8 +3180,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Správne a stručne priznáva, že román nepozná."
+          "score": 9,
+          "detail": "Správne priznáva, že román nepozná; odpoveď je strohá."
         }
       ],
       "latency": 8.04
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 5.53
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Správne odmieta existenciu zákona v bezchybnej slovenčine."
+          "detail": "Správne odmietnutie, kategorické tvrdenie o neexistencii."
         }
       ],
       "latency": 12.81
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Formálny e-mail s dôsledným vykaním s veľkým V a takmer bez chýb."
+          "score": 8,
+          "detail": "Formálny e-mail s vykaním s veľkým V bez chýb, len trochu strnulý predmet „Ospravedlnenie z pracovného procesu“."
         }
       ],
       "latency": 19.07
@@ -3757,8 +3757,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Prirodzená, neformálna a správna odpoveď s tykaním."
+          "score": 7,
+          "detail": "Správne a neformálne, ale bez akejkoľvek vecnej rady, len doplňujúca otázka."
         }
       ],
       "latency": 15.53
@@ -3779,8 +3779,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Správna neformálna SMS, mierne formálne „ospravedlňujem sa“."
+          "score": 7,
+          "detail": "Správne, ale „Ospravedlňujem sa!“ je pre SMS kamarátke zbytočne formálne."
         }
       ],
       "latency": 9.41
@@ -3806,8 +3806,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Správne oslovenie, vykanie s veľkým V, dátumy a záver."
+          "score": 8,
+          "detail": "Správne formálne náležitosti a vykanie, len čiarka za „S pozdravom,“."
         }
       ],
       "latency": 17.46
@@ -3892,18 +3892,18 @@
       "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
       "answer": "Dobrý deň, ospravedlňujeme sa za meškanie vašej objednávky. Okamžite preveríme stav zásielky u nášho dopravcu a zistíme príčinu oneskorenia. Do niekoľkých hodín vám pošleme informáciu o novom termíne doručenia. Ďakujeme za vašu trpezlivosť.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "regex",
-          "ok": false,
+          "ok": true,
           "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Zdvorilé ospravedlnenie s konkrétnym krokom, ale vykanie s malým v."
+          "ok": true,
+          "score": 9,
+          "detail": "Stručná, bezchybná odpoveď s vykaním, ospravedlnením a konkrétnym krokom u dopravcu."
         }
       ],
       "latency": 25.17
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Jednoznačne uvádza veľké písmeno."
+          "detail": "Správne a bezchybne, len neopakuje situáciu jednej osoby."
         }
       ],
       "latency": 13.68
@@ -3946,8 +3946,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Prirodzená, zdvorilá a bezchybná otázka s vykaním."
+          "score": 9,
+          "detail": "Prirodzená zdvorilá otázka s vykaním, bez chýb."
         }
       ],
       "latency": 10.16
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Spisovná a správna formulácia."
+          "detail": "Spisovné a významovo verné."
         }
       ],
       "latency": 15.08
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Zdvorilé a jasné odmietnutie s vykaním s veľkým V, iba drobná chyba „mojím“."
+          "detail": "Dobrý list s veľkým V, ale chyba „mojím aktuálnym prioritám“ (správne „mojim“)."
         }
       ],
       "latency": 27.7
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Ponúka dve možnosti namiesto jednej vety a chýba diakritika v „Standardná“."
+          "score": 4,
+          "detail": "Namiesto jednej vety ponúka dve varianty s meta-komentárom, „Standardná“ bez dĺžňa a hovorové „ide ok“."
         }
       ],
       "latency": 14.18
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Správna odpoveď, že sa čiarka nepoužíva."
+          "detail": "Správne uvádza, že sa čiarka nepíše; neuvádza však konkrétne „S pozdravom“."
         }
       ],
       "latency": 11.07
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Formálne, s vykaním veľkým V, ospravedlnením a informáciou o novej zásielke."
+          "score": 10,
+          "detail": "Formálne, prirodzené, s veľkým V, ospravedlnením a novou zásielkou."
         }
       ],
       "latency": 16.44

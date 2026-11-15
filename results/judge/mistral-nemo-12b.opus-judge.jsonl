@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 1, "reason": "Mimo témy (odpad) a plné chýb ako „zbytokové“, „postupok“, „Na konci konta“."}
-{"id": "long_text-003", "score": 1, "reason": "Odpoveď je v slovinčine, nie v slovenčine."}
-{"id": "long_text-004", "score": 2, "reason": "Chýba oslovenie a množstvo chýb („Vaša mena“, „žiadosím“, „kafe“, „služiť“, „o výberu“)."}
-{"id": "long_text-005", "score": 2, "reason": "Rovné úvodzovky, české tvary a neexistujúce slová („báfí“, „Bám sa tma“, „báriť sa“, „bázľ“)."}
-{"id": "long_text-006", "score": 3, "reason": "Miešanie infinitívov a rozkazov, nesprávny postup a chyby („adresnej čiarne“, „k novému sieťi“)."}
-{"id": "long_text-007", "score": 1, "reason": "Preklad je v slovinčine, nie v slovenčine."}
-{"id": "long_text-008", "score": 2, "reason": "Gramatické chyby („Vysoké Tatry je“, „kamzíkův“, „navštívit“, „odpočink“)."}
-{"id": "long_text-011", "score": 2, "reason": "Chýbajúca diakritika („vam“), bohemizmy („můžete“), mnoho chýb a nevhodný komplikovaný postup cez Zoom."}
-{"id": "long_text-013", "score": 1, "reason": "Príliš krátke, chyby („Objednali som“, „v Vašom“, „Dakujem“)."}
-{"id": "realie-015", "score": 0, "reason": "Vymyslel konkrétne meno autora."}
-{"id": "realie-029", "score": 0, "reason": "Uvádza konkrétne meno prezidenta pri neexistujúcom zákone."}
-{"id": "register-001", "score": 1, "reason": "Miešanie s češtinou („odpuštění“, „Děkuji za pochop“) a chýba oslovenie."}
-{"id": "register-002", "score": 1, "reason": "Vyká namiesto tykania a obsahuje chyby („budzet“, „pamäteť“)."}
-{"id": "register-003", "score": 1, "reason": "Text je v slovinčine/zmiešanom jazyku, nie v slovenčine."}
-{"id": "register-004", "score": 2, "reason": "Chýba oslovenie, vykanie aj pozdrav."}
-{"id": "register-009", "score": 3, "reason": "Obsahuje azbuku („faktрах“), chyby a chýba skutočné ospravedlnenie aj konkrétny krok."}
-{"id": "register-010", "score": 0, "reason": "Česky a nejednoznačná odpoveď."}
-{"id": "register-011", "score": 0, "reason": "Odpoveď je v angličtine."}
-{"id": "register-012", "score": 0, "reason": "Nezmyselné a hovorové („voprve hnusno“)."}
-{"id": "register-016", "score": 1, "reason": "Odpoveď je v slovinčine."}
-{"id": "register-018", "score": 1, "reason": "Odpoveď je v angličtine."}
-{"id": "register-020", "score": 6, "reason": "Vecne správne, ale začína českým „Ne“."}
-{"id": "register-022", "score": 2, "reason": "Bohemizmy a chyby („Dobrý den“, „ztratil“, „Vaš“)."}
+{"id": "long_text-001", "score": 1, "reason": "Mimo témy (odpad), chyby „zbytokové“, „postupok“, „hromadle“, „Na konci konta“."}
+{"id": "long_text-003", "score": 1, "reason": "Text je v slovinčine („Dolgo v oddaljeni je za mnogimi timi“), nie po slovensky."}
+{"id": "long_text-004", "score": 2, "reason": "Chýba oslovenie, chyby „Vaša mena“, „žiadosím“, „kafe“, „služiť“, „bude pozitívne prispieť“, „o výberu termínu na schôdku“."}
+{"id": "long_text-005", "score": 2, "reason": "Bohemizmy a chyby („ježek“, „doupete“, „Čo ťa báfí“, „Bám sa tma“, „hviezdne“, „bázľ“, „báriť sa“) a anglické úvodzovky \"…\"."}
+{"id": "long_text-006", "score": 3, "reason": "Vecne chybné „Odoberte IP adresu počítača“ ako adresu routera, „adresnej čiarne“, „routeru“, „k novému Wi-Fi sieťi“, miešanie rozkazovacieho spôsobu a neurčitku."}
+{"id": "long_text-007", "score": 1, "reason": "Odpoveď je v slovinčine („strežnik“, „balanser obremenitve“), nie v slovenčine, a navyše s chybami."}
+{"id": "long_text-008", "score": 2, "reason": "Iba 120 slov, chyby „Vysoké Tatry je“, „aktivity“, „navštívit“, „kamzíkův“, „odpočink“, „výhony“, názov len v nominatíve."}
+{"id": "long_text-011", "score": 2, "reason": "Nad limit (249 slov), čechizmus „můžete“, chyby „vam“, „vaši vnúčatí“, „hotzí“, „užívajte sa“, nevhodný postup cez Zoom schôdzu."}
+{"id": "long_text-013", "score": 2, "reason": "Len 35 slov, chyby „Objednali som“, „v Vašom“, „Dakujem“, neformálny tón."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel autora („Pavol Dobšinský“)."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza Andreja Kisku ako podpisovateľa neexistujúceho zákona."}
+{"id": "register-001", "score": 1, "reason": "Prevažne česky („odpuštění“, „Děkuji za pochop“) s nezmyslom „Požalujem“, bez oslovenia a vykania."}
+{"id": "register-002", "score": 1, "reason": "Vyká („vaše“, „mali by ste“) napriek pokynu, chyby „budzet“, „pomery“, „pamäteť“, 4 vety."}
+{"id": "register-003", "score": 1, "reason": "Text je v slovinčine („Srečnemo se ... Izviňam“), nie po slovensky."}
+{"id": "register-004", "score": 3, "reason": "Chýba oslovenie, pozdrav aj podpis, strohé „Požadujem dovolenku“ a nesprávne zakončenie „Vedúca oddelenia Pani Horváthová“."}
+{"id": "register-009", "score": 2, "reason": "Cyrilika v slove „faktрах“, „závisí na“, nezmyselné „zaistím, že sa staráme“ a „veru v náš e-shop“, chýba ospravedlnenie a podpora presúva riešenie na zákazníka."}
+{"id": "register-010", "score": 0, "reason": "Odpoveď je v češtine („slovenském seznamu“) a nejednoznačná („s velkým nebo malým V“)."}
+{"id": "register-011", "score": 1, "reason": "Odpoveď je v angličtine, nie v slovenčine."}
+{"id": "register-012", "score": 1, "reason": "Ponechané „Hej“ a „hnusno“, nezmyselné slovo „voprve“."}
+{"id": "register-016", "score": 1, "reason": "Text je v slovinčine („hvala vam za Vašu ponudbo“), nie po slovensky."}
+{"id": "register-018", "score": 1, "reason": "Odpoveď je celá v angličtine („Production deploy complete, all systems go!“), nie po slovensky."}
+{"id": "register-020", "score": 6, "reason": "Obsahovo správna odpoveď, ale začína českým „Ne“ namiesto „Nie“."}
+{"id": "register-022", "score": 1, "reason": "Čechizmy „Dobrý den“, „ztratil“, „dopravě“, „tuto“, chyby „Vaš“, „Naše odberná služba“ a nezmysel „Prosím o Vašu výhradu“."}

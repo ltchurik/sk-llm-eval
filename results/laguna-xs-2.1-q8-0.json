@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T14:43:04+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 41.5,
+    "overall": 41.1,
     "categories": {
       "format": {
         "passed": 24,
@@ -30,9 +30,9 @@
         "score": 64.3
       },
       "realie": {
-        "passed": 28,
+        "passed": 27,
         "total": 47,
-        "score": 59.6
+        "score": 57.4
       },
       "register": {
         "passed": 5,
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Text obsahuje veľa bohemizmov a gramatických chýb („zrychluje“, „usnadňuje“, „Navíc“, „pri zmenu záväzkov“)."
+          "score": 2,
+          "detail": "Mnoho chýb a bohemizmov: „budžetmi“, „odoberávať“, „pri zmenu záväzkov“, „zrychluje“, „usnadňuje“, „Navíc“, „konkurenčnejšie byť“."
         }
       ],
       "latency": 39.09
@@ -2178,8 +2178,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Text je plný nezmyselných slov a gramatických chýb („keľko“, „potierajú“, „Úspechúsle“, „novi“)."
+          "score": 2,
+          "detail": "Množstvo neexistujúcich slov („keľko“, „potierajú“, „súlu“, „Úspechúsle“), „novi pracovníci“."
         }
       ],
       "latency": 22.7
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2220,8 +2220,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Text je plný bohemizmov a nezmyslov („tabule“, „výjimečná“, „kavárna“, „povolenieplatníkov“)."
+          "score": 2,
+          "detail": "Chyby a bohemizmy „Reklamná tabule“, „mestnej“, „výjimečná“, „kavárna“, „naškodlivý“, „povolenieplatníkov“, „poskytneme ... alebo doplniť“."
         }
       ],
       "latency": 40.61
@@ -2263,7 +2263,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Príbeh je nesúvislý a plný nezmyselných slov a chýb („Ježek“, „svetr“, „bliekli“, „časťka“)."
+          "detail": "Nezmyselný text („zavrel sa do svojej šupiny“, „svetr“, „zmizol v mrkve“, „časťka“), bohemizmus „Ježek“, zbytočné tučné písmo a metakomentár „(195 slov)“."
         }
       ],
       "latency": 30.56
@@ -2299,8 +2299,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Kroky sú logické, ale obsahujú gramatické chyby („LAN káble“, „k novému Wi-Fi sieti“, „nastaveníach“)."
+          "score": 4,
+          "detail": "Chyby „LAN káble“ (a LAN namiesto WAN k modemu), „nastaveníach“, „k novému Wi-Fi sieti“."
         }
       ],
       "latency": 15.09
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Preklad obsahuje bohemizmy a hrubé chyby („sa zlyhá“, „provoz“, „běží“, „kažný“, „zlyhalý“)."
+          "score": 2,
+          "detail": "Množstvo chýb a čechizmov: „sa zlyhá“, „provoz“, „běží“, „zostávajúci servery“, „zlyhalý“, „kažný“, „najčastejší príčinou“."
         }
       ],
       "latency": 61.56
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je plný chýb a nezmyslov a obsahuje faktické omyly (Chopok, severozápadná časť)."
+          "detail": "Množstvo chýb a čechizmov („príďe“, „kvôť“, „jezieram“, „šmouch“), nesprávne fakty (Chopok, „severozápadnej časti“)."
         }
       ],
       "latency": 44.21
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Návod obsahuje viacero gramatických chýb („Ak ich nie sú“, „pošli“, „kýv“, „potvrdzujte“)."
+          "detail": "Chyby „Ak ich nie sú“, „pošli“, „kýv“, „vnúčata“, „pripojenie internetom“, „potvrdzujte“."
         }
       ],
       "latency": 25.76
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je plný nezmyslov a chýb („písom“, „jeďra“, „reštartáciu“, „pečných“, „očakujem“)."
+          "detail": "Množstvo nezmyslov („jeďra“, „reštartáciu situácie“, „vrátenie pečných 30 dní“, „očakujem“), len 88 slov a falošné „(148 slov)“."
         }
       ],
       "latency": 39.91
@@ -3175,13 +3175,13 @@
       "prompt": "Kto je autorom slovenského románu „Tiene nad Dunajom“ z roku 1987? Ak taký román nepoznáš, povedz to.",
       "answer": "Neviem, kto je autorom slovenského románu „Tiene nad Dunajom“ z roku 1987. Tento titul si nevšimol/am v svojich dátach, takže ho nepoznám.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Správne priznáva, že román nepozná, hoci formulácia „v svojich dátach“ je neobratná."
+          "ok": false,
+          "score": 6,
+          "detail": "Správne priznáva neznalosť, ale je štylisticky neobratná („si nevšimol/am v svojich dátach“, správne „vo svojich“) a obsahuje metakomentár o dátach."
         }
       ],
       "latency": 14.67
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 10.1
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymýšľa zákon a uvádza Andreja Kisku ako podpisovateľa."
+          "detail": "Uvádza Andreja Kisku ako podpisovateľa a vymýšľa „Zákon č. 109/2015 Z. z. o digitálnom identitne“."
         }
       ],
       "latency": 18.47
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Nesprávne oslovenie „Vážený pánovi“ a chyby („som Vám informoval“, „dosúvať“)."
+          "score": 3,
+          "detail": "Chybné oslovenie „Vážený pánovi“, nesprávne „dnes som Vám informoval“ a neexistujúce „dosúvať“."
         }
       ],
       "latency": 99.49
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Obsahuje bohemizmus „doporučujem“ a nezmyselné spojenie „bázu a miestne úlohy“."
+          "detail": "Bohemizmus „doporučujem“, nezmysel „na bázu a miestne úlohy“."
         }
       ],
       "latency": 17.53
@@ -3779,8 +3779,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Správa má opačný význam a obsahuje nezmysly („snať dorazniť“)."
+          "score": 1,
+          "detail": "Obrátený význam („meškáš už 10 minút“) a neexistujúce slová „snať“, „dorazniť“."
         }
       ],
       "latency": 12.11
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Chýba správne oslovenie, text obsahuje nezmysly („Väzbe“, „cakávať“)."
+          "detail": "Nezmyselné oslovenie „Väzbe,“, chyby „žiadám“, „sa budem na túto dovolenku nebudem cakávať“; text je takmer nezrozumiteľný."
         }
       ],
       "latency": 5.7
@@ -3896,14 +3896,14 @@
       "checks": [
         {
           "type": "regex",
-          "ok": false,
+          "ok": true,
           "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
         },
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Nevhodné „Ahoj“, české slová („odeslání“) a nezmyselné formulácie."
+          "score": 2,
+          "detail": "Tykavé „Ahoj“ zmiešané s vykaním, čechizmy („výsprava o odeslání“) a chybné „ospravedlníme sa za náročnosť“."
         }
       ],
       "latency": 11.61
@@ -3919,8 +3919,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Správna odpoveď, ale s chybou „v formálnom“ namiesto „vo formálnom“."
+          "score": 7,
+          "detail": "Správne, ale chyba „v formálnom“ namiesto „vo formálnom“."
         }
       ],
       "latency": 12.2
@@ -3946,8 +3946,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nejde o priamu otázku, ale o chybný opis situácie."
+          "score": 1,
+          "detail": "Nie je to otázka, ale opakovanie zadania s chybou „sa zdvorilo opýtať“."
         }
       ],
       "latency": 22.23
@@ -3968,8 +3968,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Ponecháva hovorové výrazy („Hej“, „hnusné“) a pridáva bohemizmus „venku“."
+          "score": 1,
+          "detail": "Ponechané „Hej“ a „hnusné“, navyše bohemizmus „venku“ – nie je to spisovná slovenčina."
         }
       ],
       "latency": 22.15
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Chybné oslovenie a veľké písmeno po čiarke, nesprávne slová („časované“, „oferu“) a malé „vašu“."
+          "detail": "Nezmyselné „časované rozhovory“, neexistujúce „oferu“, malé „vašu“, metapoznámka na konci."
         }
       ],
       "latency": 14.24
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Prirodzená kolegiálna veta bez chýb."
+          "score": 9,
+          "detail": "Prirodzená jedna veta bez chýb."
         }
       ],
       "latency": 17.96
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nesprávne tvrdí, že sa čiarka píše, a obsahuje preklep „lete“."
+          "detail": "Nesprávne tvrdí, že sa čiarka píše, a obsahuje chybu „v slovenskom lete“."
         }
       ],
       "latency": 14.41
@@ -4163,7 +4163,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Vykanie je s malým v, chýba ospravedlnenie a formulácia „súčasne s právo apelovať“ je nezmyselná."
+          "detail": "Bohemizmus „zákazníku“, malé „váš/vám“ a nezmyselné „súčasne s právo apelovať“."
         }
       ],
       "latency": 15.0

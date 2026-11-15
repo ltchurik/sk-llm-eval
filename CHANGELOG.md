@@ -2,6 +2,30 @@
 
 Scores are comparable only within one task version. Every leaderboard row records the `eval_version` it was scored with.
 
+## 0.2.3 — 2026-11-15
+
+### Results
+
+- Six API models run through OpenRouter: GPT-6.1 Sol, Gemini 4 Argon, Grok 4.7, DeepSeek V4 Pro, Mistral Large 4 and Llama 4 Maverick. The leaderboard now has 26 rows. GPT-6.1 Sol (98.7) comes right after Opus and Fable, and Llama 4 Maverick (76.0) is about level with the best open-weight model run locally.
+- **All judge tasks of all 26 rows were graded again in one round** by Claude Opus (blind, answers of all rows shuffled together per task). When the new rows were first graded with anchors, the judge drifted: it agreed with earlier verdicts on only 34 of 46 anchor answers, all of them stricter. In the single round, pass/fail agrees with the earlier verdicts on 94 % of answers, with changes in both directions. Rows that existed before moved by at most 1.3 points. See docs/METHODOLOGY.md.
+
+### Fixes
+
+Five checks failed correct answers:
+
+- `register-009`: formal address with a lowercase *vaša/vám* is correct and the prompt does not ask for a capital V. The regex now ignores case, and the judge rubric accepts both.
+- `register-017`: *Ďakujem Ti, že si prišiel* (capital *Ti*) is accepted.
+- `long_text-013`: the salutation *Vážené zákaznícke centrum* is accepted.
+- `long_text-004`: *na Hlavnej ulici č. 12* is accepted.
+- `realie-019`: *Finančné riaditeľstvo SR*, the head office of the financial administration, is accepted.
+
+Each fix was tested against a correct answer and a typical wrong one. All rows were re-scored. Only Mistral Nemo changed from the check fixes alone (21.3 → 21.6).
+
+### Tooling
+
+- The API client waits on HTTP 429 (rate limits, e.g. 20 requests/min for new OpenRouter accounts), honouring `Retry-After`, without using up its normal retries.
+- The `blind_judge` prompt now tells the judge to grade one task at a time and not to score an answer relative to the others.
+
 ## 0.2.2 — 2026-11-15
 
 Tasks and checks are unchanged from 0.2.1, so 0.2.1 and 0.2.2 scores are directly comparable. All rows were re-scored with 0.2.2; no score changed.

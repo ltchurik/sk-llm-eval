@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-15T08:30:12+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 63.0,
+    "overall": 63.6,
     "categories": {
       "format": {
         "passed": 28,
@@ -35,9 +35,9 @@
         "score": 70.2
       },
       "register": {
-        "passed": 15,
+        "passed": 16,
         "total": 26,
-        "score": 57.7
+        "score": 61.5
       }
     }
   },
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Väčšinou plynulý text, ale preklep „clouďovými“, nezmyselné „moderné digitalizácie“ a zbytočné anglicizmy „upgradu“, „biznisu“."
+          "score": 5,
+          "detail": "Anglicizmus „skalabilita“, chyba „clouďovými“, nekonzistentné vykanie „dokážete“, neobratné „moderné digitalizácie“."
         }
       ],
       "latency": 270.49
@@ -2178,8 +2178,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Pokrýva všetky body, ale nevhodné „plodnosť“ namiesto produktivity, „v diaľkovom režime“ a neobratné „položiť otázky priamo vedľa kolegov“."
+          "score": 5,
+          "detail": "Nevhodné „lepšiu plodnosť“, skreslenie „v kontrolovanom prostredí“, pridaný záver nad rámec textu."
         }
       ],
       "latency": 826.37
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
-          "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2220,8 +2220,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Chyby „obraciam sa k Vám s žiadosťou“, „funknom“, „nebránila ... ani narušila“, mylne citovaný zákon č. 245/2008 Z. z. (školský zákon) a „starosta“ pri meste."
+          "score": 3,
+          "detail": "Nesprávne „pán starosta“ pre mesto, „obraciam sa k Vám s žiadosťou“, „funknom“, „ani narušila“, vymyslený zákon a protirečenie o verejnom priestranstve."
         }
       ],
       "latency": 966.74
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Množstvo chýb a nezmyslov: „Bojim“, „monštra“, „tieňy“, „Nie boli“, „Čutil“, „Cukol“, „dýchaval“."
+          "score": 3,
+          "detail": "Chyby „dýchaval“, „Bojim“ (chýba dĺžeň), „monštra“, „tieňy“, „Nie boli“, „Čutil“ a nejednotné úvodzovky („…\")."
         }
       ],
       "latency": 951.2
@@ -2299,8 +2299,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Logický postup, ale chyby „routeru“, „neznáte“, „sa ľahko pamätáte“, „najnovší verziu“."
+          "score": 4,
+          "detail": "Chyby „routeru“, „neznáte“, „názov, ktorý sa ľahko pamätáte“, „najnovší verziu“, „zapnite obe zariadenia do siete“."
         }
       ],
       "latency": 763.01
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Nepreložené „traffic“ a „configuration drift“, chybná väzba „bežia rovnakú verziu“, hovorové „doňho“."
+          "score": 6,
+          "detail": "Anglické „traffic“ a kalk „bežia rovnakú verziu aplikácie“, inak správne a plynulé."
         }
       ],
       "latency": 600.87
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Správne pády názvu, ale chyby „dominuje krajinu“, „hoteľmi“, nezmysly „rezerváciou pre ... ľudské nohy“ a „pri túrach po celom svete“."
+          "detail": "Chyby „dominuje krajinu“, „hoteľmi“, nezmyselné „pri túrach po celom svete“, „rezerváciou pre ... ľudské nohy“."
         }
       ],
       "latency": 795.82
@@ -2512,8 +2512,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Vykanie dôsledné, ale chyby „kontakt s vnúčatou“, „ako kontakta“, „mikrofonu“, „súhlasite“, „pokusovať“, „vám budú radi počuť“."
+          "score": 3,
+          "detail": "Chyby „s vnúčatou“, „ako kontakta“, „súhlasite“, „mikrofonu“, „pokusovať“, „vám budú radi počuť“."
         }
       ],
       "latency": 1310.8
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Malé „vás“, chyby „e-mailových adresy“, „výmenu nového kusového zariadenia na môj účet“, mylne „obchodného zákonníka“, pravdepodobne nad 180 slov."
+          "detail": "Malé „vás/vašom“ napriek požiadavke na veľké V, chyby „e-mailových adresy“, „Takýto chod“, „výmenu nového kusového zariadenia na môj účet“."
         }
       ],
       "latency": 999.35
@@ -3180,8 +3180,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Správne nevymýšľa autora, kategorické tvrdenie o neexistencii."
+          "score": 8,
+          "detail": "Nevymýšľa autora, ale tvrdí, že dielo s istotou neexistuje, a zatváracie úvodzovky sú anglické („…\")."
         }
       ],
       "latency": 315.36
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 496.19
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Správne nevymýšľa prezidenta, ale odpoveď je strohá a kategorická."
+          "detail": "Správne odmietnutie, stručne, ale kategoricky."
         }
       ],
       "latency": 166.07
@@ -3715,7 +3715,7 @@
       "prompt": "Napíš krátky e-mail (3–4 vety) svojmu nadriadenému, že zajtra nebudeš v práci kvôli návšteve lekára. Vykaj mu.",
       "answer": "Dobrý deň, zajtra nebudem v práci kvôli návšteve lekára a ospravedlňujem sa za neprítomnosť. Budem vás kontaktovať, ak bude niečo urgentné potrebné vybaviť. Ďakujem za pochopenie. S pozdravom, [Vaše meno]",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "regex",
@@ -3729,9 +3729,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Prirodzený e-mail, iba malé „vás“ namiesto „Vás“."
+          "ok": false,
+          "score": 6,
+          "detail": "Chýba riadne oslovenie, malé „vás“ a neobratné „Budem vás kontaktovať, ak bude niečo urgentné potrebné vybaviť“."
         }
       ],
       "latency": 189.02
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Prirodzená odpoveď s preklepom „nájdješ“."
+          "detail": "Tykanie a tón v poriadku, ale preklep „nájdješ“."
         }
       ],
       "latency": 145.41
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Zbytočne formálne „ospravedlňujem sa“, chyba „Už som v ceste“ (na ceste)."
+          "detail": "Príliš formálne „ospravedlňujem sa“, chybné „meškám o 10 minút“ a „som v ceste“ namiesto „na ceste“."
         }
       ],
       "latency": 206.48
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Správne oslovenie, ale chyba „týmto sa Vás žiadam“ a veľmi strohý text bez poďakovania."
+          "detail": "Chybné zvratné „týmto sa Vás žiadam“, čiarka za „S pozdravom,“, inak správna forma."
         }
       ],
       "latency": 250.55
@@ -3892,7 +3892,7 @@
       "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
       "answer": "Ospravedlňujeme sa za oneskorenie dodania vašej objednávky a rozumíme vášmu rozhorčeniu. Momentálne skontrolujeme stav balíka v našom logistickom systéme a kontaktujeme vás do 24 hodín s presnou informáciou. Ak bude potrebné, ponúkame vám okamžité vrátenie peňazí alebo expresné doručenie. Vaša spokojnosť je pre nás prioritou a budeme sa snažiť problém vyriešiť čo najrýchlejšie.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "regex",
@@ -3901,9 +3901,9 @@
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Profesionálne s konkrétnym termínom, ale chýba oslovenie a vykanie je s malým v („vašej“, „vás“)."
+          "ok": true,
+          "score": 7,
+          "detail": "Obsahovo v poriadku, ale časový nesúlad „Momentálne skontrolujeme“ a mierne neprirodzené „rozumieme vášmu rozhorčeniu“."
         }
       ],
       "latency": 141.83
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nesprávna odpoveď, tvrdí malé písmeno."
+          "detail": "Nesprávne tvrdí, že sa píše malé písmeno."
         }
       ],
       "latency": 175.12
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Zdvorilé, ale strojené „ospravedlňujem sa za narušenie“ a menej prirodzené „aká je teraz hodina“."
+          "detail": "Neprirodzené „za narušenie“ a „aká je teraz hodina“, chýbajú čiarky okolo „prosím“."
         }
       ],
       "latency": 216.28
@@ -3958,7 +3958,7 @@
       "prompt": "Prepíš nasledujúcu vetu z hovorovej do spisovnej slovenčiny: Hej, dneska je fakt hnusne vonku.",
       "answer": "Dnes je vonku nepriaznivo.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "not_regex",
@@ -3967,9 +3967,9 @@
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Spisovné, no oslabený význam a chýba zosilnenie „fakt“."
+          "ok": true,
+          "score": 7,
+          "detail": "Spisovné, ale vynechaný zosilňujúci význam „fakt“ a „nepriaznivo“ znie strojene."
         }
       ],
       "latency": 238.42
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Zdvorilé a jasné, iba nekonzistentné malé „váš“."
+          "detail": "Zdvorilé a vecne v poriadku, ale nekonzistentné „váš záujem“ malým písmenom a všetko v jednom odseku."
         }
       ],
       "latency": 427.82
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prirodzená a správna veta."
+          "detail": "Jedna stručná, prirodzená veta bez chýb."
         }
       ],
       "latency": 215.43
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nesprávna odpoveď a bohemizmus „dopise“."
+          "detail": "Nesprávne tvrdí, že sa čiarka píše, a používa bohemizmus „v dopise“."
         }
       ],
       "latency": 322.47
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Preklep „ospravedľujeme“, bohemizmus „zásilku“, malé „vás“."
+          "score": 3,
+          "detail": "Preklep „ospravedľujeme“, čechizmus „zásilku“ a malé „vás/vašej“ namiesto veľkého V."
         }
       ],
       "latency": 300.75

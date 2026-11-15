@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 9, "reason": "Prirodzený, správny text, len „biznis“ je hovorové."}
+{"id": "long_text-003", "score": 9, "reason": "Úplné a prirodzené zhrnutie bez anglicizmov; trochu rozvláčne („spoločných zdieľaných“)."}
+{"id": "long_text-004", "score": 7, "reason": "Kvalitná žiadosť, ale oslovenie „Vážené oddelenie“, germanizmus „za účelom“, hovorové „mamičiek s kočíkmi“ a čiarka za „S úctou,“."}
+{"id": "long_text-005", "score": 10, "reason": "Bezchybný, pôsobivý detský príbeh so správnymi úvodzovkami, dialógom a jasnou stavbou."}
+{"id": "long_text-006", "score": 8, "reason": "Jazykovo správne, ale kroky sú dlhé a s nadbytočnými anglickými vsuvkami „(Wireless)“, „(Firmware Update)“."}
+{"id": "long_text-007", "score": 6, "reason": "Gramaticky správny preklad, ale zbytočné anglicizmy „traffic“ a „Requesty“ tam, kde rubrika žiada slovenské výrazy."}
+{"id": "long_text-008", "score": 9, "reason": "Správne pády, fakty v poriadku, prirodzený text; zbytočné tučné písmo."}
+{"id": "long_text-011", "score": 9, "reason": "Jasný postup s dôsledným vykaním s veľkým V; trochu neobratné „Vášmu zavolaniu“."}
+{"id": "long_text-013", "score": 9, "reason": "Konkrétna, gramaticky správna sťažnosť s jasnou požiadavkou, vykaním a správnym záverom."}
+{"id": "realie-015", "score": 9, "reason": "Správne priznáva, že román nepozná; odpoveď je strohá."}
+{"id": "realie-029", "score": 9, "reason": "Správne priznáva, že zákon nepozná; doplňujúce informácie sú vecne v poriadku."}
+{"id": "register-001", "score": 8, "reason": "Správny formálny e-mail s vykaním, ale zbytočné markdown „**Predmet:**“ a nepresné „celodennej návštevy lekára“."}
+{"id": "register-002", "score": 9, "reason": "Prirodzené, tykanie, 3 vety, bez chýb."}
+{"id": "register-003", "score": 9, "reason": "Prirodzené, tykanie, bez chýb; hraničná dĺžka, ale dve vety."}
+{"id": "register-004", "score": 9, "reason": "Úplná, zdvorilá žiadosť so správnymi dátumami „3. 8. – 7. 8.“ a vykaním „Vás“, bez chýb."}
+{"id": "register-009", "score": 9, "reason": "Kvalitná, zdvorilá odpoveď s vykaním, žiadosťou o číslo objednávky a kompenzáciou; „omeškanie“ je skôr právny termín."}
+{"id": "register-010", "score": 10, "reason": "Správne, jednoznačné a jazykovo bezchybné."}
+{"id": "register-011", "score": 9, "reason": "Veľmi zdvorilá otázka s vykaním, „milostivá pani“ je archaické, ale k staršiemu mužovi sa hodí."}
+{"id": "register-012", "score": 8, "reason": "Správny spisovný prepis, ale zbytočne pridaná alternatíva v zátvorke."}
+{"id": "register-016", "score": 10, "reason": "Kvalitný, zdvorilý e-mail s veľkým V, poďakovaním a jasným odmietnutím."}
+{"id": "register-018", "score": 8, "reason": "Správna veta, mierne neobratné spojenie „úspešne hotový“."}
+{"id": "register-020", "score": 10, "reason": "Správna a jednoznačná odpoveď bez chýb."}
+{"id": "register-022", "score": 10, "reason": "Formálne, prirodzené a bezchybné."}

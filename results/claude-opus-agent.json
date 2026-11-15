@@ -4,7 +4,7 @@
   "base_url": null,
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T18:19:09+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "offline",
   "summary": {
     "overall": 100.0,
@@ -1974,7 +1974,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Prirodzený, dobre štruktúrovaný a bezchybný text v požadovanom rozsahu."
+          "detail": "Prirodzený, súvislý text bez chýb v požadovanom rozsahu."
         }
       ]
     },
@@ -2069,8 +2069,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Úplné a prirodzené zhrnutie bez anglicizmov, len s mierne nadbytočným spojením „bežným štandardom“."
+          "score": 10,
+          "detail": "Úplné, presné a štylisticky prirodzené zhrnutie bez chýb."
         }
       ]
     },
@@ -2098,9 +2098,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2110,8 +2110,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Vzorový úradný list s vecou, správnym oslovením, dôsledným vykaním a pozdravom bez chýb."
+          "score": 9,
+          "detail": "Výborná, vecná úradná žiadosť s vhodným oslovením, vykaním, odôvodnením a záverom."
         }
       ]
     },
@@ -2152,7 +2152,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Pútavý detský príbeh so správnym dialógom, úvodzovkami a skloňovaním bez chýb."
+          "detail": "Bezchybný, prirodzený detský príbeh so správnymi úvodzovkami, dialógom a jasnou stavbou."
         }
       ]
     },
@@ -2187,8 +2187,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Presne 8 logických a zrozumiteľných krokov so slovenskou terminológiou bez chýb."
+          "score": 9,
+          "detail": "Prirodzená, presná slovenčina, logické poradie a správna terminológia."
         }
       ]
     },
@@ -2223,8 +2223,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 7,
-          "detail": "Preklad je presný, ale zbytočne ponecháva anglické výrazy „configuration drift“, „poolu“ a „stagingových“, kde existujú slovenské ekvivalenty."
+          "score": 9,
+          "detail": "Presný a plynulý preklad so slovenským „prevádzku“ a „požiadavky“ a správnym skloňovaním termínov."
         }
       ]
     },
@@ -2265,7 +2265,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Fakticky správny text s viacerými správne skloňovanými pádmi názvu pohoria a bez chýb."
+          "detail": "Fakticky presné, správne pády, prirodzený text bez chýb."
         }
       ]
     },
@@ -2396,7 +2396,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Jasný a zrozumiteľný postup s dôsledným vykaním a bez chýb."
+          "detail": "Jasný, logický postup s dôsledným vykaním a správnou dĺžkou; bez chýb."
         }
       ]
     },
@@ -2476,13 +2476,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Výborne štruktúrovaná sťažnosť s konkrétnou požiadavkou a bezchybnou slovenčinou."
+          "detail": "Vecná a presná sťažnosť s konkrétnou požiadavkou, vykaním a správnym záverom."
         }
       ]
     },
@@ -3032,8 +3032,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Model priznal, že román nepozná, a autora nevymyslel."
+          "score": 9,
+          "detail": "Správne priznáva, že román nepozná, a autora nevymýšľa."
         }
       ]
     },
@@ -3093,7 +3093,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ]
     },
@@ -3243,8 +3243,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Model priznal, že zákon nepozná, a neuviedol meno prezidenta."
+          "score": 9,
+          "detail": "Správne a prirodzene priznáva, že zákon nepozná."
         }
       ]
     },
@@ -3549,8 +3549,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Formálny e-mail s predmetom, dôsledným vykaním s veľkým V a bez chýb."
+          "score": 9,
+          "detail": "Zdvorilý formálny e-mail s dôsledným vykaním s veľkým V, bez chýb."
         }
       ]
     },
@@ -3575,8 +3575,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Neformálne, dôsledné tykanie a prirodzená slovenčina v troch vetách."
+          "score": 9,
+          "detail": "Prirodzené, tykanie, 3 vety, bez chýb."
         }
       ]
     },
@@ -3596,8 +3596,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Krátka, neformálna a prirodzená SMS v dvoch vetách."
+          "score": 9,
+          "detail": "Prirodzená hovorová SMS s tykaním, bez chýb."
         }
       ]
     },
@@ -3622,8 +3622,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Správne oslovenie, vykanie s veľkým V, dátumy v slovenskom formáte a zdvorilý záver s podpisom."
+          "score": 9,
+          "detail": "Zdvorilá, gramaticky správna žiadosť s vykaním „Vás“, oslovením, záverom a podpisom."
         }
       ]
     },
@@ -3714,7 +3714,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Ospravedlnenie, žiadosť o číslo objednávky, konkrétny postup a termín s dôsledným vykaním."
+          "detail": "Prirodzená, bezchybná odpoveď s vykaním, ospravedlnením, žiadosťou o číslo objednávky a termínom do 24 hodín."
         }
       ]
     },
@@ -3729,8 +3729,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Jednoznačne uvádza veľké V, no pridáva zbytočnú výhradu o pripustení malého písmena."
+          "score": 8,
+          "detail": "Správne uvádza veľké V, ale dodatok o malom písmene oslabuje jednoznačnosť."
         }
       ]
     },
@@ -3755,8 +3755,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Zdvorilá a prirodzená veta s vykaním a správnou interpunkciou."
+          "score": 9,
+          "detail": "Prirodzená zdvorilá otázka s vykaním, bez chýb."
         }
       ]
     },
@@ -3777,7 +3777,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Spisovná a významovo verná veta, prevod „hej“ na „áno“ je zbytočný."
+          "detail": "Spisovné, význam zachovaný; „Áno“ za „Hej“ je trochu zbytočné, ale správne."
         }
       ]
     },
@@ -3848,7 +3848,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Zdvorilé a jasné odmietnutie s poďakovaním a vykaním s veľkým V."
+          "detail": "Bezchybný, zdvorilý e-mail s veľkým V a jasným odmietnutím."
         }
       ]
     },
@@ -3883,8 +3883,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Jedna prirodzená kolegiálna veta bez chýb."
+          "score": 9,
+          "detail": "Prirodzená jedna veta bez chýb."
         }
       ]
     },
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Správne a jednoznačne uvádza, že čiarka sa nepíše."
+          "detail": "Správna a jednoznačná odpoveď bez chýb."
         }
       ]
     },
@@ -3960,8 +3960,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Formálny e-mail s vykaním a ospravedlnením, za „S pozdravom“ však chýba podpis."
+          "score": 10,
+          "detail": "Formálne, prirodzené, všetky náležitosti bez chýb."
         }
       ]
     },

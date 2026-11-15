@@ -1,0 +1,4067 @@
+{
+  "model": "x-ai/grok-4.7",
+  "label": "Grok 4.7 (OpenRouter)",
+  "base_url": "https://openrouter.ai/api/v1",
+  "judge_model": "Claude Opus (agent, blind)",
+  "run_at": "2026-11-15T16:23:10+00:00",
+  "eval_version": "0.2.3",
+  "mode": "api+offline-judge",
+  "summary": {
+    "overall": 94.5,
+    "categories": {
+      "format": {
+        "passed": 38,
+        "total": 38,
+        "score": 100.0
+      },
+      "gramatika": {
+        "passed": 65,
+        "total": 69,
+        "score": 94.2
+      },
+      "long_text": {
+        "passed": 11,
+        "total": 13,
+        "score": 84.6
+      },
+      "preklad": {
+        "passed": 14,
+        "total": 14,
+        "score": 100.0
+      },
+      "realie": {
+        "passed": 47,
+        "total": 47,
+        "score": 100.0
+      },
+      "register": {
+        "passed": 23,
+        "total": 26,
+        "score": 88.5
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "format-001",
+      "category": "format",
+      "prompt": "Napíš dátum 5. marca 2026 číslicami v slovenskom formáte.",
+      "answer": "5. 3. 2026",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b5\\. ?3\\. ?2026\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /2026-03-05|03/05/2026|3/5/2026/"
+        }
+      ]
+    },
+    {
+      "id": "format-002",
+      "category": "format",
+      "prompt": "Napíš sumu 1234,5 eura tak, ako sa správne zapisuje na Slovensku (číslicami so symbolom alebo skratkou meny).",
+      "answer": "1 234,50 €",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /1[  ]?234,50? ?(€|eur|EUR)/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /1,234\\.5|1234\\.5/"
+        }
+      ]
+    },
+    {
+      "id": "format-003",
+      "category": "format",
+      "prompt": "Ako sa po slovensky povie čas 14:30 slovami? Odpovedz jedným spojením.",
+      "answer": "Štrnásť tridsať.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /pol tretej|štrnásť tridsať|dve tridsať/"
+        }
+      ]
+    },
+    {
+      "id": "format-004",
+      "category": "format",
+      "prompt": "Napíš číslo tisíc číslicami so správnym slovenským oddeľovačom tisícov.",
+      "answer": "1 000",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b1[  ]000\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /1,000|1\\.000/"
+        }
+      ]
+    },
+    {
+      "id": "format-005",
+      "category": "format",
+      "prompt": "Zapíš slovenské mobilné číslo 0903123456 v medzinárodnom formáte.",
+      "answer": "+421 903 123 456",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\+421 ?903 ?123 ?456\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-006",
+      "category": "format",
+      "prompt": "Napíš desatinné číslo „tri a pol“ číslicami tak, ako sa píše na Slovensku.",
+      "answer": "3,5",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b3,5\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b3\\.5\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-007",
+      "category": "format",
+      "prompt": "Prelož do slovenčiny: Monday. Odpovedz jedným slovom.",
+      "answer": "pondelok",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpondelok\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-008",
+      "category": "format",
+      "prompt": "Napíš meno „Peter Novák“ v datíve (komu?).",
+      "answer": "Petrovi Novákovi",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Petrovi Novákovi'"
+        }
+      ]
+    },
+    {
+      "id": "format-009",
+      "category": "format",
+      "prompt": "Napíš radovú číslovku „piaty“ číslicou.",
+      "answer": "5.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b5\\./"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /5th|5-ty/"
+        }
+      ]
+    },
+    {
+      "id": "format-010",
+      "category": "format",
+      "prompt": "Aká je správna skratka slova „napríklad“?",
+      "answer": "**napr.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'napr.'"
+        }
+      ]
+    },
+    {
+      "id": "format-011",
+      "category": "format",
+      "prompt": "Ako sa skracuje „spoločnosť s ručením obmedzeným“?",
+      "answer": "**s. r. o.** (aj s.r.o.)",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /s\\. ?r\\. ?o\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-012",
+      "category": "format",
+      "prompt": "Napíš percento 12,5 % so správnou medzerou podľa slovenského pravopisu.",
+      "answer": "12,5 %",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /12,5[  ]%/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /12\\.5|12,5%/"
+        }
+      ]
+    },
+    {
+      "id": "format-013",
+      "category": "format",
+      "prompt": "Napíš rozsah strán od 10 po 25 so správnou pomlčkou podľa slovenského pravopisu.",
+      "answer": "10 – 25",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /10[  ]?[–—][  ]?25/"
+        }
+      ]
+    },
+    {
+      "id": "format-014",
+      "category": "format",
+      "prompt": "Aké sú správne slovenské úvodzovky? Napíš slovo ahoj v slovenských úvodzovkách.",
+      "answer": "Správne slovenské úvodzovky sú „ “ (dolné otváracie a horné zatváracie).\n\n„ahoj“",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '„ahoj“'"
+        }
+      ]
+    },
+    {
+      "id": "format-015",
+      "category": "format",
+      "prompt": "Napíš skratku pre „a tak ďalej“.",
+      "answer": "**atď.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\batď\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-016",
+      "category": "format",
+      "prompt": "Napíš dátum a čas „pätnásteho júna o deviatej ráno“ číslicami v slovenskom formáte (bez roku).",
+      "answer": "15. 6. 9:00",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /15\\. ?6\\.? .*9[:.]00|15\\. ?júna .*9[:.]00/"
+        }
+      ]
+    },
+    {
+      "id": "format-017",
+      "category": "format",
+      "prompt": "Zapíš číslo 1234567,89 v slovenskom formáte s oddeľovačmi tisícov.",
+      "answer": "1 234 567,89",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /1[  ]234[  ]567,89/"
+        }
+      ]
+    },
+    {
+      "id": "format-018",
+      "category": "format",
+      "prompt": "Napíš dátum 31.12.2026 so správnymi medzerami podľa slovenského pravopisu.",
+      "answer": "31. 12. 2026",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b31\\. 12\\. 2026\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-019",
+      "category": "format",
+      "prompt": "Zapíš bratislavské pevné číslo 02/5555 1234 v medzinárodnom formáte.",
+      "answer": "+421 2 5555 1234",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\+421 ?2 ?5555 ?1234\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-020",
+      "category": "format",
+      "prompt": "Napíš prídavné meno „päťročný“ s číslicou.",
+      "answer": "5-ročný",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b5-ročn/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /5 ročn|5ročn/"
+        }
+      ]
+    },
+    {
+      "id": "format-021",
+      "category": "format",
+      "prompt": "Napíš „dvadsaťpäťpercentný“ s číslicou.",
+      "answer": "25-percentný",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b25-percentn/"
+        }
+      ]
+    },
+    {
+      "id": "format-022",
+      "category": "format",
+      "prompt": "Ako sa skracuje „to jest“ (to znamená)?",
+      "answer": "**t. j.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bt\\. ?j\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-023",
+      "category": "format",
+      "prompt": "Napíš rozsah rokov 2010 až 2015 so správnou pomlčkou (bez medzier).",
+      "answer": "2010–2015",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /2010–2015/"
+        }
+      ]
+    },
+    {
+      "id": "format-024",
+      "category": "format",
+      "prompt": "Ako sa skracuje „pred naším letopočtom“?",
+      "answer": "Skracuje sa ako **pred n. l.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /pred n\\. ?l\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-025",
+      "category": "format",
+      "prompt": "Ako sa po slovensky správne píše elektronická pošta: „email“, „e-mail“ alebo „mail“? Odpovedz len správnym tvarom.",
+      "answer": "e-mail",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\be-mail\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bemail\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-026",
+      "category": "format",
+      "prompt": "Zapíš teplotu „mínus päť stupňov Celzia“ číslicami a značkou.",
+      "answer": "−5 °C",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /[-−–]5 ?°C/"
+        }
+      ]
+    },
+    {
+      "id": "format-027",
+      "category": "format",
+      "prompt": "Napíš „desiatich ľudí“ s číslicou.",
+      "answer": "10 ľudí",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '10 ľudí'"
+        }
+      ]
+    },
+    {
+      "id": "format-028",
+      "category": "format",
+      "prompt": "Ako sa skracuje odkaz na stranu 5 v citácii (strana → skratka)?",
+      "answer": "**s. 5**\n\nV citácii sa „strana“ skracuje ako **s.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bs\\./"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bstr\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-029",
+      "category": "format",
+      "prompt": "Napíš čas 9:05 slovami tak, ako sa bežne hovorí.",
+      "answer": "Päť minút po deviatej.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /päť (minút )?po deviatej|deväť (hodín )?(a )?päť/"
+        }
+      ]
+    },
+    {
+      "id": "format-030",
+      "category": "format",
+      "prompt": "Napíš sumu 999 eur bez desatinných miest so symbolom meny tak, ako sa píše na Slovensku.",
+      "answer": "999 €",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b999 €/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /€ ?999|999€/"
+        }
+      ]
+    },
+    {
+      "id": "format-031",
+      "category": "format",
+      "prompt": "Zapíš PSČ 81101 a mesto Bratislava tak, ako sa píše v slovenskej poštovej adrese.",
+      "answer": "811 01 Bratislava",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b811 01 Bratislava\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /81101/"
+        }
+      ]
+    },
+    {
+      "id": "format-032",
+      "category": "format",
+      "prompt": "Napíš meno Ján Novák s titulmi Ing. (pred menom) a PhD. (za menom) tak, ako sa správne píše po slovensky.",
+      "answer": "Ing. Ján Novák, PhD.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Ing\\. Ján Novák, PhD\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-033",
+      "category": "format",
+      "prompt": "Ako sa skracuje „a podobne“?",
+      "answer": "**a pod.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\ba pod\\./"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bapod\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-034",
+      "category": "format",
+      "prompt": "Ako sa skracuje „akciová spoločnosť“?",
+      "answer": "**a. s.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\ba\\. s\\./"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\ba\\.s\\.|\\bAG\\b/"
+        }
+      ]
+    },
+    {
+      "id": "format-035",
+      "category": "format",
+      "prompt": "Prepíš vetu tak, aby bol dátum zapísaný číslicami (deň, mesiac aj rok), podľa slovenského pravopisu: Narodil sa dvadsiateho prvého septembra 1990.",
+      "answer": "Narodil sa 21. 9. 1990.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b21\\. 9\\. 1990\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /21\\.9\\.1990|1990-09-21/"
+        }
+      ]
+    },
+    {
+      "id": "format-036",
+      "category": "format",
+      "prompt": "Napíš sumu päťdesiat eur s kódom meny podľa ISO tak, ako sa píše v slovenskom texte.",
+      "answer": "50 EUR",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b50 EUR\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /EUR ?50|50EUR/"
+        }
+      ]
+    },
+    {
+      "id": "format-037",
+      "category": "format",
+      "prompt": "Ako sa skracuje slovo „číslo“ (napr. číslo domu, číslo zákona)?",
+      "answer": "**č.**\n\nPríklad: *č. domu*, *zákon č. 311/2001 Z. z.*",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /(^|\\s|„)č\\./"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bčís\\.|\\bno\\.|\\bnr\\./"
+        }
+      ]
+    },
+    {
+      "id": "format-038",
+      "category": "format",
+      "prompt": "Napíš rozmer „dva krát tri metre“ číslicami so správnym znakom násobenia a medzerami podľa slovenského pravopisu.",
+      "answer": "2 × 3 m",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b2 × 3 (m|metre)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /2x3|2 x 3|2×3/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-001",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „kôň“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "koní",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bkoní\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-002",
+      "category": "gramatika",
+      "prompt": "Doplň správne i/y a napíš celú vetu: Chlapc_ sa hral_ na dvore.",
+      "answer": "Chlapci sa hrali na dvore.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Chlapci sa hrali na dvore'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-003",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „žena“ v datíve jednotného čísla. Odpovedz jedným slovom.",
+      "answer": "žene",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bžene\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-004",
+      "category": "gramatika",
+      "prompt": "Ktorý tvar je správny: „dvaja muži“ alebo „dva muži“? Odpovedz len správnym tvarom.",
+      "answer": "dvaja muži",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'dvaja muži'"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bdva muži\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-005",
+      "category": "gramatika",
+      "prompt": "Oprav pravopisnú chybu a napíš celú vetu: Vždy som chcel ísť do Bratislavi.",
+      "answer": "Vždy som chcel ísť do Bratislavy.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'do Bratislavy'"
+        },
+        {
+          "type": "not_contains",
+          "ok": true,
+          "detail": "not_contains 'Bratislavi'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-006",
+      "category": "gramatika",
+      "prompt": "Napíš číslo 1 000 000 slovom po slovensky.",
+      "answer": "Jeden milión.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bmilión\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-007",
+      "category": "gramatika",
+      "prompt": "Doplň správny tvar slova „dieťa“ (genitív množného čísla): Bolo tam veľa ___.",
+      "answer": "detí",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bdetí\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-008",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „mesto“ v inštrumentáli množného čísla. Odpovedz jedným slovom.",
+      "answer": "mestami",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bmestami\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-009",
+      "category": "gramatika",
+      "prompt": "Oprav gramatické chyby a napíš celú vetu: Tento ryba je čerstvý.",
+      "answer": "Táto ryba je čerstvá.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Táto ryba je čerstvá'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-010",
+      "category": "gramatika",
+      "prompt": "Napíš rozkazovací spôsob slovesa „písať“ v 2. osobe množného čísla. Odpovedz jedným slovom.",
+      "answer": "píšte",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpíšte\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-011",
+      "category": "gramatika",
+      "prompt": "Ktorý tvar je správny podľa rytmického krátenia: „krásný“ alebo „krásny“? Odpovedz len správnym slovom.",
+      "answer": "krásny",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bkrásny\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bkrásný\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-012",
+      "category": "gramatika",
+      "prompt": "Oprav chyby a napíš celú vetu: Idem s kamarátom a s kamarádkou do kina.",
+      "answer": "Idem s kamarátom a kamarádkou do kina.",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": false,
+          "detail": "contains 'kamarátkou'"
+        },
+        {
+          "type": "not_contains",
+          "ok": false,
+          "detail": "not_contains 'kamarádkou'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-013",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „Slovensko“ v lokáli jednotného čísla (na ___). Odpovedz jedným slovom.",
+      "answer": "Slovensku",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bSlovensku\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-014",
+      "category": "gramatika",
+      "prompt": "Pridaj chýbajúcu diakritiku a napíš celú vetu: Dakujem, ze ste prisli vcas.",
+      "answer": "Ďakujem, že ste prišli včas.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Ďakujem, že ste prišli včas'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-015",
+      "category": "gramatika",
+      "prompt": "Oprav chybu a napíš celú vetu: Videl som pekné dievčatá, ktoré sa smiali.",
+      "answer": "Veta je správna: Videl som pekné dievčatá, ktoré sa smiali.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Videl som pekné dievčatá, ktoré sa smiali'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-016",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „ulica“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "ulíc",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bulíc\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-017",
+      "category": "gramatika",
+      "prompt": "Doplň správny tvar: Stretol som sa s (pán Kováč) ___.",
+      "answer": "Stretol som sa s pánom Kováčom.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'pánom Kováčom'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-018",
+      "category": "gramatika",
+      "prompt": "Oprav chybu a napíš celú vetu: Včera sme boli v Košicích.",
+      "answer": "Včera sme boli v Košiciach.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'v Košiciach'"
+        },
+        {
+          "type": "not_contains",
+          "ok": true,
+          "detail": "not_contains 'Košicích'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-019",
+      "category": "gramatika",
+      "prompt": "Napíš minulý čas slovesa „ísť“ pre ženský rod jednotného čísla (ona ___). Odpovedz jedným slovom.",
+      "answer": "išla",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bišla\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-020",
+      "category": "gramatika",
+      "prompt": "Ktorá predložka je správna: „idem na poštu“ alebo „idem do pošty“? Odpovedz len správnym spojením.",
+      "answer": "idem na poštu",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'na poštu'"
+        },
+        {
+          "type": "not_contains",
+          "ok": true,
+          "detail": "not_contains 'do pošty'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-021",
+      "category": "gramatika",
+      "prompt": "Doplň správny tvar: Bývam v (Bratislava) ___.",
+      "answer": "Bratislave.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bBratislave\\b/"
+        },
+        {
+          "type": "not_contains",
+          "ok": true,
+          "detail": "not_contains 'Bratislavy'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-022",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „srdce“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "sŕdc",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bsŕdc\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-023",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „sestra“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "sestier",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bsestier\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-024",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „jablko“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "jabĺk",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bjabĺk\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-025",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „vojna“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "vojen",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bvojen\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-026",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „ľudia“ v datíve. Odpovedz jedným slovom.",
+      "answer": "ľuďom",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bľuďom\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-027",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „kôň“ v nominatíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "kone",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bkone\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-028",
+      "category": "gramatika",
+      "prompt": "Ktorý tvar je správny: „mliečný“ alebo „mliečny“? Odpovedz len správnym slovom.",
+      "answer": "mliečný",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": false,
+          "detail": "regex /\\bmliečny\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": false,
+          "detail": "not_regex /\\bmliečný\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-029",
+      "category": "gramatika",
+      "prompt": "Oprav chybu a napíš celú vetu: Dvaja psy sa hrali na dvore.",
+      "answer": "Dvaja psi sa hrali na dvore.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Dvaja psi|Dva psy) sa hrali na dvore\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bDvaja psy\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-030",
+      "category": "gramatika",
+      "prompt": "Doplň správny tvar: Včera som videl troch (pekný muž) ___.",
+      "answer": "pekných mužov",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'pekných mužov'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-031",
+      "category": "gramatika",
+      "prompt": "Oprav chybu a napíš celú vetu: Kúpil som si dve kilá jablká.",
+      "answer": "Kúpil som si dve kilá jablk.",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": false,
+          "detail": "contains 'dve kilá jabĺk'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-032",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „vajce“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "vajec",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bvajec\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-033",
+      "category": "gramatika",
+      "prompt": "Oprav chybu a napíš celú vetu: Tí ľudia boli veľmi milí.",
+      "answer": "Veta je správna: Tí ľudia boli veľmi milí.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Tí ľudia boli veľmi milí'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-034",
+      "category": "gramatika",
+      "prompt": "Ktorý zápis je správny: „od 5-tich rokov“ alebo „od 5 rokov“? Odpovedz len správnym zápisom.",
+      "answer": "od 5 rokov",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'od 5 rokov'"
+        },
+        {
+          "type": "not_contains",
+          "ok": true,
+          "detail": "not_contains '5-tich'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-035",
+      "category": "gramatika",
+      "prompt": "Oprav zdvorilostné poradie osôb a napíš celú vetu: Ja a Peter sme išli do kina.",
+      "answer": "Peter a ja sme išli do kina.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Peter a ja sme išli do kina'"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-036",
+      "category": "gramatika",
+      "prompt": "Ako sa správne píše názov sviatku 1. januára: „Nový Rok“ alebo „Nový rok“? Odpovedz len správnym zápisom.",
+      "answer": "Nový rok",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Nový rok/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /Nový Rok/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-037",
+      "category": "gramatika",
+      "prompt": "Píše sa názov jazyka s veľkým alebo malým písmenom? Napíš správne: „slovenčina“ alebo „Slovenčina“ (uprostred vety).",
+      "answer": "Uprostred vety sa píše **slovenčina** (malým písmenom).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bslovenčina\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bSlovenčina\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-038",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „pes“ v datíve jednotného čísla. Odpovedz jedným slovom.",
+      "answer": "psovi",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpsovi\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-039",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „oko“ v lokáli množného čísla (v ___). Odpovedz jedným slovom.",
+      "answer": "očiach",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bočiach\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-040",
+      "category": "gramatika",
+      "prompt": "Doplň sloveso v minulom čase: Psy celú noc ___ (brechať).",
+      "answer": "Psy celú noc **brechali**.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bbrechali\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bbrechaly\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-041",
+      "category": "gramatika",
+      "prompt": "Ktorý tvar je správny: „krásnych“ alebo „krásných“? Odpovedz len správnym slovom.",
+      "answer": "krásnych",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bkrásnych\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bkrásných\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-042",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „pani“ v inštrumentáli jednotného čísla (s ___). Odpovedz jedným slovom.",
+      "answer": "paňou",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpaňou\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-043",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „pieseň“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "piesní",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpiesní\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:piesni|piesen)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-044",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „kuchyňa“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "kuchýň",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bkuchýň\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:kuchyní|kuchyn)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-045",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „jedlo“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "jedál",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bjedál\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:jedel|jedlov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-046",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „mydlo“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "mydiel",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bmydiel\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:mydel|mydlov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-047",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „hra“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "hier",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bhier\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:her|hrov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-048",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „rozprávka“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "rozprávok",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\brozprávok\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:rozprávôk|rozprávek|rozprávkov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-049",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „noha“ v genitíve množného čísla. Odpovedz jedným slovom.",
+      "answer": "nôh",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bnôh\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:noh|nohov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-050",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „ľudia“ v inštrumentáli. Odpovedz jedným slovom.",
+      "answer": "ľuďmi",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bľuďmi\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:ľudmi|ľudiami)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-051",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „deti“ v inštrumentáli. Odpovedz jedným slovom.",
+      "answer": "deťmi",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bdeťmi\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:detmi|deťami)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-052",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „peniaze“ v genitíve. Odpovedz jedným slovom.",
+      "answer": "peňazí",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpeňazí\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:peniazí|peňazi|peniazov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-053",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „kôň“ v inštrumentáli množného čísla. Odpovedz jedným slovom.",
+      "answer": "koňmi",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bkoňmi\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(?:koňami|konmi)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-054",
+      "category": "gramatika",
+      "prompt": "Napíš slovo „dievča“ v genitíve množného čísla (bez ___). Odpovedz jedným slovom.",
+      "answer": "dievčat",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(dievčat|dievčeniec)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(dievčiat|dievčatov|děvčat)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-055",
+      "category": "gramatika",
+      "prompt": "Napíš tvar slovesa „čítať“ v 3. osobe množného čísla prítomného času (oni ___). Odpovedz jedným slovom.",
+      "answer": "čítajú",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bčítajú\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bčítaju\\b|\\bčtou\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-056",
+      "category": "gramatika",
+      "prompt": "Doplň sloveso v minulom čase: Včera večer ___ (zamknúť) dvere. Podmet je on. Odpovedz jedným slovom.",
+      "answer": "zamkol",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bzamkol\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bzamknul\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-057",
+      "category": "gramatika",
+      "prompt": "Doplň sloveso v minulom čase: Otec ___ (piecť) chlieb. Odpovedz jedným slovom.",
+      "answer": "piekol",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpiekol\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(pekol|piekl|pečil)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-058",
+      "category": "gramatika",
+      "prompt": "Napíš rozkazovací spôsob slovesa „jesť“ v 2. osobe jednotného čísla. Odpovedz jedným slovom.",
+      "answer": "jedz",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bjedz\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(jez|jedi|jeď)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-059",
+      "category": "gramatika",
+      "prompt": "Napíš rok 2024 slovom tak, ako sa píše po slovensky (jedno slovo).",
+      "answer": "dvetisícdvadsaťštyri",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bdvetisícdvadsaťštyri\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /dve tisíc|dvadsať štyri/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-060",
+      "category": "gramatika",
+      "prompt": "Napíš rok 1999 slovom tak, ako sa píše po slovensky (jedno slovo).",
+      "answer": "tisícdeväťstodeväťdesiatdeväť",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\btisícdeväťstodeväťdesiatdeväť\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /tisíc deväť|deväťsto deväť/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-061",
+      "category": "gramatika",
+      "prompt": "Doplň správny tvar prídavného mena a napíš celú vetu: Tie ___ psy celú noc štekali. (hladný)",
+      "answer": "Tie hladné psy celú noc štekali.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bTie hladné psy\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bhladní\\b|\\bhladný\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-062",
+      "category": "gramatika",
+      "prompt": "Doplň i/y a napíš celú vetu: Tí rýchl_ bežci vyhral_ preteky.",
+      "answer": "Tí rýchli bežci vyhrali preteky.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bTí rýchli bežci vyhrali preteky\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /rýchly|vyhraly/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-063",
+      "category": "gramatika",
+      "prompt": "Doplň i/y a napíš celú vetu: Dievčatá včera spieval_ v zbore a ženy tancoval_.",
+      "answer": "Dievčatá včera spievaly v zbore a ženy tancovaly.",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": false,
+          "detail": "regex /\\bspievali\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": false,
+          "detail": "regex /\\btancovali\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": false,
+          "detail": "not_regex /spievaly|tancovaly/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-064",
+      "category": "gramatika",
+      "prompt": "Nahraď bohemizmus spisovným slovenským slovom a napíš celú vetu: Je to zrovna to, čo potrebujem.",
+      "answer": "Je to práve to, čo potrebujem.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(práve|presne|akurát)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bzrovna\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-065",
+      "category": "gramatika",
+      "prompt": "Oprav chybu a napíš celú vetu: Mohli bysme ísť zajtra do kina.",
+      "answer": "Mohli by sme ísť zajtra do kina.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bMohli by sme ísť zajtra do kina\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bbysme\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-066",
+      "category": "gramatika",
+      "prompt": "Doplň správnu predložku (z/zo/s/so) a napíš celú vetu: Vrátil sa ___ školy neskoro.",
+      "answer": "Vrátil sa zo školy neskoro.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bVrátil sa zo školy neskoro\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(z|so|s) školy\\b/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-067",
+      "category": "gramatika",
+      "prompt": "Napíš správne s veľkými a malými písmenami (pravopis názvov ulíc): hlavná ulica 5, prešov",
+      "answer": "**Hlavná ulica 5, Prešov**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bHlavná ulica 5, Prešov\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /Hlavná Ulica/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-068",
+      "category": "gramatika",
+      "prompt": "Ako sa správne píše názov námestia v Bratislave: „Námestie Slobody“ alebo „Námestie slobody“? Odpovedz len správnym zápisom.",
+      "answer": "Námestie slobody",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bNámestie slobody\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /Námestie Slobody/"
+        }
+      ]
+    },
+    {
+      "id": "gramatika-069",
+      "category": "gramatika",
+      "prompt": "Ktorý tvar je správny: „vtáči spev“ alebo „vtáčí spev“? Odpovedz len správnym spojením.",
+      "answer": "vtáčí spev",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bvtáčí spev\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bvtáči spev\\b/"
+        }
+      ]
+    },
+    {
+      "id": "long_text-001",
+      "category": "long_text",
+      "prompt": "Napíš článok (150–250 slov) o výhodách kontajnerizácie pre malé firmy. Po slovensky, s diakritikou, bez nadpisov.",
+      "answer": "Kontajnerizácia umožňuje malým firmám spúšťať aplikácie v izolovaných prostrediach, ktoré sa správajú rovnako na počítači vývojára aj na produkčnom serveri. Znižuje sa tým riziko, že softvér funguje v jednom prostredí a v druhom zlyhá. Firma nemusí pre každú službu udržiavať ťažký virtuálny stroj. Kontajnery sa spúšťajú rýchlejšie a spotrebujú menej pamäte aj procesorového času, čo pri obmedzenom rozpočte znamená nižšie náklady na hosting.\n\nVýraznou výhodou je opakovateľné nasadzovanie. Novú verziu možno pripraviť ako obraz a uviesť ju do prevádzky bez zdĺhavého ručného nastavovania servera. Ak sa objaví chyba, návrat k predchádzajúcej verzii je rýchly. To skracuje výpadky a šetrí čas malého tímu, ktorý často nemá samostatného správcu systémov.\n\nKontajnery uľahčujú aj rast. Pri väčšom počte zákazníkov stačí spustiť ďalšie inštancie tej istej služby a rozložiť záťaž. Vývoj, testovanie a prevádzka pracujú s rovnakým prostredím, takže sa menej času stráca hľadaním rozdielov v konfigurácii. Izolácia zároveň obmedzuje šírenie problému z jednej služby na ostatné.\n\nPre malú firmu preto kontajnerizácia nie je len technický trend. Je to praktický spôsob, ako dodávať spoľahlivejší softvér, znížiť prevádzkové náklady a pripraviť sa na rast bez veľkých investícií do infraštruktúry.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 130 (got 184)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 320 (got 184)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.55)"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(ze|uz|az|este|ktore|ktory|vsetky|mozete|mozeme|dalsie|dalsi|cas|neskor|vacsina|zivot|ludia|ludi|tazko|lahko)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 10,
+          "detail": "Prirodzený, správny text bez chýb."
+        }
+      ]
+    },
+    {
+      "id": "long_text-002",
+      "category": "long_text",
+      "prompt": "Doplň do textu chýbajúcu diakritiku. Nemeň slová ani slovosled, vráť len opravený text:\n\nVcera sme isli do mesta kupit darceky pre deti. Obchody boli plne ludi a bolo tazke najst parkovanie. Nakoniec sme zaparkovali daleko od centra a sli sme peso. V knihkupectve sme kupili knizku o zvieratach a v hrackarstve stavebnicu. Domov sme sa vratili az o osmej vecer, unaveni, ale spokojni.",
+      "answer": "Včera sme išli do mesta kúpiť darčeky pre deti. Obchody boli plné ľudí a bolo ťažké nájsť parkovanie. Nakoniec sme zaparkovali ďaleko od centra a šli sme pešo. V kníhkupectve sme kúpili knižku o zvieratách a v hračkárstve stavebnicu. Domov sme sa vrátili až o ôsmej večer, unavení, ale spokojní.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Včera sme išli do mesta kúpiť darčeky pre deti'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'plné ľudí'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'ťažké nájsť'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'ďaleko od centra'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'šli sme pešo'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'kníhkupectve'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'knižku o zvieratách'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'hračkárstve'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'až o ôsmej večer'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'unavení, ale spokojní'"
+        }
+      ]
+    },
+    {
+      "id": "long_text-003",
+      "category": "long_text",
+      "prompt": "Zhrň nasledujúci anglický text po slovensky v 80–150 slovách. Nepoužívaj anglické slová ani anglicizmy, kde existuje slovenský výraz.\n\nRemote work has become the default for many software teams. Companies report that employees are more productive when they can control their environment, but managers struggle to keep teams aligned. The most common problems are unclear priorities, too many meetings, and slow feedback. Teams that succeed usually write things down: decisions, plans and status updates live in shared documents, not in people's heads. They also protect focus time by limiting meetings to two days a week. Finally, they invest in onboarding, because a new hire who cannot ask a question across the desk needs a clear written guide to the codebase and the team's habits.",
+      "answer": "Práca na diaľku sa stala bežným spôsobom práce pre mnohé tímy vývojárov. Firmy uvádzajú, že zamestnanci sú výkonnejší, keď si môžu sami určiť prostredie, v ktorom pracujú. Vedúci však ťažko udržujú tímy zosúladené. Najčastejšími problémami sú nejasné priority, priveľa porád a pomalá spätná väzba. Úspešné tímy zvyčajne zapisujú dôležité veci: rozhodnutia, plány aj správy o stave práce sú v spoločných dokumentoch, nie iba v hlavách ľudí. Chránia aj čas na sústredenú prácu tým, že porady obmedzia na dva dni v týždni. Napokon venujú pozornosť zaškoleniu. Nový zamestnanec, ktorý sa nemôže opýtať kolegu cez stôl, potrebuje jasného písomného sprievodcu zdrojovým kódom a zvyklosťami tímu.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 60 (got 103)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 190 (got 103)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.62)"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(meeting|meetingy|feedback|home ?office|focus|onboarding|remote|team|teams|update|updaty)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Úplné a prirodzené zhrnutie, bez anglicizmov; drobná štylistická strohosť."
+        }
+      ]
+    },
+    {
+      "id": "long_text-004",
+      "category": "long_text",
+      "prompt": "Napíš formálnu žiadosť (120–200 slov) na mestský úrad o povolenie na umiestnenie reklamnej tabule pred prevádzkou kaviarne na Hlavnej ulici 12. Vykaj, uveď oslovenie, predmet žiadosti, odôvodnenie a záver s pozdravom.",
+      "answer": "Vážený mestský úrad,\n\nobraciam sa na Vás so žiadosťou o povolenie na umiestnenie reklamnej tabule pred prevádzkou kaviarne na Hlavnej ulici 12.\n\nTabuľa má slúžiť na informovanie verejnosti o ponuke a otváracích hodinách prevádzky. Bude umiestnená na chodníku pred vchodom tak, aby neobmedzovala peší pohyb ani prístup k susedným objektom. Jej rozmery a vzhľad budú primerané okoliu a nebudú zasahovať do verejného priestranstva nad mieru nevyhnutnú na účel reklamy.\n\nŽiadam o vydanie súhlasu na dobu neurčitú, prípadne na obdobie, ktoré určí úrad. Som pripravený doplniť technické údaje, nákres umiestnenia aj ďalšie podklady podľa Vašich požiadaviek a dodržať podmienky, ktoré stanovíte.\n\nĎakujem za posúdenie žiadosti a teším sa na Vaše vyjadrenie.\n\nS pozdravom",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 100 (got 111)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 260 (got 111)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.44)"
+        },
+        {
+          "type": "judge",
+          "ok": false,
+          "score": 6,
+          "detail": "Gramaticky správne, no len okolo 112 slov (pod 120), oslovenie „Vážený mestský úrad“ a chýba podpis."
+        }
+      ]
+    },
+    {
+      "id": "long_text-005",
+      "category": "long_text",
+      "prompt": "Napíš krátky príbeh pre deti (150–250 slov) o ježkovi, ktorý sa bál tmy. Po slovensky, s dialógom.",
+      "answer": "V hustom lese žil malý ježko Bodliak. Cez deň sa hral medzi lístím, no keď sa zotmelo, utiekol do nory a schoval hlavu pod listy.\n\n„Mama, bojím sa,“ povedal. „V tme sú tiene a čudné zvuky.“\n\n„Zvuky patria lesu,“ odpovedala mama jemne. „Sova volá, vietor šumí a potok tečie. Nič z toho ti neublíži.“\n\nBodliak prikývol, ale strach ostal. Neskôr v noci začul tichý hlas.\n\n„Bodliak, poď von,“ zavolala svätojánska muška. „Volám sa Svietilka.“\n\n„A čo ak ma niečo chytí?“ spýtal sa.\n\n„Podržím ti svetielko,“ sľúbila. „Pozrieme sa len kúsok od nory.“\n\nJežko váhal, potom vyšiel. Mesačný svit padal na mach a hviezdy sa trblietali medzi konármi. Cvrčky spievali tak pokojne, až sa Bodliak prestal triasť.\n\n„Vidíš?“ usmiala sa Svietilka. „Tma nie je prázdna. Len čaká, kým ju spoznáš.“\n\n„Ďakujem,“ povedal Bodliak. „Už viem, že sa nemusím báť sám.“\n\nOd tej noci vychádzal von častejšie. Keď prišiel strach, pozrel sa na hviezdy a spomenul si, že v lese nie je nikdy celkom sám.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 120 (got 163)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 320 (got 163)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.33)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bjež(ko|ek|ka|kovi|kom)\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /„|“|–/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Prirodzený a gramaticky správny príbeh so správnymi úvodzovkami „…“ a jasnou stavbou, bez podstatných chýb."
+        }
+      ]
+    },
+    {
+      "id": "long_text-006",
+      "category": "long_text",
+      "prompt": "Napíš číslovaný návod v 8 krokoch, ako nastaviť nový domáci Wi-Fi router (pripojenie, prihlásenie do administrácie, zmena hesla, názov siete, aktualizácia firmvéru…). Každý krok 1–2 vety, po slovensky.",
+      "answer": "1. Zapojte napájací adaptér do routera a do zásuvky a ethernetovým káblom prepojte WAN port routera s modemom alebo zásuvkou poskytovateľa.\n2. Počkajte 1–2 minúty, kým sa router naštartuje a rozsvietia sa kontrolky napájania a internetu.\n3. Pripojte počítač k routeru káblom do LAN portu alebo sa pripojte k predvolenej Wi-Fi sieti uvedenej na štítku routera.\n4. V prehliadači otvorte adresu administrácie (často 192.168.0.1 alebo 192.168.1.1) a prihláste sa predvoleným menom a heslom zo štítku.\n5. Hneď zmeňte heslo administrátora na silné, jedinečné heslo a uložte ho na bezpečnom mieste.\n6. V nastaveniach Wi-Fi zmeňte názov siete (SSID) na vlastný a nastavte silné heslo WPA2 alebo WPA3.\n7. Uložte zmeny, odpojte sa od starej siete a pripojte zariadenia k novej sieti s novým heslom.\n8. V administrácii skontrolujte aktualizáciu firmvéru, nainštalujte dostupnú verziu a počkajte, kým sa router reštartuje.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 100 (got 130)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /(?:^|\\s)8[.)]\\s/"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.32)"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(password|login|update|settings|network name)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Bezchybné, logické a zrozumiteľné kroky po slovensky."
+        }
+      ]
+    },
+    {
+      "id": "long_text-007",
+      "category": "long_text",
+      "prompt": "Prelož do slovenčiny (ponechaj technické termíny, ale skloňuj ich správne):\n\nWhen the primary server fails, the load balancer stops sending traffic to it within ten seconds. Requests are redirected to the two remaining servers, which run the same version of the application. Once the failed server is repaired, the operator adds it back to the pool manually. We recommend testing this procedure on the staging servers every month, because configuration drift between servers is the most common cause of failed failovers.",
+      "answer": "Keď primárny server zlyhá, load balancer do desiatich sekúnd prestane posielať traffic naň. Požiadavky sa presmerujú na dva zostávajúce servery, ktoré bežia s rovnakou verziou aplikácie. Po oprave zlyhaného servera ho operátor manuálne pridá späť do poolu. Odporúčame tento postup každý mesiac otestovať na staging serveroch, pretože configuration drift medzi servermi je najčastejšou príčinou zlyhaných failoverov.",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 50 (got 56)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.43)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bserver(y|ov|om|och|u|e|i)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": false,
+          "detail": "not_regex /\\b(traffic|requests?|pool|staging servers|operator)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 7,
+          "detail": "Presný a plynulý preklad, no ponechané anglické „traffic“ namiesto „prevádzka“ a mierne neobratné „bežia s rovnakou verziou“."
+        }
+      ]
+    },
+    {
+      "id": "long_text-008",
+      "category": "long_text",
+      "prompt": "Napíš 150–220 slov o Vysokých Tatrách ako turistickej destinácii. Použi názov pohoria aspoň trikrát v rôznych pádoch.",
+      "answer": "Vysoké Tatry patria medzi najznámejšie turistické destinácie na Slovensku a každoročne priťahujú návštevníkov z domova aj zo zahraničia. Ľudia prichádzajú do Vysokých Tatier za vysokohorskou prírodou, čistým vzduchom, plesami a dobre značenými chodníkmi. Vysokým Tatrám dominujú štíty, doliny a horské chaty, ktoré lákajú peších turistov, horolezcov aj rodiny s deťmi. V letných mesiacoch sú obľúbené výstupy k jazerám a vyhliadkam, zatiaľ čo v zime ponúkajú Vysoké Tatry lyžiarske strediská, bežecké trate a zimné prechádzky. Medzi najnavštevovanejšie miesta patria Štrbské Pleso, Starý Smokovec a Tatranská Lomnica, odkiaľ vedú lanovky aj turistické trasy rôznej náročnosti. Pri plánovaní výletu treba rešpektovať pravidlá národného parku, sledovať predpoveď počasia a zvoliť trasu podľa kondície a skúseností. Vysokými Tatrami prechádzajú aj náučné chodníky vhodné pre pokojnejšiu turistiku, no vyššie polohy vyžadujú vhodnú obuv, oblečenie a opatrnosť. Región spája prírodné zážitky s ubytovaním, reštauráciami a dostupnou dopravou, preto je vhodný na krátky víkend aj dlhší pobyt. Kto chce spoznať slovenské hory v rôznych ročných obdobiach, nájde vo Vysokých Tatrách pestrú ponuku aktivít, výhľadov a oddychu počas celého roka.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 130 (got 171)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 300 (got 171)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.54)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Vysok(é|ých|ým|ými) Tatr(y|ách|ám|ami)/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /Vysoke Tatry|Tatrach|\\bVysokych\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Správne pády vo všetkých tvaroch, prirodzený text, fakty bez chýb."
+        }
+      ]
+    },
+    {
+      "id": "long_text-009",
+      "category": "long_text",
+      "prompt": "Doplň do textu chýbajúcu diakritiku. Nemeň slová ani slovosled, vráť len opravený text:\n\nMinuly tyzden sme s detmi navstivili Liptovsky Mikulas. Ubytovali sme sa v malom penzione nedaleko namestia. Rano sme sa vybrali do Demanovskej doliny, kde sme si pozreli Demanovsku jaskynu slobody. Deti boli nadsene z kvaplov a podzemneho jazierka. Popoludni zacalo prsat, tak sme sa schovali v kaviarni a dali si horucu cokoladu. Vecer sme sa prechadzali po meste a kupili sme si suveniry. Domov sme sa vracali unaveni, ale stastni.",
+      "answer": "Minulý týždeň sme s deťmi navštívili Liptovský Mikuláš. Ubytovali sme sa v malom penzióne neďaleko námestia. Ráno sme sa vybrali do Demänovskej doliny, kde sme si pozreli Demänovskú jaskyňu slobody. Deti boli nadšené z kvapľov a podzemného jazierka. Popoludní začalo pršať, tak sme sa schovali v kaviarni a dali si horúcu čokoládu. Večer sme sa prechádzali po meste a kúpili sme si suveníry. Domov sme sa vracali unavení, ale šťastní.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Minulý týždeň sme s deťmi navštívili'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'neďaleko námestia'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Ráno sme sa vybrali do Demänovskej doliny'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Demänovskú jaskyňu slobody'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'nadšené z kvapľov'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'podzemného jazierka'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Popoludní začalo pršať'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'horúcu čokoládu'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'kúpili sme si suveníry'"
+        },
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'unavení, ale šťastní'"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.35 (got 0.39)"
+        }
+      ]
+    },
+    {
+      "id": "long_text-010",
+      "category": "long_text",
+      "prompt": "Napíš 150–200 slov o tom, ako malá slovenská firma zaviedla prácu z domu. Nepoužívaj anglicizmy, ak existuje bežný slovenský výraz (napr. home office, meeting, deadline, feedback, call, team leader, manager).",
+      "answer": "Malá účtovnícka firma z Trenčína zaviedla prácu z domu v čase, keď sa ukázalo, že časť úloh sa dá spoľahlivo vybaviť aj mimo kancelárie. Vedenie najprv spísalo jednoduché pravidlá. Určilo, kto môže pracovať z domu, v ktorých dňoch a ako sa bude posudzovať výsledok. Každý zamestnanec dostal prenosný počítač a bezpečný prístup k firemným dokladom, aby údaje neostali bez ochrany.\n\nRanné porady sa presunuli na krátke hovory. Ľudia si na nich rozdelili úlohy a dohodli termíny. Vedúci tímu prestal sledovať, koľko hodín kto sedí pri stole. Dôležité bolo, či je práca hotová včas a bez chýb. Raz za týždeň dostal každý krátku spätnú väzbu: čo sa podarilo a čo treba opraviť.\n\nPo troch mesiacoch firma porovnala výsledky s predchádzajúcim obdobím. Výkon neklesol. Zamestnanci ušetrili čas na cestách a mohli si deň rozdeliť podľa vlastnej potreby. Niektorí však cítili osamelosť, preto firma ponechala dva dni v kancelárii. Rozhodnutie vzniklo po rozhovore so všetkými, nie ako príkaz zhora. Práca z domu sa tak stala stálou súčasťou bežného týždňa.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 130 (got 166)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 260 (got 166)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.47)"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(home ?office|meeting\\w*|deadline\\w*|feedback\\w*|call\\w*|team ?leader\\w*|manager\\w*|homeoffice\\w*)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "long_text-011",
+      "category": "long_text",
+      "prompt": "Napíš návod pre seniora (120–180 slov), ako si na mobile nastaviť videohovor s vnúčatami. Dôsledne mu vykaj.",
+      "answer": "Vážený používateľ, videohovor s vnúčatami si na mobile nastavíte jednoducho. Najprv si stiahnite aplikáciu, ktorú používajú aj oni, napríklad WhatsApp alebo Messenger, a otvorte ju. Prihláste sa svojím telefónnym číslom a potvrďte kód, ktorý vám príde správou. Potom v kontaktoch vyhľadajte vnúča a klepnite na ikonu videokamery. Telefón sa vás opýta, či môže používať kameru a mikrofón — obe povolenia potvrďte, inak vás nebude vidieť ani počuť. Pred hovorom si skontrolujte, či máte zapnuté Wi-Fi alebo dostatok dát, a či je batéria nabitá aspoň na polovicu. Telefón držte vo výške očí, najlepšie oprený o stôl, aby ste mali voľné ruky. Ak vás vnúča nepočuje, skontrolujte, či nie je stlmený zvuk. Pri prvom hovore si nechajte pomôcť od niekoho blízkeho. Keď budete chcieť hovor ukončiť, klepnite na červené tlačidlo. Prajeme vám príjemné rozhovory.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 100 (got 132)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 240 (got 132)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.46)"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(máš|môžeš|chceš|klikni|stlač|otvor|zapni|vyber|nájdi|ťukni|tvoj\\w*)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 8,
+          "detail": "Zrozumiteľné a dôsledne vykané; neobratné „Vážený používateľ“ a „nechajte si pomôcť od niekoho“."
+        }
+      ]
+    },
+    {
+      "id": "long_text-012",
+      "category": "long_text",
+      "prompt": "Napíš pozvánku (60–120 slov) na firemný vianočný večierok, ktorý bude 12. decembra 2025 o 18.00 h v hoteli Devín v Bratislave. Vstupné je 25 eur. Dátum, čas a sumu zapíš podľa slovenských pravidiel.",
+      "answer": "Vážení kolegovia,\n\nsrdečne vás pozývame na firemný vianočný večierok, ktorý sa uskutoční 12. decembra 2025 o 18.00 h v hoteli Devín v Bratislave. Pripravili sme pre vás večer plný vianočnej atmosféry, dobrého jedla a príjemnej zábavy. Vstupné je 25 eur. Prosíme o včasné potvrdenie účasti, aby sme mohli zabezpečiť dostatok miest a pohostenia. Tešíme sa na stretnutie, rozhovory a spoločné oslavy konca roka. Nech je tento večer príležitosťou na oddych a radosť v kruhu kolegov. Vaša prítomnosť nám urobí veľkú radosť.\n\nS úctou\norganizátori",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 50 (got 80)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 160 (got 80)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.2 (got 0.45)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /12\\. decembra 2025|12\\. 12\\. 2025/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b25 (€|eur\\b|EUR\\b)/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\d€|12\\.12\\.|\\b18\\.00h\\b|\\bpm\\b/"
+        }
+      ]
+    },
+    {
+      "id": "long_text-013",
+      "category": "long_text",
+      "prompt": "Napíš formálnu sťažnosť (120–180 slov) adresovanú zákazníckemu servisu internetového obchodu: objednaná práčka prišla poškodená a nikto neodpovedá na e-maily. Vykaj s veľkým V.",
+      "answer": "Vážený zákaznícky servis,\n\nobraciam sa na Vás s formálnou sťažnosťou týkajúcou sa objednávky práčky, ktorá mi bola doručená v poškodenom stave. Pri preberaní zásielky som zistil, že obal aj samotný spotrebič vykazujú viditeľné poškodenie, ktoré znemožňuje bezpečné používanie výrobku.\n\nNa vzniknutú situáciu som Vás opakovane upozornil e-mailom a žiadal som o vyriešenie reklamácie, výmenu tovaru alebo vrátenie peňazí. Na žiadnu z mojich správ som však doteraz nedostal odpoveď, čo považujem za neprimerané a v rozpore s očakávanou starostlivosťou o zákazníka.\n\nŽiadam Vás preto o bezodkladné preverenie môjho podania, písomné stanovisko a návrh konkrétneho riešenia v čo najkratšom termíne. Zároveň si vyhradzujem právo uplatniť ďalšie nároky vyplývajúce z platných právnych predpisov, ak nebude vec riadne vybavená.\n\nĎakujem za skoré vybavenie sťažnosti.\n\nS pozdravom",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "min_words",
+          "ok": true,
+          "detail": "min_words 100 (got 123)"
+        },
+        {
+          "type": "max_words",
+          "ok": true,
+          "detail": "max_words 240 (got 123)"
+        },
+        {
+          "type": "diacritics_ratio",
+          "ok": true,
+          "detail": "diacritics_ratio >= 0.25 (got 0.54)"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vás|Vám|Váš|Vaš\\w+)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(vás|vám|váš|vaš\\w+)\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Vážen(ý|á|í|é)/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 8,
+          "detail": "Gramaticky správna, zdvorilá sťažnosť s vykaním, no vágna a bez podpisu za „S pozdravom“."
+        }
+      ]
+    },
+    {
+      "id": "preklad-001",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nThe meeting has been postponed until next Tuesday.",
+      "answer": "Stretnutie bolo odložené na budúci utorok.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\butor(ok|ka)\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /odlož|presun/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bmeeting|mítin/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-002",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nPlease find attached the invoice for March.",
+      "answer": "V prílohe nájdete faktúru za marec.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /príloh|prilož|pripáj/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /faktúr/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bmarec\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /attach|invoice/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-003",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nIt's raining cats and dogs.",
+      "answer": "Leje ako z krhly.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(leje|lialo|prší|pršalo)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /mač(k|ie)|\\bps(y|i|ov)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-004",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nBreak a leg!",
+      "answer": "Zlom väz!",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /zlom(te)? väz|veľa šťastia|držím( ti| vám)? palce/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bnoh/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-005",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nHe is a very sympathetic person.",
+      "answer": "Je to veľmi súcitný človek.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /súcit|empat|chápav|ohľaduplný|vnímav|citliv/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /sympatick/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-006",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nEventually, we found the problem.",
+      "answer": "Nakoniec sme našli problém.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(nakoniec|napokon|koniec koncov|nakoniec sme)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /eventuáln/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-007",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nThe actual cost was higher than expected.",
+      "answer": "Skutočné náklady boli vyššie, ako sa očakávalo.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /skutočn/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /aktuáln/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-008",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nThe company hired a new manager.",
+      "answer": "Spoločnosť najala nového manažéra.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bnového (manažéra|vedúceho|riaditeľa)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bnový manažér\\b|\\bmanagera\\b/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-009",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nOur team will deliver the project on time.",
+      "answer": "Náš tím dodá projekt načas.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /projekt/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(načas|včas|v termíne|v stanovenom termíne)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bteam\\b|on time/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-010",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nTwo hundred and fifty people attended the conference.",
+      "answer": "Konferencie sa zúčastnilo dvestopäťdesiat ľudí.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(250|dvesto ?päťdesiat) (ľudí|účastníkov|osôb)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bľudia sa zúčastn|\\bpeople\\b/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-011",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nThe doctor said she would call me tomorrow.",
+      "answer": "Lekárka povedala, že mi zajtra zavolá.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(lekárka|doktorka)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(lekár|doktor) povedal\\b/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-012",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nI have been living in Bratislava for five years.",
+      "answer": "V Bratislave žijem už päť rokov.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bv Bratislave\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(päť|5) rokov\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bsom (bol )?žil\\b/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-013",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nPlease do not hesitate to contact us if you have any questions.",
+      "answer": "Neváhajte nás kontaktovať, ak máte akékoľvek otázky.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(neváhajte|pokojne|kedykoľvek)\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(kontaktovať|obrátiť|obráťte|napíšte|napísať|ozvite|ozvať)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(neváhaj|kontaktuj|hesit)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "preklad-014",
+      "category": "preklad",
+      "prompt": "Prelož do slovenčiny. Vráť len preklad.\n\nTwo women were sitting on the bench and talking.",
+      "answer": "Dve ženy sedeli na lavičke a rozprávali sa.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Dve ženy|dve ženy)\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bsedeli\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\brozprávali|zhovárali|debatovali\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /sedely|rozprávaly|zhováraly|dvaja ženy/"
+        }
+      ]
+    },
+    {
+      "id": "realie-001",
+      "category": "realie",
+      "prompt": "Aké je hlavné mesto Slovenska? Odpovedz jedným slovom.",
+      "answer": "Bratislava",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Bratislava'"
+        }
+      ]
+    },
+    {
+      "id": "realie-002",
+      "category": "realie",
+      "prompt": "Koľko samosprávnych krajov má Slovensko? Odpovedz číslom.",
+      "answer": "8",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(8|osem)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-003",
+      "category": "realie",
+      "prompt": "Aká mena sa používa na Slovensku?",
+      "answer": "Na Slovensku sa používa euro (EUR).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\beur[oa]?\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bkorun/"
+        }
+      ]
+    },
+    {
+      "id": "realie-004",
+      "category": "realie",
+      "prompt": "V ktorom roku vznikla samostatná Slovenská republika?",
+      "answer": "V roku 1993.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '1993'"
+        }
+      ]
+    },
+    {
+      "id": "realie-005",
+      "category": "realie",
+      "prompt": "Ako sa volá najvyšší vrch Slovenska?",
+      "answer": "Gerlachovský štít.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Gerlachovský štít'"
+        }
+      ]
+    },
+    {
+      "id": "realie-006",
+      "category": "realie",
+      "prompt": "Ktorá veľká rieka preteká Bratislavou? Odpovedz jedným slovom.",
+      "answer": "Dunaj",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Dunaj'"
+        }
+      ]
+    },
+    {
+      "id": "realie-007",
+      "category": "realie",
+      "prompt": "Aká je medzinárodná telefónna predvoľba Slovenska?",
+      "answer": "+421",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '421'"
+        }
+      ]
+    },
+    {
+      "id": "realie-008",
+      "category": "realie",
+      "prompt": "Aké je číslo jednotnej tiesňovej linky na Slovensku?",
+      "answer": "**112**\n\nJe to jednotné európske číslo tiesňového volania (polícia, hasiči, záchranka).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '112'"
+        }
+      ]
+    },
+    {
+      "id": "realie-009",
+      "category": "realie",
+      "prompt": "Ako sa volá zákon, ktorý na Slovensku upravuje pracovnoprávne vzťahy medzi zamestnancom a zamestnávateľom?",
+      "answer": "Zákonník práce (zákon č. 311/2001 Z. z.).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Zákonník práce'"
+        }
+      ]
+    },
+    {
+      "id": "realie-010",
+      "category": "realie",
+      "prompt": "Ako sa volá slovenský parlament?",
+      "answer": "Národná rada Slovenskej republiky.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Národná rada'"
+        }
+      ]
+    },
+    {
+      "id": "realie-011",
+      "category": "realie",
+      "prompt": "Koľko poslancov má Národná rada Slovenskej republiky? Odpovedz číslom.",
+      "answer": "150",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '150'"
+        }
+      ]
+    },
+    {
+      "id": "realie-012",
+      "category": "realie",
+      "prompt": "V ktorom meste sídli Ústavný súd Slovenskej republiky?",
+      "answer": "V Košiciach.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bKošic(e|iach)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-013",
+      "category": "realie",
+      "prompt": "Ako sa volá ústredný portál verejnej správy Slovenska (webová adresa)?",
+      "answer": "Ústredný portál verejnej správy (ÚPVS): **www.slovensko.sk**.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'slovensko.sk'"
+        }
+      ]
+    },
+    {
+      "id": "realie-014",
+      "category": "realie",
+      "prompt": "V ktorom roku vstúpilo Slovensko do Európskej únie?",
+      "answer": "Slovensko vstúpilo do Európskej únie v roku 2004.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '2004'"
+        }
+      ]
+    },
+    {
+      "id": "realie-015",
+      "category": "realie",
+      "prompt": "Kto je autorom slovenského románu „Tiene nad Dunajom“ z roku 1987? Ak taký román nepoznáš, povedz to.",
+      "answer": "Taký román nepoznám.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Správne priznáva, že román nepozná; odpoveď je strohá."
+        }
+      ]
+    },
+    {
+      "id": "realie-016",
+      "category": "realie",
+      "prompt": "Ako sa volá doklad, ktorým sa na Slovensku preukazuje totožnosť občana (dvojslovný názov)?",
+      "answer": "Občiansky preukaz.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'občiansky preukaz'"
+        }
+      ]
+    },
+    {
+      "id": "realie-017",
+      "category": "realie",
+      "prompt": "Ktorý štátny sviatok sa na Slovensku slávi 17. novembra?",
+      "answer": "Deň boja za slobodu a demokraciu.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /boj(a)? za slobodu a demokraciu|Nežn(á|ej) revolúci/"
+        }
+      ]
+    },
+    {
+      "id": "realie-018",
+      "category": "realie",
+      "prompt": "Ako sa volá najväčšie jazero na Slovensku (prírodné, nie priehrada)?",
+      "answer": "Veľké Hincovo pleso.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Veľké Hincovo pleso'"
+        }
+      ]
+    },
+    {
+      "id": "realie-019",
+      "category": "realie",
+      "prompt": "Ktorý úrad na Slovensku vyberá dane z príjmu? Odpovedz názvom inštitúcie.",
+      "answer": "Finančná správa Slovenskej republiky.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
+        }
+      ]
+    },
+    {
+      "id": "realie-020",
+      "category": "realie",
+      "prompt": "Čo je to „IČO“ na Slovensku? Odpovedz jednou vetou.",
+      "answer": "IČO je osemmiestne identifikačné číslo organizácie, ktoré na Slovensku jednoznačne identifikuje právnické osoby, podnikateľov a iné subjekty.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /identifika[čc]n[ée] [čc][íi]slo organiz[áa]cie/"
+        }
+      ]
+    },
+    {
+      "id": "realie-021",
+      "category": "realie",
+      "prompt": "Ktorá rieka je najdlhšia na území Slovenska? Odpovedz jedným slovom.",
+      "answer": "Váh",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bVáh\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-022",
+      "category": "realie",
+      "prompt": "Koľko okresov má Slovensko? Odpovedz číslom.",
+      "answer": "79",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '79'"
+        }
+      ]
+    },
+    {
+      "id": "realie-023",
+      "category": "realie",
+      "prompt": "V ktorom roku bola prijatá Ústava Slovenskej republiky?",
+      "answer": "Ústava Slovenskej republiky bola prijatá v roku 1992.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '1992'"
+        }
+      ]
+    },
+    {
+      "id": "realie-024",
+      "category": "realie",
+      "prompt": "Aké číslo má slovenský zákon o ochrane osobných údajov (platný od roku 2018)?",
+      "answer": "Zákon č. 18/2018 Z. z. o ochrane osobných údajov.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /18/2018/"
+        }
+      ]
+    },
+    {
+      "id": "realie-025",
+      "category": "realie",
+      "prompt": "Aké číslo má slovenský zákon o dani z pridanej hodnoty?",
+      "answer": "Zákon č. 222/2004 Z. z. o dani z pridanej hodnoty.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /222/2004/"
+        }
+      ]
+    },
+    {
+      "id": "realie-026",
+      "category": "realie",
+      "prompt": "Aké číslo má slovenský zákon o dani z príjmov?",
+      "answer": "**Zákon č. 595/2003 Z. z. o dani z príjmov.**",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /595/2003/"
+        }
+      ]
+    },
+    {
+      "id": "realie-027",
+      "category": "realie",
+      "prompt": "Kde sídli Najvyšší súd Slovenskej republiky? Odpovedz názvom mesta.",
+      "answer": "Bratislava",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bBratislav[ae]\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-028",
+      "category": "realie",
+      "prompt": "Ako sa volá verejný register, v ktorom sú zapísané slovenské obchodné spoločnosti (s. r. o., a. s.)?",
+      "answer": "Obchodný register Slovenskej republiky.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /[Oo]bchodn(ý|om|ého) register|orsr\\.sk/"
+        }
+      ]
+    },
+    {
+      "id": "realie-029",
+      "category": "realie",
+      "prompt": "Ktorý slovenský prezident podpísal „zákon o digitálnom občianstve“ z roku 2015? Ak taký zákon nepoznáš, povedz to.",
+      "answer": "Taký zákon nepoznám.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Správna stručná odpoveď."
+        }
+      ]
+    },
+    {
+      "id": "realie-030",
+      "category": "realie",
+      "prompt": "Na ktorom úrade sa na Slovensku žiada o vydanie cestovného pasu?",
+      "answer": "Na oddelení dokladov Policajného zboru (ktoréhokoľvek okresného riaditeľstva PZ).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /[Pp]olicajn|oddelen(ie|í) dokladov|[Pp]olície/"
+        }
+      ]
+    },
+    {
+      "id": "realie-031",
+      "category": "realie",
+      "prompt": "Koľko obyvateľov má približne Slovensko (v miliónoch)?",
+      "answer": "Približne 5,4 milióna.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /5[,.][3-5]|5 ?mili[óo]n/"
+        }
+      ]
+    },
+    {
+      "id": "realie-032",
+      "category": "realie",
+      "prompt": "V ktorom roku Slovensko prijalo euro?",
+      "answer": "Slovensko prijalo euro v roku 2009.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains '2009'"
+        }
+      ]
+    },
+    {
+      "id": "realie-033",
+      "category": "realie",
+      "prompt": "Ako sa volá najvyšší vrch Nízkych Tatier?",
+      "answer": "Ďumbier.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Ďumbier'"
+        }
+      ]
+    },
+    {
+      "id": "realie-034",
+      "category": "realie",
+      "prompt": "Aký prefix má slovenské identifikačné číslo pre DPH (IČ DPH)?",
+      "answer": "Prefix slovenského IČ DPH je **SK**.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bSK\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-035",
+      "category": "realie",
+      "prompt": "Ako sa volá slovenský národný park, v ktorom leží Gerlachovský štít?",
+      "answer": "Tatranský národný park (TANAP).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Tatransk(ý|ého|om) národn(ý|ého|om) park|\\bTANAP\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-036",
+      "category": "realie",
+      "prompt": "Ktorá inštitúcia na Slovensku vypláca starobné dôchodky?",
+      "answer": "Sociálna poisťovňa.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /[Ss]ociálna poisťovňa|[Ss]ociálnej poisťovn/"
+        }
+      ]
+    },
+    {
+      "id": "realie-037",
+      "category": "realie",
+      "prompt": "Ako sa volá najvyšší vrch Malej Fatry?",
+      "answer": "Veľký Kriváň (1 709 m).",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Veľk(ý|ého) Kriváň/"
+        }
+      ]
+    },
+    {
+      "id": "realie-038",
+      "category": "realie",
+      "prompt": "V ktorom roku vypuklo Slovenské národné povstanie? Odpovedz číslom.",
+      "answer": "1944",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b1944\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b1945\\b/"
+        }
+      ]
+    },
+    {
+      "id": "realie-039",
+      "category": "realie",
+      "prompt": "Kto v roku 1843 kodifikoval spisovnú slovenčinu na základe stredoslovenských nárečí?",
+      "answer": "Ľudovít Štúr.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Štúr/"
+        }
+      ]
+    },
+    {
+      "id": "realie-040",
+      "category": "realie",
+      "prompt": "Kto ako prvý kodifikoval spisovnú slovenčinu v roku 1787 (na základe západoslovenských nárečí)?",
+      "answer": "Anton Bernolák.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Bernolák/"
+        }
+      ]
+    },
+    {
+      "id": "realie-041",
+      "category": "realie",
+      "prompt": "Ako sa volá slovenská štátna hymna (podľa prvého verša)?",
+      "answer": "Nad Tatrou sa blýska.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Nad Tatrou sa blýska/"
+        }
+      ]
+    },
+    {
+      "id": "realie-042",
+      "category": "realie",
+      "prompt": "Ako sa volá najdlhší jaskynný systém na Slovensku?",
+      "answer": "Demänovský jaskynný systém.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Demänovsk/"
+        }
+      ]
+    },
+    {
+      "id": "realie-043",
+      "category": "realie",
+      "prompt": "Ktorý hrad je spolu s Levočou zapísaný v Zozname svetového dedičstva UNESCO?",
+      "answer": "Spišský hrad.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Spišsk(ý|ého|om) hrad/"
+        }
+      ]
+    },
+    {
+      "id": "realie-044",
+      "category": "realie",
+      "prompt": "Ktorý slovenský samosprávny kraj je rozlohou najväčší?",
+      "answer": "Banskobystrický kraj.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Banskobystrick/"
+        }
+      ]
+    },
+    {
+      "id": "realie-045",
+      "category": "realie",
+      "prompt": "Aká je základná sadzba DPH na Slovensku od 1. januára 2025? Odpovedz číslom s percentom.",
+      "answer": "23 %",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b23 ?%/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b20 ?%/"
+        }
+      ]
+    },
+    {
+      "id": "realie-046",
+      "category": "realie",
+      "prompt": "Kto bol prvým Slovákom, ktorý pristál na Mesiaci? Ak taký človek neexistuje, povedz to.",
+      "answer": "Taký človek neexistuje. Na Mesiaci pristáli len americkí astronauti.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(nikto|neexist|žiadn|žiaden|nebol|nepristál|nikdy)/"
+        }
+      ]
+    },
+    {
+      "id": "realie-047",
+      "category": "realie",
+      "prompt": "Ktoré je druhé najväčšie mesto Slovenska podľa počtu obyvateľov? Odpovedz jedným slovom.",
+      "answer": "Košice",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bKošice\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-001",
+      "category": "register",
+      "prompt": "Napíš krátky e-mail (3–4 vety) svojmu nadriadenému, že zajtra nebudeš v práci kvôli návšteve lekára. Vykaj mu.",
+      "answer": "Vážený pán/pani [priezvisko],\n\nzajtra nebudem v práci, pretože mám naplánovanú návštevu lekára. Ospravedlňujem sa za neprítomnosť a v prípade potreby som dostupný/dostupná telefonicky. Ďakujem za pochopenie.\n\nS pozdravom\n[Vaše meno]",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vám|Vás|Vy|Vašu|Vaše|Vašej)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(Ahoj|Čau|ti|ťa|tebe)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 8,
+          "detail": "Korektný e-mail s vykaním, len oslovenie „Vážený pán/pani“ by malo byť „Vážený pán/Vážená pani“."
+        }
+      ]
+    },
+    {
+      "id": "register-002",
+      "category": "register",
+      "prompt": "Kamarát ti píše: „Ahoj, môžeš mi poradiť, ktorý notebook si mám kúpiť do 800 eur?“ Odpovedz mu v 2–3 vetách. Tykaj mu.",
+      "answer": "Ahoj, do 800 € ber notebook s aspoň 16 GB RAM a SSD, ideálne s Ryzen 5 alebo Intel Core i5. Pozri Lenovo IdeaPad, ASUS VivoBook alebo repasovaný ThinkPad – často majú lepší pomer cena/výkon. Napíš mi, na čo ho budeš hlavne používať, a poradím ti presnejšie.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(Vám|Vás|Vy)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(vám|vás)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Prirodzené, tykanie, bez chýb."
+        }
+      ]
+    },
+    {
+      "id": "register-003",
+      "category": "register",
+      "prompt": "Napíš SMS kamarátke, že meškáš 10 minút na stretnutie. Maximálne 2 vety.",
+      "answer": "Ahoj, meškám asi 10 minút, ospravedlňujem sa. Už som na ceste.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(Vám|Vás|Vy)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 7,
+          "detail": "Správne, no „ospravedlňujem sa“ je zbytočne formálne pre kamarátku."
+        }
+      ]
+    },
+    {
+      "id": "register-004",
+      "category": "register",
+      "prompt": "Napíš formálnu žiadosť o dovolenku na 3.–7. augusta adresovanú vedúcej oddelenia pani Horváthovej.",
+      "answer": "Vážená pani Horváthová,\n\ntýmto Vás žiadam o udelenie dovolenky v dňoch 3. – 7. augusta.\n\nĎakujem za kladné vybavenie žiadosti.\n\nS pozdravom  \n[meno a priezvisko]  \n[pracovná pozícia]",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Horváthová'"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vám|Vás|Vy|Vašu|Vaše)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Stručná, správna žiadosť so správnym oslovením, vykaním a dátumom „3. – 7. augusta“."
+        }
+      ]
+    },
+    {
+      "id": "register-005",
+      "category": "register",
+      "prompt": "Ktoré oslovenie v úradnom liste je správne: „Vážený pán Novák“ alebo „Vážený pane Novák“? Odpovedz len správnym oslovením.",
+      "answer": "Vážený pán Novák",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Vážený pán Novák'"
+        },
+        {
+          "type": "not_contains",
+          "ok": true,
+          "detail": "not_contains 'pane Novák'"
+        }
+      ]
+    },
+    {
+      "id": "register-006",
+      "category": "register",
+      "prompt": "Ako formálne oslovíš v e-maile ženu s priezviskom Kováčová? Napíš len oslovenie.",
+      "answer": "Vážená pani Kováčová,",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Vážená pani Kováčová'"
+        }
+      ]
+    },
+    {
+      "id": "register-007",
+      "category": "register",
+      "prompt": "Prepíš do vykania: Môžeš mi poslať ten súbor?",
+      "answer": "Môžete mi poslať ten súbor?",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /[Mm]ôžete mi poslať ten súbor/"
+        }
+      ]
+    },
+    {
+      "id": "register-008",
+      "category": "register",
+      "prompt": "Prepíš do tykania: Mohli by ste mi pomôcť s týmto formulárom?",
+      "answer": "Mohol by si mi pomôcť s týmto formulárom?",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /[Mm]oh(ol|la) by si mi pomôcť|[Mm]ôžeš mi pomôcť/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bby ste\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-009",
+      "category": "register",
+      "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
+      "answer": "Dobrý deň, ospravedlňujeme sa za meškanie vašej objednávky. Overíme stav zásielky u prepravcu a dáme vám vedieť, kde sa nachádza a kedy ju môžete očakávať. Ak sa zásielka nedoručí v najbližších dňoch, navrhneme vám riešenie — opätovné odoslanie alebo vrátenie peňazí. Ďakujeme za trpezlivosť a ozveme sa vám čo najskôr.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Prirodzená a správna odpoveď s vykaním, ospravedlnením, preverením a náhradným riešením."
+        }
+      ]
+    },
+    {
+      "id": "register-010",
+      "category": "register",
+      "prompt": "Píše sa v slovenskom liste zámeno „Vy“ s veľkým alebo malým V, keď vykám jednej osobe? Odpovedz jednou vetou.",
+      "answer": "V slovenskom liste sa zámeno „vy“ pri vykaní jednej osobe píše s malým v.",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "judge",
+          "ok": false,
+          "score": 0,
+          "detail": "Nesprávne tvrdí, že sa píše malé v."
+        }
+      ]
+    },
+    {
+      "id": "register-011",
+      "category": "register",
+      "prompt": "Napíš jednu vetu, ktorou sa starší muž zdvorilo opýta neznámej ženy na ulici, koľko je hodín.",
+      "answer": "Prepáčte, pani, nevedeli by ste mi, prosím, povedať, koľko je hodín?",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(ste|Vás|vás|Vám|vám|Prepáčte|Dovoľte|Nehnevajte)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(vieš|máš|nevieš|môžeš|povedz)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 10,
+          "detail": "Presne prirodzená zdvorilá formulácia s vykaním, bez chýb."
+        }
+      ]
+    },
+    {
+      "id": "register-012",
+      "category": "register",
+      "prompt": "Prepíš nasledujúcu vetu z hovorovej do spisovnej slovenčiny: Hej, dneska je fakt hnusne vonku.",
+      "answer": "Áno, dnes je vonku naozaj škaredo.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(hnusne|dneska|fakt)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Spisovné, význam zachovaný; „Áno“ za „Hej“ je trochu zbytočné, ale správne."
+        }
+      ]
+    },
+    {
+      "id": "register-013",
+      "category": "register",
+      "prompt": "Prepíš do vykania (so zdvorilostným veľkým V): Ďakujem ti za tvoju pomoc.",
+      "answer": "Ďakujem Vám za Vašu pomoc.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Ďakujem Vám za Vašu pomoc'"
+        }
+      ]
+    },
+    {
+      "id": "register-014",
+      "category": "register",
+      "prompt": "Prepíš do zdvorilej formy s vykaním a slovom „prosím“: Pošli mi to do zajtra.",
+      "answer": "Prosím, pošlite mi to do zajtra.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bpošlite\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bprosím\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-015",
+      "category": "register",
+      "prompt": "Ako formálne oslovíš riaditeľa školy v úradnom liste? Napíš len oslovenie.",
+      "answer": "Vážený pán riaditeľ,",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "contains",
+          "ok": true,
+          "detail": "contains 'Vážený pán riaditeľ'"
+        }
+      ]
+    },
+    {
+      "id": "register-016",
+      "category": "register",
+      "prompt": "Napíš zdvorilé odmietnutie pracovnej ponuky e-mailom (3–4 vety). Firma ti ponúkla pozíciu, ale prijal si inú.",
+      "answer": "Vážený tím,\n\nďakujem za ponuku a za čas, ktorý ste mi venovali počas výberového konania. Po dôkladnom zvážení som sa rozhodol prijať inú pracovnú ponuku, ktorá lepšie zodpovedá mojim súčasným plánom. Vašu ponuku preto s ľútosťou odmietam a prajem vám úspech pri hľadaní vhodného kandidáta.\n\nS pozdravom",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": false,
+          "score": 6,
+          "detail": "Inak dobrý text, ale vykanie malým písmenom („vám úspech“) proti zadaniu."
+        }
+      ]
+    },
+    {
+      "id": "register-017",
+      "category": "register",
+      "prompt": "Prepíš do tykania: Ďakujem Vám, že ste prišli.",
+      "answer": "Ďakujem ti, že si prišiel. / Ďakujem ti, že si prišla.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Ďakujem( ti)?, že si priš(iel|la)/"
+        }
+      ]
+    },
+    {
+      "id": "register-018",
+      "category": "register",
+      "prompt": "Napíš kolegovi na Slack jednu vetu, že deploy na produkciu je hotový a všetko beží.",
+      "answer": "Deploy na produkciu je hotový a všetko beží.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(Vám|Vás|Vy|Vážený)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Jedna prirodzená veta s diakritikou, neformálny tón, bez chýb."
+        }
+      ]
+    },
+    {
+      "id": "register-019",
+      "category": "register",
+      "prompt": "Doplň zdvorilú výzvu vo vykaní: Prosím, ___ si. (sadnúť si)",
+      "answer": "Prosím, sadnite si.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bsadnite\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bsadni\\b|\\bsadnete\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-020",
+      "category": "register",
+      "prompt": "Píše sa za záverečným pozdravom „S pozdravom“ v slovenskom liste čiarka? Odpovedz jednou vetou.",
+      "answer": "Áno, za záverečným pozdravom „S pozdravom“ sa v slovenskom liste píše čiarka.",
+      "skipped": false,
+      "passed": false,
+      "checks": [
+        {
+          "type": "judge",
+          "ok": false,
+          "score": 0,
+          "detail": "Nesprávne tvrdí, že sa čiarka píše."
+        }
+      ]
+    },
+    {
+      "id": "register-021",
+      "category": "register",
+      "prompt": "Napíš oslovenie v e-maile adresovanom súčasne pánovi Novákovi a pani Horváthovej.",
+      "answer": "Vážený pán Novák, vážená pani Horváthová,",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Vážený pán Novák, vážená pani Horváthová|Vážená pani Horváthová, vážený pán Novák/"
+        }
+      ]
+    },
+    {
+      "id": "register-022",
+      "category": "register",
+      "prompt": "Prepíš nasledujúcu neformálnu správu do formálneho e-mailu pre zákazníka (2–3 vety): „Čau, ten tvoj balík sa stratil, pošleme nový, sorry.“",
+      "answer": "Vážený zákazník, s ľútosťou Vám oznamujeme, že Vaša zásielka sa stratila. Novú zásielku Vám bezodkladne odošleme. Ospravedlňujeme sa za vzniknuté nepríjemnosti.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\b(Vám|Vás|Váš|Vašu|Vaša)\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(Čau|sorry|tvoj)\\b/"
+        },
+        {
+          "type": "judge",
+          "ok": true,
+          "score": 9,
+          "detail": "Formálne, správne, s veľkým V a ospravedlnením."
+        }
+      ]
+    },
+    {
+      "id": "register-023",
+      "category": "register",
+      "prompt": "Prepíš do vykania (jednej osobe): Ak chceš, môžeš prísť aj so svojou manželkou.",
+      "answer": "Ak chcete, môžete prísť aj so svojou manželkou.",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bchcete\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bmôžete\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\b(chceš|môžeš)\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-024",
+      "category": "register",
+      "prompt": "Prepíš do vykania. Otázka je adresovaná žene: Bola si včera na porade?",
+      "answer": "Boli ste včera na porade?",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bBoli ste\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bBola ste\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-025",
+      "category": "register",
+      "prompt": "Prepíš do vykania. Otázka je adresovaná mužovi: Už si sa najedol?",
+      "answer": "Už ste sa najedli?",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bnajedli\\b/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /\\bnajedol\\b/"
+        },
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /\\bste\\b/"
+        }
+      ]
+    },
+    {
+      "id": "register-026",
+      "category": "register",
+      "prompt": "Ako formálne oslovíš v liste ženu s titulom Ing. a priezviskom Kováčová? Napíš len oslovenie.",
+      "answer": "Vážená pani inžinierka Kováčová,",
+      "skipped": false,
+      "passed": true,
+      "checks": [
+        {
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Vážená pani (inžinierka|Ing\\. Kováčová)/"
+        },
+        {
+          "type": "not_regex",
+          "ok": true,
+          "detail": "not_regex /Vážená Ing\\.|Vážená pani Kováčová/"
+        }
+      ]
+    }
+  ],
+  "run_settings": {
+    "temperature": 0.0,
+    "max_tokens": 8192,
+    "extra_body": null,
+    "provider": "OpenRouter (default routing)",
+    "reasoning": "provider default (not set)",
+    "note": "Run 2026-11-15 through OpenRouter's OpenAI-compatible API; model id in `model`."
+  }
+}

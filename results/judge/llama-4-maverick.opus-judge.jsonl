@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 4, "reason": "Pod 150 slov, opakovaná chyba „prináša malé firmy“, „umožňuje rýchlejšie a efektívnejšie vývoj“."}
+{"id": "long_text-003", "score": 6, "reason": "Chybné „stav aktualizácií“, „nemôže niečo spýtať“ bez „sa“, kalky „čas zamerania“, „kódovú základňu“."}
+{"id": "long_text-004", "score": 4, "reason": "Len okolo 94 slov (pod 120), oslovenie „Vážený Mestský úrad,“ a následné veľké „Žiadam“, chýba vykanie, čiarka za „S pozdravom,“."}
+{"id": "long_text-005", "score": 4, "reason": "Chyby „Ježkovia mama“ (správne „Ježkova“), „triasol strachy“, anglické úvodzovky \"…\", nevhodná „ježibaba šramotí“ a nelogický záver o zvieratách pripravujúcich sa v noci na spánok."}
+{"id": "long_text-006", "score": 7, "reason": "Správne a zrozumiteľné, ale vecne pochybné tvrdenie, že predvolená Wi-Fi je „predvolene nechránená“."}
+{"id": "long_text-007", "score": 7, "reason": "Plynulý preklad, ale „Akonáhle“ je bohemizmus a „totožný postup“ významovo nesedí (má byť „tento postup“)."}
+{"id": "long_text-008", "score": 3, "reason": "Iba 130 slov, chybný pád „Vysokými Tatrami je čo objavovať“, chyby „adrenalinové“, „muzea“."}
+{"id": "long_text-011", "score": 5, "reason": "Správne vykanie, ale len 85 slov (pod limit) a veľmi všeobecný postup."}
+{"id": "long_text-013", "score": 6, "reason": "Správna slovenčina, ale len okolo 110 slov, anglicizmus „promptnú“, vágna požiadavka a čiarka za „S pozdravom,“."}
+{"id": "realie-015", "score": 0, "reason": "Vymyslel autora („Jozef Cíger-Hronský“)."}
+{"id": "realie-029", "score": 0, "reason": "Uvádza Andreja Kisku ako podpisovateľa a vymýšľa „Zákon č. 305/2015 Z. z.“."}
+{"id": "register-001", "score": 8, "reason": "Správny zdvorilý e-mail s vykaním s veľkým V, len chýba podpis a oslovenie je všeobecné."}
+{"id": "register-002", "score": 8, "reason": "Tykanie a jazyk v poriadku, rada je dosť všeobecná."}
+{"id": "register-003", "score": 8, "reason": "Správne a stručné, no „Uvidíme sa čoskoro“ je trochu strojené."}
+{"id": "register-004", "score": 6, "reason": "Príliš strohá, chýba „Vás“ pri žiadosti a domýšľavé „Ďakujem za Vašu pozitívnu odpoveď“, čiarka za „S pozdravom,“."}
+{"id": "register-009", "score": 4, "reason": "Vymyslený a protirečivý fakt („odoslali v stredu“, hoci mala prísť v pondelok), prehadzuje problém na zákazníka a chýba konkrétny krok podpory."}
+{"id": "register-010", "score": 7, "reason": "Správne, ale čechizmus „vykání“."}
+{"id": "register-011", "score": 4, "reason": "Kalk „nemali by ste vedieť“ mení význam na „nemali by ste“, nie je to prirodzená zdvorilá otázka."}
+{"id": "register-012", "score": 2, "reason": "Ponechané hovorové „Hej“, „fakt“ aj „hnusno“, aj „lepšia“ verzia obsahuje „fakt“, plus metakomentár."}
+{"id": "register-016", "score": 8, "reason": "Správne s veľkým V, ale chýba oslovenie a podpis, „ktorú som dostal“ je nadbytočné."}
+{"id": "register-018", "score": 8, "reason": "Správna veta, no zbytočne v úvodzovkách a trochu strojená („úspešne dokončený... funguje v poriadku“)."}
+{"id": "register-020", "score": 8, "reason": "Správna odpoveď s mierne neobratným slovosledom („„S pozdravom“ v slovenskom liste sa čiarka nepíše“)."}
+{"id": "register-022", "score": 8, "reason": "Veľké písmeno po oslovení s čiarkou („Oznamujeme“) a neprirodzené pasívum „bol stratený“."}

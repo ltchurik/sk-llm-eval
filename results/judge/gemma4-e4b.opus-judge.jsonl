@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 4, "reason": "Zbytočné anglicizmy (SMBs, core businessu) a gramatické chyby („aktuálnej dopytu“, rozbitá veta)."}
-{"id": "long_text-003", "score": 2, "reason": "Obsahuje kórejské slovo a hrubé chyby („priorítu“, „stretnaní“, „manažeri sa bojuje“)."}
-{"id": "long_text-004", "score": 3, "reason": "Veľa chýb („reklámna“, „v zóny“, „v verejnom“, „narúšovať“, „Prosím o úvaha“)."}
-{"id": "long_text-005", "score": 3, "reason": "Bohemizmy („ježek“, „jmenoval“) a viaceré gramatické chyby („strašné hmyz“, „na čiernom oblohe“, „najtmavej“)."}
-{"id": "long_text-006", "score": 5, "reason": "Chýbajúca diakritika („bezpečnost“, „Potvrdte“) a chyba „k novej siete“."}
-{"id": "long_text-007", "score": 3, "reason": "Rušivé zátvorky a tučné písmo, poľské „przestane“, chybné „do desať sekúnd“ a vymyslený „balíktor“."}
-{"id": "long_text-008", "score": 2, "reason": "Veľa nezmyselných slov („plášťov“, „tatrske plasy“, „gólske“) a názov pohoria iba v dvoch pádoch."}
-{"id": "long_text-011", "score": 3, "reason": "Vykanie nie je dôsledné („skús tepuť“, „skús zmeniť“) a sú tu ďalšie chyby („zrnity“, „by sa teraz pokúsiť“)."}
-{"id": "long_text-013", "score": 3, "reason": "Veľa chýb („najhlavšiu“, „v výrazne“, „voprívore“, „Žiadám“, „konstruktívnu“)."}
-{"id": "realie-015", "score": 6, "reason": "Autora si nevymýšľa, ale obsahuje gramatickú chybu „Nie môžem“."}
-{"id": "realie-029", "score": 6, "reason": "Správne neuvádza meno, ale tvar „Nepoznávam“ je neštandardný."}
-{"id": "register-001", "score": 6, "reason": "Vykanie s veľkým V, ale neprirodzené formulácie („urgentný zámer“, „Absencie zajtra“) a čiarka za „S pozdravom“."}
-{"id": "register-002", "score": 6, "reason": "Neformálny tón, no chyba „Predtým, čo“ namiesto „Skôr než“."}
-{"id": "register-003", "score": 2, "reason": "Nezrozumiteľná a nesprávna formulácia „už chýbam“, nevyjadruje meškanie."}
-{"id": "register-004", "score": 7, "reason": "Správne oslovenie a obsah, no veľké „Týmto“ po čiarke a neobratné „predčasne zabezpečím“."}
-{"id": "register-009", "score": 6, "reason": "Ospravedlnenie a konkrétny krok (číslo objednávky), ale vykanie s malým v a chýba pozdrav."}
-{"id": "register-010", "score": 0, "reason": "Nesprávne uvádza malé V."}
-{"id": "register-011", "score": 4, "reason": "Chybná konštrukcia „môžem vás požiadať, koľko je hodín“."}
-{"id": "register-012", "score": 9, "reason": "Spisovná a správna formulácia so zachovaným významom."}
-{"id": "register-016", "score": 3, "reason": "Dva varianty, vykanie s malým v a nezmyselný kalk („urobiť čas, aby som sa uverejnil“)."}
-{"id": "register-018", "score": 9, "reason": "Prirodzená, správna jedna veta."}
-{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
-{"id": "register-022", "score": 5, "reason": "Vykanie a štruktúra v poriadku, ale bohemizmus „ztratil“."}
+{"id": "long_text-001", "score": 4, "reason": "Anglicizmy „SMBs“, „core businessu“, „benefitom“, chyba „aktuálnej dopytu“, neúplná veta „umožňuje tým, že sa sústredíte“."}
+{"id": "long_text-003", "score": 2, "reason": "Chyby „manažeri sa bojuje“, „priorítu“, „stretnaní“, kórejské slovo „보고“."}
+{"id": "long_text-004", "score": 3, "reason": "Veľké „Žiadam“ po oslovení, chyby „reklámna“, „v zóny“, „v verejnom“, „narúšovať“, „Prosím o úvaha“."}
+{"id": "long_text-005", "score": 2, "reason": "Bohemizmy a chyby („ježek“, „jmenoval“, „lesickom“, „zrolil“, „ježového bodnutia“, „strašné hmyz“, „čiernom oblohe“, „najtmavej“)."}
+{"id": "long_text-006", "score": 5, "reason": "Chyby „bezpečnost“, „Potvrdte“ bez diakritiky, „k novej siete“, neprirodzené „Definujte si“."}
+{"id": "long_text-007", "score": 2, "reason": "Nezmysly „vyrovnávací balíktor“, poľské „przestane“, chyba „do desať“, zbytočné tučné písmo a zátvorkové glosy, pridané „pôvodný (alebo primárny)“."}
+{"id": "long_text-008", "score": 1, "reason": "Nadpis a mnoho nezmyselných slov: „plášťov“, „tatrske plasy“, „gólske výšky“, „neochabiteľnými“."}
+{"id": "long_text-011", "score": 3, "reason": "Prechod na tykanie („skús tepuť“), chyby „Mobil by sa teraz pokúsiť“, „zrnity“, „sa s vnúčatami hovoriť“."}
+{"id": "long_text-013", "score": 2, "reason": "Chýba oslovenie, chyby „najhlavšiu“, „v výrazne“, „voprívore“, „môj/a e-maily“, „Žiadám“, „konstruktívnu“, čiarka za „S pozdravom,“."}
+{"id": "realie-015", "score": 5, "reason": "Autora nevymýšľa, ale obsahuje gramatickú chybu „Nie môžem“ (správne „Nemôžem“)."}
+{"id": "realie-029", "score": 6, "reason": "Správne, ale chybný tvar „Nepoznávam“ namiesto „Nepoznám“."}
+{"id": "register-001", "score": 5, "reason": "Chybný tvar „Absencie zajtra“, veľké „Chcel/a“ po čiarke, nezmyselné „urgentný zámer“."}
+{"id": "register-002", "score": 6, "reason": "Chybná spojka „Predtým, čo“ (má byť ako/než), inak tykanie v poriadku."}
+{"id": "register-003", "score": 2, "reason": "Nezmyselné „už chýbam“, z textu nevyplýva, že pisateľ mešká."}
+{"id": "register-004", "score": 5, "reason": "Veľké písmeno po oslovení „Týmto“, nevhodné „predčasne zabezpečím“, veľké písmená „Vaše Meno a Priezvisko“, čiarka za „S pozdravom,“ a chýba „Vás“."}
+{"id": "register-009", "score": 8, "reason": "Správna odpoveď s vykaním a žiadosťou o číslo objednávky, „situáciu presne zistiť“ je však nešikovná kolokácia a chýba konkrétny termín."}
+{"id": "register-010", "score": 1, "reason": "Nesprávne tvrdí, že sa píše malé v, a obsahuje chyby „pokiaľ nie začína vety“, „v veľmi“."}
+{"id": "register-011", "score": 4, "reason": "Významová chyba „môžem vás požiadať, koľko je hodín“ (má byť „opýtať sa“) a neprirodzené „Pani, pardon“."}
+{"id": "register-012", "score": 9, "reason": "Spisovné a významovo verné, bez chýb."}
+{"id": "register-016", "score": 3, "reason": "Dve verzie s metakomentárom, nezmysel „Chcel/a by som sa urobiť čas, aby som sa uverejnil/a“, malé „vám“."}
+{"id": "register-018", "score": 9, "reason": "Stručná prirodzená veta bez chýb."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka používa, a obsahuje chybu „po záverečnom pozdravu“."}
+{"id": "register-022", "score": 5, "reason": "Čechizmus „ztratil“, „počas dopravy“ namiesto „prepravy“ a veľké písmeno po oslovení s čiarkou."}

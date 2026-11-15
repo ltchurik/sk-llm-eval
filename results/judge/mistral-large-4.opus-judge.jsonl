@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 9, "reason": "Kvalitný, prirodzený text bez podstatných chýb."}
+{"id": "long_text-003", "score": 7, "reason": "Úplné, ale neobratné „zapisujú si veci“ s chybným slovosledom a pádová nezhoda „návod na prácu ... a zvyky kolektívu“."}
+{"id": "long_text-004", "score": 8, "reason": "Gramaticky správna a dôkladná žiadosť s vykaním, ale s vymyslenými údajmi (úrad, dátum, „Hlavná káva“)."}
+{"id": "long_text-005", "score": 7, "reason": "Dobrý príbeh, ale úvodzovky sú nejednotné (otváracie „ a zatváracie \") a svetluška hovorí v mužskom rode („Rád pomôžem“)."}
+{"id": "long_text-006", "score": 9, "reason": "Osem logických krokov, správna terminológia a prirodzená slovenčina bez chýb."}
+{"id": "long_text-007", "score": 8, "reason": "Presný a plynulý preklad, drobná výhrada k bohemizmu „Akonáhle“."}
+{"id": "long_text-008", "score": 8, "reason": "Správne pády a fakty, drobnosti: „jazerám“ namiesto plies, sporné „liečivé pramene“."}
+{"id": "long_text-011", "score": 6, "reason": "Dôsledné vykanie, ale opakovaná chyba „vnúčata“ (správne „vnúčaťa“) a neobratné „Vaša výzva“."}
+{"id": "long_text-013", "score": 9, "reason": "Podrobná, gramaticky správna sťažnosť s jasnou požiadavkou, vykaním a záverom bez čiarky."}
+{"id": "realie-015", "score": 10, "reason": "Správna, presná a bezchybná odpoveď, ktorá priznáva neznalosť."}
+{"id": "realie-029", "score": 9, "reason": "Správne priznáva, že taký zákon nepozná, Kisku uvádza len ako vtedajšieho prezidenta, nie podpisovateľa."}
+{"id": "register-001", "score": 9, "reason": "Formálny e-mail s dôsledným vykaním a zdvorilým oslovením, bez chýb."}
+{"id": "register-002", "score": 8, "reason": "Tykanie a jazyk v poriadku, mierne strohé bez pozdravu."}
+{"id": "register-003", "score": 9, "reason": "Prirodzené, neformálne, s ospravedlnením; bez chýb."}
+{"id": "register-004", "score": 9, "reason": "Úplná formálna žiadosť so správnym oslovením, vykaním „Vás“, dátumami a podpisom, bez chýb."}
+{"id": "register-009", "score": 9, "reason": "Bezchybná odpoveď s vykaním, ospravedlnením, preverením u prepravcu a jasným termínom aj riešením."}
+{"id": "register-010", "score": 10, "reason": "Správne a bezchybné."}
+{"id": "register-011", "score": 9, "reason": "Stručná, prirodzená a zdvorilá otázka s vykaním, bez chýb."}
+{"id": "register-012", "score": 4, "reason": "Ponechané expresívne „hnusno“, nesprávne tvrdenie, že je spisovné, a zbytočný metakomentár s viacerými variantmi."}
+{"id": "register-016", "score": 9, "reason": "Zdvorilé a správne s veľkým V; zbytočné tučné písmo v zástupných poliach."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená jedna veta bez chýb."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
+{"id": "register-022", "score": 9, "reason": "Formálne, s veľkým V, ospravedlnením a novou zásielkou, len trochu ťažkopádne pasívum „bol stratený“."}

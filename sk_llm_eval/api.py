@@ -58,7 +58,8 @@ def chat(
         headers["Authorization"] = f"Bearer {key}"
 
     last_err: Exception | None = None
-    for attempt in range(retries):
+    attempt = rate_limited = 0
+    while attempt < retries:
         req = urllib.request.Request(url, data=body, headers=headers, method="POST")
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -69,7 +70,25 @@ def chat(
             last_err = ApiError(f"HTTP {e.code}: {msg}")
             if e.code in (400, 401, 403, 404):
                 break
+            if e.code == 429 and rate_limited < RATE_LIMIT_RETRIES:
+                # rate limits (e.g. 20 requests/min) need a longer wait than other errors,
+                # and waiting for them should not use up the normal retries
+                rate_limited += 1
+                time.sleep(_retry_after(e) or min(60, 10 * rate_limited))
+                continue
         except (urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError) as e:
             last_err = ApiError(str(e))
         time.sleep(2**attempt)
+        attempt += 1
     raise last_err or ApiError("unknown error")
+
+
+RATE_LIMIT_RETRIES = 8
+
+
+def _retry_after(e: urllib.error.HTTPError) -> float | None:
+    """Seconds to wait from a Retry-After header, capped at two minutes."""
+    try:
+        return min(120.0, max(1.0, float(e.headers.get("Retry-After", ""))))
+    except (TypeError, ValueError):
+        return None

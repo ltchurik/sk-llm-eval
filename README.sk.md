@@ -19,49 +19,55 @@ Akademické slovenské benchmarky (skLEP, Trojsten) merajú porozumenie textu a 
 - **Žiadne závislosti.** Štandardná knižnica Pythonu 3.10+ a ľubovoľné OpenAI-kompatibilné API: OpenAI, OpenRouter, Ollama, vLLM, LM Studio…
 - **Reprodukovateľné.** Všetky odpovede a všetky verdikty hodnotiteľa, z ktorých rebríček vychádza, sú v repozitári.
 
-## Rebríček (v0.2.2)
+## Rebríček (v0.2.3)
 
-20 riadkov: 4 modely Claude a 14 modelov s otvorenými váhami spustených lokálne; Qwen 3.5 4B a 9B sú v tabuľke dvakrát, s vypnutým aj zapnutým premýšľaním.
+26 riadkov: 4 modely Claude, 6 modelov cez API OpenRouter (GPT, Gemini, Grok, DeepSeek, Mistral, Llama) a 14 modelov s otvorenými váhami spustených lokálne; Qwen 3.5 4B a 9B sú v tabuľke dvakrát, s vypnutým aj zapnutým premýšľaním.
 
 | # | Model | Celkovo | Gramatika | Register | Reálie | Formát | Preklad | Dlhý text |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Claude Fable 5.1 (chat) | **100,0** | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 |
-| 2 | Claude Opus (agent) | **100,0** | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 |
-| 3 | Claude Sonnet (agent) | **94,4** | 98,6 | 100,0 | 97,9 | 100,0 | 92,9 | 76,9 |
-| 4 | Claude Haiku (agent) | **93,1** | 94,2 | 96,2 | 93,6 | 97,4 | 92,9 | 84,6 |
-| 5 | Gemma 4 26B-A4B (Ollama) | **75,9** | 75,4 | 84,6 | 85,1 | 86,8 | 92,9 | 30,8 |
-| 6 | Qwen 3.8 27B Q8 (Ollama, bez premýšľania) | **70,4** | 69,6 | 73,1 | 63,8 | 84,2 | 92,9 | 38,5 |
-| 7 | Qwen 3.5 9B (Ollama, s premýšľaním) | **63,0** | 68,1 | 57,7 | 70,2 | 73,7 | 92,9 | 15,4 |
-| 8 | Gemma 4 12B (Ollama) | **60,1** | 62,3 | 69,2 | 61,7 | 73,7 | 85,7 | 7,7 |
-| 9 | Gemma 3 12B (Ollama) | **58,9** | 63,8 | 57,7 | 59,6 | 63,2 | 78,6 | 30,8 |
-| 10 | Ornith 1.5 35B (Ollama) | **58,5** | 56,5 | 53,8 | 72,3 | 73,7 | 71,4 | 23,1 |
-| 11 | Qwen 3.5 9B (Ollama, bez premýšľania) | **52,9** | 55,1 | 38,5 | 59,6 | 63,2 | 85,7 | 15,4 |
-| 12 | Gemma 4 E4B (Ollama) | **47,3** | 47,8 | 38,5 | 51,1 | 52,6 | 78,6 | 15,4 |
-| 13 | Qwen 3.5 4B (Ollama, s premýšľaním) | **44,8** | 53,6 | 34,6 | 53,2 | 63,2 | 64,3 | 0,0 |
-| 14 | Laguna XS 2.1 Q8 (Ollama) | **41,5** | 34,8 | 19,2 | 59,6 | 63,2 | 64,3 | 7,7 |
-| 15 | Qwen 3.5 4B (Ollama, bez premýšľania) | **39,9** | 49,3 | 19,2 | 42,6 | 63,2 | 57,1 | 7,7 |
-| 16 | Gemma 3 4B (Ollama) | **36,6** | 37,7 | 34,6 | 34,0 | 34,2 | 71,4 | 7,7 |
-| 17 | Granite 4.1 8B (Ollama) | **34,8** | 43,5 | 19,2 | 42,6 | 52,6 | 42,9 | 7,7 |
-| 18 | Mistral Nemo 12B (Ollama) | **21,3** | 31,9 | 11,5 | 44,7 | 39,5 | 0,0 | 0,0 |
-| 19 | Llama 3.2 3B (Ollama) | **14,5** | 24,6 | 7,7 | 21,3 | 18,4 | 7,1 | 7,7 |
-| 20 | Phi-4 mini 3.8B (Ollama) | **13,0** | 15,9 | 3,8 | 25,5 | 18,4 | 14,3 | 0,0 |
+| 1 | Claude Opus (agent) | **100,0** | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 |
+| 2 | Claude Fable 5.1 (chat) | **99,4** | 100,0 | 96,2 | 100,0 | 100,0 | 100,0 | 100,0 |
+| 3 | GPT-6.1 Sol (OpenRouter) | **98,7** | 100,0 | 100,0 | 100,0 | 100,0 | 100,0 | 92,3 |
+| 4 | Gemini 4 Argon (OpenRouter) | **97,0** | 100,0 | 100,0 | 100,0 | 97,4 | 100,0 | 84,6 |
+| 5 | DeepSeek V4 Pro (OpenRouter) | **96,9** | 100,0 | 96,2 | 100,0 | 100,0 | 92,9 | 92,3 |
+| 6 | Claude Sonnet (agent) | **95,7** | 98,6 | 100,0 | 97,9 | 100,0 | 92,9 | 84,6 |
+| 7 | Grok 4.7 (OpenRouter) | **94,5** | 94,2 | 88,5 | 100,0 | 100,0 | 100,0 | 84,6 |
+| 8 | Claude Haiku (agent) | **93,1** | 94,2 | 88,5 | 93,6 | 97,4 | 92,9 | 92,3 |
+| 9 | Mistral Large 4 (OpenRouter) | **88,5** | 78,3 | 84,6 | 95,7 | 94,7 | 92,9 | 84,6 |
+| 10 | Gemma 4 26B-A4B (Ollama) | **76,6** | 75,4 | 88,5 | 85,1 | 86,8 | 92,9 | 30,8 |
+| 11 | Llama 4 Maverick (OpenRouter) | **76,0** | 79,7 | 76,9 | 89,4 | 86,8 | 100,0 | 23,1 |
+| 12 | Qwen 3.8 27B Q8 (Ollama, bez premýšľania) | **69,4** | 69,6 | 69,2 | 61,7 | 84,2 | 92,9 | 38,5 |
+| 13 | Qwen 3.5 9B (Ollama, s premýšľaním) | **63,6** | 68,1 | 61,5 | 70,2 | 73,7 | 92,9 | 15,4 |
+| 14 | Gemma 4 12B (Ollama) | **58,8** | 62,3 | 61,5 | 61,7 | 73,7 | 85,7 | 7,7 |
+| 15 | Gemma 3 12B (Ollama) | **58,3** | 63,8 | 61,5 | 59,6 | 63,2 | 78,6 | 23,1 |
+| 16 | Ornith 1.5 35B (Ollama) | **57,8** | 56,5 | 50,0 | 72,3 | 73,7 | 71,4 | 23,1 |
+| 17 | Qwen 3.5 9B (Ollama, bez premýšľania) | **52,9** | 55,1 | 38,5 | 59,6 | 63,2 | 85,7 | 15,4 |
+| 18 | Gemma 4 E4B (Ollama) | **47,3** | 47,8 | 38,5 | 51,1 | 52,6 | 78,6 | 15,4 |
+| 19 | Qwen 3.5 4B (Ollama, s premýšľaním) | **44,2** | 53,6 | 30,8 | 53,2 | 63,2 | 64,3 | 0,0 |
+| 20 | Laguna XS 2.1 Q8 (Ollama) | **41,1** | 34,8 | 19,2 | 57,4 | 63,2 | 64,3 | 7,7 |
+| 21 | Qwen 3.5 4B (Ollama, bez premýšľania) | **39,9** | 49,3 | 19,2 | 42,6 | 63,2 | 57,1 | 7,7 |
+| 22 | Gemma 3 4B (Ollama) | **36,0** | 37,7 | 30,8 | 34,0 | 34,2 | 71,4 | 7,7 |
+| 23 | Granite 4.1 8B (Ollama) | **34,1** | 43,5 | 15,4 | 42,6 | 52,6 | 42,9 | 7,7 |
+| 24 | Mistral Nemo 12B (Ollama) | **21,6** | 31,9 | 11,5 | 46,8 | 39,5 | 0,0 | 0,0 |
+| 25 | Llama 3.2 3B (Ollama) | **14,5** | 24,6 | 7,7 | 21,3 | 18,4 | 7,1 | 7,7 |
+| 26 | Phi-4 mini 3.8B (Ollama) | **13,0** | 15,9 | 3,8 | 25,5 | 18,4 | 14,3 | 0,0 |
 
 Skóre = percento úloh, ktoré prešli všetkými kontrolami; Celkovo = priemer skóre kategórií. Úplná tabuľka s hodnotiteľom a dátumami je v súbore [`results/LEADERBOARD.md`](results/LEADERBOARD.md). Skôr než riadky porovnáte, prečítajte si, [ako vznikli výsledky](#ako-vznikli-výsledky).
 
 ## V čom sa modely mýlia
 
-Skutočné odpovede 18 modelov uvedených vyššie (jeden beh na model, bez variantov s premýšľaním):
+Skutočné odpovede 24 modelov uvedených vyššie (jeden beh na model, bez variantov s premýšľaním):
 
 | Úloha | Správne | Chybné odpovede |
 |---|---|---|
-| Sídlo Ústavného súdu SR | Košice | Bratislava (13 z 18 modelov) |
-| Najväčší samosprávny kraj | Banskobystrický | Košický, Prešovský (13 z 18) |
-| *He is a very sympathetic person.* | *súcitný, empatický* | *sympatický* (11 z 18) |
-| Sadzba DPH od 1. 1. 2025 | 23 % | 20 % (11 z 18) |
-| *sestra*, genitív plurálu | *sestier* | *sester*, *sestr* (10 z 18) |
-| Dátum 21. septembra 1990 číslicami | *21. 9. 1990* | *21.9.1990*, *21. septembra 1990* (8 z 18) |
-| *vtáči*, alebo *vtáčí spev*? | *vtáčí* (výnimka z rytmického krátenia) | *vtáči* (5 z 18) |
-| *Bola si včera na porade?* → vykanie | *Boli ste…* | *Bola ste…*, podľa českého vzoru (4 z 18) |
+| Sídlo Ústavného súdu SR | Košice | Bratislava (13 z 24 modelov) |
+| Najväčší samosprávny kraj | Banskobystrický | Košický, Prešovský (13 z 24) |
+| *He is a very sympathetic person.* | *súcitný, empatický* | *sympatický* (13 z 24) |
+| Sadzba DPH od 1. 1. 2025 | 23 % | 20 % (12 z 24) |
+| *sestra*, genitív plurálu | *sestier* | *sester*, *sestr* (11 z 24) |
+| Dátum 21. septembra 1990 číslicami | *21. 9. 1990* | *21.9.1990*, *21. septembra 1990* (8 z 24) |
+| *vtáči*, alebo *vtáčí spev*? | *vtáčí* (výnimka z rytmického krátenia) | *vtáči* (5 z 24) |
+| *Bola si včera na porade?* → vykanie | *Boli ste…* | *Bola ste…*, podľa českého vzoru (4 z 24) |
 
 Niektoré malé modely zablúdia do susedného jazyka: Mistral Nemo preložil vetu *Eventually, we found the problem* ako *Končno smo našli problem*, čo je slovinčina.
 
@@ -162,12 +168,13 @@ Všetky podrobnosti (presné príkazy, digesty modelov, Modelfiles, prompt a dá
 
 - **Riadky `(Ollama)`** sú čisté behy cez API modelov s otvorenými váhami na NVIDIA DGX Spark cez OpenAI-kompatibilné rozhranie Ollamy, s teplotou 0 a predvoleným systémovým promptom. Modely používajú predvolenú kvantizáciu Ollamy (Q4_K_M; Mistral Nemo Q4_0), ak názov neuvádza Q8. Presné nastavenia sú v poli `run_settings` v súbore `results/<model>.json`.
 - **Premýšľanie.** Modely, ktoré predvolene premýšľajú, ho mali zapnuté s limitom 8192 tokenov. Riadky Qwen `bez premýšľania` bežali s vypnutým premýšľaním (`reasoning_effort: none`); hustý Qwen 3.8 27B generuje na tomto stroji asi 5 tokenov za sekundu, čo je na beh s premýšľaním príliš pomaly.
-- **Riadky Qwen `s premýšľaním`** bežali so zapnutým premýšľaním, kontextom 32k a limitom 16 384 tokenov, s nastavením vzorkovania, ktoré Qwen odporúča pre premýšľanie (teplota 0,6, top_p 0,95, top_k 20, presence_penalty 1,5). Pri teplote 0 sa modely v premýšľaní zacyklili. Premýšľanie zdvihne Qwen 3.5 9B z 52,9 na 63,0 a 4B z 39,9 na 44,8, za cenu asi 5 minút na úlohu. Pomáha pri gramatike, reáliách a registri, no nie pri dlhých textoch.
+- **Riadky Qwen `s premýšľaním`** bežali so zapnutým premýšľaním, kontextom 32k a limitom 16 384 tokenov, s nastavením vzorkovania, ktoré Qwen odporúča pre premýšľanie (teplota 0,6, top_p 0,95, top_k 20, presence_penalty 1,5). Pri teplote 0 sa modely v premýšľaní zacyklili. Premýšľanie zdvihne Qwen 3.5 9B z 52,9 na 63,6 a 4B z 39,9 na 44,2, za cenu asi 5 minút na úlohu. Pomáha pri gramatike, reáliách a registri, no nie pri dlhých textoch.
 - **Prázdna odpoveď sa počíta ako zlyhanie.** Gemma 4 12B (11 úloh), Gemma 4 26B-A4B (9), Laguna (5), Ornith (3) a Qwen 3.5 4B (16) a 9B (4) s premýšľaním vrátili pri niektorých úlohách prázdnu odpoveď, najpravdepodobnejšie preto, že premýšľanie minulo celý limit tokenov.
+- **Riadky `(OpenRouter)`** sú čisté behy cez API OpenRouter s teplotou 0, limitom 8192 tokenov a predvoleným systémovým promptom. Premýšľanie ostalo na predvolenom nastavení každého poskytovateľa. Mistral Large 4 vrátil pri 3 úlohách prázdnu odpoveď. Všetkých šesť behov stálo spolu asi 1,70 $.
 - **Riadky `(agent)`**: model Claude bežal ako subagent v Claude Code a videl len zadania, nie kontroly. Nejde o čistý beh cez API, pretože prostredie pridáva vlastný systémový prompt.
 - **Riadok `(chat)`**: autor úloh nechal tento model odpovedať na úlohy z v0.1.0 v chate a na úlohy z v0.2.0 odpovedal ten istý model ako subagent. Berte ho ako kontrolu správnosti úloh.
-- **Hodnotiteľ**: úlohy pre hodnotiteľa naslepo ohodnotil Claude Opus. Pri každej úlohe boli odpovede zamiešané a označené len písmenami A, B, C… Stále však ide o model Claude, ktorý hodnotí modely Claude, preto treba počítať s istým zvýhodnením vlastnej rodiny modelov. Všetky verdikty sú v priečinku `results/judge/`.
-- **Vrchol rebríčka**: Opus a Fable prešli všetkými 207 úlohami. Benchmark dobre rozlišuje stredné modely a modely s otvorenými váhami (od 13 % do 76 %), no najsilnejšie modely zatiaľ od seba neodlíši.
+- **Hodnotiteľ**: úlohy pre hodnotiteľa naslepo ohodnotil Claude Opus. Odpovede všetkých 26 riadkov na tú istú úlohu sa hodnotili spolu v jednom kole, zamiešané a označené len písmenami A, B, C… Stále však ide o model Claude, ktorý hodnotí modely Claude, preto treba počítať s istým zvýhodnením vlastnej rodiny modelov. Všetky verdikty sú v priečinku `results/judge/`.
+- **Vrchol rebríčka**: Opus prešiel všetkými 207 úlohami, Fable a GPT-6.1 Sol neprešli každý jednou úlohou pre hodnotiteľa a ďalších päť modelov má medzi 93 a 97. Opus je zároveň hodnotiteľ, preto jeho 100 nepreceňujte. Benchmark dobre rozlišuje stredné modely a modely s otvorenými váhami (od 13 % do 89 %), no najsilnejšie modely zatiaľ od seba neodlíši.
 
 Skóre sú porovnateľné len v rámci jednej verzie úloh. Pozrite [CHANGELOG.md](CHANGELOG.md).
 

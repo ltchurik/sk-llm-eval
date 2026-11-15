@@ -4,7 +4,7 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T15:40:50+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
     "overall": 13.0,
@@ -2081,7 +2081,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je napísaný po česky."
+          "detail": "Text je takmer celý v češtine („která“, „nabízí“, „snadno“, „Za čtvrté“)."
         }
       ],
       "latency": 6.07
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Odpoveď je v češtine, nie v slovenčine."
+          "detail": "Text je v češtine („Práce z dálka se stala standardním“), nie po slovensky."
         }
       ],
       "latency": 3.29
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je prevažne po česky."
+          "detail": "Text je prevažne v češtine („Předmluva“, „Odôvodnění“, „S pozdravem“) a obsahuje meta-poznámku na konci."
         }
       ],
       "latency": 7.63
@@ -2263,7 +2263,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je v češtine a obsahovo nezmyselný."
+          "detail": "Text je v podstate po česky („Název“, „přišel“, „řekl“, „děkuji“), obsahuje francúzske „qui“ a je nezmyselný, nejde v ňom o strach z tmy."
         }
       ],
       "latency": 7.43
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je prevažne česky s tykaním a chybami."
+          "detail": "Text je prevažne v češtine s nezmyslami („Vytiňte“, „zásobníku pro výživu pomocí zástěry“), nejde o slovenčinu."
         }
       ],
       "latency": 5.6
@@ -2337,7 +2337,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nezmyselný text v češtine."
+          "detail": "Odpoveď je v češtine („Když“, „posílání provozu“) a obsahuje nezmysly „zbalížeř“, „strmou rukou“, „seléchaní“."
         }
       ],
       "latency": 2.18
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je prevažne česky s vymyslenými údajmi."
+          "detail": "Prevažne česky, opakovaný odsek, vymyslený vrchol „Svĕtokrus“, nezmysel „turistických traktorov“."
         }
       ],
       "latency": 8.45
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Zacyklený nezmyselný text s tykaním a češtinou."
+          "detail": "Nezmyselný, opakujúci sa text s tykaním a češtinou („Otevře“, „jsi v režimech“)."
         }
       ],
       "latency": 69.76
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je po česky a obsahovo zmätený."
+          "detail": "Text je v češtine a nezmyselne zamieňa práčku za knihu („výměna poškrábané knihy“)."
         }
       ],
       "latency": 6.17
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslel konkrétne meno autora."
+          "detail": "Vymyslel autora („Dušan Čič“) a použil bohemizmus „Autorem“."
         }
       ],
       "latency": 0.56
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 0.29
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Uvádza konkrétne meno prezidenta."
+          "detail": "Uvádza Andreja Kisku ako podpisovateľa, navyše čechizmus „digitálném“."
         }
       ],
       "latency": 0.75
@@ -3731,7 +3731,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je prevažne v češtine a obsahuje nezmysly."
+          "detail": "Text je v zmesi češtiny a slovenčiny s nezmyslami („Budu se vrátit v rádi slnce“)."
         }
       ],
       "latency": 1.35
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Zmes češtiny a chybných tvarov („okrmy“, „mohlaš“)."
+          "detail": "Množstvo chýb a čechizmov: „práce, hraní“, „okrmy“, „úložiště“, „tvými rozpočtomom“, „ti mohlaš“."
         }
       ],
       "latency": 1.91
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nezmyselný text s češtinou."
+          "detail": "Nezmyselný text s češtinou („Chyť se hned“), hashtagom a úvodzovkami, nesplňa zadanie."
         }
       ],
       "latency": 0.89
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je po česky."
+          "detail": "Celý text je v češtine („Drahá Paní Horváthové, píšu, abych požádal“, „srpna“), nie po slovensky."
         }
       ],
       "latency": 3.8
@@ -3903,7 +3903,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Odpoveď je v češtine."
+          "detail": "Odpoveď je v češtine („Omlouváme se“, „Děkujemy“) a obsahovo nezmyselná (presun na pondelok)."
         }
       ],
       "latency": 1.7
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Česky („Velký“) a bez celej vety."
+          "detail": "Nie je to veta a je po česky „Velký V“."
         }
       ],
       "latency": 0.18
@@ -3946,8 +3946,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nezmyselná veta, ktorá nie je otázkou na čas."
+          "score": 1,
+          "detail": "Nezmyselný text („Vstup na 2 hodiny“, „zdvoril opýta neznámej ženu“), nie je to požadovaná otázka."
         }
       ],
       "latency": 0.69
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nezmyselné a nespisovné („Dneska“, „hnědé“)."
+          "detail": "Ponechané „Dneska“, čeština „hnědé“ a úplne zmenený význam."
         }
       ],
       "latency": 0.31
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Odpoveď je v češtine."
+          "detail": "Text je v češtine („Děkuji vám za nabídku“), nie po slovensky."
         }
       ],
       "latency": 2.0
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Česky a nezmyselný opakujúci sa text."
+          "score": 1,
+          "detail": "Text je prevažne v češtine („Zdravím, kolegové! Zavolal jsem“), mnohovetný, s nezmyselnými opakovanými inštrukciami a hashtagmi."
         }
       ],
       "latency": 27.53
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Na otázku neodpovedá."
+          "detail": "Na otázku vôbec neodpovedá („S pozdravom.“)."
         }
       ],
       "latency": 0.17
@@ -4163,7 +4163,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je po česky."
+          "detail": "Text je prevažne v češtine („Předmět“, „Doufám“, „Děkujeme“)."
         }
       ],
       "latency": 3.58

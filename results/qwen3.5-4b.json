@@ -4,7 +4,7 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T16:14:44+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
     "overall": 39.9,
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Chyby „cloudového výpočtia“, „malé firmám“ a bohemizmus „usnadňuje“."
+          "score": 3,
+          "detail": "Pod 150 slov, chyby „cloudového výpočtia“, „malé firmám“, bohemizmus „usnadňuje“."
         }
       ],
       "latency": 5.86
@@ -2178,8 +2178,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Vymyslený údaj o polovici tímov, bohemizmus „omezujú“, anglicizmus „onboarding“ a chybné „ťažia s udržaním súčasti tímu“."
+          "score": 2,
+          "detail": "Vymyslené „Viac ako polovica“, chyby „ťažia“, „súčasti tímu“, čechizmus „Omezujú“, anglicizmus „onboardingu“, „statusy“."
         }
       ],
       "latency": 10.48
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2220,8 +2220,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Chybné oslovenie „Vážení pání“ a nesprávne „stavebné povolenie“, inak úradný štýl."
+          "score": 4,
+          "detail": "Chyba v oslovení „Vážení pání“, nepravdivé „stavebného povolenia“ a vymyslené „projektová dokumentácia už bola schválená“, adresa úradu „Hlavná 12“ zamenená s kaviarňou."
         }
       ],
       "latency": 15.62
@@ -2263,7 +2263,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Hrubé gramatické chyby („sa báť tmou viac než všetkému“, „aj ja sa bála“) a nelogické pasáže."
+          "detail": "Hrubé chyby („sa báť tmou viac než všetkému“, „spomenula na svoju detstvo“, „aj ja sa bála“, „si to prečítal“, „maškarnú lampu“) a nezmyselný koniec („teraz už nevie, či sa báť tmy“)."
         }
       ],
       "latency": 15.77
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Nelogické poradie krokov a chyby („správacie meno“, „preferovaný IP adresu“)."
+          "detail": "Chyby „správacie meno“, „preferovaný IP adresu“, nezmyselné „neopísateľné heslo“ a „bezpečnejšie hodnoty“, chýba fyzické pripojenie k modemu a krok 2 je prázdny."
         }
       ],
       "latency": 17.2
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Chybné „smerovať doprava doň“ a „spájajú verziu“, inak čitateľný preklad."
+          "score": 3,
+          "detail": "Nezmyselná veta „ho load balancer prestane smerovať doprava doň“, chybné „spájajú“ a „zlyhajúceho servera“."
         }
       ],
       "latency": 16.05
@@ -2378,8 +2378,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Vymyslené údaje (republika 1918, Gerlach 2 499 m, Liptovský Marian)."
+          "score": 1,
+          "detail": "Vymyslené fakty (republika 1918, Gerlach 2 499 m, „Liptovský Marian“), čechizmus „stezky“, názov len v nominatíve."
         }
       ],
       "latency": 17.15
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Celý text tyká napriek požiadavke na vykanie."
+          "detail": "Tyká seniorovi („Ahoj“, „Otvori“), čím porušuje zadanie, a obsahuje chyby („vyber nového kontaktu“)."
         }
       ],
       "latency": 18.5
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Malé „vám“, chyby („môjho objednávky“, „rešľovania“, „ozveme na súdne cesty“)."
+          "detail": "Chyby „môjho objednávky“, „karátke“, „skreslenie motoru“, „rešľovania“, „ozveme na súdne cesty“, malé „vám“ a len 89 slov."
         }
       ],
       "latency": 15.17
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslel konkrétne meno autora."
+          "detail": "Vymyslel autora („Ján Štrbik“)."
         }
       ],
       "latency": 2.3
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 4.48
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Uvádza vymyslené meno prezidenta."
+          "detail": "Uvádza vymyslenú osobu „Roman Dzurinda“ ako prezidenta a podpisovateľa, chyba „v prvej mandáte“."
         }
       ],
       "latency": 3.79
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Vykanie s malým v a nezmyselné „vykaľovanie mojej prítomnosti“."
+          "score": 3,
+          "detail": "Chýba oslovenie nadriadeného, neexistujúce „vykaľovanie“ a nezmyselné „o dohodu s týmito úlohami“."
         }
       ],
       "latency": 5.26
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Tykanie dodržané, ale nelogická posledná veta a neprirodzené „skvelý nápad na výdavok“."
+          "detail": "Neprirodzené „skvelý nápad na výdavok“, „hrávanie hier“ a nelogické „Skontroluj si ... aby som ti mohol odporučiť“."
         }
       ],
       "latency": 6.83
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Chybné formulácie („meškám ti 10 minút“, „Uvidím sa“)."
+          "detail": "Chybné „Uvidím sa čo najskôr“ a neobratné „meškám ti“; formálne „omlúvam sa“."
         }
       ],
       "latency": 3.75
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Oslovenie „Drahá“, preklep v mene, nezmyselný údaj o sobotách a chyby."
+          "detail": "Viacero chýb: „Výzva:“, „p. i. Hrváthová“, neformálne „Drahá“, nezmysel „všetky dni sú sobotné a nedelne“, bohemizmus „s kolegy“."
         }
       ],
       "latency": 7.41
@@ -3896,14 +3896,14 @@
       "checks": [
         {
           "type": "regex",
-          "ok": false,
+          "ok": true,
           "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
         },
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Gramatické chyby („nespokojní z“, „sme pripravené“, „vám kontaktujeme“)."
+          "score": 3,
+          "detail": "Gramatické chyby „nespokojní z“, „sme pripravené“, „vám kontaktujeme“, nevhodné „vypočúvame si“ a nelogický záver „veríme, že sa vám podarí vec vyriešiť“; chýba ospravedlnenie."
         }
       ],
       "latency": 2.76
@@ -3919,8 +3919,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Zmätená, gramaticky chybná odpoveď."
+          "score": 1,
+          "detail": "Nezmyselné zdôvodnenie a chyba „píšete zámenom“."
         }
       ],
       "latency": 3.36
@@ -3945,9 +3945,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Zdvorilé vykanie, aj keď formulácia je trochu ťažkopádna."
+          "ok": false,
+          "score": 6,
+          "detail": "Neprirodzené „aká je teraz hodina“ a spojenie dvoch otázok čiarkou namiesto prirodzeného „koľko je hodín“."
         }
       ],
       "latency": 3.53
@@ -3968,8 +3968,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Hovorové „fakticky“ a chyba „nepriaznivo počasie“."
+          "score": 3,
+          "detail": "Gramatická chyba „nepriaznivo počasie“ (má byť nepriaznivé), nevhodné „fakticky“ a vypustené „vonku“."
         }
       ],
       "latency": 3.52
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Vykanie s malým v, bohemizmus „paní“ a nevhodné formulácie („za vašu úprimnosť“, „vykazovali“)."
+          "detail": "Malé „vašu/vás“, čechizmus „paní“, nevhodné „úprimnosť“ a chybné „dôveru, ktorú ste vo mne vykazovali“."
         }
       ],
       "latency": 2.33
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prirodzená kolegiálna veta bez chýb."
+          "detail": "Prirodzená veta s pozdravom „Ahoj kolega“, vhodný tón."
         }
       ],
       "latency": 2.47
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Oslovenie „Drahý“, nekonzistentné vykanie a chyby („Omlúvame si“)."
+          "score": 3,
+          "detail": "Nevhodné „Drahý zákazník“, nejednotné „Vás/váš“, vymyslené „vyzdvihnite ho bezplatne“, chyba „Omlúvame si“."
         }
       ],
       "latency": 2.42

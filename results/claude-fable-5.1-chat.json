@@ -4,10 +4,10 @@
   "base_url": null,
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T18:19:09+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "offline",
   "summary": {
-    "overall": 100.0,
+    "overall": 99.4,
     "categories": {
       "format": {
         "passed": 38,
@@ -35,9 +35,9 @@
         "score": 100.0
       },
       "register": {
-        "passed": 26,
+        "passed": 25,
         "total": 26,
-        "score": 100.0
+        "score": 96.2
       }
     }
   },
@@ -1974,7 +1974,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Prirodzený, súvislý a bezchybný text v požadovanom rozsahu bez nadpisov."
+          "detail": "Prirodzený, presný text bez chýb."
         }
       ]
     },
@@ -2069,8 +2069,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 7,
-          "detail": "Zhrnutie je úplné a bez anglicizmov, ale obsahuje pádovú chybu „potrebuje jasný písomný sprievodca“ namiesto „jasného písomného sprievodcu“."
+          "score": 8,
+          "detail": "Úplné a prirodzené, ale chybný akuzatív „jasný písomný sprievodca“ a kalk „žijú v dokumentoch“."
         }
       ]
     },
@@ -2098,9 +2098,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2110,8 +2110,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Úradný štýl, dôsledné vykanie s veľkým V, oslovenie, predmet, odôvodnenie aj pozdrav s podpisom bez chýb."
+          "score": 9,
+          "detail": "Výborná, konkrétna a gramaticky správna žiadosť s oslovením pána primátora, vykaním a záverom."
         }
       ]
     },
@@ -2151,8 +2151,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Pekný príbeh so správnymi úvodzovkami, ale dvakrát chybný genitív „spod dubu“ namiesto „spod duba“."
+          "score": 9,
+          "detail": "Prirodzený a pekný príbeh so správnymi úvodzovkami; drobnou chybou je tvar „spod dubu“ (správne „spod duba“)."
         }
       ]
     },
@@ -2188,7 +2188,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Presne 8 logických krokov so slovenskou terminológiou, len chýba čiarka pred vedľajšou vetou „ak staršie zariadenia…“."
+          "detail": "Výborný, prirodzený návod, len drobnosť chýbajúcej čiarky „WPA2 ak“."
         }
       ]
     },
@@ -2223,8 +2223,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Presný a plynulý preklad so správne skloňovanými termínmi a slovenskými výrazmi pre bežné slová."
+          "score": 9,
+          "detail": "Presný, prirodzený preklad so slovenskými výrazmi („správca“, „testovacích serveroch“) a vysvetlením konfiguračného driftu, bez chýb."
         }
       ]
     },
@@ -2265,7 +2265,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Názov pohoria použitý vo viacerých správne skloňovaných pádoch, fakty sedia a text je bez chýb."
+          "detail": "Fakticky presné, názov v rôznych pádoch správne (do Vysokých Tatier, Vo Vysokých Tatrách, Vysokým Tatrám), bez chýb."
         }
       ]
     },
@@ -2396,7 +2396,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prehľadný postup s dôsledným vykaním a správnou slovenčinou."
+          "detail": "Zrozumiteľný postup v logickom poradí, dôsledné vykanie s veľkým V, správna dĺžka; bez chýb."
         }
       ]
     },
@@ -2476,13 +2476,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Vecná sťažnosť s jasnou požiadavkou, vykaním s veľkým V a bez chýb."
+          "detail": "Výborná vecná sťažnosť s jasným problémom, požiadavkou výmeny alebo vrátenia peňazí, vykaním a správnym záverom."
         }
       ]
     },
@@ -3033,7 +3033,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Model priznal, že román nepozná, a autora si nevymyslel."
+          "detail": "Výborná odpoveď: román nepozná, nevymýšľa autora a ponúka pomoc, a to bez chýb."
         }
       ]
     },
@@ -3093,7 +3093,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ]
     },
@@ -3243,8 +3243,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Model nepotvrdil existenciu zákona a neuviedol žiadne meno prezidenta."
+          "score": 9,
+          "detail": "Správne uvádza, že zákon nepozná, prirodzenou slovenčinou."
         }
       ]
     },
@@ -3549,8 +3549,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením bez chýb."
+          "score": 9,
+          "detail": "Zdvorilý formálny e-mail s vykaním s veľkým V, bez chýb; vymyslené mená nevadia."
         }
       ]
     },
@@ -3560,7 +3560,7 @@
       "prompt": "Kamarát ti píše: „Ahoj, môžeš mi poradiť, ktorý notebook si mám kúpiť do 800 eur?“ Odpovedz mu v 2–3 vetách. Tykaj mu.",
       "answer": "Ahoj! Do 800 eur by som išiel do Lenovo IdeaPad Slim 5 s Ryzen 5 a 16 GB RAM – má dobrý displej a vydrží na batériu. Ak chceš radšej niečo ľahšie, pozri Acer Swift Go 14. Hlavne neber nič s 8 GB RAM.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "not_regex",
@@ -3574,9 +3574,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 10,
-          "detail": "Neformálne, dôsledné tykanie a prirodzená slovenčina v rozsahu troch viet."
+          "ok": false,
+          "score": 6,
+          "detail": "Chybné „vydrží na batériu“ (na batérii), inak prirodzené tykanie."
         }
       ]
     },
@@ -3596,8 +3596,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Krátka, prirodzená a neformálna SMS bez chýb."
+          "score": 9,
+          "detail": "Krátke, hovorové, s tykaním; chýba len ospravedlnenie, inak bez chýb."
         }
       ]
     },
@@ -3622,8 +3622,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Správne oslovenie, vykanie s veľkým V, slovenský formát dátumu a zdvorilý záver s podpisom."
+          "score": 8,
+          "detail": "Správna a zdvorilá žiadosť s vykaním, dátumy „3. – 7. augusta“ správne, len vymyslené mená zástupcu a podpisu."
         }
       ]
     },
@@ -3714,7 +3714,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Ospravedlnenie, konkrétne kroky s termínom a žiadosť o číslo objednávky, dôsledné vykanie bez chýb."
+          "detail": "Bezchybná, profesionálna odpoveď s vykaním, ospravedlnením, číslom objednávky, termínom aj náhradným riešením."
         }
       ]
     },
@@ -3730,7 +3730,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Jednoznačne a správne uvádza veľké V vrátane tvarov zámena."
+          "detail": "Správne, jednoznačné a jazykovo bezchybné."
         }
       ]
     },
@@ -3756,7 +3756,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Zdvorilá, prirodzená veta s vykaním bez chýb."
+          "detail": "Presne prirodzená zdvorilá formulácia s vykaním, bez chýb."
         }
       ]
     },
@@ -3777,7 +3777,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Spisovná formulácia so zachovaným významom bez hovorových výrazov."
+          "detail": "Spisovné, prirodzené a významovo presné."
         }
       ]
     },
@@ -3848,7 +3848,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Zdvorilé a jasné odmietnutie s poďakovaním a vykaním s veľkým V."
+          "detail": "Zdvorilé, prirodzené, vykanie s veľkým V, poďakovanie aj jasné odmietnutie; bez chýb."
         }
       ]
     },
@@ -3883,8 +3883,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Jedna prirodzená kolegiálna veta s diakritikou."
+          "score": 9,
+          "detail": "Prirodzená jedna veta bez chýb."
         }
       ]
     },
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": true,
           "score": 10,
-          "detail": "Správne a jednoznačne uvádza, že čiarka sa nepíše."
+          "detail": "Správna a úplná odpoveď vrátane podpisu na novom riadku."
         }
       ]
     },
@@ -3960,8 +3960,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Formálne oslovenie, vykanie s veľkým V, ospravedlnenie a informácia o novej zásielke bez anglicizmov."
+          "score": 8,
+          "detail": "Dobrá formálna správa, len mierne neobratné spojenie viet „ospravedlňujeme sa, Vaša zásielka sa, žiaľ, …“."
         }
       ]
     },

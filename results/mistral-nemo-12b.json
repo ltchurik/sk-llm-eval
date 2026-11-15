@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T17:58:25+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 21.3,
+    "overall": 21.6,
     "categories": {
       "format": {
         "passed": 15,
@@ -30,9 +30,9 @@
         "score": 0.0
       },
       "realie": {
-        "passed": 21,
+        "passed": 22,
         "total": 47,
-        "score": 44.7
+        "score": 46.8
       },
       "register": {
         "passed": 3,
@@ -2081,7 +2081,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Mimo témy (odpad) a plné chýb ako „zbytokové“, „postupok“, „Na konci konta“."
+          "detail": "Mimo témy (odpad), chyby „zbytokové“, „postupok“, „hromadle“, „Na konci konta“."
         }
       ],
       "latency": 13.88
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Odpoveď je v slovinčine, nie v slovenčine."
+          "detail": "Text je v slovinčine („Dolgo v oddaljeni je za mnogimi timi“), nie po slovensky."
         }
       ],
       "latency": 7.98
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Chýba oslovenie a množstvo chýb („Vaša mena“, „žiadosím“, „kafe“, „služiť“, „o výberu“)."
+          "detail": "Chýba oslovenie, chyby „Vaša mena“, „žiadosím“, „kafe“, „služiť“, „bude pozitívne prispieť“, „o výberu termínu na schôdku“."
         }
       ],
       "latency": 11.73
@@ -2263,7 +2263,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Rovné úvodzovky, české tvary a neexistujúce slová („báfí“, „Bám sa tma“, „báriť sa“, „bázľ“)."
+          "detail": "Bohemizmy a chyby („ježek“, „doupete“, „Čo ťa báfí“, „Bám sa tma“, „hviezdne“, „bázľ“, „báriť sa“) a anglické úvodzovky \"…\"."
         }
       ],
       "latency": 13.39
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Miešanie infinitívov a rozkazov, nesprávny postup a chyby („adresnej čiarne“, „k novému sieťi“)."
+          "detail": "Vecne chybné „Odoberte IP adresu počítača“ ako adresu routera, „adresnej čiarne“, „routeru“, „k novému Wi-Fi sieťi“, miešanie rozkazovacieho spôsobu a neurčitku."
         }
       ],
       "latency": 15.81
@@ -2337,7 +2337,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Preklad je v slovinčine, nie v slovenčine."
+          "detail": "Odpoveď je v slovinčine („strežnik“, „balanser obremenitve“), nie v slovenčine, a navyše s chybami."
         }
       ],
       "latency": 5.83
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Gramatické chyby („Vysoké Tatry je“, „kamzíkův“, „navštívit“, „odpočink“)."
+          "detail": "Iba 120 slov, chyby „Vysoké Tatry je“, „aktivity“, „navštívit“, „kamzíkův“, „odpočink“, „výhony“, názov len v nominatíve."
         }
       ],
       "latency": 11.88
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Chýbajúca diakritika („vam“), bohemizmy („můžete“), mnoho chýb a nevhodný komplikovaný postup cez Zoom."
+          "detail": "Nad limit (249 slov), čechizmus „můžete“, chyby „vam“, „vaši vnúčatí“, „hotzí“, „užívajte sa“, nevhodný postup cez Zoom schôdzu."
         }
       ],
       "latency": 28.47
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Príliš krátke, chyby („Objednali som“, „v Vašom“, „Dakujem“)."
+          "score": 2,
+          "detail": "Len 35 slov, chyby „Objednali som“, „v Vašom“, „Dakujem“, neformálny tón."
         }
       ],
       "latency": 3.59
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslel konkrétne meno autora."
+          "detail": "Vymyslel autora („Pavol Dobšinský“)."
         }
       ],
       "latency": 1.33
@@ -3240,12 +3240,12 @@
       "prompt": "Ktorý úrad na Slovensku vyberá dane z príjmu? Odpovedz názvom inštitúcie.",
       "answer": "Finančné riaditeľstvo Slovenskej republiky",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "regex",
-          "ok": false,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "ok": true,
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 0.53
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Uvádza konkrétne meno prezidenta pri neexistujúcom zákone."
+          "detail": "Uvádza Andreja Kisku ako podpisovateľa neexistujúceho zákona."
         }
       ],
       "latency": 1.43
@@ -3731,7 +3731,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Miešanie s češtinou („odpuštění“, „Děkuji za pochop“) a chýba oslovenie."
+          "detail": "Prevažne česky („odpuštění“, „Děkuji za pochop“) s nezmyslom „Požalujem“, bez oslovenia a vykania."
         }
       ],
       "latency": 1.98
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Vyká namiesto tykania a obsahuje chyby („budzet“, „pamäteť“)."
+          "detail": "Vyká („vaše“, „mali by ste“) napriek pokynu, chyby „budzet“, „pomery“, „pamäteť“, 4 vety."
         }
       ],
       "latency": 5.74
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Text je v slovinčine/zmiešanom jazyku, nie v slovenčine."
+          "detail": "Text je v slovinčine („Srečnemo se ... Izviňam“), nie po slovensky."
         }
       ],
       "latency": 0.91
@@ -3806,8 +3806,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Chýba oslovenie, vykanie aj pozdrav."
+          "score": 3,
+          "detail": "Chýba oslovenie, pozdrav aj podpis, strohé „Požadujem dovolenku“ a nesprávne zakončenie „Vedúca oddelenia Pani Horváthová“."
         }
       ],
       "latency": 1.83
@@ -3902,8 +3902,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Obsahuje azbuku („faktрах“), chyby a chýba skutočné ospravedlnenie aj konkrétny krok."
+          "score": 2,
+          "detail": "Cyrilika v slove „faktрах“, „závisí na“, nezmyselné „zaistím, že sa staráme“ a „veru v náš e-shop“, chýba ospravedlnenie a podpora presúva riešenie na zákazníka."
         }
       ],
       "latency": 8.05
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Česky a nejednoznačná odpoveď."
+          "detail": "Odpoveď je v češtine („slovenském seznamu“) a nejednoznačná („s velkým nebo malým V“)."
         }
       ],
       "latency": 1.41
@@ -3946,8 +3946,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Odpoveď je v angličtine."
+          "score": 1,
+          "detail": "Odpoveď je v angličtine, nie v slovenčine."
         }
       ],
       "latency": 0.93
@@ -3968,8 +3968,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nezmyselné a hovorové („voprve hnusno“)."
+          "score": 1,
+          "detail": "Ponechané „Hej“ a „hnusno“, nezmyselné slovo „voprve“."
         }
       ],
       "latency": 1.0
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Odpoveď je v slovinčine."
+          "detail": "Text je v slovinčine („hvala vam za Vašu ponudbo“), nie po slovensky."
         }
       ],
       "latency": 6.59
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Odpoveď je v angličtine."
+          "detail": "Odpoveď je celá v angličtine („Production deploy complete, all systems go!“), nie po slovensky."
         }
       ],
       "latency": 0.57
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Vecne správne, ale začína českým „Ne“."
+          "detail": "Obsahovo správna odpoveď, ale začína českým „Ne“ namiesto „Nie“."
         }
       ],
       "latency": 1.24
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Bohemizmy a chyby („Dobrý den“, „ztratil“, „Vaš“)."
+          "score": 1,
+          "detail": "Čechizmy „Dobrý den“, „ztratil“, „dopravě“, „tuto“, chyby „Vaš“, „Naše odberná služba“ a nezmysel „Prosím o Vašu výhradu“."
         }
       ],
       "latency": 3.54

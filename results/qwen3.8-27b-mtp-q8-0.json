@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T14:54:12+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 70.4,
+    "overall": 69.4,
     "categories": {
       "format": {
         "passed": 32,
@@ -30,14 +30,14 @@
         "score": 92.9
       },
       "realie": {
-        "passed": 30,
+        "passed": 29,
         "total": 47,
-        "score": 63.8
+        "score": 61.7
       },
       "register": {
-        "passed": 19,
+        "passed": 18,
         "total": 26,
-        "score": 73.1
+        "score": 69.2
       }
     }
   },
@@ -2055,7 +2055,7 @@
       "prompt": "Napíš článok (150–250 slov) o výhodách kontajnerizácie pre malé firmy. Po slovensky, s diakritikou, bez nadpisov.",
       "answer": "Kontajnerizácia sa stala kľúčovým trendom v IT priemysle, ktorý prináša výrazné výhody aj pre malé firmy. Hlavnou výhodou je rýchlosť nasadenia aplikácií. Vďaka kontajnerom, ako sú Docker alebo Kubernetes, môžu tímy vyvíjať, testovať a nasadzovať softvér oveľa rýchlejšie ako pri tradičných metódach. To umožňuje malým firmám rýchlejšie reagovať na zmeny na trhu a spustiť nové produkty skôr, než to urobia konkurenti.\n\nĎalšou podstatnou výhodou je škálovateľnosť a efektívnosť využívania zdrojov. Kontajnery zdieľajú jadro hostiteľského operačného systému, čo znamená, že spotrebúvajú menej pamäte a výpočtového výkonu než virtuálne stroje. Pre malé firmy s obmedzeným rozpočtom to znamená nižšie náklady na cloudovú infraštruktúru. Môžu ľahko škálovať aplikácie nahor alebo nadol podľa aktuálnej dopytu, bez nutnosti investovať do drahého hardvéru vopred.\n\nKontajnerizácia tiež zjednodušuje správu prostredí. Aplikácia spustená v kontajneri sa správa rovnako vo vývojovom, testovacom aj produkčnom prostredí. Tým sa eliminujú bežné problémy typu „u mňa to funguje“, čo šetrí čas a nervy vývojových tímov. Pre malé firmy, ktoré často nemajú veľké oddelenia pre správu IT, je toto obrovské uľahčenie.\n\nNakoniec, kontajnery podporujú moderné vývojové prístupy, ako je DevOps a mikroservisová architektúra. To umožňuje malým firmám budovať robustné a udržiavateľné systémy, ktoré sa dajú ľahko aktualizovať a opravovať. Celkovo kontajnerizácia pomáha malým firmám byť agilnejšími, nákladovo efektívnejšími a konkurencieschopnejšími na digitálnom trhu.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "min_words",
@@ -2079,9 +2079,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Prirodzený a súvislý text s drobnou chybou v zhode („aktuálnej dopytu“)."
+          "ok": false,
+          "score": 6,
+          "detail": "Chyba „aktuálnej dopytu“, Kubernetes nesprávne označený ako kontajner, „mikroservisová“."
         }
       ],
       "latency": 40.49
@@ -2153,7 +2153,7 @@
       "prompt": "Zhrň nasledujúci anglický text po slovensky v 80–150 slovách. Nepoužívaj anglické slová ani anglicizmy, kde existuje slovenský výraz.\n\nRemote work has become the default for many software teams. Companies report that employees are more productive when they can control their environment, but managers struggle to keep teams aligned. The most common problems are unclear priorities, too many meetings, and slow feedback. Teams that succeed usually write things down: decisions, plans and status updates live in shared documents, not in people's heads. They also protect focus time by limiting meetings to two days a week. Finally, they invest in onboarding, because a new hire who cannot ask a question across the desk needs a clear written guide to the codebase and the team's habits.",
       "answer": "Práca na diaľku sa stala štandardom pre mnohé softvérové tímy. Hoci zamestnanci hlásia vyššiu produktivitu vďaka kontrole prostredia, manažéri majú ťažkosti s koordináciou. Najčastejšie problémy predstavujú nejasné priority, nadmerný počet schôdzok a pomalá spätná väzba. Úspešné tímy riešia tieto výzvy systematickým zapisovaním rozhodnutí, plánov a stavu projektov do spoločných dokumentov, čím eliminujú závislosť na pamäti jednotlivcov. Zároveň chránia sústredenie obmedzením stretnutí na dva dni v týždni. Kľúčovou investíciou je aj dôkladné zaškolenie nových zamestnancov. Keďže nemôžu okamžite položiť otázku kolegom, potrebujú jasný písomný sprievodca kódom a internými zvyklosťami tímu, čo im umožňuje rýchlejšie sa orientovať a plnohodnotne prispievať k práci.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "min_words",
@@ -2177,9 +2177,9 @@
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Zhrnutie pokrýva všetky body, ale obsahuje chybu „jasný písomný sprievodca“ v akuzatíve a väzbu „závislosť na pamäti“."
+          "ok": true,
+          "score": 7,
+          "detail": "Pokrýva všetky body, ale chybný akuzatív „jasný písomný sprievodca“ (správne „sprievodcu“), „závislosť na pamäti“ a pridaný záver."
         }
       ],
       "latency": 65.83
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
-          "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Úradný štýl je zachovaný, ale vyskytujú sa chyby („oslovit’“, „Závazne“, „prispelieme“) a nevhodné oslovenie zastupiteľstva."
+          "detail": "Nesprávny znak v „oslovit’“, chyby „sídliacou“, „Závazne sa zaväzujeme“, „prispelieme“, nezvyčajné oslovenie poslancov."
         }
       ],
       "latency": 104.76
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Pekný a súvislý detský príbeh so správnymi úvodzovkami a len drobnými lexikálnymi nedostatkami („bleskotiek“)."
+          "score": 7,
+          "detail": "Celkovo dobrý príbeh, ale objavuje sa v ňom neexistujúce slovo „bleskotiek“, nešťastné meno sovy „pani Nočník“, kalk „les sa nezobrazoval“ a nelogické „škrípanie veveričky“ v noci."
         }
       ],
       "latency": 118.63
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Zrozumiteľný návod v 8 krokoch s drobnou chybou v diakritike („diody“)."
+          "detail": "Chyba „diody“ namiesto „diódy“ a „adresného riadku“, inak správne."
         }
       ],
       "latency": 139.08
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Preklad ponecháva zbytočné anglicizmy („traffic“, „staging“, „konfigurácia drift“) a chýba v ňom zámeno „ho“."
+          "score": 4,
+          "detail": "Anglické „traffic“, chýbajúce zámeno „ho“ vo vete „operátor ručne vráti do poolu“, chybné „konfigurácia drift“ a „zlyhávajúceho“."
         }
       ],
       "latency": 128.82
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Faktická chyba (Jasná nie je vo Vysokých Tatrách) a gramatické chyby („horolezce“, „Krášna“)."
+          "detail": "Chyby „horolezce“, „Krášna“, faktická chyba – Jasná nie je vo Vysokých Tatrách."
         }
       ],
       "latency": 129.47
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Vykanie je dôsledné, ale vyskytujú sa chyby („z zoznamu“, „k kamere“) a neprirodzené oslovenie „Vážený senior“."
+          "detail": "Neprirodzené „Vážený senior“, „z zoznamu“, povolenia až po spustení hovoru, „kde hľadáte“."
         }
       ],
       "latency": 106.24
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Sťažnosť obsahuje chyby („obrátam“, „nespokojivú“, „deklarovými“) a čiarku za „S pozdravom“."
+          "detail": "Chyby „obrátam“, nezmysel „plastový pánik“, „nespokojivú“, „deklarovými“, čiarka za „S pozdravom,“."
         }
       ],
       "latency": 100.79
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Autora nevymýšľa, ale chybne píše „nepoznáš“ a používa nevhodné slovo „zámienku“."
+          "detail": "Autora nevymýšľa, ale obsahuje chybnú osobu („Takýto román nepoznáš“) a nesprávne slovo „zámienku“ (správne „zámenu“)."
         }
       ],
       "latency": 11.07
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 8.43
@@ -3400,13 +3400,13 @@
       "prompt": "Ktorý slovenský prezident podpísal „zákon o digitálnom občianstve“ z roku 2015? Ak taký zákon nepoznáš, povedz to.",
       "answer": "Takýto zákon neexistuje. Slovensko v roku 2015 neprijalo zákon s názvom „zákon o digitálnom občianstve“.\n\nV tom období sa na Slovensku zaoberali digitálnou transformáciou a e-governmentom, ale neexistoval samostatný zákon s týmto konkrétnym názvom. Digitálne služby a identifikácia boli (a sú) riešené cez rôzne legislatívne úpravy, napr. zákon o elektronickom podpise, zákon o elektronickom obchode alebo neskôr cez Národnú identitačnú službu (NIS), ktorá bola zavedená až neskôr (plne funkčná od roku 2021).\n\nPrezidentom Slovenska v roku 2015 bol **Andrej Kiska** (v úrade od júna 2014 do júna 2019), ale žiadny takýto zákon nepodpísal, pretože neexistoval.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Správne uvádza, že taký zákon neexistuje, a Kisku nespomína ako podpisovateľa, no pridáva neisté podrobnosti."
+          "ok": false,
+          "score": 6,
+          "detail": "Správne odmieta, ale pridáva pochybné vymyslené údaje o „Národnej identitačnej službe (NIS)“ plne funkčnej od 2021."
         }
       ],
       "latency": 21.6
@@ -3731,7 +3731,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Formálny e-mail s vykaním s veľkým V, len s čiarkou za „S pozdravom“."
+          "detail": "Krátky korektný e-mail s vykaním, len mierne neprirodzené „O ospravedlnenie sa postarám včas“ a chýba oslovenie menom."
         }
       ],
       "latency": 12.2
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prirodzená odpoveď s dôsledným tykaním a bez chýb."
+          "detail": "Neformálne, dôsledné tykanie, konkrétna rada, bez chýb."
         }
       ],
       "latency": 17.81
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Krátka, prirodzená neformálna SMS bez chýb."
+          "detail": "Prirodzená, krátka SMS s tykaním a ospravedlnením; bez chýb."
         }
       ],
       "latency": 15.03
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Správne oslovenie a vykanie, ale chyby („bude za mňa zastupovať“, „O prosím“) a čiarka za „S pozdravom“."
+          "detail": "Chyby „bude za mňa zastupovať“ (správne „ma bude zastupovať“) a „O prosím o Vaše potvrdenie“, čiarka za „S pozdravom,“."
         }
       ],
       "latency": 24.95
@@ -3892,18 +3892,18 @@
       "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
       "answer": "Ospravedlňujeme sa za oneskorenie vašej objednávky. Kontaktujeme dopravcu, aby sme zistili presnú príčinu zdržania a aktuálny stav zásielky. O výsledku vás budeme informovať do 24 hodín. Ďakujeme za trpezlivosť a pochopenie.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "regex",
-          "ok": false,
+          "ok": true,
           "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 5,
-          "detail": "Zdvorilá odpoveď s ďalším krokom, ale vykanie je s malým v napriek požiadavke."
+          "ok": true,
+          "score": 9,
+          "detail": "Správna slovenčina s vykaním, ospravedlnením a konkrétnym krokom (kontakt s dopravcom, informácia do 24 hodín), bez chýb."
         }
       ],
       "latency": 9.79
@@ -3914,13 +3914,13 @@
       "prompt": "Píše sa v slovenskom liste zámeno „Vy“ s veľkým alebo malým V, keď vykám jednej osobe? Odpovedz jednou vetou.",
       "answer": "Áno, zámeno „Vy“ sa v slovenčine píše vždy s veľkým začiatočným písmenom, keď sa používa na vykávanie jednej osoby.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Uvádza veľké písmeno, ale úvodné „Áno“ je nelogické a tvar „vykávanie“ je nespisovný."
+          "ok": false,
+          "score": 6,
+          "detail": "Správne veľké V, ale nesedí „Áno“, neexistujúce „vykávanie“ a nepresné „vždy“."
         }
       ],
       "latency": 12.76
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Nezmyselné oslovenie „Oslobodná“ robí vetu neprirodzenou."
+          "detail": "Nezmyselné oslovenie „Oslobodná, oslobodná“ a rozvláčna formulácia."
         }
       ],
       "latency": 15.04
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Správny spisovný prepis so zachovaným významom."
+          "detail": "Spisovné a správne, „nepriaznivé“ je mierne knižné."
         }
       ],
       "latency": 15.28
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": true,
           "score": 7,
-          "detail": "Zdvorilé a bezchybné odmietnutie, hoci zámená s veľkým V sa v ňom takmer nevyskytujú."
+          "detail": "Gramaticky správne, ale bez zámena vo vykaní s veľkým V a strohé oslovenie „Vážený pán,“."
         }
       ],
       "latency": 10.4
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 10,
-          "detail": "Prirodzená kolegiálna veta bez chýb."
+          "score": 9,
+          "detail": "Prirodzená jedna veta bez chýb."
         }
       ],
       "latency": 10.23
@@ -4147,7 +4147,7 @@
       "prompt": "Prepíš nasledujúcu neformálnu správu do formálneho e-mailu pre zákazníka (2–3 vety): „Čau, ten tvoj balík sa stratil, pošleme nový, sorry.“",
       "answer": "Vážený zákazníku, ospravedlňujeme sa za vzniknutú komplikáciu pri doručení Vašej zásielky, ktorá sa bohužiaľ stratila. Do 24 hodín Vám zašleme náhradný balík s novým sledovacím číslom. Ďakujeme za Vašu trpezlivosť.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "regex",
@@ -4161,9 +4161,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 9,
-          "detail": "Formálny e-mail s ospravedlnením, informáciou o novej zásielke a vykaním s veľkým V."
+          "ok": false,
+          "score": 6,
+          "detail": "Bohemizmus vo vokatíve „Vážený zákazníku“ a vymyslený detail „do 24 hodín“."
         }
       ],
       "latency": 10.58

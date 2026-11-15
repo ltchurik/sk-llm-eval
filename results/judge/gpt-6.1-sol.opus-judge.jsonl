@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 10, "reason": "Prirodzený, vyvážený text bez chýb."}
+{"id": "long_text-003", "score": 10, "reason": "Výborné, úplné zhrnutie dôsledne bez anglicizmov a bez chýb."}
+{"id": "long_text-004", "score": 9, "reason": "Úplná, gramaticky správna úradná žiadosť s vhodným oslovením, vykaním a odôvodnením."}
+{"id": "long_text-005", "score": 9, "reason": "Pekný a prirodzený príbeh so správnymi úvodzovkami a bohatou slovnou zásobou v rozsahu; drobnou výhradou je len nadpis vo formáte markdown („###“)."}
+{"id": "long_text-006", "score": 6, "reason": "Jazykovo výborné, ale viaceré kroky (5–8) majú tri vety, čím porušujú limit 1–2 viet."}
+{"id": "long_text-007", "score": 9, "reason": "Presný, prirodzený preklad so správnym skloňovaním („servermi“, „failoverov“) a slovenským „prevádzku“, bez chýb."}
+{"id": "long_text-008", "score": 9, "reason": "Správne pády aj fakty, len zhoda „Obľúbeným cieľom je Rysy“ je neobratná."}
+{"id": "long_text-011", "score": 9, "reason": "Jasný postup, dôsledné vykanie s veľkým V, správna dĺžka; drobné „Wi-Fi“ je bežné."}
+{"id": "long_text-013", "score": 9, "reason": "Výborná formálna sťažnosť s jasným problémom, požiadavkou a vykaním, bez chýb."}
+{"id": "realie-015", "score": 10, "reason": "Správne a prirodzene priznáva, že román nepozná a autora nevie uviesť."}
+{"id": "realie-029", "score": 9, "reason": "Správne a jazykovo bezchybné."}
+{"id": "register-001", "score": 9, "reason": "Krátky formálny e-mail s dôsledným vykaním s veľkým V, bez chýb."}
+{"id": "register-002", "score": 8, "reason": "Prirodzené a tykanie, len hovorové „by som pozeral“ bez predložky."}
+{"id": "register-003", "score": 9, "reason": "Prirodzené a správne, s ospravedlnením."}
+{"id": "register-004", "score": 9, "reason": "Správne oslovenie, vykanie „Vás“, dátum aj záver „S úctou“, bez chýb."}
+{"id": "register-009", "score": 9, "reason": "Prirodzená a bezchybná odpoveď s vykaním, ospravedlnením a žiadosťou o číslo objednávky."}
+{"id": "register-010", "score": 10, "reason": "Správne a bezchybné."}
+{"id": "register-011", "score": 10, "reason": "Prirodzená zdvorilá otázka s vykaním a správnou interpunkciou."}
+{"id": "register-012", "score": 9, "reason": "Spisovné, význam zachovaný; „Áno“ za „Hej“ je trochu zbytočné, ale správne."}
+{"id": "register-016", "score": 9, "reason": "Zdvorilý e-mail s veľkým V; „tú Vašu zdvorilo odmietam“ je trochu neobratné."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená jedna veta so správnou interpunkciou."}
+{"id": "register-020", "score": 10, "reason": "Správne a jednoznačne uvádza, že sa čiarka nepíše."}
+{"id": "register-022", "score": 9, "reason": "Správne a formálne, stručné."}

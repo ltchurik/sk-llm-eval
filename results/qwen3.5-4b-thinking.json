@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-15T03:05:49+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 44.8,
+    "overall": 44.2,
     "categories": {
       "format": {
         "passed": 24,
@@ -35,9 +35,9 @@
         "score": 53.2
       },
       "register": {
-        "passed": 9,
+        "passed": 8,
         "total": 26,
-        "score": 34.6
+        "score": 30.8
       }
     }
   },
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Chyby „ponúka malé firmám“, „Týmto sa ľahšie spolupracujú tími“, anglicizmy „benefity“, „patchov“ a vecne pochybné tvrdenie o licenciách."
+          "score": 3,
+          "detail": "Chyby „malé firmám“, „mojím počítačom ide“, „Týmto sa ľahšie spolupracujú tími“, anglicizmy „benefity“, „patchov“."
         }
       ],
       "latency": 373.03
@@ -2178,8 +2178,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Bohemizmus „Omezujú“, chyby „dva dni týždeňa“, „k kódu“, nesprávne „Vkladajú aj do prípravy“ a „prioritizácie“."
+          "score": 4,
+          "detail": "Čechizmus „Omezujú“, nezmysel „Vkladajú aj do dôležitej prípravy“, „nejasné prioritizácie“, pridaná veta mimo textu."
         }
       ],
       "latency": 596.32
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Vymyslený zákon č. 369/2014 Z. z., chyby „na Hlavnú ulici“, „chodecov“, neobratné „Odborne a formálne prosím“ a slabé odôvodnenie."
+          "detail": "Chyby „na Hlavnú ulici“, „chodecov“, veľké „Na“ po oslovení, vymyslený zákon „369/2014 Z. z.“ a nezmyselné „Odborne a formálne prosím“."
         }
       ],
       "latency": 586.93
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Nezmysly a chyby „chobotkatý“, „spriateľ“, „zašeplal“, „Len ho pozrela“, „dodala Lenou“, „úsmievom“, „vlastný svetlo“."
+          "score": 3,
+          "detail": "Veľa chýb: „chobotkatý“, „by ste mali báť“ (vykanie dieťaťu, chýba „sa“), „Len ho pozrela“, „zašeplal“, „úsmievom“, „dodala Lenou“, „jeho vlastný svetlo“, bohemizmus „Od tej doby“ a nejednotné úvodzovky."
         }
       ],
       "latency": 621.91
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Neexistujúce „kadejkoľvek portu“, chyby „zmenite predvolé“, bohemizmus „počkejte“, „routeru“ namiesto „routera“."
+          "detail": "Nezmysel „kadejkoľvek portu“, chyby „zmenite“, „predvolé“, čechizmus „počkejte“, „routeru“ a nezrozumiteľné „často nahradené štandardným admin“."
         }
       ],
       "latency": 499.59
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Chyby „Ak sa primárny server zlyhá“, „bežia rovnakou verziou“, chýbajúce „ho“ pri pridaní, nepreložené „traffic“ a „configuration drift“."
+          "score": 4,
+          "detail": "Chybné „sa zlyhá“, kalk „bežia rovnakou verziou“, chýbajúce „ho“, anglické „traffic“ a „zastaví traffic naň“."
         }
       ],
       "latency": 470.29
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nepravdivé „Najvyššie vrchy Európy“, nezmysel „Vysokých Tatier je množstvo skanov“, chybné „Vysokým Tatram“, „zaskúšané“, „infraštruktura“."
+          "detail": "Nesprávne pády „Vysokých Tatier je množstvo skanov“, „Vysokým Tatram“, vymyslené fakty (najvyššie vrchy Európy, ľadovce)."
         }
       ],
       "latency": 544.33
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Nevhodné „Ahojte!“, chyba „hovoriť jasne“, nezmysly „nepoužívajte šatku na uši“, „Mám radi vaše vnúčatá“."
+          "detail": "Oslovenie „Ahojte!“, chyby „hovoriť jasne“ (neurčitok), „šatku na uši“, nezmyselné „Mám radi vaše vnúčatá“."
         }
       ],
       "latency": 867.86
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Chybné oslovenie „Vážení zákazníci“, chyby „Vyzývam Vás o“, „na mojich troch emailových správach“, „požiadavať“, čiarka za pozdravom."
+          "detail": "Nesprávne oslovenie „Vážení zákazníci“, chyby „Vyzývam Vás o“, „na mojich troch emailových správach“, „požiadavať“, záver „S pozdravom, Marek Novák,“."
         }
       ],
       "latency": 751.49
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslený autor „Ján Štrbík“ a rok 1962."
+          "detail": "Hoci tvrdí, že román nepozná, vymýšľa autora a dátum („od Jána Štrbíka, ktoré vyšlo v roku 1962“) a má nejednotné úvodzovky."
         }
       ],
       "latency": 434.52
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 697.29
@@ -3405,8 +3405,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Správne a jazykovo bezchybne uvádza, že taký zákon nie je známy."
+          "score": 8,
+          "detail": "Správne odmietnutie, kategorické a s nejednotnými úvodzovkami."
         }
       ],
       "latency": 231.43
@@ -3731,7 +3731,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Vykanie s V, ale neobratné „Budem sa snažiť urobiť všetko čo mám v práci“ (chýba čiarka) a chýba podpis."
+          "detail": "Vykanie je správne, ale chýba oslovenie a čiarka v „všetko, čo mám“, veta „Budem sa snažiť urobiť všetko čo mám v práci“ je neobratná."
         }
       ],
       "latency": 90.91
@@ -3757,8 +3757,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Tykanie v poriadku, ale chyby „čo budeš počítač využívať“ a „radím ti“ namiesto „poradím“."
+          "score": 5,
+          "detail": "Chyby „čo budeš počítač využívať“ (chýba „na“) a „radím ti“ namiesto „poradím ti“."
         }
       ],
       "latency": 154.33
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Nezmysel „Previňme sa“, bohemizmus „brzy“, nesprávne „som o 10 minút neskoro“."
+          "detail": "Nezmyselné „Previňme sa“ a čechizmus „brzy“; text nedáva zmysel."
         }
       ],
       "latency": 216.51
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Chýba diakritika „Vážena“, veľké písmeno po oslovení, chýba vykanie s V."
+          "detail": "Chýbajúca diakritika „Vážena“, veľké písmeno „Žiadam“ po oslovení, bez vykania, neobratné „budú moje úlohy preberané kolegom“."
         }
       ],
       "latency": 265.04
@@ -3902,8 +3902,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Nevhodné „Drahý zákazník“, nezmysel „vyznáme sa za oneskorenie“, presúva krok na zákazníka."
+          "score": 3,
+          "detail": "Chyby „Drahý zákazník“, nezmyselné „vyznáme sa za oneskorenie“, „peňazie“ a odosielanie zákazníka, aby kontaktoval podporu."
         }
       ],
       "latency": 256.56
@@ -3914,13 +3914,13 @@
       "prompt": "Píše sa v slovenskom liste zámeno „Vy“ s veľkým alebo malým V, keď vykám jednej osobe? Odpovedz jednou vetou.",
       "answer": "Formálne zámeno Vy sa v liste oproti jednej osobe píše s veľkým V.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Správne veľké V, ale neobratné „v liste oproti jednej osobe“."
+          "ok": false,
+          "score": 6,
+          "detail": "Správne, ale chybná predložka „oproti jednej osobe“."
         }
       ],
       "latency": 253.29
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Bohemizmus „Omluvte“ a nesprávny slovosled „koľko hodín je“."
+          "detail": "Čechizmus „Omluvte“ a nesprávny slovosled „koľko hodín je“."
         }
       ],
       "latency": 257.05
@@ -3968,8 +3968,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Spisovné, ale „je veľmi zle vonku“ nevyjadruje jasne zlé počasie."
+          "score": 6,
+          "detail": "„veľmi zle vonku“ je štylisticky slabé a významovo nepresné, neprirodzený slovosled."
         }
       ],
       "latency": 267.0
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Vykanie s malým v, neobratné „prejsť na inú pozíciu“ a „v ďalšej spolupráci“."
+          "detail": "Malé „vám/vašu“, bez oslovenia, „prejsť na inú pozíciu“ a „v ďalšej spolupráci“ sú významovo nepresné."
         }
       ],
       "latency": 200.38
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prirodzená a správna veta."
+          "detail": "Prirodzená jedna veta s diakritikou, vhodný tón."
         }
       ],
       "latency": 165.4
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Správne a jednoznačne uvádza, že čiarka sa nepíše."
+          "detail": "Správna a jednoznačná odpoveď; úvodzovky sú nejednotné („…\")."
         }
       ],
       "latency": 158.19
@@ -4162,8 +4162,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 5,
-          "detail": "Vecne v poriadku, ale malé „vášho“, „vám“ a neprirodzené „stratenie“."
+          "score": 4,
+          "detail": "Malé „vášho/vám“ namiesto veľkého V a neprirodzené „stratenie“."
         }
       ],
       "latency": 201.38

@@ -4,7 +4,7 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T16:00:39+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
     "overall": 47.3,
@@ -2081,7 +2081,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Zbytočné anglicizmy (SMBs, core businessu) a gramatické chyby („aktuálnej dopytu“, rozbitá veta)."
+          "detail": "Anglicizmy „SMBs“, „core businessu“, „benefitom“, chyba „aktuálnej dopytu“, neúplná veta „umožňuje tým, že sa sústredíte“."
         }
       ],
       "latency": 19.37
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Obsahuje kórejské slovo a hrubé chyby („priorítu“, „stretnaní“, „manažeri sa bojuje“)."
+          "detail": "Chyby „manažeri sa bojuje“, „priorítu“, „stretnaní“, kórejské slovo „보고“."
         }
       ],
       "latency": 15.54
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
-          "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "type": "regex",
+          "ok": true,
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Veľa chýb („reklámna“, „v zóny“, „v verejnom“, „narúšovať“, „Prosím o úvaha“)."
+          "detail": "Veľké „Žiadam“ po oslovení, chyby „reklámna“, „v zóny“, „v verejnom“, „narúšovať“, „Prosím o úvaha“."
         }
       ],
       "latency": 17.75
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Bohemizmy („ježek“, „jmenoval“) a viaceré gramatické chyby („strašné hmyz“, „na čiernom oblohe“, „najtmavej“)."
+          "score": 2,
+          "detail": "Bohemizmy a chyby („ježek“, „jmenoval“, „lesickom“, „zrolil“, „ježového bodnutia“, „strašné hmyz“, „čiernom oblohe“, „najtmavej“)."
         }
       ],
       "latency": 19.6
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Chýbajúca diakritika („bezpečnost“, „Potvrdte“) a chyba „k novej siete“."
+          "detail": "Chyby „bezpečnost“, „Potvrdte“ bez diakritiky, „k novej siete“, neprirodzené „Definujte si“."
         }
       ],
       "latency": 17.87
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Rušivé zátvorky a tučné písmo, poľské „przestane“, chybné „do desať sekúnd“ a vymyslený „balíktor“."
+          "score": 2,
+          "detail": "Nezmysly „vyrovnávací balíktor“, poľské „przestane“, chyba „do desať“, zbytočné tučné písmo a zátvorkové glosy, pridané „pôvodný (alebo primárny)“."
         }
       ],
       "latency": 7.15
@@ -2378,8 +2378,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Veľa nezmyselných slov („plášťov“, „tatrske plasy“, „gólske“) a názov pohoria iba v dvoch pádoch."
+          "score": 1,
+          "detail": "Nadpis a mnoho nezmyselných slov: „plášťov“, „tatrske plasy“, „gólske výšky“, „neochabiteľnými“."
         }
       ],
       "latency": 17.78
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Vykanie nie je dôsledné („skús tepuť“, „skús zmeniť“) a sú tu ďalšie chyby („zrnity“, „by sa teraz pokúsiť“)."
+          "detail": "Prechod na tykanie („skús tepuť“), chyby „Mobil by sa teraz pokúsiť“, „zrnity“, „sa s vnúčatami hovoriť“."
         }
       ],
       "latency": 16.04
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Veľa chýb („najhlavšiu“, „v výrazne“, „voprívore“, „Žiadám“, „konstruktívnu“)."
+          "score": 2,
+          "detail": "Chýba oslovenie, chyby „najhlavšiu“, „v výrazne“, „voprívore“, „môj/a e-maily“, „Žiadám“, „konstruktívnu“, čiarka za „S pozdravom,“."
         }
       ],
       "latency": 19.08
@@ -3180,8 +3180,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Autora si nevymýšľa, ale obsahuje gramatickú chybu „Nie môžem“."
+          "score": 5,
+          "detail": "Autora nevymýšľa, ale obsahuje gramatickú chybu „Nie môžem“ (správne „Nemôžem“)."
         }
       ],
       "latency": 4.91
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 0.49
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Správne neuvádza meno, ale tvar „Nepoznávam“ je neštandardný."
+          "detail": "Správne, ale chybný tvar „Nepoznávam“ namiesto „Nepoznám“."
         }
       ],
       "latency": 6.95
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Vykanie s veľkým V, ale neprirodzené formulácie („urgentný zámer“, „Absencie zajtra“) a čiarka za „S pozdravom“."
+          "score": 5,
+          "detail": "Chybný tvar „Absencie zajtra“, veľké „Chcel/a“ po čiarke, nezmyselné „urgentný zámer“."
         }
       ],
       "latency": 9.86
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 6,
-          "detail": "Neformálny tón, no chyba „Predtým, čo“ namiesto „Skôr než“."
+          "detail": "Chybná spojka „Predtým, čo“ (má byť ako/než), inak tykanie v poriadku."
         }
       ],
       "latency": 10.25
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Nezrozumiteľná a nesprávna formulácia „už chýbam“, nevyjadruje meškanie."
+          "detail": "Nezmyselné „už chýbam“, z textu nevyplýva, že pisateľ mešká."
         }
       ],
       "latency": 3.82
@@ -3791,7 +3791,7 @@
       "prompt": "Napíš formálnu žiadosť o dovolenku na 3.–7. augusta adresovanú vedúcej oddelenia pani Horváthovej.",
       "answer": "**Žiadosť o dovolenku**\n\n[Vaše Meno a Priezvisko]\n[Vaša pozícia]\n[Dátum]\n\n**Pani Horváthová**\nVedúca oddelenia\n[Názov spoločnosti/Oddelenia]\n\n**Vážená pani Horváthová,**\n\nTýmto žiadam o schválenie dovolenky na obdobie od **3. augusta 2024** do **7. augusta 2024** vrátane.\n\nVšetky moje pracovné úlohy predčasne zabezpečím a v období mojej absencie sa uistím, že budú splnené.\n\nĎakujem za pochopenie a schválenie mojej žiadosti.\n\n**S pozdravom,**\n\n[Váš podpis]\n[Vaše Meno a Priezvisko]",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "contains",
@@ -3805,9 +3805,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 7,
-          "detail": "Správne oslovenie a obsah, no veľké „Týmto“ po čiarke a neobratné „predčasne zabezpečím“."
+          "ok": false,
+          "score": 5,
+          "detail": "Veľké písmeno po oslovení „Týmto“, nevhodné „predčasne zabezpečím“, veľké písmená „Vaše Meno a Priezvisko“, čiarka za „S pozdravom,“ a chýba „Vás“."
         }
       ],
       "latency": 11.48
@@ -3892,18 +3892,18 @@
       "prompt": "Zákazník napísal: „Objednávka mala prísť v pondelok, dnes je štvrtok a nič. Čo s tým?“ Napíš odpoveď za zákaznícku podporu e-shopu (3–5 viet).",
       "answer": "Rozumieme vašej frustrácii a ospravedlňujeme sa za zdržanie doručenia. Aby sme mohli situáciu presne zistiť, prosím, pošlite nám číslo vašej objednávky. Ihneď ju preveríme v našom logistickom systéme a kontaktujeme dopravcu. Poskytneme vám aktuálny stav a presný odhad doručenia v najkratšom čase.",
       "skipped": false,
-      "passed": false,
+      "passed": true,
       "checks": [
         {
           "type": "regex",
-          "ok": false,
+          "ok": true,
           "detail": "regex /\\b(Vám|Vás|Vašu|Vašej|Vaša)\\b/"
         },
         {
           "type": "judge",
-          "ok": false,
-          "score": 6,
-          "detail": "Ospravedlnenie a konkrétny krok (číslo objednávky), ale vykanie s malým v a chýba pozdrav."
+          "ok": true,
+          "score": 8,
+          "detail": "Správna odpoveď s vykaním a žiadosťou o číslo objednávky, „situáciu presne zistiť“ je však nešikovná kolokácia a chýba konkrétny termín."
         }
       ],
       "latency": 10.49
@@ -3919,8 +3919,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 0,
-          "detail": "Nesprávne uvádza malé V."
+          "score": 1,
+          "detail": "Nesprávne tvrdí, že sa píše malé v, a obsahuje chyby „pokiaľ nie začína vety“, „v veľmi“."
         }
       ],
       "latency": 10.66
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Chybná konštrukcia „môžem vás požiadať, koľko je hodín“."
+          "detail": "Významová chyba „môžem vás požiadať, koľko je hodín“ (má byť „opýtať sa“) a neprirodzené „Pani, pardon“."
         }
       ],
       "latency": 8.05
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Spisovná a správna formulácia so zachovaným významom."
+          "detail": "Spisovné a významovo verné, bez chýb."
         }
       ],
       "latency": 0.44
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Dva varianty, vykanie s malým v a nezmyselný kalk („urobiť čas, aby som sa uverejnil“)."
+          "detail": "Dve verzie s metakomentárom, nezmysel „Chcel/a by som sa urobiť čas, aby som sa uverejnil/a“, malé „vám“."
         }
       ],
       "latency": 13.9
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Prirodzená, správna jedna veta."
+          "detail": "Stručná prirodzená veta bez chýb."
         }
       ],
       "latency": 3.76
@@ -4120,7 +4120,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Nesprávne tvrdí, že sa čiarka píše."
+          "detail": "Nesprávne tvrdí, že sa čiarka používa, a obsahuje chybu „po záverečnom pozdravu“."
         }
       ],
       "latency": 3.53
@@ -4163,7 +4163,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Vykanie a štruktúra v poriadku, ale bohemizmus „ztratil“."
+          "detail": "Čechizmus „ztratil“, „počas dopravy“ namiesto „prepravy“ a veľké písmeno po oslovení s čiarkou."
         }
       ],
       "latency": 10.06

@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T17:03:18+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 34.8,
+    "overall": 34.1,
     "categories": {
       "format": {
         "passed": 20,
@@ -35,9 +35,9 @@
         "score": 42.6
       },
       "register": {
-        "passed": 5,
+        "passed": 4,
         "total": 26,
-        "score": 19.2
+        "score": 15.4
       }
     }
   },
@@ -2081,7 +2081,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Množstvo bohemizmov a chýb (softwarovom, poptávky, rychlé, mnohem, infrastrukture) a tučné nadpisy."
+          "detail": "Nad 250 slov, tučné písmo a množstvo čechizmov/chýb: „poptávky“, „rychlé“, „mnohem“, „infrastrukture“, „je tieto výhody“, „znížiť“."
         }
       ],
       "latency": 28.22
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Množstvo chýb a nezmyselných tvarov („zamäťi“, „prioritá“, „zpätné vedenie“) a vymyslená zmienka o pandémii."
+          "detail": "Vymyslená pandémia, chyby „dálku“, „zamäťi“, „prioritá“, „schôdza“, „zpätné vedenie“, „jasný písaný príručku“."
         }
       ],
       "latency": 10.79
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": true,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2221,7 +2221,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Chybné oslovenie „Vážne pán miestny“, bohemizmy a nezmysly („Vážnime sa“)."
+          "detail": "Nezrozumiteľné „Vážne pán miestny“, „Vážnime sa“, české „přitáhnúť“, „piet“, malé „vás“ a meta-poznámka „Počet slov: 152“."
         }
       ],
       "latency": 13.62
@@ -2263,7 +2263,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Takmer nezrozumiteľný text plný neexistujúcich slov a chýb („bol veľmi báť tmu“, „uklamali“)."
+          "detail": "Nezmyselný a negramatický text („jednýročník ježatko“, „bol veľmi báť tmu“, „uklamali“, „usmál“, „S mnou“, „priateľník“)."
         }
       ],
       "latency": 18.3
@@ -2300,7 +2300,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Bohemizmy a chyby („počkejte“, „otevrením“, „zmenite“, „firmwéru“) a miešanie tykania s vykaním."
+          "detail": "Množstvo chýb a čechizmov: „káble“, „počkejte“, „otevrením“, „zmenite“, „vypniť“, „firmwéru“, „routeru“, tykanie „nájdeš“, nezmyselná „anonymizácia IP adresy“."
         }
       ],
       "latency": 10.52
@@ -2336,8 +2336,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Bohemizmy („zátěže“, „směrovane“), chyby („dve zvyšné servery“) a skreslený význam („menej často“)."
+          "score": 1,
+          "detail": "Veľmi chybný text s čechizmami („zátěže“, „směrovane“), tvarmi „do desať“, „dve zvyšné servery“, „zlyhalejho“ a vecne nesprávnym „menej často“ namiesto každý mesiac."
         }
       ],
       "latency": 5.7
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Množstvo chýb, bohemizmov a vymyslených údajov („lyžiny“, „Rainer“)."
+          "detail": "Zmes češtiny („pohořie“, „láká“, „výběh“) a angličtiny („Tatra National Parku“), vymyslené strediská „Rainer“, „Žiar“."
         }
       ],
       "latency": 14.73
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 1,
-          "detail": "Prevažne tykanie zmiešané s vykaním a množstvo gramatických chýb."
+          "detail": "Tyká namiesto vykania („postupuj“), kolíše medzi tykaním a vykaním, množstvo chýb („Otvori“, „prijú“), nad limit slov."
         }
       ],
       "latency": 17.71
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Chybné oslovenie „vážna žena“, bohemizmy („odkazuji“, „nejdeššom“) a chýba pozdrav."
+          "detail": "Chybné oslovenie „vážna žena“, české tvary „odkazuji“, „nejdeššom“, „mi znepokojuje“, oslovenie zopakované namiesto záveru."
         }
       ],
       "latency": 14.13
@@ -3180,8 +3180,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Autora si nevymýšľa, ale obsahuje bohemizmy a chyby („Možná jde“, „povedám“, „Autorom… nie je známy“)."
+          "score": 3,
+          "detail": "Nevymyslel autora, ale obsahuje chyby („Autorom … nie je známy“), češtinu („Možná jde“), neexistujúci tvar „povedám“ a mechanicky opakuje zadanie."
         }
       ],
       "latency": 2.6
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 1.73
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 5,
-          "detail": "Správne neuvádza meno, no obsahuje chyby („nepodpíšalo“, „Možná“, „prostredí“)."
+          "detail": "Obsahovo správne, ale chyby „nepodpíšalo“, čechizmy „Možná“, „prostredí“."
         }
       ],
       "latency": 3.63
@@ -3730,8 +3730,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Množstvo hrubých chýb, bohemizmov a nezmyslov („omlouvam“, „musieť absencia“, „nepriechod“)."
+          "score": 2,
+          "detail": "Viacero hrubých chýb a čechizmov („Omlouvam“, „ktorý budem musieť absencia“, „nepriechod“) a nelogický obsah (dovolenka, „dnešnom dni“)."
         }
       ],
       "latency": 5.65
@@ -3758,7 +3758,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Rozbitá veta „Riešiť by som tiež“ a formálny záver „S úctou“."
+          "detail": "Nezmyselná veta „Riešiť by som tiež zabezpečenie“ a formálny záver „S úctou, [Tvoje meno]“ nesedí k tónu."
         }
       ],
       "latency": 4.18
@@ -3769,7 +3769,7 @@
       "prompt": "Napíš SMS kamarátke, že meškáš 10 minút na stretnutie. Maximálne 2 vety.",
       "answer": "Som na ceste, počkaj 10 minút.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "not_regex",
@@ -3778,9 +3778,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 8,
-          "detail": "Krátka, neformálna a správna SMS, meškanie je vyjadrené nepriamo."
+          "ok": false,
+          "score": 6,
+          "detail": "Gramaticky správne, ale chýba ospravedlnenie a „počkaj 10 minút“ nevyjadruje jasne meškanie."
         }
       ],
       "latency": 0.63
@@ -3807,7 +3807,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Chybné oslovenie a viaceré chyby („Váš pozitívny odpoveď“, „vyhovorenie“)."
+          "detail": "Chybné oslovenie „Vážená pani vedúcej oddelenia pani Horváthovej“, nezmysly „nepreniknuteľnú pozornosť“, „vyhovorenie“, „Budem radosťou prijať“, „Váš pozitívny odpoveď“."
         }
       ],
       "latency": 8.85
@@ -3902,8 +3902,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 2,
-          "detail": "Mnoho chýb a nezmyslov („Ovďačujeme“, „Vás ukladáme“, podpis „Zákazník“) a príliš dlhé."
+          "score": 1,
+          "detail": "Množstvo chýb a nezmyslov („inštruktovali“, „do Vášho poštu“, „Ovďačujeme“, „Vás ukladáme“, „nejpresnejšom“), „ste správne zadal“, podpis „Zákazník“ a prekročená dĺžka."
         }
       ],
       "latency": 14.15
@@ -3920,7 +3920,7 @@
           "type": "judge",
           "ok": true,
           "score": 9,
-          "detail": "Správne a jednoznačne uvádza veľké V."
+          "detail": "Správne a jazykovo bezchybné."
         }
       ],
       "latency": 1.23
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Bohemizmus „mohla byste“."
+          "detail": "Čechizmus „mohla byste“ namiesto „mohli by ste“."
         }
       ],
       "latency": 1.05
@@ -3969,7 +3969,7 @@
           "type": "judge",
           "ok": true,
           "score": 8,
-          "detail": "Spisovné, len menej prirodzený slovosled."
+          "detail": "Spisovné, ale slovosled „nepríjemne vonku“ je menej prirodzený."
         }
       ],
       "latency": 0.6
@@ -4043,8 +4043,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 1,
-          "detail": "Nezmyselné slová („dĺžky“, „bohužialstvo“) a české tvary."
+          "score": 2,
+          "detail": "Čechizmy „Jméno“, nezmyselné „dĺžky“, „bohužialstvo“, „tuto“; chýba poďakovanie na začiatku."
         }
       ],
       "latency": 4.01
@@ -4082,7 +4082,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Metakomentár s chybami („Kolégovi“, „vete“)."
+          "detail": "Obsahuje meta-komentár a chyby („Kolégovi“, „nasledujúcu vete“ namiesto „vetu“), samotná veta je v úvodzovkách."
         }
       ],
       "latency": 1.81
@@ -4119,8 +4119,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Vecne správne, ale používa české slovo „čárka“."
+          "score": 5,
+          "detail": "Obsahovo správna odpoveď, ale používa český tvar „čárka“ namiesto „čiarka“."
         }
       ],
       "latency": 1.28
@@ -4163,7 +4163,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Zmes češtiny a chýb („Omlouvame“, „poštom“, „Vaše spokojnosť“)."
+          "detail": "Plno čechizmov a chýb: „Omluva“, „Omlouvame“, „tuto“, „Bohužial“, „náš balík“, „poštom“, „Vaše spokojnosť“, „najvyššia prioritou“, nesúvisiaca veta o ponuke."
         }
       ],
       "latency": 9.11

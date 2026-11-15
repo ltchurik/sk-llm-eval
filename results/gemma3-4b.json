@@ -4,10 +4,10 @@
   "base_url": "http://localhost:11434/v1",
   "judge_model": "Claude Opus (agent, blind)",
   "run_at": "2026-11-14T15:22:16+00:00",
-  "eval_version": "0.2.2",
+  "eval_version": "0.2.3",
   "mode": "api+offline-judge",
   "summary": {
-    "overall": 36.6,
+    "overall": 36.0,
     "categories": {
       "format": {
         "passed": 13,
@@ -35,9 +35,9 @@
         "score": 34.0
       },
       "register": {
-        "passed": 9,
+        "passed": 8,
         "total": 26,
-        "score": 34.6
+        "score": 30.8
       }
     }
   },
@@ -2080,8 +2080,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 6,
-          "detail": "Logistický výklad témy, prijateľný jazyk, ale chyba „v vlastných skladoch“ a „rýchle prepravy tovaru“."
+          "score": 4,
+          "detail": "Téma chápaná ako skladovanie tovaru, nie softvérové kontajnery, a chyba „v vlastných“."
         }
       ],
       "latency": 6.15
@@ -2179,7 +2179,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Viaceré neexistujúce slová a chyby („schoviek“, „schúvky“, „zažívania“, „tímy, ktoré sa daria“)."
+          "detail": "Nezmyselné „schoviek“, „schúvky“, „zažívania“, chybné „Tímy, ktoré sa daria“, „nemôže jednoducho spýtať“."
         }
       ],
       "latency": 4.2
@@ -2208,9 +2208,9 @@
           "detail": "regex /\\b(Vás|Vám|Vaš[aeu]|Vašej)\\b/"
         },
         {
-          "type": "contains",
+          "type": "regex",
           "ok": false,
-          "detail": "contains 'Hlavnej ulici 12'"
+          "detail": "regex /Hlavnej ulici (č\\. ?)?12\\b/"
         },
         {
           "type": "diacritics_ratio",
@@ -2220,8 +2220,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Nezmyselný úvod „sú s tým, že“ a chyba „návrh rozmery“."
+          "score": 3,
+          "detail": "Nezmyselný začiatok „sú s tým, že ... smerujem na Vás“, chyba „návrh rozmery“, oslovenie „Vážení páni“ a čiarka za „S pozdravom,“."
         }
       ],
       "latency": 6.31
@@ -2262,8 +2262,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Neštandardné tvary a chyby („ježok“, „vlasek“, „prizeral sa“, „strachopýtlivý“) a nedokončený koniec."
+          "score": 2,
+          "detail": "Chyby „Ježok“, nezmysly („chlpatý ježok“, „chlpatý chvost“, „vlasek“, „prizeral sa“, „strachopýtlivý“), rozsah pod 150 slov a chýba záver."
         }
       ],
       "latency": 5.87
@@ -2299,8 +2299,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 4,
-          "detail": "Vecné chyby (USB kábel do WAN portu) a jazykové chyby („nezapáky“, „prehľadávač“)."
+          "score": 3,
+          "detail": "Neexistujúce slovo „nezapáky“, vecne chybné pripojenie počítača „USB kábla“ do „WAN portu“, bohemizmus „obvykle“ a zbytočný úvodný komentár."
         }
       ],
       "latency": 7.81
@@ -2337,7 +2337,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Mnoho nezmyslov a chýb („zátkové riadenie“, „odesielanie dopravy“, „prida jeho späť do pulzu“)."
+          "detail": "Nezmyselné výrazy „zátkové riadenie“, „odesielanie dopravy“, „prida jeho späť do pulzu“, „premostení“; chýba aj load balancer."
         }
       ],
       "latency": 2.63
@@ -2379,7 +2379,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Vymyslená „Tatranská Polňa“ a chyby v zhode („ponúka Vysoké Tatry“, „lednícke“)."
+          "detail": "Chyby „lednícke jazerá“, „Tatranská Polňa“, „ponúka Vysoké Tatry“, „chat“."
         }
       ],
       "latency": 6.44
@@ -2513,7 +2513,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Dôsledné vykanie, ale chýba mäkčeň („Potvrdte“), je tu bohemizmus „obvykle“ a chybná zhoda („má vaše vnúčatá… pripojený“)."
+          "detail": "Nelogický prvý krok „Späť“, chýbajúci mäkčeň „Potvrdte“, nezhoda „má vaše vnúčatá“, pod rozsahom pre laika nejasné."
         }
       ],
       "latency": 7.18
@@ -2595,13 +2595,13 @@
         {
           "type": "regex",
           "ok": false,
-          "detail": "regex /Vážen(ý|á|í)/"
+          "detail": "regex /Vážen(ý|á|í|é)/"
         },
         {
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Nezmyselné formulácie („Súhlasím s tým“, „Hlasným sklamaním“, „nepodvoláte“) a malé „váš“."
+          "detail": "Chýba oslovenie, chyby „Vaša Telefónna Číslo“, „Hlasným sklamaním“, „Môje“, „nepodvoláte“, malé „váš/vás“ napriek zadaniu."
         }
       ],
       "latency": 8.91
@@ -3181,7 +3181,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Vymyslel konkrétne meno autora."
+          "detail": "Vymyslel autora („Jozef Kopányi“)."
         }
       ],
       "latency": 0.97
@@ -3245,7 +3245,7 @@
         {
           "type": "regex",
           "ok": true,
-          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad/"
+          "detail": "regex /finančn(á|ej|ou) správ|daňov(ý|ého) úrad|finančn(é|ého) riaditeľstv/"
         }
       ],
       "latency": 0.36
@@ -3406,7 +3406,7 @@
           "type": "judge",
           "ok": false,
           "score": 0,
-          "detail": "Uvádza konkrétne meno a vymyslené číslo zákona."
+          "detail": "Uvádza Andreja Kisku ako podpisovateľa a vymýšľa číslo zákona."
         }
       ],
       "latency": 1.15
@@ -3731,7 +3731,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Neexistujúce slová a chyby („Nevednosť“, „rádil by som Vám“, „neprekára“)."
+          "detail": "Chyby „Nevednosť“, „rádil by som Vám“, „neprekára“; text je nezrozumiteľný."
         }
       ],
       "latency": 2.59
@@ -3742,7 +3742,7 @@
       "prompt": "Kamarát ti píše: „Ahoj, môžeš mi poradiť, ktorý notebook si mám kúpiť do 800 eur?“ Odpovedz mu v 2–3 vetách. Tykaj mu.",
       "answer": "Ahoj, do 800 eur sa dá kúpiť slušný notebook, ale treba zvážiť, na čo ho budeš používať. Pre kancelársku prácu a prehliadanie internetu ti odporúčam model s procesorom Intel Celeron alebo AMD Ryzen 3 a 8 GB RAM.",
       "skipped": false,
-      "passed": true,
+      "passed": false,
       "checks": [
         {
           "type": "not_regex",
@@ -3756,9 +3756,9 @@
         },
         {
           "type": "judge",
-          "ok": true,
-          "score": 8,
-          "detail": "Správna slovenčina a tykanie, obsahovo trochu slabšie odporúčanie."
+          "ok": false,
+          "score": 6,
+          "detail": "Jazykovo v poriadku, ale rada (Celeron za 800 €) je vecne nevhodná."
         }
       ],
       "latency": 1.7
@@ -3780,7 +3780,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Chýbajúca diakritika („Čakam“) a nelogický obsah („nech sa už pripravíš“, „čakám ťa“)."
+          "detail": "Chybné „meškám o 10 minút“, nezmyselné „nech sa už pripravíš“, chýbajúca dĺžka v „Čakam“."
         }
       ],
       "latency": 0.59
@@ -3806,8 +3806,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Správne oslovenie a formálny záver, hoci veľmi stručné."
+          "score": 7,
+          "detail": "Stručná, správna žiadosť so správnym oslovením, ale vymyslený rok, čiarka za „S pozdravom,“ a bez zámena Vy."
         }
       ],
       "latency": 1.21
@@ -3903,7 +3903,7 @@
           "type": "judge",
           "ok": false,
           "score": 3,
-          "detail": "Vymyslené informácie, chyba „očakávame ju doručiť“ a vykanie s malým v."
+          "detail": "Chybná konštrukcia „očakávame ju doručiť do piatku“, bagatelizujúce „prípadné zdržanie“, vymyslený stav zásielky a nezmyselné „aby sme sa zlepšili“."
         }
       ],
       "latency": 2.2
@@ -3919,8 +3919,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Správne uvádza veľké Vy."
+          "score": 7,
+          "detail": "Správne, ale neprirodzené „s formálnou rečou“ a nepresné „vždy“."
         }
       ],
       "latency": 0.59
@@ -3947,7 +3947,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Nesprávny význam a ženský rod hovoriaceho namiesto staršieho muža."
+          "detail": "Nelogická veta z pohľadu ženy („mohla by som sa opýtať“) a „neviem, koľko je hodín“ nespĺňa zadanie."
         }
       ],
       "latency": 0.77
@@ -3968,8 +3968,8 @@
         {
           "type": "judge",
           "ok": false,
-          "score": 3,
-          "detail": "Ponecháva hovorové „Dneska“."
+          "score": 4,
+          "detail": "Ponechané hovorové „Dneska“, prepis do spisovnej podoby nie je dokončený."
         }
       ],
       "latency": 0.52
@@ -4044,7 +4044,7 @@
           "type": "judge",
           "ok": false,
           "score": 4,
-          "detail": "Chyby („po starostom zvážení“, „Vám želám Vám“) a zástupný text „[Tvoje meno]“."
+          "detail": "Chyby „Po starostom zvážení“, „Vám želám Vám“, zástupný text „[Tvoje meno]“ s tykaním."
         }
       ],
       "latency": 2.26
@@ -4081,8 +4081,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 9,
-          "detail": "Prirodzená, správna jedna veta."
+          "score": 8,
+          "detail": "Prirodzená veta, ale chýba čiarka pred vedľajšou vetou „ako má“."
         }
       ],
       "latency": 0.52
@@ -4119,8 +4119,8 @@
         {
           "type": "judge",
           "ok": true,
-          "score": 8,
-          "detail": "Správna odpoveď, hoci s menej prirodzeným slovosledom."
+          "score": 7,
+          "detail": "Obsahovo správna odpoveď s neprirodzeným slovosledom („v slovenskom liste čiarka sa nepíše za…“)."
         }
       ],
       "latency": 0.74
@@ -4163,7 +4163,7 @@
           "type": "judge",
           "ok": false,
           "score": 2,
-          "detail": "Dve možnosti, chyby a anglicizmus („súcemu“, „inconveniencie“, „prehlásime“)."
+          "detail": "Dve varianty namiesto jedného e-mailu, nezmysel „súcemu“, anglicizmus „inconveniencie“, chybné „prehlásime“."
         }
       ],
       "latency": 2.72

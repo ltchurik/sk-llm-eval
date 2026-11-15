@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 4, "reason": "Chyby „ponúka malé firmám“, „Týmto sa ľahšie spolupracujú tími“, anglicizmy „benefity“, „patchov“ a vecne pochybné tvrdenie o licenciách."}
-{"id": "long_text-003", "score": 3, "reason": "Bohemizmus „Omezujú“, chyby „dva dni týždeňa“, „k kódu“, nesprávne „Vkladajú aj do prípravy“ a „prioritizácie“."}
-{"id": "long_text-004", "score": 3, "reason": "Vymyslený zákon č. 369/2014 Z. z., chyby „na Hlavnú ulici“, „chodecov“, neobratné „Odborne a formálne prosím“ a slabé odôvodnenie."}
-{"id": "long_text-005", "score": 2, "reason": "Nezmysly a chyby „chobotkatý“, „spriateľ“, „zašeplal“, „Len ho pozrela“, „dodala Lenou“, „úsmievom“, „vlastný svetlo“."}
-{"id": "long_text-006", "score": 3, "reason": "Neexistujúce „kadejkoľvek portu“, chyby „zmenite predvolé“, bohemizmus „počkejte“, „routeru“ namiesto „routera“."}
-{"id": "long_text-007", "score": 3, "reason": "Chyby „Ak sa primárny server zlyhá“, „bežia rovnakou verziou“, chýbajúce „ho“ pri pridaní, nepreložené „traffic“ a „configuration drift“."}
-{"id": "long_text-008", "score": 1, "reason": "Nepravdivé „Najvyššie vrchy Európy“, nezmysel „Vysokých Tatier je množstvo skanov“, chybné „Vysokým Tatram“, „zaskúšané“, „infraštruktura“."}
-{"id": "long_text-011", "score": 2, "reason": "Nevhodné „Ahojte!“, chyba „hovoriť jasne“, nezmysly „nepoužívajte šatku na uši“, „Mám radi vaše vnúčatá“."}
-{"id": "long_text-013", "score": 3, "reason": "Chybné oslovenie „Vážení zákazníci“, chyby „Vyzývam Vás o“, „na mojich troch emailových správach“, „požiadavať“, čiarka za pozdravom."}
-{"id": "realie-015", "score": 0, "reason": "Vymyslený autor „Ján Štrbík“ a rok 1962."}
-{"id": "realie-029", "score": 9, "reason": "Správne a jazykovo bezchybne uvádza, že taký zákon nie je známy."}
-{"id": "register-001", "score": 6, "reason": "Vykanie s V, ale neobratné „Budem sa snažiť urobiť všetko čo mám v práci“ (chýba čiarka) a chýba podpis."}
-{"id": "register-002", "score": 6, "reason": "Tykanie v poriadku, ale chyby „čo budeš počítač využívať“ a „radím ti“ namiesto „poradím“."}
-{"id": "register-003", "score": 1, "reason": "Nezmysel „Previňme sa“, bohemizmus „brzy“, nesprávne „som o 10 minút neskoro“."}
-{"id": "register-004", "score": 4, "reason": "Chýba diakritika „Vážena“, veľké písmeno po oslovení, chýba vykanie s V."}
-{"id": "register-009", "score": 2, "reason": "Nevhodné „Drahý zákazník“, nezmysel „vyznáme sa za oneskorenie“, presúva krok na zákazníka."}
-{"id": "register-010", "score": 7, "reason": "Správne veľké V, ale neobratné „v liste oproti jednej osobe“."}
-{"id": "register-011", "score": 3, "reason": "Bohemizmus „Omluvte“ a nesprávny slovosled „koľko hodín je“."}
-{"id": "register-012", "score": 5, "reason": "Spisovné, ale „je veľmi zle vonku“ nevyjadruje jasne zlé počasie."}
-{"id": "register-016", "score": 5, "reason": "Vykanie s malým v, neobratné „prejsť na inú pozíciu“ a „v ďalšej spolupráci“."}
-{"id": "register-018", "score": 9, "reason": "Prirodzená a správna veta."}
-{"id": "register-020", "score": 9, "reason": "Správne a jednoznačne uvádza, že čiarka sa nepíše."}
-{"id": "register-022", "score": 5, "reason": "Vecne v poriadku, ale malé „vášho“, „vám“ a neprirodzené „stratenie“."}
+{"id": "long_text-001", "score": 3, "reason": "Chyby „malé firmám“, „mojím počítačom ide“, „Týmto sa ľahšie spolupracujú tími“, anglicizmy „benefity“, „patchov“."}
+{"id": "long_text-003", "score": 4, "reason": "Čechizmus „Omezujú“, nezmysel „Vkladajú aj do dôležitej prípravy“, „nejasné prioritizácie“, pridaná veta mimo textu."}
+{"id": "long_text-004", "score": 3, "reason": "Chyby „na Hlavnú ulici“, „chodecov“, veľké „Na“ po oslovení, vymyslený zákon „369/2014 Z. z.“ a nezmyselné „Odborne a formálne prosím“."}
+{"id": "long_text-005", "score": 3, "reason": "Veľa chýb: „chobotkatý“, „by ste mali báť“ (vykanie dieťaťu, chýba „sa“), „Len ho pozrela“, „zašeplal“, „úsmievom“, „dodala Lenou“, „jeho vlastný svetlo“, bohemizmus „Od tej doby“ a nejednotné úvodzovky."}
+{"id": "long_text-006", "score": 3, "reason": "Nezmysel „kadejkoľvek portu“, chyby „zmenite“, „predvolé“, čechizmus „počkejte“, „routeru“ a nezrozumiteľné „často nahradené štandardným admin“."}
+{"id": "long_text-007", "score": 4, "reason": "Chybné „sa zlyhá“, kalk „bežia rovnakou verziou“, chýbajúce „ho“, anglické „traffic“ a „zastaví traffic naň“."}
+{"id": "long_text-008", "score": 1, "reason": "Nesprávne pády „Vysokých Tatier je množstvo skanov“, „Vysokým Tatram“, vymyslené fakty (najvyššie vrchy Európy, ľadovce)."}
+{"id": "long_text-011", "score": 2, "reason": "Oslovenie „Ahojte!“, chyby „hovoriť jasne“ (neurčitok), „šatku na uši“, nezmyselné „Mám radi vaše vnúčatá“."}
+{"id": "long_text-013", "score": 3, "reason": "Nesprávne oslovenie „Vážení zákazníci“, chyby „Vyzývam Vás o“, „na mojich troch emailových správach“, „požiadavať“, záver „S pozdravom, Marek Novák,“."}
+{"id": "realie-015", "score": 0, "reason": "Hoci tvrdí, že román nepozná, vymýšľa autora a dátum („od Jána Štrbíka, ktoré vyšlo v roku 1962“) a má nejednotné úvodzovky."}
+{"id": "realie-029", "score": 8, "reason": "Správne odmietnutie, kategorické a s nejednotnými úvodzovkami."}
+{"id": "register-001", "score": 6, "reason": "Vykanie je správne, ale chýba oslovenie a čiarka v „všetko, čo mám“, veta „Budem sa snažiť urobiť všetko čo mám v práci“ je neobratná."}
+{"id": "register-002", "score": 5, "reason": "Chyby „čo budeš počítač využívať“ (chýba „na“) a „radím ti“ namiesto „poradím ti“."}
+{"id": "register-003", "score": 1, "reason": "Nezmyselné „Previňme sa“ a čechizmus „brzy“; text nedáva zmysel."}
+{"id": "register-004", "score": 4, "reason": "Chýbajúca diakritika „Vážena“, veľké písmeno „Žiadam“ po oslovení, bez vykania, neobratné „budú moje úlohy preberané kolegom“."}
+{"id": "register-009", "score": 3, "reason": "Chyby „Drahý zákazník“, nezmyselné „vyznáme sa za oneskorenie“, „peňazie“ a odosielanie zákazníka, aby kontaktoval podporu."}
+{"id": "register-010", "score": 6, "reason": "Správne, ale chybná predložka „oproti jednej osobe“."}
+{"id": "register-011", "score": 3, "reason": "Čechizmus „Omluvte“ a nesprávny slovosled „koľko hodín je“."}
+{"id": "register-012", "score": 6, "reason": "„veľmi zle vonku“ je štylisticky slabé a významovo nepresné, neprirodzený slovosled."}
+{"id": "register-016", "score": 5, "reason": "Malé „vám/vašu“, bez oslovenia, „prejsť na inú pozíciu“ a „v ďalšej spolupráci“ sú významovo nepresné."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená jedna veta s diakritikou, vhodný tón."}
+{"id": "register-020", "score": 9, "reason": "Správna a jednoznačná odpoveď; úvodzovky sú nejednotné („…\")."}
+{"id": "register-022", "score": 4, "reason": "Malé „vášho/vám“ namiesto veľkého V a neprirodzené „stratenie“."}

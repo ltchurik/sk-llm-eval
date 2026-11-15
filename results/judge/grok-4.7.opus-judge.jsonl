@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 10, "reason": "Prirodzený, správny text bez chýb."}
+{"id": "long_text-003", "score": 9, "reason": "Úplné a prirodzené zhrnutie, bez anglicizmov; drobná štylistická strohosť."}
+{"id": "long_text-004", "score": 6, "reason": "Gramaticky správne, no len okolo 112 slov (pod 120), oslovenie „Vážený mestský úrad“ a chýba podpis."}
+{"id": "long_text-005", "score": 9, "reason": "Prirodzený a gramaticky správny príbeh so správnymi úvodzovkami „…“ a jasnou stavbou, bez podstatných chýb."}
+{"id": "long_text-006", "score": 9, "reason": "Bezchybné, logické a zrozumiteľné kroky po slovensky."}
+{"id": "long_text-007", "score": 7, "reason": "Presný a plynulý preklad, no ponechané anglické „traffic“ namiesto „prevádzka“ a mierne neobratné „bežia s rovnakou verziou“."}
+{"id": "long_text-008", "score": 9, "reason": "Správne pády vo všetkých tvaroch, prirodzený text, fakty bez chýb."}
+{"id": "long_text-011", "score": 8, "reason": "Zrozumiteľné a dôsledne vykané; neobratné „Vážený používateľ“ a „nechajte si pomôcť od niekoho“."}
+{"id": "long_text-013", "score": 8, "reason": "Gramaticky správna, zdvorilá sťažnosť s vykaním, no vágna a bez podpisu za „S pozdravom“."}
+{"id": "realie-015", "score": 9, "reason": "Správne priznáva, že román nepozná; odpoveď je strohá."}
+{"id": "realie-029", "score": 9, "reason": "Správna stručná odpoveď."}
+{"id": "register-001", "score": 8, "reason": "Korektný e-mail s vykaním, len oslovenie „Vážený pán/pani“ by malo byť „Vážený pán/Vážená pani“."}
+{"id": "register-002", "score": 9, "reason": "Prirodzené, tykanie, bez chýb."}
+{"id": "register-003", "score": 7, "reason": "Správne, no „ospravedlňujem sa“ je zbytočne formálne pre kamarátku."}
+{"id": "register-004", "score": 9, "reason": "Stručná, správna žiadosť so správnym oslovením, vykaním a dátumom „3. – 7. augusta“."}
+{"id": "register-009", "score": 9, "reason": "Prirodzená a správna odpoveď s vykaním, ospravedlnením, preverením a náhradným riešením."}
+{"id": "register-010", "score": 0, "reason": "Nesprávne tvrdí, že sa píše malé v."}
+{"id": "register-011", "score": 10, "reason": "Presne prirodzená zdvorilá formulácia s vykaním, bez chýb."}
+{"id": "register-012", "score": 9, "reason": "Spisovné, význam zachovaný; „Áno“ za „Hej“ je trochu zbytočné, ale správne."}
+{"id": "register-016", "score": 6, "reason": "Inak dobrý text, ale vykanie malým písmenom („vám úspech“) proti zadaniu."}
+{"id": "register-018", "score": 9, "reason": "Jedna prirodzená veta s diakritikou, neformálny tón, bez chýb."}
+{"id": "register-020", "score": 0, "reason": "Nesprávne tvrdí, že sa čiarka píše."}
+{"id": "register-022", "score": 9, "reason": "Formálne, správne, s veľkým V a ospravedlnením."}

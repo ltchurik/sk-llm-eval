@@ -1,23 +1,23 @@
-{"id": "long_text-001", "score": 10, "reason": "Prirodzený, súvislý a bezchybný text v požadovanom rozsahu bez nadpisov."}
-{"id": "long_text-003", "score": 7, "reason": "Zhrnutie je úplné a bez anglicizmov, ale obsahuje pádovú chybu „potrebuje jasný písomný sprievodca“ namiesto „jasného písomného sprievodcu“."}
-{"id": "long_text-004", "score": 10, "reason": "Úradný štýl, dôsledné vykanie s veľkým V, oslovenie, predmet, odôvodnenie aj pozdrav s podpisom bez chýb."}
-{"id": "long_text-005", "score": 8, "reason": "Pekný príbeh so správnymi úvodzovkami, ale dvakrát chybný genitív „spod dubu“ namiesto „spod duba“."}
-{"id": "long_text-006", "score": 9, "reason": "Presne 8 logických krokov so slovenskou terminológiou, len chýba čiarka pred vedľajšou vetou „ak staršie zariadenia…“."}
-{"id": "long_text-007", "score": 10, "reason": "Presný a plynulý preklad so správne skloňovanými termínmi a slovenskými výrazmi pre bežné slová."}
-{"id": "long_text-008", "score": 10, "reason": "Názov pohoria použitý vo viacerých správne skloňovaných pádoch, fakty sedia a text je bez chýb."}
-{"id": "long_text-011", "score": 9, "reason": "Prehľadný postup s dôsledným vykaním a správnou slovenčinou."}
-{"id": "long_text-013", "score": 9, "reason": "Vecná sťažnosť s jasnou požiadavkou, vykaním s veľkým V a bez chýb."}
-{"id": "realie-015", "score": 10, "reason": "Model priznal, že román nepozná, a autora si nevymyslel."}
-{"id": "realie-029", "score": 10, "reason": "Model nepotvrdil existenciu zákona a neuviedol žiadne meno prezidenta."}
-{"id": "register-001", "score": 10, "reason": "Formálny e-mail s dôsledným vykaním s veľkým V a zdvorilým oslovením bez chýb."}
-{"id": "register-002", "score": 10, "reason": "Neformálne, dôsledné tykanie a prirodzená slovenčina v rozsahu troch viet."}
-{"id": "register-003", "score": 10, "reason": "Krátka, prirodzená a neformálna SMS bez chýb."}
-{"id": "register-004", "score": 10, "reason": "Správne oslovenie, vykanie s veľkým V, slovenský formát dátumu a zdvorilý záver s podpisom."}
-{"id": "register-009", "score": 10, "reason": "Ospravedlnenie, konkrétne kroky s termínom a žiadosť o číslo objednávky, dôsledné vykanie bez chýb."}
-{"id": "register-010", "score": 10, "reason": "Jednoznačne a správne uvádza veľké V vrátane tvarov zámena."}
-{"id": "register-011", "score": 10, "reason": "Zdvorilá, prirodzená veta s vykaním bez chýb."}
-{"id": "register-012", "score": 10, "reason": "Spisovná formulácia so zachovaným významom bez hovorových výrazov."}
-{"id": "register-016", "score": 10, "reason": "Zdvorilé a jasné odmietnutie s poďakovaním a vykaním s veľkým V."}
-{"id": "register-018", "score": 10, "reason": "Jedna prirodzená kolegiálna veta s diakritikou."}
-{"id": "register-020", "score": 10, "reason": "Správne a jednoznačne uvádza, že čiarka sa nepíše."}
-{"id": "register-022", "score": 10, "reason": "Formálne oslovenie, vykanie s veľkým V, ospravedlnenie a informácia o novej zásielke bez anglicizmov."}
+{"id": "long_text-001", "score": 10, "reason": "Prirodzený, presný text bez chýb."}
+{"id": "long_text-003", "score": 8, "reason": "Úplné a prirodzené, ale chybný akuzatív „jasný písomný sprievodca“ a kalk „žijú v dokumentoch“."}
+{"id": "long_text-004", "score": 9, "reason": "Výborná, konkrétna a gramaticky správna žiadosť s oslovením pána primátora, vykaním a záverom."}
+{"id": "long_text-005", "score": 9, "reason": "Prirodzený a pekný príbeh so správnymi úvodzovkami; drobnou chybou je tvar „spod dubu“ (správne „spod duba“)."}
+{"id": "long_text-006", "score": 9, "reason": "Výborný, prirodzený návod, len drobnosť chýbajúcej čiarky „WPA2 ak“."}
+{"id": "long_text-007", "score": 9, "reason": "Presný, prirodzený preklad so slovenskými výrazmi („správca“, „testovacích serveroch“) a vysvetlením konfiguračného driftu, bez chýb."}
+{"id": "long_text-008", "score": 10, "reason": "Fakticky presné, názov v rôznych pádoch správne (do Vysokých Tatier, Vo Vysokých Tatrách, Vysokým Tatrám), bez chýb."}
+{"id": "long_text-011", "score": 9, "reason": "Zrozumiteľný postup v logickom poradí, dôsledné vykanie s veľkým V, správna dĺžka; bez chýb."}
+{"id": "long_text-013", "score": 9, "reason": "Výborná vecná sťažnosť s jasným problémom, požiadavkou výmeny alebo vrátenia peňazí, vykaním a správnym záverom."}
+{"id": "realie-015", "score": 10, "reason": "Výborná odpoveď: román nepozná, nevymýšľa autora a ponúka pomoc, a to bez chýb."}
+{"id": "realie-029", "score": 9, "reason": "Správne uvádza, že zákon nepozná, prirodzenou slovenčinou."}
+{"id": "register-001", "score": 9, "reason": "Zdvorilý formálny e-mail s vykaním s veľkým V, bez chýb; vymyslené mená nevadia."}
+{"id": "register-002", "score": 6, "reason": "Chybné „vydrží na batériu“ (na batérii), inak prirodzené tykanie."}
+{"id": "register-003", "score": 9, "reason": "Krátke, hovorové, s tykaním; chýba len ospravedlnenie, inak bez chýb."}
+{"id": "register-004", "score": 8, "reason": "Správna a zdvorilá žiadosť s vykaním, dátumy „3. – 7. augusta“ správne, len vymyslené mená zástupcu a podpisu."}
+{"id": "register-009", "score": 10, "reason": "Bezchybná, profesionálna odpoveď s vykaním, ospravedlnením, číslom objednávky, termínom aj náhradným riešením."}
+{"id": "register-010", "score": 10, "reason": "Správne, jednoznačné a jazykovo bezchybné."}
+{"id": "register-011", "score": 10, "reason": "Presne prirodzená zdvorilá formulácia s vykaním, bez chýb."}
+{"id": "register-012", "score": 10, "reason": "Spisovné, prirodzené a významovo presné."}
+{"id": "register-016", "score": 10, "reason": "Zdvorilé, prirodzené, vykanie s veľkým V, poďakovanie aj jasné odmietnutie; bez chýb."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená jedna veta bez chýb."}
+{"id": "register-020", "score": 10, "reason": "Správna a úplná odpoveď vrátane podpisu na novom riadku."}
+{"id": "register-022", "score": 8, "reason": "Dobrá formálna správa, len mierne neobratné spojenie viet „ospravedlňujeme sa, Vaša zásielka sa, žiaľ, …“."}

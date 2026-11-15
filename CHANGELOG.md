@@ -2,6 +2,13 @@
 
 Scores are comparable only within one task version. Every leaderboard row records the `eval_version` it was scored with.
 
+## Unreleased
+
+### Results
+
+- Qwen 3.5 4B and 9B rerun with thinking on (32k context, 16384-token budget, Qwen's recommended thinking sampling: temperature 0.6, top_p 0.95, top_k 20, presence_penalty 1.5). Thinking lifts 9B from 52.9 to 63.0 and 4B from 39.9 to 44.8. The leaderboard now has 20 rows; tasks and checks are unchanged (still 0.2.1).
+- Judge tasks for both rows graded blind by Claude Opus; the earlier no-thinking answers were mixed in as anchors and got the same pass/fail verdict in 45 of 46 cases.
+
 ## 0.2.1 — 2026-11-14
 
 ### Results

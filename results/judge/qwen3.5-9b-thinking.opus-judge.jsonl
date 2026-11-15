@@ -1,0 +1,23 @@
+{"id": "long_text-001", "score": 6, "reason": "Väčšinou plynulý text, ale preklep „clouďovými“, nezmyselné „moderné digitalizácie“ a zbytočné anglicizmy „upgradu“, „biznisu“."}
+{"id": "long_text-003", "score": 6, "reason": "Pokrýva všetky body, ale nevhodné „plodnosť“ namiesto produktivity, „v diaľkovom režime“ a neobratné „položiť otázky priamo vedľa kolegov“."}
+{"id": "long_text-004", "score": 4, "reason": "Chyby „obraciam sa k Vám s žiadosťou“, „funknom“, „nebránila ... ani narušila“, mylne citovaný zákon č. 245/2008 Z. z. (školský zákon) a „starosta“ pri meste."}
+{"id": "long_text-005", "score": 2, "reason": "Množstvo chýb a nezmyslov: „Bojim“, „monštra“, „tieňy“, „Nie boli“, „Čutil“, „Cukol“, „dýchaval“."}
+{"id": "long_text-006", "score": 5, "reason": "Logický postup, ale chyby „routeru“, „neznáte“, „sa ľahko pamätáte“, „najnovší verziu“."}
+{"id": "long_text-007", "score": 4, "reason": "Nepreložené „traffic“ a „configuration drift“, chybná väzba „bežia rovnakú verziu“, hovorové „doňho“."}
+{"id": "long_text-008", "score": 4, "reason": "Správne pády názvu, ale chyby „dominuje krajinu“, „hoteľmi“, nezmysly „rezerváciou pre ... ľudské nohy“ a „pri túrach po celom svete“."}
+{"id": "long_text-011", "score": 4, "reason": "Vykanie dôsledné, ale chyby „kontakt s vnúčatou“, „ako kontakta“, „mikrofonu“, „súhlasite“, „pokusovať“, „vám budú radi počuť“."}
+{"id": "long_text-013", "score": 3, "reason": "Malé „vás“, chyby „e-mailových adresy“, „výmenu nového kusového zariadenia na môj účet“, mylne „obchodného zákonníka“, pravdepodobne nad 180 slov."}
+{"id": "realie-015", "score": 9, "reason": "Správne nevymýšľa autora, kategorické tvrdenie o neexistencii."}
+{"id": "realie-029", "score": 8, "reason": "Správne nevymýšľa prezidenta, ale odpoveď je strohá a kategorická."}
+{"id": "register-001", "score": 7, "reason": "Prirodzený e-mail, iba malé „vás“ namiesto „Vás“."}
+{"id": "register-002", "score": 6, "reason": "Prirodzená odpoveď s preklepom „nájdješ“."}
+{"id": "register-003", "score": 5, "reason": "Zbytočne formálne „ospravedlňujem sa“, chyba „Už som v ceste“ (na ceste)."}
+{"id": "register-004", "score": 5, "reason": "Správne oslovenie, ale chyba „týmto sa Vás žiadam“ a veľmi strohý text bez poďakovania."}
+{"id": "register-009", "score": 6, "reason": "Profesionálne s konkrétnym termínom, ale chýba oslovenie a vykanie je s malým v („vašej“, „vás“)."}
+{"id": "register-010", "score": 0, "reason": "Nesprávna odpoveď, tvrdí malé písmeno."}
+{"id": "register-011", "score": 6, "reason": "Zdvorilé, ale strojené „ospravedlňujem sa za narušenie“ a menej prirodzené „aká je teraz hodina“."}
+{"id": "register-012", "score": 6, "reason": "Spisovné, no oslabený význam a chýba zosilnenie „fakt“."}
+{"id": "register-016", "score": 7, "reason": "Zdvorilé a jasné, iba nekonzistentné malé „váš“."}
+{"id": "register-018", "score": 9, "reason": "Prirodzená a správna veta."}
+{"id": "register-020", "score": 0, "reason": "Nesprávna odpoveď a bohemizmus „dopise“."}
+{"id": "register-022", "score": 4, "reason": "Preklep „ospravedľujeme“, bohemizmus „zásilku“, malé „vás“."}

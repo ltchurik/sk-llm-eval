@@ -21,7 +21,7 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 
 ## Leaderboard (v0.2.1)
 
-18 models: 4 Claude models and 14 open-weight models run locally.
+20 rows: 4 Claude models and 14 open-weight models run locally; Qwen 3.5 4B and 9B appear twice, with thinking off and on.
 
 | # | Model | Overall | Grammar | Register | Facts | Formatting | Translation | Long text |
 |---|---|---|---|---|---|---|---|---|
@@ -31,24 +31,26 @@ Academic Slovak benchmarks (skLEP, Trojsten) measure language understanding and 
 | 4 | Claude Haiku (agent) | **93.1** | 94.2 | 96.2 | 93.6 | 97.4 | 92.9 | 84.6 |
 | 5 | Gemma 4 26B-A4B (Ollama) | **75.9** | 75.4 | 84.6 | 85.1 | 86.8 | 92.9 | 30.8 |
 | 6 | Qwen 3.8 27B Q8 (Ollama, no thinking) | **70.4** | 69.6 | 73.1 | 63.8 | 84.2 | 92.9 | 38.5 |
-| 7 | Gemma 4 12B (Ollama) | **60.1** | 62.3 | 69.2 | 61.7 | 73.7 | 85.7 | 7.7 |
-| 8 | Gemma 3 12B (Ollama) | **58.9** | 63.8 | 57.7 | 59.6 | 63.2 | 78.6 | 30.8 |
-| 9 | Ornith 1.5 35B (Ollama) | **58.5** | 56.5 | 53.8 | 72.3 | 73.7 | 71.4 | 23.1 |
-| 10 | Qwen 3.5 9B (Ollama, no thinking) | **52.9** | 55.1 | 38.5 | 59.6 | 63.2 | 85.7 | 15.4 |
-| 11 | Gemma 4 E4B (Ollama) | **47.3** | 47.8 | 38.5 | 51.1 | 52.6 | 78.6 | 15.4 |
-| 12 | Laguna XS 2.1 Q8 (Ollama) | **41.5** | 34.8 | 19.2 | 59.6 | 63.2 | 64.3 | 7.7 |
-| 13 | Qwen 3.5 4B (Ollama, no thinking) | **39.9** | 49.3 | 19.2 | 42.6 | 63.2 | 57.1 | 7.7 |
-| 14 | Gemma 3 4B (Ollama) | **36.6** | 37.7 | 34.6 | 34.0 | 34.2 | 71.4 | 7.7 |
-| 15 | Granite 4.1 8B (Ollama) | **34.8** | 43.5 | 19.2 | 42.6 | 52.6 | 42.9 | 7.7 |
-| 16 | Mistral Nemo 12B (Ollama) | **21.3** | 31.9 | 11.5 | 44.7 | 39.5 | 0.0 | 0.0 |
-| 17 | Llama 3.2 3B (Ollama) | **14.5** | 24.6 | 7.7 | 21.3 | 18.4 | 7.1 | 7.7 |
-| 18 | Phi-4 mini 3.8B (Ollama) | **13.0** | 15.9 | 3.8 | 25.5 | 18.4 | 14.3 | 0.0 |
+| 7 | Qwen 3.5 9B (Ollama, thinking) | **63.0** | 68.1 | 57.7 | 70.2 | 73.7 | 92.9 | 15.4 |
+| 8 | Gemma 4 12B (Ollama) | **60.1** | 62.3 | 69.2 | 61.7 | 73.7 | 85.7 | 7.7 |
+| 9 | Gemma 3 12B (Ollama) | **58.9** | 63.8 | 57.7 | 59.6 | 63.2 | 78.6 | 30.8 |
+| 10 | Ornith 1.5 35B (Ollama) | **58.5** | 56.5 | 53.8 | 72.3 | 73.7 | 71.4 | 23.1 |
+| 11 | Qwen 3.5 9B (Ollama, no thinking) | **52.9** | 55.1 | 38.5 | 59.6 | 63.2 | 85.7 | 15.4 |
+| 12 | Gemma 4 E4B (Ollama) | **47.3** | 47.8 | 38.5 | 51.1 | 52.6 | 78.6 | 15.4 |
+| 13 | Qwen 3.5 4B (Ollama, thinking) | **44.8** | 53.6 | 34.6 | 53.2 | 63.2 | 64.3 | 0.0 |
+| 14 | Laguna XS 2.1 Q8 (Ollama) | **41.5** | 34.8 | 19.2 | 59.6 | 63.2 | 64.3 | 7.7 |
+| 15 | Qwen 3.5 4B (Ollama, no thinking) | **39.9** | 49.3 | 19.2 | 42.6 | 63.2 | 57.1 | 7.7 |
+| 16 | Gemma 3 4B (Ollama) | **36.6** | 37.7 | 34.6 | 34.0 | 34.2 | 71.4 | 7.7 |
+| 17 | Granite 4.1 8B (Ollama) | **34.8** | 43.5 | 19.2 | 42.6 | 52.6 | 42.9 | 7.7 |
+| 18 | Mistral Nemo 12B (Ollama) | **21.3** | 31.9 | 11.5 | 44.7 | 39.5 | 0.0 | 0.0 |
+| 19 | Llama 3.2 3B (Ollama) | **14.5** | 24.6 | 7.7 | 21.3 | 18.4 | 7.1 | 7.7 |
+| 20 | Phi-4 mini 3.8B (Ollama) | **13.0** | 15.9 | 3.8 | 25.5 | 18.4 | 14.3 | 0.0 |
 
 Score = % of tasks that passed all their checks; Overall = mean of the category scores. The full table with judge and dates is in [`results/LEADERBOARD.md`](results/LEADERBOARD.md). Read [how the rows were produced](#how-the-rows-were-produced) before you compare them.
 
 ## What models get wrong
 
-Real answers from the 18 runs above:
+Real answers from the 18 models above (one run per model, without the thinking variants):
 
 | Task | Expected | Wrong answers seen |
 |---|---|---|
@@ -157,8 +159,9 @@ Before checking, answers are normalised: NFC, non-breaking spaces become spaces,
 ## How the rows were produced
 
 - **`(Ollama)` rows** are clean API runs of open-weight models on an NVIDIA DGX Spark through Ollama's OpenAI-compatible endpoint, at temperature 0 with the default system prompt. Models use Ollama's default quantisation (Q4_K_M; Mistral Nemo Q4_0) unless the label says Q8. Exact settings are in `run_settings` in `results/<model>.json`.
-- **Thinking.** Models that think by default kept it on, with an 8192-token budget. The Qwen models ran with thinking switched off (`reasoning_effort: none`), because with it on, Qwen 3.5 4B managed 7 tasks in 30 minutes and the dense Qwen 3.8 27B generates about 5 tokens/s on this machine. With thinking they would likely score higher.
-- **Empty answers count as failures.** Gemma 4 12B (11 tasks), Gemma 4 26B-A4B (9), Laguna (5) and Ornith (3) returned an empty answer on some tasks, most likely because their thinking used up the token budget.
+- **Thinking.** Models that think by default kept it on, with an 8192-token budget. The `no thinking` Qwen rows ran with thinking switched off (`reasoning_effort: none`); the dense Qwen 3.8 27B generates about 5 tokens/s on this machine, too slow for a thinking run.
+- **`thinking` Qwen rows** ran with thinking on, a 32k context and a 16384-token budget, using Qwen's recommended sampling for thinking mode (temperature 0.6, top_p 0.95, top_k 20, presence_penalty 1.5). At temperature 0 the models got stuck in endless thinking loops. Thinking lifts Qwen 3.5 9B from 52.9 to 63.0 and 4B from 39.9 to 44.8, at about 5 minutes per task. It helps on grammar, facts and register, but not on long texts.
+- **Empty answers count as failures.** Gemma 4 12B (11 tasks), Gemma 4 26B-A4B (9), Laguna (5), Ornith (3) and the thinking Qwen 3.5 4B (16) and 9B (4) returned an empty answer on some tasks, most likely because their thinking used up the token budget.
 - **`(agent)` rows**: the Claude model ran as a Claude Code subagent that saw only the prompts, not the checks. This is not a clean API run, because the harness adds its own system prompt.
 - **`(chat)` row**: the author of the tasks answered the v0.1.0 tasks with this model in a chat session, and the same model answered the v0.2.0 tasks as a subagent. Treat it as a sanity check of the tasks.
 - **Judge**: Claude Opus graded the judge tasks blind. For each task, the answers were shuffled and labelled only A, B, C… It is still a Claude model grading Claude models, so expect some family bias. All verdicts are in `results/judge/`.
